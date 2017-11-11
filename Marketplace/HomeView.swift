@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  HomeView.swift
 //  Marketplace
 //
 //  Created by Gaybriella Igno on 11/6/17.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SearchView: UIViewController {
-
+class HomeView: UIViewController {
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
