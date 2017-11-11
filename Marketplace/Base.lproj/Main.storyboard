@@ -178,7 +178,7 @@
                                     <color key="titleColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ia8-MI-Eg1" kind="show" id="dHZ-az-WNI"/>
+                                    <segue destination="ia8-MI-Eg1" kind="show" identifier="toSignIn" id="dHZ-az-WNI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAm-08-9qu">
@@ -198,7 +198,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="7qO-qN-Q3c"/>
                     <connections>
+                        <outlet property="registerButton" destination="TAm-08-9qu" id="TUa-hQ-Hzm"/>
                         <outlet property="searchDisplayController" destination="Bv1-tG-kpY" id="bvy-Ig-box"/>
+                        <outlet property="signInButton" destination="cSD-QA-EoS" id="IxC-Qr-f3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

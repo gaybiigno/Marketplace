@@ -10,17 +10,39 @@ import UIKit
 
 class HomeView: UIViewController {
 	
+	@IBOutlet weak var signInButton: UIButton!
+	@IBOutlet weak var registerButton: UIButton!
+	private var signedIn = false;
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		signedIn = true
+		checkUser()
+		
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	func checkUser() {
+		if signedIn {
+			//signInButton.isHidden = true
+			signInButton.alpha = 0
+			//signInButton.isEnabled = false
+			//registerButton.isHidden = true
+			registerButton.alpha = 0
+			//registerButton.isEnabled = false
+		} else {
+			signInButton.isHidden = false
+			signInButton.isEnabled = true
+			registerButton.isHidden = false
+			registerButton.isEnabled = true
+		}
+	}
 
     /*
     // MARK: - Navigation
