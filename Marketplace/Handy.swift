@@ -13,11 +13,12 @@ import UIKit
 
 // Sets a "max length" variable - useful for month, date, quantity, etc.
 private var __maxLengths = [UITextField: Int]()
+
 extension UITextField {
 	@IBInspectable var maxLength: Int {
 		get {
 			guard let l = __maxLengths[self] else {
-				return 150 // (global default-limit. or just, Int.max)
+				return Int.max //150 // (global default-limit. or just, Int.max)
 			}
 			return l
 		}
