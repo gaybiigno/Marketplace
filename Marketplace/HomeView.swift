@@ -9,17 +9,16 @@
 import UIKit
 
 class HomeView: UIViewController {
-	
-	@IBOutlet weak var signInButton: UIButton!
 	@IBOutlet weak var registerButton: UIButton!
-	private var signedIn = false;
+	@IBOutlet weak var signInButton: UIButton!
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		signedIn = true
-		checkUser()
+		startValues()
+		//checkUser()
 		
     }
 
@@ -28,30 +27,36 @@ class HomeView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	func checkUser() {
-		if signedIn {
-			//signInButton.isHidden = true
-			signInButton.alpha = 0
-			//signInButton.isEnabled = false
-			//registerButton.isHidden = true
-			registerButton.alpha = 0
-			//registerButton.isEnabled = false
-		} else {
-			signInButton.isHidden = false
-			signInButton.isEnabled = true
-			registerButton.isHidden = false
-			registerButton.isEnabled = true
-		}
+	func startValues() {
+		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
+		
+		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
 	}
+	
+	@objc func clickRegister(_ sender: UIButton) {
+		self.performSegue(withIdentifier: "homeToReg", sender: self)
+	}
+	
+	@objc func clickSignIn(_ sender: UIButton) {
+		self.performSegue(withIdentifier: "homeToSignIn", sender: self)
+	}
+	
+	
 
-    /*
+	/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "homeToReg" {
+			if let destination = segue.destination as? RegisterTableView {
+				
+			}
+		}
+		
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+	*/
 
 }

@@ -20,8 +20,6 @@ class RegisterTableView: UITableViewController {
 	@IBOutlet weak var month: UITextField!
 	@IBOutlet weak var day: UITextField!
 	@IBOutlet weak var year: UITextField!
-	let monthDayLimit = 2
-	let yearLimit = 4
 	
 	@IBOutlet weak var dateError: UITextView!
 	@IBOutlet weak var formError: UITextView!
@@ -46,6 +44,7 @@ class RegisterTableView: UITableViewController {
 		} else {
 			dateError.isHidden = dateError.isHidden ? false : true
 		}
+		
 		var errorMessage = ""
 		
 		if (firstName.text?.isEmpty)! {
@@ -69,9 +68,19 @@ class RegisterTableView: UITableViewController {
 		}
 		if !errorMessage.isEmpty {
 			errorMessage += " required."
-			formError.text = errorMessage
-			formError.isHidden = false
+			formError!.text = errorMessage
+			formError!.isHidden = false
 		}
+	}
+	
+	
+	@IBAction func backHome(_ sender: UIButton) {
+		self.performSegue(withIdentifier: "regToHome", sender: self)
+		print()
+		let framey = sender.frame.origin
+		let f = self.view.convert(framey, to: parent?.view)
+		print(f)
+		print()
 	}
 	
 	
@@ -83,12 +92,12 @@ class RegisterTableView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 3
+        // I did this in such a stupid way I'm sorry
+		return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // I did this in such a stupid way I'm sorry
 		if section == 0 {
 			return 2
 		}
