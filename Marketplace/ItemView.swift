@@ -10,8 +10,23 @@ import UIKit
 
 class ItemView: UIViewController {
 	
+	// Item title max chars is 48
+	@IBOutlet weak var itemTitle: UITextView!
+	
+	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet var imageView: UIImageView!
+	
+	// Item description max chars is 1000
+	@IBOutlet var itemDescription: UITextView!
+	
+	@IBOutlet var tagViewBox: UIView!
+	
+	@IBOutlet var profilePicture: UIImageView!
+	@IBOutlet weak var postedByLabel: UILabel!
+	
+	@IBOutlet weak var msgSellerButton: UIButton!
+	
 	let imageModel = ImageModel()
-	var imageView = UIImageView(frame: CGRect(x: 7, y: 60, width: 400, height: 300))
 	
 	var swipeLeft = UISwipeGestureRecognizer()
 	var swipeRight = UISwipeGestureRecognizer()
@@ -19,7 +34,6 @@ class ItemView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		start()
-		
         // Do any additional setup after loading the view.
     }
 
@@ -31,18 +45,13 @@ class ItemView: UIViewController {
 	func displayCurrentImage() {
 		if let image = imageModel.currentImage()  {
 			imageView.image = image
-			self.view.addSubview(imageView)
-			
 		}
 	}
 	
 	func start() {
-		let title = UILabel(frame: CGRect(x: 30, y: 33, width: 400, height: 30))
-		title.text = "ITEM TITLE GOES HERE"
-		title.font = UIFont(name: "Avenir Next", size: 25.0)
-		self.view.addSubview(title)
-
 		displayCurrentImage()
+//		priceLabel.layer.cornerRadius = 1
+//		msgSellerButton.layer.cornerRadius = 0.5
 	}
 	
 	@objc func next() {
