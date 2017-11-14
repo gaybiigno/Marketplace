@@ -10,7 +10,7 @@ import UIKit
 
 class ItemView: UIViewController {
 	
-	// Item title max chars is 48
+	// Item title max chars SHOULD BE 48
 	@IBOutlet weak var itemTitle: UITextView!
 	
 	@IBOutlet weak var priceLabel: UILabel!
@@ -22,6 +22,7 @@ class ItemView: UIViewController {
 	@IBOutlet var tagViewBox: UIView!
 	
 	@IBOutlet var profilePicture: UIImageView!
+	
 	@IBOutlet weak var postedByLabel: UILabel!
 	
 	@IBOutlet weak var msgSellerButton: UIButton!
@@ -29,12 +30,12 @@ class ItemView: UIViewController {
 	let imageModel = ImageModel()
 	
 	var swipeLeft = UISwipeGestureRecognizer()
+	
 	var swipeRight = UISwipeGestureRecognizer()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		start()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +51,7 @@ class ItemView: UIViewController {
 	
 	func start() {
 		displayCurrentImage()
-//		priceLabel.layer.cornerRadius = 1
-//		msgSellerButton.layer.cornerRadius = 0.5
+		msgSellerButton.layer.cornerRadius = 5
 	}
 	
 	@objc func next() {

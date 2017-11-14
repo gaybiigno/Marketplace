@@ -22,7 +22,19 @@ class RegisterTableView: UITableViewController {
 	@IBOutlet weak var year: UITextField!
 	
 	@IBOutlet weak var dateError: UITextView!
-	@IBOutlet weak var formError: UITextView!
+	@IBOutlet weak var personalError: UITextView!
+	@IBOutlet weak var addressError: UITextView!
+	
+	@IBOutlet weak var addressOne: UITextField!
+	@IBOutlet weak var addressTwo: UITextField!
+	@IBOutlet weak var city: UITextField!
+	@IBOutlet weak var state: UITextField!
+	@IBOutlet weak var zipcode: UITextField!
+	
+	
+	private var dateErrorFound = false
+	private var personalErrorFound = false
+	private var addressErrorFound = false
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,53 +46,20 @@ class RegisterTableView: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 		self.view.backgroundColor = UIColor.white
 		dateError.isHidden = true
-		formError.isHidden = true
+		personalError.isHidden = true
+		addressError.isHidden = true
     }
 	
 	
 	@IBAction func signUpsubmit(_ sender: UIButton) {
-		if !(month.text?.isEmpty)!, !(day.text?.isEmpty)!, !(year.text?.isEmpty)! {
-			calculateAge()
-		} else {
-			dateError.isHidden = dateError.isHidden ? false : true
-		}
-		
-		var errorMessage = ""
-		
-		if (firstName.text?.isEmpty)! {
-			errorMessage += "First name"
-		}
-		if (lastName.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Last name"
-		}
-		if (email.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Email"
-		}
-		if (password.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Password"
-		}
-		if (confirmPassword.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Password Confirmation"
-		}
-		if !errorMessage.isEmpty {
-			errorMessage += " required."
-			formError!.text = errorMessage
-			formError!.isHidden = false
-		}
+		dateErrorFinder()
+		personalErrorFinder()
+		addressErrorFinder()
 	}
 	
 	
 	@IBAction func backHome(_ sender: UIButton) {
 		self.performSegue(withIdentifier: "regToHome", sender: self)
-		print()
-		let framey = sender.frame.origin
-		let f = self.view.convert(framey, to: parent?.view)
-		print(f)
-		print()
 	}
 	
 	
@@ -92,23 +71,115 @@ class RegisterTableView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // I did this in such a stupid way I'm sorry
-		return 3
+		return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // I did this in such a stupid way I'm sorry
-		if section == 0 {
-			return 2
-		}
-		if section == 1 {
-			return 4
-		}
-		if section == 2 {
+        // I did this in such a stupid way lol sorry
+		switch section {
+		case 0:
+			return 1
+		case 1:
+			return 5
+		case 2:
+			return 3
+		case 3:
 			return 6
+		default:
+			return 0
 		}
-		return 0
     }
+	
+	func dateErrorFinder() {
+		dateErrorFound = false
+		if !(month.text?.isEmpty)!, !(day.text?.isEmpty)!, !(year.text?.isEmpty)! {
+			if let uMonth = Int(month.text!), let uDay = Int(day.text!), let uYear = Int(year.text!) {
+				if (uMonth < 1 || uMonth > 12) ||
+					(uDay < 1 || uDay > 31) ||
+					(uYear < 1900 || uYear > 2014){
+					dateErrorFound = true
+				}
+			}
+		} else {
+			dateErrorFound = true
+		}
+		if dateErrorFound {
+			dateError.isHidden = true
+		} else {
+			dateError.isHidden = false
+			calculateAge()
+		}
+	}
+	
+	func personalErrorFinder() {
+		personalErrorFound = false
+		var errorMessage = ""
+		
+		if (firstName.text?.isEmpty)! {
+			errorMessage += "First name"
+			personalErrorFound = true
+		}
+		if (lastName.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "Last name"
+			personalErrorFound = true
+		}
+		if (email.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "Email"
+			personalErrorFound = true
+		}
+		if (password.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "Password"
+			personalErrorFound = true
+		}
+		if (confirmPassword.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "Password Confirmation"
+			personalErrorFound = true
+		}
+		if personalErrorFound {
+			errorMessage += " required."
+			personalError.text = errorMessage
+			personalError.isHidden = false
+		} else {
+			personalError.isHidden = true
+		}
+	}
+	
+	func addressErrorFinder() {
+		addressErrorFound = false
+		var errorMessage = ""
+		
+		if (addressOne.text?.isEmpty)! {
+			errorMessage += "Address Line 1"
+			addressErrorFound = true
+		}
+		if (email.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "City"
+			addressErrorFound = true
+		}
+		if (password.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "State"
+			addressErrorFound = true
+		}
+		if (confirmPassword.text?.isEmpty)! {
+			errorMessage += errorMessage.isEmpty ? "" : ", "
+			errorMessage += "Zip Code"
+			addressErrorFound = true
+		}
+		if addressErrorFound {
+			errorMessage += " required."
+			addressError.text = errorMessage
+			addressError.isHidden = false
+		} else {
+			addressError.isHidden = true
+		}
+		
+	}
 	
 	func calculateAge() {
 		let today = Date()
@@ -121,7 +192,6 @@ class RegisterTableView: UITableViewController {
 		let age = calculateAge.year
 		print("Age is \(String(describing: age))")
 		print()
-		
 	}
 
     /*

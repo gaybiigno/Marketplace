@@ -12,8 +12,16 @@ class HomeView: UIViewController {
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var signInButton: UIButton!
 	
+	@IBOutlet weak var homeGardButton: UIButton!
+	@IBOutlet weak var fashionButton: UIButton!
+	@IBOutlet weak var electronicsButton: UIButton!
+	@IBOutlet weak var artCollectButton: UIButton!
+	@IBOutlet weak var autoVehiButton: UIButton!
+	@IBOutlet weak var sportingButton: UIButton!
 	
-    override func viewDidLoad() {
+	
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,9 +36,19 @@ class HomeView: UIViewController {
     }
 	
 	func startValues() {
+		// Add targets
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
 		
 		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
+		
+		// Add borders
+		let borderColor = homeGardButton.backgroundColor?.cgColor
+		fashionButton.layer.borderWidth = 1.0
+		fashionButton.layer.borderColor = borderColor
+		artCollectButton.layer.borderWidth = 1.0
+		artCollectButton.layer.borderColor = borderColor
+		sportingButton.layer.borderWidth = 1.0
+		sportingButton.layer.borderColor = borderColor // as! CGColor
 	}
 	
 	@objc func clickRegister(_ sender: UIButton) {
