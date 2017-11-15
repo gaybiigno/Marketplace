@@ -30,10 +30,6 @@ class ItemView: UIViewController {
 	
 	let imageModel = ItemModel()
 	
-	var swipeLeft = UISwipeGestureRecognizer()
-	
-	var swipeRight = UISwipeGestureRecognizer()
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		start()
@@ -47,6 +43,12 @@ class ItemView: UIViewController {
 	func displayCurrentImage() {
 		if let image = imageModel.currentImage()  {
 			itemImageView.image = image
+			let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(next(_:)))
+			swipeLeft.direction = .left
+			itemImageView.addGestureRecognizer(swipeLeft)
+			let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(prev(_:)))
+			swipeRight.direction = .right
+			itemImageView.addGestureRecognizer(swipeRight)
 		}
 	}
 	
@@ -57,13 +59,15 @@ class ItemView: UIViewController {
 		itemPriceLabel.layer.mask?.cornerRadius = 5
 	}
 	
-	@objc func next() {
-		imageModel.next()
+	@objc func next(_ sender: UIImageView) {
+		print("in next")
+		imageModel.nextPic()
 		displayCurrentImage()
 	}
 	
-	@objc func prev() {
-		imageModel.next()
+	@objc func prev(_ sender: UIImageView) {
+		print("in prev")
+		imageModel.previousPic()
 		displayCurrentImage()
 	}
 	
