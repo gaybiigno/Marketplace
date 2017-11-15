@@ -13,21 +13,22 @@ class ItemView: UIViewController {
 	// Item title max chars SHOULD BE 48
 	@IBOutlet weak var itemTitle: UITextView!
 	
-	@IBOutlet weak var priceLabel: UILabel!
-	@IBOutlet var imageView: UIImageView!
-	
-	// Item description max chars is 1000
+	@IBOutlet weak var itemPriceLabel: UILabel!
+	@IBOutlet var itemImageView: UIImageView!
 	@IBOutlet var itemDescription: UITextView!
 	
 	@IBOutlet var tagViewBox: UIView!
+	@IBOutlet weak var itemCategory: UILabel!
+	@IBOutlet weak var itemTags: UITextView!
 	
 	@IBOutlet var profilePicture: UIImageView!
-	
 	@IBOutlet weak var postedByLabel: UILabel!
+	@IBOutlet weak var usernameLabel: UILabel!
+	@IBOutlet weak var ratingLabel: UILabel!
 	
 	@IBOutlet weak var msgSellerButton: UIButton!
 	
-	let imageModel = ImageModel()
+	let imageModel = ItemModel()
 	
 	var swipeLeft = UISwipeGestureRecognizer()
 	
@@ -45,13 +46,15 @@ class ItemView: UIViewController {
 	
 	func displayCurrentImage() {
 		if let image = imageModel.currentImage()  {
-			imageView.image = image
+			itemImageView.image = image
 		}
 	}
 	
 	func start() {
 		displayCurrentImage()
 		msgSellerButton.layer.cornerRadius = 5
+		itemPriceLabel.layer.masksToBounds = true
+		itemPriceLabel.layer.mask?.cornerRadius = 5
 	}
 	
 	@objc func next() {
@@ -63,7 +66,19 @@ class ItemView: UIViewController {
 		imageModel.next()
 		displayCurrentImage()
 	}
-    
+	
+	func setItemCategory() {
+		itemCategory.text = "Main Category → Sub Category"
+	}
+	
+	func setItemTitle() {
+		itemTitle.text = "Here is the item title!"
+	}
+	
+//	func setItemTags() {
+//		// set tags
+//	}
+	
 
     /*
     // MARK: - Navigation

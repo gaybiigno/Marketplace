@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageModel: NSObject {
+class ItemModel: NSObject {
 	
 	fileprivate let itemURL = "https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg"
 	
@@ -34,7 +34,7 @@ class ImageModel: NSObject {
 	
 	func previous() {
 		if currentIdx == 0 {
-			currentIdx = 3//imageNames.count - 1
+			currentIdx = 3 //imageNames.count - 1
 		} else {
 			currentIdx -= 1
 		}

@@ -90,6 +90,7 @@ class RegisterTableView: UITableViewController {
 		}
     }
 	
+	// Checks if any date sections empty or invalid
 	func dateErrorFinder() {
 		dateErrorFound = false
 		if !(month.text?.isEmpty)!, !(day.text?.isEmpty)!, !(year.text?.isEmpty)! {
@@ -111,6 +112,7 @@ class RegisterTableView: UITableViewController {
 		}
 	}
 	
+	// Checks if any personal sections empty or invalid
 	func personalErrorFinder() {
 		personalErrorFound = false
 		var errorMessage = ""
@@ -145,9 +147,15 @@ class RegisterTableView: UITableViewController {
 			personalError.isHidden = false
 		} else {
 			personalError.isHidden = true
+			// Check if password == confirm password
+			if password.text! != confirmPassword.text! {
+				personalError.text = "Password Confirmation does not match!"
+				personalError.isHidden = false
+			}
 		}
 	}
 	
+	// Checks if any address sections empty
 	func addressErrorFinder() {
 		addressErrorFound = false
 		var errorMessage = ""
