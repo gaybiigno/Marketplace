@@ -853,12 +853,20 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-xe-zeD">
+                                <rect key="frame" x="354" y="372" width="40" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="goZ-dw-kzn"/>
                     </view>
                     <size key="freeformSize" width="414" height="800"/>
                     <connections>
+                        <outlet property="imageCounterLabel" destination="6t0-xe-zeD" id="KLa-yd-qE1"/>
                         <outlet property="itemCategory" destination="Rzp-gL-ug5" id="ZX2-vS-okb"/>
                         <outlet property="itemDescription" destination="7Fq-sP-bmf" id="7zZ-BV-QID"/>
                         <outlet property="itemImageView" destination="NxP-1r-cdI" id="yyb-3V-OTa"/>

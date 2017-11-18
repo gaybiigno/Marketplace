@@ -27,22 +27,22 @@ class ItemModel: NSObject {
 		
 	}
 	
+	func numberOfImages() -> Int {
+		return itemArray.count
+	}
+	
 	func currentImagePosition() -> Int {
 		return currentIdx + 1
 	}
 	
 	func previousPic() {
-		if currentIdx == 0 {
-			currentIdx = 0 //imageNames.count - 1
-		} else {
+		if currentIdx != 0 {
 			currentIdx -= 1
 		}
 	}
 	
 	func nextPic() {
-		if currentIdx == 2 {
-			currentIdx = 2
-		} else {
+		if currentIdx != numberOfImages() - 1 {
 			currentIdx += 1
 		}
 		

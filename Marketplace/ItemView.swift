@@ -16,10 +16,12 @@ class ItemView: UIViewController {
 	@IBOutlet weak var itemPriceLabel: UILabel!
 	@IBOutlet var itemImageView: UIImageView!
 	@IBOutlet var itemDescription: UITextView!
+	@IBOutlet weak var imageCounterLabel: UILabel!
 	
 	@IBOutlet var tagViewBox: UIView!
 	@IBOutlet weak var itemCategory: UILabel!
 	@IBOutlet weak var itemTags: UITextView!
+	
 	
 	@IBOutlet var profilePicture: UIImageView!
 	@IBOutlet weak var postedByLabel: UILabel!
@@ -53,6 +55,7 @@ class ItemView: UIViewController {
 	}
 	
 	func start() {
+		setImageCounter()
 		displayCurrentImage()
 		msgSellerButton.layer.cornerRadius = 5
 		itemPriceLabel.layer.masksToBounds = true
@@ -60,15 +63,15 @@ class ItemView: UIViewController {
 	}
 	
 	@objc func next(_ sender: UIImageView) {
-		print("in next")
 		imageModel.nextPic()
 		displayCurrentImage()
+		setImageCounter()
 	}
 	
 	@objc func prev(_ sender: UIImageView) {
-		print("in prev")
 		imageModel.previousPic()
 		displayCurrentImage()
+		setImageCounter()
 	}
 	
 	func setItemCategory() {
@@ -77,6 +80,11 @@ class ItemView: UIViewController {
 	
 	func setItemTitle() {
 		itemTitle.text = "Here is the item title!"
+	}
+	
+	func setImageCounter() {
+		let title = String(imageModel.currentImagePosition()) + "/" + String(imageModel.numberOfImages())
+		imageCounterLabel.text = title
 	}
 	
 //	func setItemTags() {
