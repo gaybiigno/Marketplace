@@ -30,7 +30,7 @@ class ItemView: UIViewController {
 	
 	@IBOutlet weak var msgSellerButton: UIButton!
 	
-	let imageModel = ItemModel()
+	let itemModel = ItemModel()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class ItemView: UIViewController {
     }
 	
 	func displayCurrentImage() {
-		if let image = imageModel.currentImage()  {
+		if let image = itemModel.currentImage()  {
 			itemImageView.image = image
 			let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(next(_:)))
 			swipeLeft.direction = .left
@@ -56,6 +56,10 @@ class ItemView: UIViewController {
 	
 	func start() {
 		setImageCounter()
+		setItemPrice()
+		setItemTitle()
+		setItemCategory()
+		setItemDescription()
 		displayCurrentImage()
 		msgSellerButton.layer.cornerRadius = 5
 		itemPriceLabel.layer.masksToBounds = true
@@ -63,28 +67,37 @@ class ItemView: UIViewController {
 	}
 	
 	@objc func next(_ sender: UIImageView) {
-		imageModel.nextPic()
+		itemModel.nextPic()
 		displayCurrentImage()
 		setImageCounter()
 	}
 	
 	@objc func prev(_ sender: UIImageView) {
-		imageModel.previousPic()
+		itemModel.previousPic()
 		displayCurrentImage()
 		setImageCounter()
 	}
 	
 	func setItemCategory() {
-		itemCategory.text = "Main Category → Sub Category"
+		itemCategory.text = itemModel.getCategory()
 	}
 	
 	func setItemTitle() {
-		itemTitle.text = "Here is the item title!"
+		itemTitle.text = itemModel.getTitle()
+	}
+	
+	func setItemPrice() {
+		let price = "$" + String(itemModel.getPrice())
+		itemPriceLabel.text = price
 	}
 	
 	func setImageCounter() {
-		let title = String(imageModel.currentImagePosition()) + "/" + String(imageModel.numberOfImages())
+		let title = String(itemModel.currentImagePosition()) + "/" + String(itemModel.numberOfImages())
 		imageCounterLabel.text = title
+	}
+	
+	func setItemDescription() {
+		itemDescription.text = itemModel.getDescription()
 	}
 	
 //	func setItemTags() {

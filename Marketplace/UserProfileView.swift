@@ -9,10 +9,13 @@
 import UIKit
 
 class UserProfileView: UIViewController {
-
+	
+	var userData: UserModel?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		start()
+		
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +23,12 @@ class UserProfileView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func start() {
+		print("we out here")
+		title = userData?.getUserName()
+		
+	}
     
 
     /*

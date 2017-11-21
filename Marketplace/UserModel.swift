@@ -10,4 +10,14 @@ import UIKit
 
 class UserModel: NSObject {
 
+	func numUserItems() -> Int {
+		return 10
+	}
+	
+	func getUserName() -> String {
+		return "Jane D."
+	}
+	
+	
+	
 }

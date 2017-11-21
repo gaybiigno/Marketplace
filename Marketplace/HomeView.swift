@@ -19,6 +19,7 @@ class HomeView: UIViewController {
 	@IBOutlet weak var autoVehiButton: UIButton!
 	@IBOutlet weak var sportingButton: UIButton!
 	
+	@IBOutlet weak var navBar: UINavigationItem!
 	
 	
 	override func viewDidLoad() {
