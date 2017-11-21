@@ -10,6 +10,8 @@ import UIKit
 
 class ItemView: UIViewController {
 	
+	@IBOutlet weak var scrollView: UIScrollView!
+	
 	// Item title max chars SHOULD BE 48
 	@IBOutlet weak var itemTitle: UITextView!
 	
@@ -19,6 +21,7 @@ class ItemView: UIViewController {
 	@IBOutlet weak var imageCounterLabel: UILabel!
 	
 	@IBOutlet var tagViewBox: UIView!
+	@IBOutlet weak var itemQuantity: UILabel!
 	@IBOutlet weak var itemCategory: UILabel!
 	@IBOutlet weak var itemTags: UITextView!
 	
@@ -34,6 +37,7 @@ class ItemView: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
 		start()
     }
 
@@ -55,6 +59,7 @@ class ItemView: UIViewController {
 	}
 	
 	func start() {
+		setItemQuantity()
 		setImageCounter()
 		setItemPrice()
 		setItemTitle()
@@ -62,6 +67,7 @@ class ItemView: UIViewController {
 		setItemDescription()
 		displayCurrentImage()
 		msgSellerButton.layer.cornerRadius = 5
+		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
 		itemPriceLabel.layer.mask?.cornerRadius = 5
 	}
@@ -98,6 +104,10 @@ class ItemView: UIViewController {
 	
 	func setItemDescription() {
 		itemDescription.text = itemModel.getDescription()
+	}
+	
+	func setItemQuantity() {
+		itemQuantity.text = String(itemModel.getQuantity())
 	}
 	
 //	func setItemTags() {

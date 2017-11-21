@@ -55,6 +55,10 @@ class ItemModel: NSObject {
 		return "Main Category → Sub Category"
 	}
 	
+	func getQuantity() -> Int {
+		return 892
+	}
+	
 	func getDescription() -> String {
 		return "This fake item is NOT real and therefore should not " +
 			"be purchased for actual money. It's completely imaginary " +
@@ -70,8 +74,6 @@ class ItemModel: NSObject {
 			"I'm used to PS4 controllers and they're smaller/lighter. " +
 			"No idea why you actually have read to this point but thanks " +
 			"for listening. Good day!"
-		
-		
 	}
 	
 	

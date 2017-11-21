@@ -9,6 +9,10 @@
 import UIKit
 
 class HomeView: UIViewController {
+	
+	@IBOutlet weak var scrollView: UIScrollView!
+	
+	
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var signInButton: UIButton!
 	
@@ -27,6 +31,8 @@ class HomeView: UIViewController {
 
         // Do any additional setup after loading the view.
 		startValues()
+		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
+		
 		//checkUser()
 		
     }

@@ -105,9 +105,9 @@ class RegisterTableView: UITableViewController {
 			dateErrorFound = true
 		}
 		if dateErrorFound {
-			dateError.isHidden = true
-		} else {
 			dateError.isHidden = false
+		} else {
+			dateError.isHidden = true
 			calculateAge()
 		}
 	}
@@ -130,6 +130,10 @@ class RegisterTableView: UITableViewController {
 			errorMessage += errorMessage.isEmpty ? "" : ", "
 			errorMessage += "Email"
 			personalErrorFound = true
+		} else {
+			if !(email.text?.contains("@"))! {
+				print("uh oh no @")
+			}
 		}
 		if (password.text?.isEmpty)! {
 			errorMessage += errorMessage.isEmpty ? "" : ", "
@@ -164,17 +168,17 @@ class RegisterTableView: UITableViewController {
 			errorMessage += "Address Line 1"
 			addressErrorFound = true
 		}
-		if (email.text?.isEmpty)! {
+		if (city.text?.isEmpty)! {
 			errorMessage += errorMessage.isEmpty ? "" : ", "
 			errorMessage += "City"
 			addressErrorFound = true
 		}
-		if (password.text?.isEmpty)! {
+		if (state.text?.isEmpty)! {
 			errorMessage += errorMessage.isEmpty ? "" : ", "
 			errorMessage += "State"
 			addressErrorFound = true
 		}
-		if (confirmPassword.text?.isEmpty)! {
+		if (zipcode.text?.isEmpty)! {
 			errorMessage += errorMessage.isEmpty ? "" : ", "
 			errorMessage += "Zip Code"
 			addressErrorFound = true
