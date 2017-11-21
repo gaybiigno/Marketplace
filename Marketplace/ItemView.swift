@@ -25,7 +25,6 @@ class ItemView: UIViewController {
 	@IBOutlet weak var itemCategory: UILabel!
 	@IBOutlet weak var itemTags: UITextView!
 	
-	
 	@IBOutlet var profilePicture: UIImageView!
 	@IBOutlet weak var postedByLabel: UILabel!
 	@IBOutlet weak var usernameLabel: UILabel!

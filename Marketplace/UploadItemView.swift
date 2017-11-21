@@ -10,9 +10,6 @@ import UIKit
 
 class UploadItemView: UIViewController {
 	
-	
-	
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
