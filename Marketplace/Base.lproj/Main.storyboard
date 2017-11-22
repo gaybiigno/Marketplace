@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eyP-V4-qob">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -139,6 +139,13 @@
                                             <color key="titleColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOr-bU-R9e">
+                                        <rect key="frame" x="260" y="20" width="150" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="5Sa-5I-bXd"/>
                             </scrollView>
@@ -153,6 +160,7 @@
                         <outlet property="autoVehiButton" destination="oxZ-Wy-JkD" id="QiR-52-cUl"/>
                         <outlet property="electronicsButton" destination="VVA-g3-pSW" id="a1f-TA-ReF"/>
                         <outlet property="fashionButton" destination="lG0-dK-iXS" id="fgb-bp-cuh"/>
+                        <outlet property="helloLabel" destination="MOr-bU-R9e" id="glq-4q-BsI"/>
                         <outlet property="homeGardButton" destination="a1n-8M-c5X" id="d2G-2Q-vz3"/>
                         <outlet property="navBar" destination="uD5-lZ-RLq" id="lN6-6F-RYp"/>
                         <outlet property="registerButton" destination="TAm-08-9qu" id="vsa-2Q-3FU"/>
@@ -202,6 +210,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="backHome:" destination="ddm-Ic-h2n" eventType="touchUpInside" id="NfN-5T-N48"/>
+                                                        <segue destination="BYZ-38-t0r" kind="show" identifier="signInToHome" id="yGE-Uh-yR2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -277,6 +286,9 @@
                                                     <state key="normal" title="Forgot password?">
                                                         <color key="titleColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="XXz-Rw-MhV" kind="show" id="huu-E7-XDA"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -329,11 +341,91 @@
                         <outlet property="email_entry" destination="cMv-M5-JKT" id="cT5-9L-f5D"/>
                         <outlet property="errorMessage" destination="8Rw-Za-RRJ" id="F2H-x6-yD6"/>
                         <outlet property="password_entry" destination="YA4-D3-lh3" id="ykp-ag-sRb"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="completeSignIn" id="8Ll-2J-8H9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-d3-iJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-526.08695652173913" y="-579.61956521739137"/>
+        </scene>
+        <!--Forgot Password View-->
+        <scene sceneID="VIe-wa-P9Z">
+            <objects>
+                <viewController id="XXz-Rw-MhV" customClass="ForgotPasswordView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cym-Vh-Vtg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXg-9W-Qyb">
+                                <rect key="frame" x="20" y="31" width="29" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backHome:" destination="ddm-Ic-h2n" eventType="touchUpInside" id="dos-8v-IcQ"/>
+                                    <segue destination="ia8-MI-Eg1" kind="show" identifier="forgotToSignIn" id="XHw-Dt-gBY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Forgot Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-q5-LYs">
+                                <rect key="frame" x="73" y="29" width="269" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Thank you! If there is an account associated with " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-C8-Maa">
+                                <rect key="frame" x="20" y="72" width="374" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please enter the email address associated with your account" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aOf-oY-6IN">
+                                <rect key="frame" x="20" y="69" width="374" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyx-OZ-XAa">
+                                <rect key="frame" x="20" y="136" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-tA-Eq9">
+                                <rect key="frame" x="0.0" y="205" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="0.97268694639999997" green="0.96495133639999997" blue="0.95224434140000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedEnter:" destination="XXz-Rw-MhV" eventType="touchUpInside" id="52e-ei-94v"/>
+                                    <action selector="submit:" destination="ia8-MI-Eg1" eventType="touchUpInside" id="OMf-Av-Ma6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Ccx-gX-bpR"/>
+                    </view>
+                    <connections>
+                        <outlet property="completePrompt" destination="hMG-C8-Maa" id="LDC-QV-x8n"/>
+                        <outlet property="email" destination="Yyx-OZ-XAa" id="Loa-L4-coJ"/>
+                        <outlet property="enterButton" destination="0KI-tA-Eq9" id="Rqb-zN-XnM"/>
+                        <outlet property="firstPrompt" destination="aOf-oY-6IN" id="XEE-Ft-8IT"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="forgotToHome" id="nMo-Ch-E7i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUN-M2-gTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="206" y="-705"/>
         </scene>
         <!--Register Table View-->
         <scene sceneID="Vy5-IH-4jo">
@@ -745,7 +837,7 @@
         <!--User Profile View-->
         <scene sceneID="Jvv-SC-s5L">
             <objects>
-                <viewController id="KYk-bC-Ajz" customClass="UserProfileView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="KYk-bC-Ajz" customClass="UserProfileView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayS-kN-6OU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -809,7 +901,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZr-mK-H75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2372" y="-1041"/>
+            <point key="canvasLocation" x="-2268" y="-1051"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="pqe-Ob-mmQ">
@@ -1068,6 +1160,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UB8-EZ-E71"/>
+        <segue reference="huu-E7-XDA"/>
+        <segue reference="XHw-Dt-gBY"/>
+        <segue reference="yGE-Uh-yR2"/>
     </inferredMetricsTieBreakers>
 </document>

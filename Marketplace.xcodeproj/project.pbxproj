@@ -11,6 +11,7 @@
 		5A2C08A01FB54F7700D884B4 /* RegisterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */; };
 		5A2C08A21FB5671900D884B4 /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C08A11FB5671900D884B4 /* Handy.swift */; };
 		5A31408A1FB9194C00C6A3BA /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3140891FB9194C00C6A3BA /* ItemModel.swift */; };
+		5A49973C1FC6178B00AB1A1A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */; };
 		5A805B2F1FC0F70F00904781 /* displayCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A805B2E1FC0F70F00904781 /* displayCollectionView.swift */; };
 		5A8494EA1FAA8E7B00A2A91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */; };
 		5A8494EF1FAA8E7B00A2A91C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8494ED1FAA8E7B00A2A91C /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableView.swift; sourceTree = "<group>"; };
 		5A2C08A11FB5671900D884B4 /* Handy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handy.swift; sourceTree = "<group>"; };
 		5A3140891FB9194C00C6A3BA /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		5A805B2E1FC0F70F00904781 /* displayCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayCollectionView.swift; sourceTree = "<group>"; };
 		5A8494E61FAA8E7B00A2A91C /* Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5A84951D1FB3D65600A2A91C /* UserProfileView.swift */,
 				5AE94F2B1FBBDCD000E864D9 /* UserModel.swift */,
 				5A805B2E1FC0F70F00904781 /* displayCollectionView.swift */,
+				5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */,
 			);
 			path = Marketplace;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				5A8495201FB3D72100A2A91C /* ItemView.swift in Sources */,
 				5A8495221FB3D7E400A2A91C /* UploadItemView.swift in Sources */,
 				5A805B2F1FC0F70F00904781 /* displayCollectionView.swift in Sources */,
+				5A49973C1FC6178B00AB1A1A /* ForgotPasswordView.swift in Sources */,
 				5A8494EA1FAA8E7B00A2A91C /* AppDelegate.swift in Sources */,
 				5A8495241FB3D8AC00A2A91C /* CheckoutView.swift in Sources */,
 				5A2C089E1FB5470800D884B4 /* SignInTableView.swift in Sources */,

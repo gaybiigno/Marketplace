@@ -15,6 +15,8 @@ class SignInTableView: UITableViewController {
 	
 	@IBOutlet weak var errorMessage: UITextView!
 	
+	let userInfo = UserModel()
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,8 @@ class SignInTableView: UITableViewController {
 			errorMessage.isHidden = false
 			email_entry.text = ""
 			password_entry.text = ""
+		} else {
+			self.performSegue(withIdentifier: "completeSignIn", sender: self)
 		}
 		// TODO:: If they aren't empty, do something with input
 	}
@@ -50,7 +54,7 @@ class SignInTableView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 7
     }
 
     /*
@@ -98,14 +102,19 @@ class SignInTableView: UITableViewController {
     }
     */
 
-    /*
+	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+		if segue.identifier == "completeSignIn" {
+			if segue.destination is HomeView {
+				let hv = segue.destination as! HomeView
+				hv.signedIn = true
+			}
+		}
+		print("should be signed in")
     }
-    */
+	
 
 }

@@ -12,6 +12,7 @@ class HomeView: UIViewController {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
 	
+	@IBOutlet weak var helloLabel: UILabel!
 	
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var signInButton: UIButton!
@@ -25,6 +26,9 @@ class HomeView: UIViewController {
 	
 	@IBOutlet weak var navBar: UINavigationItem!
 	
+	let userData = UserModel()
+	
+	var signedIn = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +60,10 @@ class HomeView: UIViewController {
 		artCollectButton.layer.borderColor = borderColor
 		sportingButton.layer.borderWidth = 1.0
 		sportingButton.layer.borderColor = borderColor // as! CGColor
+		
+		if signedIn {
+			addHello()
+		}
 	}
 	
 	@objc func clickRegister(_ sender: UIButton) {
@@ -64,6 +72,15 @@ class HomeView: UIViewController {
 	
 	@objc func clickSignIn(_ sender: UIButton) {
 		self.performSegue(withIdentifier: "homeToSignIn", sender: self)
+	}
+	
+	func addHello() {
+		signInButton.isHidden = true
+		registerButton.isHidden = true
+		
+		let username = userData.getUserName()
+		helloLabel.text = "Hello, " + username
+		helloLabel.isHidden = false
 	}
 	
 	

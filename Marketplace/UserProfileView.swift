@@ -15,7 +15,7 @@ class UserProfileView: UIViewController {
 	@IBOutlet weak var rating: UILabel!
 	
 	
-	var userData: UserModel?
+	let userData = UserModel()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,25 @@ class UserProfileView: UIViewController {
     }
 	
 	func start() {
-		print("we out here")
-		title = userData?.getUserName()
-		
+		setUserName()
+		setRating()
+		setProfilePic()
+	}
+	
+	func setUserName() {
+		username.text = userData.getUserName()
+	}
+	
+	func setRating() {
+		rating.text = String(describing: userData.getRating())
+	}
+	
+	func setProfilePic() {
+		if let image = userData.getProfilePic() {
+			profilePicture.image = image
+			profilePicture.layer.cornerRadius = 5.0
+			profilePicture.layer.masksToBounds = true
+		}
 	}
     
 
