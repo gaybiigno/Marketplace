@@ -13,9 +13,10 @@ class HomeView: UIViewController {
 	@IBOutlet weak var scrollView: UIScrollView!
 	
 	@IBOutlet weak var helloLabel: UILabel!
-	
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var signInButton: UIButton!
+	
+	@IBOutlet weak var menuButton: UIButton!
 	
 	@IBOutlet weak var homeGardButton: UIButton!
 	@IBOutlet weak var fashionButton: UIButton!
@@ -26,7 +27,13 @@ class HomeView: UIViewController {
 	
 	@IBOutlet weak var navBar: UINavigationItem!
 	
+	@IBOutlet weak var viewForMenu: UIView!
+	
+	
+	
 	let userData = UserModel()
+	let menuImageURL = "https://i.pinimg.com/564x/20/35/a6/2035a6f4dfec98e16ba743609e495a85.jpg"
+	let menuTable = MenuTableView()
 	
 	var signedIn = false
 	
@@ -36,6 +43,7 @@ class HomeView: UIViewController {
         // Do any additional setup after loading the view.
 		startValues()
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
+		
 		
 		//checkUser()
 		
@@ -59,10 +67,31 @@ class HomeView: UIViewController {
 		artCollectButton.layer.borderWidth = 1.0
 		artCollectButton.layer.borderColor = borderColor
 		sportingButton.layer.borderWidth = 1.0
-		sportingButton.layer.borderColor = borderColor // as! CGColor
+		sportingButton.layer.borderColor = borderColor
 		
 		if signedIn {
 			addHello()
+		} else {
+			menuButton.isHidden = true
+			helloLabel.isHidden = true
+		}
+	}
+	
+	func addHello() {
+		signInButton.isHidden = true
+		registerButton.isHidden = true
+		
+		let username = userData.getUserName()
+		helloLabel.text = "Hello, " + username
+		helloLabel.isHidden = false
+		
+		if let url = URL(string: menuImageURL), let data = try? Data(contentsOf: url),
+			let image = UIImage(data: data) {
+			menuButton.setBackgroundImage(image, for: .normal)
+			menuButton.isHidden = false
+			menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
+		} else {
+			print("IMAGE DIDN'T LOAD")
 		}
 	}
 	
@@ -74,13 +103,10 @@ class HomeView: UIViewController {
 		self.performSegue(withIdentifier: "homeToSignIn", sender: self)
 	}
 	
-	func addHello() {
-		signInButton.isHidden = true
-		registerButton.isHidden = true
+	@objc func clickMenu(_ sender: UIButton) {
+		//self.performSegue(withIdentifier: "showMenu", sender: self)
+		viewForMenu.isHidden = !viewForMenu.isHidden
 		
-		let username = userData.getUserName()
-		helloLabel.text = "Hello, " + username
-		helloLabel.isHidden = false
 	}
 	
 	
