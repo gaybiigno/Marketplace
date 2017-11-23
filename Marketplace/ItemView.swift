@@ -36,6 +36,7 @@ class ItemView: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.scrollView.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
 		start()
     }

@@ -1,5 +1,5 @@
 //
-//  MenuTableView.swift
+//  SearchTableView.swift
 //  Marketplace
 //
 //  Created by Gaybriella Igno on 11/22/17.
@@ -8,20 +8,10 @@
 
 import UIKit
 
-class MenuTableView: UITableViewController {
-	
-	
-	
-	@IBOutlet weak var uploadButton: UIButton!
-	@IBOutlet weak var inboxButton: UIButton!
-	@IBOutlet weak var profileButton: UIButton!
-	
-	@IBOutlet weak var unreadIndicator: UIImageView!
-	
-	fileprivate let unreadImgURL = "https://i.pinimg.com/originals/d0/46/6c/d0466cc72c8f286edb5b0892c191783b.png"
-	
-	private var unreadMessage = false
+class SearchTableView: UITableViewController {
 
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,69 +20,34 @@ class MenuTableView: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-		//setButtons()
-		self.accessibilityFrame = CGRect(x: 0, y: 0, width: 200, height: 132)
-		start()
     }
-	
-	func start() {
-		if unreadMessage {
-			unreadIndicator.tag = 69 // lol sorry
-			if let url = URL(string: unreadImgURL), let data = try? Data(contentsOf: url),
-				let image = UIImage(data: data) {
-				unreadIndicator.image = image
-			}
-		} else {
-			if let taggy = unreadIndicator?.tag {
-				if taggy == 69 {
-					unreadIndicator.tag = 0
-					unreadIndicator.removeFromSuperview()
-				}
-			}
-		}
-	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	@objc func clickUpload(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
-	}
-	
-	@objc func clickInbox(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
-	}
-	
-	@objc func clickProfile(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
-	}
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 0
     }
 
-/*
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-			let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-		
-			return cell
-		
+        // Configure the cell...
+
+        return cell
     }
-*/
+    */
 
     /*
     // Override to support conditional editing of the table view.
