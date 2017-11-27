@@ -29,7 +29,7 @@ class HomeView: UIViewController {
 	
 	@IBOutlet weak var viewForMenu: UIView!
 	
-	
+	private var embeddedViewController: MenuTableView!
 	
 	let userData = UserModel()
 	let menuImageURL = "https://i.pinimg.com/564x/20/35/a6/2035a6f4dfec98e16ba743609e495a85.jpg"
@@ -104,12 +104,19 @@ class HomeView: UIViewController {
 	}
 	
 	@objc func clickMenu(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "showMenu", sender: self)
 		viewForMenu.isHidden = !viewForMenu.isHidden
-		
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let vc = segue.destination as? MenuTableView,
+			segue.identifier == "showMenu" {
+			self.embeddedViewController = vc
+		}
+	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		self.embeddedViewController.viewDidLoad()
+	}
 
 	/*
     // MARK: - Navigation

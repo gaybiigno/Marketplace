@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate { //, UIPickerViewDelegate, UIPickerViewDataSource {
 	
 	@IBOutlet weak var titleEntry: UITextField!
 	@IBOutlet weak var descriptionEntry: UITextView!
@@ -20,17 +20,24 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var catPicker: UIPickerView!
 	@IBOutlet weak var subcatPicker: UIPickerView!
 	
+	@IBOutlet weak var uploadButton: UIButton!
+	
 	private var price = ""
+	private var categories = ["Home & Garden", "Fashion", "Electronics", "Art & Collectibles",
+	                          "Auto & Vehicles", "Sporting Goods"]
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		descriptionEntry.delegate = self
 		priceEntry.delegate = self
+//		catPicker.delegate = self
+//		catPicker.dataSource = self
+//		subcatPicker.delegate = self
+//		subcatPicker.dataSource = self
 		
 		start()
 		
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -100,7 +107,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 					}
 					priceEntry.text?.insert(price[i], at: (priceEntry.text?.endIndex)!)
 				}
-			case 4 ..< 7:
+			case 4 ..< 8:
 				priceEntry.text = "$"
 				for i in 0 ..< pcount {
 					if i == (pcount - 2) {
@@ -115,30 +122,16 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		}
 
 	}
+	//MARK: - Delegates and data sources
+	/*
+	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+		return 1
+	}
 	
-	
-//
-//	@objc func changePrice(_ sender: UITextField) {
-//		let entry = self.priceEntry.text
-//		if entry == "" {
-//			return
-//		}
-//		let pcount = entry?.characters.count
-//		priceEntry.text = "$00.00"
-//		switch pcount {
-//		case 1:
-//			priceEntry.text?.remove(at: (priceEntry.text?.endIndex)!)
-//			priceEntry.text?.insert(entry![0], at: (priceEntry.text?.endIndex)!)
-//		case 2:
-//			for i in 4 ..< 5 {
-//				priceEntry.text?.remove(at: (priceEntry.text?.endIndex)!)
-//				priceEntry.text?.insert(entry![i], at: (priceEntry.text?.endIndex)!)
-//			}
-//		default:
-//			print("FELL INTO DEFAULT")
-//		}
-//	}
-
+	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return pickerData.count
+	}
+*/
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -148,7 +141,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 9
     }
 
     /*

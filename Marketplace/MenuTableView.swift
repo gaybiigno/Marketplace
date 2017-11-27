@@ -20,22 +20,23 @@ class MenuTableView: UITableViewController {
 	
 	fileprivate let unreadImgURL = "https://i.pinimg.com/originals/d0/46/6c/d0466cc72c8f286edb5b0892c191783b.png"
 	
-	private var unreadMessage = false
+	private var unreadMessage = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+		
+		self.view.frame = CGRect(x: 50, y: 50, width: 200, height: 132)
+		self.accessibilityFrame = CGRect(x: 50, y: 50, width: 200, height: 132)
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-		//setButtons()
-		self.accessibilityFrame = CGRect(x: 0, y: 0, width: 200, height: 132)
 		start()
     }
 	
 	func start() {
+//		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
+		inboxButton.addTarget(self, action: #selector(clickInbox(_:)), for: .touchUpInside)
+		profileButton.addTarget(self, action: #selector(clickProfile(_:)), for: .touchUpInside)
+		
 		if unreadMessage {
 			unreadIndicator.tag = 69 // lol sorry
 			if let url = URL(string: unreadImgURL), let data = try? Data(contentsOf: url),
@@ -57,10 +58,6 @@ class MenuTableView: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	@objc func clickUpload(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
-	}
 	
 	@objc func clickInbox(_ sender: UIButton) {
 		//self.performSegue(withIdentifier: "homeToReg", sender: self)
