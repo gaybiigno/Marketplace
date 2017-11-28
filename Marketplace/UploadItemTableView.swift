@@ -8,7 +8,12 @@
 
 import UIKit
 
-class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate { //, UIPickerViewDelegate, UIPickerViewDataSource {
+class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource {
+	
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
 	
 	@IBOutlet weak var titleEntry: UITextField!
 	@IBOutlet weak var descriptionEntry: UITextView!
@@ -20,29 +25,29 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var catPicker: UIPickerView!
 	@IBOutlet weak var subcatPicker: UIPickerView!
 	
+	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var uploadButton: UIButton!
 	
-	private var price = ""
-	private var categories = ["Home & Garden", "Fashion", "Electronics", "Art & Collectibles",
-	                          "Auto & Vehicles", "Sporting Goods"]
+	@IBOutlet weak var subCatCell: UITableViewCell!
+	
+	
+	private var price: String = ""
+	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
+	
+	private var categoryChoice = UILabel()
+	private var subcategoryChoice = UILabel()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		descriptionEntry.delegate = self
 		priceEntry.delegate = self
-//		catPicker.delegate = self
-//		catPicker.dataSource = self
-//		subcatPicker.delegate = self
-//		subcatPicker.dataSource = self
+		catPicker.delegate = self
+		catPicker.dataSource = self
+		subcatPicker.delegate = self
+		subcatPicker.dataSource = self
 		
 		start()
-		
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,16 +56,24 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     }
 	
 	func start() {
+		uploadButton.isHidden = false
+		errorLabel.isHidden = true
+		categoryChoice.text = ""
 		descriptionEntry.clearsOnInsertion = true
+		
+		// Add target
+		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 	}
 	
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if textView == descriptionEntry {
-			self.descriptionEntry.textColor = UIColor.black
+			descriptionCounter.textColor = UIColor.darkGray
+			
 			let desc = (self.descriptionEntry.text as NSString).replacingCharacters(in: range, with: text)
 			let count = desc.characters.count
 			if Int(count) > 1000 {
-			self.descriptionEntry.text = self.descriptionEntry.text.safelyLimitedTo(length: 1000)
+				descriptionCounter.textColor = UIColor.red
+				self.descriptionEntry.text = self.descriptionEntry.text.safelyLimitedTo(length: 1000)
 				return false
 			}
 			descriptionCounter.text = String(count)
@@ -72,7 +85,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 
 	@IBAction func changedPrice(_ sender: UITextField) {
 		if !(priceEntry.text?.isEmpty)! {
-			let entry = (self.priceEntry.text as! String)
+			let entry = self.priceEntry.text as! String
 			print("entry is: \(entry).")
 			
 			if entry.characters.contains("$"), entry.characters.distance(from: entry.characters.index(of: ".")!, to: entry.characters.endIndex) <= 2
@@ -83,7 +96,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 						return
 					}
 			} else {
-				if price.characters.count != 0, entry != "0" {
+				if entry != "0" {
 					price += entry[entry.count - 1]
 				}
 			}
@@ -120,18 +133,80 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				print("price is: \(price)")
 			}
 		}
-
-	}
-	//MARK: - Delegates and data sources
-	/*
-	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-		return 1
 	}
 	
-	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return pickerData.count
+	@objc func clickUpload(_ sender: UIButton) {
+		checkValues()
 	}
-*/
+	
+	private func checkValues() {
+		var errorFound = false
+		
+		// Check if title, price, and category are empty
+		if (titleEntry.text?.isEmpty)! {
+			errorFound = true
+			titleEntry.layer.borderWidth = 1.0
+			titleEntry.layer.borderColor = UIColor.red.cgColor
+		} else {
+			titleEntry.layer.borderWidth = 0
+		}
+		if (priceEntry.text?.isEmpty)! {
+			errorFound = true
+			priceEntry.layer.borderWidth = 1.0
+			priceEntry.layer.borderColor = UIColor.red.cgColor
+		}
+		else {
+			priceEntry.layer.borderWidth = 0
+		}
+		if (categoryChoice.text?.isEmpty)! {
+			errorFound = true
+			catPicker.layer.borderWidth = 1.0
+			catPicker.layer.borderColor = UIColor.red.cgColor
+		} else {
+			catPicker.layer.borderWidth = 0
+		}
+		
+		if errorFound {
+			errorLabel.isHidden = false
+		}
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+		if pickerView == catPicker {
+			let titleData = categories[row]
+			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+			return myTitle
+		} else {
+			let titleData = "SUB OPTION"//categories[row]
+			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+			return myTitle
+		}
+	}
+	
+	
+	//MARK: - Delegates and data sources
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		if pickerView == catPicker {
+			return categories.count
+		} else {
+			return 2 // TODO Placeholder
+		}
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		if pickerView == catPicker {
+			categoryChoice.text = categories[row]
+			if !(categoryChoice.text?.isEmpty)! {
+				subCatCell.isHidden = false
+			} else{
+				subCatCell.isHidden = true
+			}
+		} else {
+			subcategoryChoice.text = "Valid Option"
+		}
+	}
+	
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -141,7 +216,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 9
+        return 11
     }
 
     /*
