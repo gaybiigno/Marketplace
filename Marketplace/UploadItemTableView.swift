@@ -128,9 +128,12 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 					}
 					priceEntry.text?.insert(price[i], at: (priceEntry.text?.endIndex)!)
 				}
+//			case 9 ...< 11:
+//				priceEntry.textColor = UIColor.red
+//				priceEntry.text += "    Max price: "
 				
 			default:
-				print("price is: \(price)")
+				priceEntry.text = ""
 			}
 		}
 	}

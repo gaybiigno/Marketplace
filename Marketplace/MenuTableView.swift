@@ -33,7 +33,6 @@ class MenuTableView: UITableViewController {
     }
 	
 	func start() {
-//		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 		inboxButton.addTarget(self, action: #selector(clickInbox(_:)), for: .touchUpInside)
 		profileButton.addTarget(self, action: #selector(clickProfile(_:)), for: .touchUpInside)
 		
