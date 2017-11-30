@@ -33,6 +33,7 @@ class ItemView: UIViewController {
 	@IBOutlet weak var msgSellerButton: UIButton!
 	
 	let itemModel = ItemModel()
+    let userModel = UserModel()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +110,18 @@ class ItemView: UIViewController {
 	func setItemQuantity() {
 		itemQuantity.text = String(itemModel.getQuantity())
 	}
+    
+    func setItemTags() {
+        // set tags
+    }
+
+    
+    func setUserInfo() {
+        profilePicture.image = userModel.getProfilePic()
+        usernameLabel.text = userModel.getUserName()
+        ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
+    }
 	
-//	func setItemTags() {
-//		// set tags
-//	}
 	
 
     /*

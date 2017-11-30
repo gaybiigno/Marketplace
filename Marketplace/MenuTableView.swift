@@ -18,7 +18,7 @@ class MenuTableView: UITableViewController {
 	
 	@IBOutlet weak var unreadIndicator: UIImageView!
 	
-	fileprivate let unreadImgURL = "https://i.pinimg.com/originals/d0/46/6c/d0466cc72c8f286edb5b0892c191783b.png"
+	//fileprivate let unreadImgURL = "https://i.pinimg.com/originals/d0/46/6c/d0466cc72c8f286edb5b0892c191783b.png"
 	
 	private var unreadMessage = true
 
@@ -36,20 +36,7 @@ class MenuTableView: UITableViewController {
 		inboxButton.addTarget(self, action: #selector(clickInbox(_:)), for: .touchUpInside)
 		profileButton.addTarget(self, action: #selector(clickProfile(_:)), for: .touchUpInside)
 		
-		if unreadMessage {
-			unreadIndicator.tag = 69 // lol sorry
-			if let url = URL(string: unreadImgURL), let data = try? Data(contentsOf: url),
-				let image = UIImage(data: data) {
-				unreadIndicator.image = image
-			}
-		} else {
-			if let taggy = unreadIndicator?.tag {
-				if taggy == 69 {
-					unreadIndicator.tag = 0
-					unreadIndicator.removeFromSuperview()
-				}
-			}
-		}
+        unreadIndicator.isHidden = !unreadMessage
 	}
 
     override func didReceiveMemoryWarning() {

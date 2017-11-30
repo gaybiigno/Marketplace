@@ -11,19 +11,19 @@ import UIKit
 class UserModel: NSObject {
 	
 	fileprivate let ninjaPic = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
-	
-	fileprivate let defaultPic = "https://www.menon.no/wp-content/uploads/person-placeholder.jpg"
-
+    
+    // TODO TEMP
 	func numUserItems() -> Int {
 		return 10
 	}
 	
+    // TODO TEMP
 	func getUserName() -> String {
 		return "Jane D."
 	}
 	
 	func getRating() -> Float {
-		var rating = 7.589
+		var rating = 7.589  // TODO TEMP
 		rating = (rating * 10).rounded() / 10
 		return Float(rating)
 	}
@@ -37,13 +37,9 @@ class UserModel: NSObject {
 		}
 	}
 	
-	func defaultProfilePic() -> UIImage? {
-		if let url = URL(string: defaultPic), let data = try? Data(contentsOf: url),
-			let image = UIImage(data: data) {
-			return image
-		}
-		return nil
-	}
+    func defaultProfilePic() -> UIImage? {
+        return UIImage(named: "DefaultProfileIcon")!
+    }
 	
 	
 }
