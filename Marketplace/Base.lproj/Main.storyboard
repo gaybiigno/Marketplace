@@ -1575,7 +1575,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Add Icon"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-Hs-V7a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PhotoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-Hs-V7a">
                                 <rect key="frame" x="20" y="29" width="126" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1599,6 +1599,7 @@
         <image name="BackIcon" width="100" height="100"/>
         <image name="MailIcon" width="540" height="540"/>
         <image name="MenuIcon" width="100" height="100"/>
+        <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cg0-5h-hio"/>

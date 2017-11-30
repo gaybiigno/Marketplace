@@ -39,12 +39,13 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             allImages.append(pickedImage)
-            if allImages.isEmpty {
-                mainImage.contentMode = .scaleAspectFill
+            if allImages.count == 1 {
+                mainImage.contentMode = .scaleToFill
                 mainImage.image = pickedImage
+                //showAllImages()
             } else {
                 showAllImages()
             }
@@ -58,7 +59,7 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
         dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -67,25 +68,23 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         let hw = 60
 
-        for i in 1 ..< numImages {
-            let y_value = i > 4 ? 65 : 29
-            let x_value = i > 4 ? (146 + ((i - 4) * hw)) : (146 + (i * hw))
+        for i in 1 ..< MAX_IMAGES {
+            let y_value = i > 4 ? 95 : 29
+            let x_value = i > 4 ? (146 + ((i - 5) * hw)) : (146 + ((i - 1) * hw))
             let currImageView = UIImageView(frame: CGRect(x: x_value, y: y_value, width: hw, height: hw))
-            currImageView.contentMode = .scaleAspectFill
-            currImageView.image = allImages[i]
-        }
-        
-        if let defaultPic = UIImage(named: "PhotoIcon"), numImages < MAX_IMAGES {
-            for i in numImages ..< MAX_IMAGES {
-                let y_value = i > 4 ? 65 : 29
-                let x_value = i > 4 ? (146 + ((i - 4) * hw)) : (146 + (i * hw))
-                let currImageView = UIImageView(frame: CGRect(x: x_value, y: y_value, width: hw, height: hw))
-                currImageView.contentMode = .scaleAspectFill
-                currImageView.image = defaultPic
+            currImageView.contentMode = .scaleToFill
+            
+            if i >= numImages {
+                if let defaultPic = UIImage(named: "PhotoIcon") {
+                    currImageView.image = defaultPic
+                    currImageView.layer.opacity = 0.6
+                }
+            } else {
+                currImageView.image = allImages[i]
             }
+            view.addSubview(currImageView)
+            
         }
-        
-        print("DONE SHOWING ALL IMAGES")
         
     }
     
