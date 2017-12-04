@@ -15,6 +15,7 @@ class SignInTableView: UITableViewController {
 	
 	@IBOutlet weak var errorMessage: UITextView!
 	
+	@IBOutlet weak var enterButton: UIButton!
 	
 	let userInfo = UserModel()
 	
@@ -23,7 +24,7 @@ class SignInTableView: UITableViewController {
 		errorMessage.isHidden = true
 		self.view.backgroundColor = UIColor.white
 		
-		
+		enterButton.frame.size = CGSize(width: view.frame.width, height: 45)
     }
 	
 	@IBAction func clickedBack(_ sender: UIButton) {

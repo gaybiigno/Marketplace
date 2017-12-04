@@ -33,12 +33,13 @@ class HomeView: UIViewController, SegueHandler {
 	
 	@IBOutlet weak var navBar: UINavigationItem!
 	
+	@IBOutlet weak var searchBar: UISearchBar!
+	
 	@IBOutlet weak var viewForMenu: UIView!
 	
 	private var embeddedViewController: MenuTableView!
 	
 	let userData = UserModel()
-	let darkView = UIView()
 	
 	var signedIn = false
 	
@@ -47,8 +48,8 @@ class HomeView: UIViewController, SegueHandler {
 
         // Do any additional setup after loading the view.
 		startValues()
+		self.view.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
-		//checkUser()
 		
     }
 
@@ -58,7 +59,10 @@ class HomeView: UIViewController, SegueHandler {
     }
 	
 	func startValues() {
-		self.view.backgroundColor = UIColor.white
+		// Set place of menu
+		let topY = searchBar.frame.minY
+		viewForMenu.frame.origin = CGPoint(x: 50, y: topY)
+		
 		
 		// Add targets
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
@@ -67,6 +71,8 @@ class HomeView: UIViewController, SegueHandler {
 		
 		// Add borders
 		let borderColor = homeGardButton.backgroundColor?.cgColor
+		viewForMenu.layer.borderColor = borderColor
+		viewForMenu.layer.borderWidth = 0.8
 		fashionButton.layer.borderWidth = 1.0
 		fashionButton.layer.borderColor = borderColor
 		artCollectButton.layer.borderWidth = 1.0
@@ -103,7 +109,6 @@ class HomeView: UIViewController, SegueHandler {
 		
 		menuButton.isHidden = true
 		helloLabel.isHidden = true
-		
 		signInButton.isHidden = false
 		registerButton.isHidden = false
 		

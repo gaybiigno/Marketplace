@@ -21,6 +21,8 @@ class ForgotPasswordView: UIViewController, MFMailComposeViewControllerDelegate 
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		enterButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
         // Do any additional setup after loading the view.
     }

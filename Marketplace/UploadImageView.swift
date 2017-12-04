@@ -13,7 +13,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
 	
-	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var imgCountLabel: UILabel!
 	
     let MAX_IMAGES = 8
@@ -24,7 +23,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-		errorLabel.isHidden = true
         start()
     }
     
@@ -38,12 +36,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
 	func displayError() -> Bool {
 		return numImages() == 0 ? true : false
-//		if numImages() == 0 {
-//			self.errorLabel.isHidden = false
-//			return true
-//		}
-//		self.errorLabel.isHidden = true
-//		return false
 	}
     
     @objc func clickNew(_ sender: UIButton) {

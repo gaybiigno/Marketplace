@@ -19,17 +19,10 @@ class MenuTableView: UITableViewController {
 	
 	weak var delegate: SegueHandler?
 	
-	var homeView = HomeView()
-	
 	private var unreadMessage = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		
-		self.view.frame = CGRect(x: 50, y: 50, width: 200, height: 176)
-		self.accessibilityFrame = CGRect(x: 50, y: 50, width: 200, height: 176)
-
 		start()
     }
 	
@@ -57,12 +50,12 @@ class MenuTableView: UITableViewController {
 	
 	@objc func clickInbox(_ sender: UIButton) {
 		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
+		print("no inbox yet")
 	}
 	
 	@objc func clickProfile(_ sender: UIButton) {
 		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print()
+		print("no prof yet")
 	}
 
     // MARK: - Table view data source
@@ -76,13 +69,6 @@ class MenuTableView: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 4
     }
-	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "showMenu" {
-//			if let destination = segue.destination as? YourPageViewControllerClass {
-//				self.homeView = destination
-//			}
-//	}
 
 /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
