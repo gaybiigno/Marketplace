@@ -8,7 +8,13 @@
 
 import UIKit
 
-class HomeView: UIViewController {
+protocol SegueHandler: class {
+	func segueToNext(identifier: String)
+	
+	func signOut()
+}
+
+class HomeView: UIViewController, SegueHandler {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
 	
@@ -32,8 +38,7 @@ class HomeView: UIViewController {
 	private var embeddedViewController: MenuTableView!
 	
 	let userData = UserModel()
-	let menuImageURL = "https://i.pinimg.com/564x/20/35/a6/2035a6f4dfec98e16ba743609e495a85.jpg"
-	let menuTable = MenuTableView()
+	let darkView = UIView()
 	
 	var signedIn = false
 	
@@ -43,8 +48,6 @@ class HomeView: UIViewController {
         // Do any additional setup after loading the view.
 		startValues()
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
-		
-		
 		//checkUser()
 		
     }
@@ -55,6 +58,8 @@ class HomeView: UIViewController {
     }
 	
 	func startValues() {
+		self.view.backgroundColor = UIColor.white
+		
 		// Add targets
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
 		
@@ -85,14 +90,24 @@ class HomeView: UIViewController {
 		helloLabel.text = "Hello, " + username
 		helloLabel.isHidden = false
 		
-		if let url = URL(string: menuImageURL), let data = try? Data(contentsOf: url),
-			let image = UIImage(data: data) {
-			menuButton.setBackgroundImage(image, for: .normal)
-			menuButton.isHidden = false
-			menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
-		} else {
-			print("IMAGE DIDN'T LOAD")
+		menuButton.isHidden = false
+		menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
+	}
+	
+	func signOut() {
+		if !signedIn {
+			print("ERROR: Cannot sign out of NULL profile")
+			return
 		}
+		endMenu(self)
+		
+		menuButton.isHidden = true
+		helloLabel.isHidden = true
+		
+		signInButton.isHidden = false
+		registerButton.isHidden = false
+		
+		signedIn = false
 	}
 	
 	@objc func clickRegister(_ sender: UIButton) {
@@ -104,18 +119,30 @@ class HomeView: UIViewController {
 	}
 	
 	@objc func clickMenu(_ sender: UIButton) {
-		viewForMenu.isHidden = !viewForMenu.isHidden
+		if viewForMenu.isHidden {
+			self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endMenu)))
+			viewForMenu.isHidden = false
+		} else {
+			viewForMenu.isHidden = true
+		}
 	}
+	
+	@objc func endMenu(_ sender: HomeView) {
+		viewForMenu.isHidden = true
+	}
+	
+	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? MenuTableView,
 			segue.identifier == "showMenu" {
+			vc.delegate = self
 			self.embeddedViewController = vc
 		}
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		self.embeddedViewController.viewDidLoad()
+	func segueToNext(identifier: String) {
+		self.performSegue(withIdentifier: identifier, sender: self)
 	}
 
 	/*

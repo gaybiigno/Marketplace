@@ -52,7 +52,7 @@ class ItemModel: NSObject {
 	}
 	
 	func getCategory() -> String {
-		return "Main Category → Sub Category"
+		return "Main Category"
 	}
 	
 	func getQuantity() -> Int {

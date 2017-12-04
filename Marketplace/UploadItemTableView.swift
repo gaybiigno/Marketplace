@@ -14,7 +14,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		return 1
 	}
 	
-	
 	@IBOutlet weak var titleEntry: UITextField!
 	@IBOutlet weak var descriptionEntry: UITextView!
 	@IBOutlet weak var descriptionCounter: UILabel!
@@ -30,12 +29,14 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
 	@IBOutlet weak var subCatCell: UITableViewCell!
 	
-	
 	private var price: String = ""
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	
+	var cv = UploadImageView()
+	
 	private var categoryChoice = UILabel()
 	private var subcategoryChoice = UILabel()
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 	
 	func start() {
@@ -61,7 +61,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		categoryChoice.text = ""
 		descriptionEntry.clearsOnInsertion = true
 		
-		// Add target
+		// Add targets
 		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 	}
 	
@@ -86,7 +86,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBAction func changedPrice(_ sender: UITextField) {
 		if !(priceEntry.text?.isEmpty)! {
 			let entry = self.priceEntry.text as! String
-			print("entry is: \(entry).")
+			//print("entry is: \(entry).")
 			
 			if entry.characters.contains("$"), entry.characters.distance(from: entry.characters.index(of: ".")!, to: entry.characters.endIndex) <= 2
 				{
@@ -138,6 +138,13 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		}
 	}
 	
+	@IBAction func backButton(_ sender: UIButton) {
+		
+		self.performSegue(withIdentifier: "uploadToHome", sender: self)
+	}
+	
+	
+	
 	@objc func clickUpload(_ sender: UIButton) {
 		checkValues()
 	}
@@ -169,6 +176,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			catPicker.layer.borderWidth = 0
 		}
 		
+		if cv.displayError() {
+			errorFound = true
+		}
+		
 		if errorFound {
 			errorLabel.isHidden = false
 		}
@@ -180,7 +191,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
 			return myTitle
 		} else {
-			let titleData = "SUB OPTION"//categories[row]
+			let titleData = "SUB OPTION" // categories[row]
 			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
 			return myTitle
 		}
@@ -188,7 +199,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
 	
 	//MARK: - Delegates and data sources
-	
+
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		if pickerView == catPicker {
 			return categories.count
@@ -221,6 +232,24 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         // #warning Incomplete implementation, return the number of rows
         return 11
     }
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let vc = segue.destination as? HomeView,
+			segue.identifier == "uploadToHome" {
+			//vc.delegate = self
+			vc.signedIn = true
+		}
+	}
+	
+	
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		if (segue.identifier == "displayImgUpload") {
+//			if segue.destination is UploadImageView {
+//				let cv = segue.destination as! UploadImageView
+//
+//			}
+//		}
+//	}
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

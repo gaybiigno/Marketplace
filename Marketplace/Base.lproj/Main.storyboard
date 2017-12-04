@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RDa-lc-3uC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5wT-e6-kzb">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,7 +149,7 @@
                                         </state>
                                     </button>
                                     <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1go-gb-PkT">
-                                        <rect key="frame" x="49" y="58" width="200" height="132"/>
+                                        <rect key="frame" x="49" y="58" width="200" height="176"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <segue destination="UP6-fd-42J" kind="embed" identifier="showMenu" id="LMb-YX-0KW"/>
@@ -187,6 +187,7 @@
                         <outlet property="viewForMenu" destination="1go-gb-PkT" id="xnE-jX-Qo8"/>
                         <segue destination="ddm-Ic-h2n" kind="show" identifier="homeToReg" id="oWT-H2-naF"/>
                         <segue destination="ia8-MI-Eg1" kind="show" identifier="homeToSignIn" id="cg0-5h-hio"/>
+                        <segue destination="RDa-lc-3uC" kind="show" identifier="homeToUp" id="5uY-PQ-cL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -363,7 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-d3-iJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526.08695652173913" y="-579.61956521739137"/>
+            <point key="canvasLocation" x="-2054" y="-227"/>
         </scene>
         <!--Forgot Password View-->
         <scene sceneID="VIe-wa-P9Z">
@@ -876,15 +877,12 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8C-7A-hf5">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gy-ps-vLY">
                                                     <rect key="frame" x="8" y="9" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="BackIcon">
-                                                        <color key="titleColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
+                                                    <state key="normal" title="Button" image="BackIcon"/>
                                                     <connections>
-                                                        <action selector="backHome:" destination="ddm-Ic-h2n" eventType="touchUpInside" id="flx-ia-Y0i"/>
-                                                        <segue destination="BYZ-38-t0r" kind="show" identifier="uploadToHome" id="PYS-pO-nIr"/>
+                                                        <action selector="backButton:" destination="RDa-lc-3uC" eventType="touchUpInside" id="EsY-Jg-lAF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -902,7 +900,7 @@
                                                     <rect key="frame" x="8" y="8" width="398" height="184"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <connections>
-                                                        <segue destination="o8A-dx-Jyp" kind="embed" id="7OD-pb-0pm"/>
+                                                        <segue destination="o8A-dx-Jyp" kind="embed" identifier="displayImgUpload" id="7OD-pb-0pm"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -1156,6 +1154,7 @@
                         <outlet property="tagEntry" destination="L4I-oy-5Cd" id="Maq-0b-Etm"/>
                         <outlet property="titleEntry" destination="dDC-sW-vBx" id="Cxe-wX-3aT"/>
                         <outlet property="uploadButton" destination="77R-uk-nNz" id="j3I-oh-hFD"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="uploadToHome" id="lDl-7n-KXr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3B-ta-etg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1225,7 +1224,7 @@
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="UP6-fd-42J" customClass="MenuTableView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="28" id="cKK-mK-jUd">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1246,9 +1245,6 @@
                                                     <state key="normal" title="Upload Item">
                                                         <color key="titleColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="RDa-lc-3uC" kind="show" id="cML-J3-VwF"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1293,6 +1289,24 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Lu8-17-PZP">
+                                        <rect key="frame" x="0.0" y="132" width="200" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lu8-17-PZP" id="EqB-Ug-yZt">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51K-f8-YIb">
+                                                    <rect key="frame" x="21" y="2" width="152" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                    <state key="normal" title="Sign Out">
+                                                        <color key="titleColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1303,22 +1317,24 @@
                     </tableView>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="132"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="132"/>
+                    <size key="freeformSize" width="200" height="176"/>
                     <connections>
                         <outlet property="inboxButton" destination="a79-AM-n1N" id="n3i-ud-mdd"/>
                         <outlet property="profileButton" destination="6m1-GK-Zan" id="CBh-GA-YDH"/>
+                        <outlet property="signOutButton" destination="51K-f8-YIb" id="lGo-IA-uDl"/>
                         <outlet property="unreadIndicator" destination="aBS-Mc-z58" id="efc-kS-9eP"/>
                         <outlet property="uploadButton" destination="MnT-39-cw6" id="nlG-eO-T78"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="menuToHome" id="S3O-V1-7Vh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtM-uI-aXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1658" y="-1568"/>
+            <point key="canvasLocation" x="-1310" y="-1679"/>
         </scene>
         <!--Item-->
         <scene sceneID="UPU-w5-ukI">
             <objects>
-                <navigationController navigationBarHidden="YES" id="5wT-e6-kzb" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="5wT-e6-kzb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="C6I-Ng-5Di"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YEa-jH-08n">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1396,8 +1412,8 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Category → Sub Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzp-gL-ug5">
-                                                <rect key="frame" x="86" y="25" width="288" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzp-gL-ug5">
+                                                <rect key="frame" x="86" y="25" width="288" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -1565,7 +1581,7 @@
         <!--Upload Image View-->
         <scene sceneID="Uxn-Z4-Tpu">
             <objects>
-                <viewController id="o8A-dx-Jyp" customClass="UploadImageView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="o8A-dx-Jyp" customClass="UploadImageView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O8z-g9-HxQ">
                         <rect key="frame" x="0.0" y="0.0" width="398" height="184"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1579,6 +1595,27 @@
                                 <rect key="frame" x="20" y="29" width="126" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEu-vR-kk6">
+                                <rect key="frame" x="359" y="156" width="19" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-Xp-yKo">
+                                <rect key="frame" x="356" y="156" width="10" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* Must upload one photo mininum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3g-zC-b3j">
+                                <rect key="frame" x="20" y="156" width="261" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="1jy-OO-8sw"/>
@@ -1586,12 +1623,29 @@
                     <size key="freeformSize" width="398" height="184"/>
                     <connections>
                         <outlet property="addButton" destination="0sj-Hm-S3O" id="8gw-fb-szn"/>
+                        <outlet property="errorLabel" destination="G3g-zC-b3j" id="v4o-ty-K4i"/>
+                        <outlet property="imgCountLabel" destination="eu8-Xp-yKo" id="60Y-OY-ZVN"/>
                         <outlet property="mainImage" destination="iIi-Hs-V7a" id="e1d-Po-mV8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKL-dM-FGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-523" y="-3114"/>
+            <point key="canvasLocation" x="224.63768115942031" y="-3087.2282608695655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NO8-ZT-UZ5">
+            <objects>
+                <viewController id="Drn-GA-Ijx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncM-Nv-sWk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="tCH-mu-IpJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPw-KH-WjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="-2862"/>
         </scene>
     </scenes>
     <resources>
@@ -1602,7 +1656,8 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LMb-YX-0KW"/>
         <segue reference="cg0-5h-hio"/>
-        <segue reference="PYS-pO-nIr"/>
+        <segue reference="S3O-V1-7Vh"/>
     </inferredMetricsTieBreakers>
 </document>

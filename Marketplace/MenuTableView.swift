@@ -10,15 +10,16 @@ import UIKit
 
 class MenuTableView: UITableViewController {
 	
-	
-	
 	@IBOutlet weak var uploadButton: UIButton!
 	@IBOutlet weak var inboxButton: UIButton!
 	@IBOutlet weak var profileButton: UIButton!
+	@IBOutlet weak var signOutButton: UIButton!
 	
 	@IBOutlet weak var unreadIndicator: UIImageView!
 	
-	//fileprivate let unreadImgURL = "https://i.pinimg.com/originals/d0/46/6c/d0466cc72c8f286edb5b0892c191783b.png"
+	weak var delegate: SegueHandler?
+	
+	var homeView = HomeView()
 	
 	private var unreadMessage = true
 
@@ -26,23 +27,32 @@ class MenuTableView: UITableViewController {
         super.viewDidLoad()
 
 		
-		self.view.frame = CGRect(x: 50, y: 50, width: 200, height: 132)
-		self.accessibilityFrame = CGRect(x: 50, y: 50, width: 200, height: 132)
+		self.view.frame = CGRect(x: 50, y: 50, width: 200, height: 176)
+		self.accessibilityFrame = CGRect(x: 50, y: 50, width: 200, height: 176)
 
 		start()
     }
 	
 	func start() {
+		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 		inboxButton.addTarget(self, action: #selector(clickInbox(_:)), for: .touchUpInside)
 		profileButton.addTarget(self, action: #selector(clickProfile(_:)), for: .touchUpInside)
+		signOutButton.addTarget(self, action: #selector(clickSignOut(_:)), for: .touchUpInside)
 		
         unreadIndicator.isHidden = !unreadMessage
 	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+	
+	@objc func clickUpload(_ sender: UIButton) {
+		delegate?.segueToNext(identifier: "homeToUp")
+	}
+	
+	@objc func clickSignOut(_ sender: UIButton) {
+		delegate?.signOut()
+	}
 	
 	
 	@objc func clickInbox(_ sender: UIButton) {
@@ -64,8 +74,15 @@ class MenuTableView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
+	
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		if segue.identifier == "showMenu" {
+//			if let destination = segue.destination as? YourPageViewControllerClass {
+//				self.homeView = destination
+//			}
+//	}
 
 /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
