@@ -66,6 +66,11 @@ class SendMessageView: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	
+	func setDefaultValues(_ rec: String, item: String, vc: ItemView) {
+		recipient = rec
+		subject = item
+	}
+	
     /*
     // MARK: - Navigation
 

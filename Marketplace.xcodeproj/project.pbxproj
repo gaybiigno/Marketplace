@@ -127,20 +127,19 @@
 		5A8494E81FAA8E7B00A2A91C /* Marketplace */ = {
 			isa = PBXGroup;
 			children = (
+				5AC840011FD5EA2200B8FC85 /* Models */,
 				5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */,
 				5A8494ED1FAA8E7B00A2A91C /* Main.storyboard */,
 				5A8494F01FAA8E7B00A2A91C /* Assets.xcassets */,
 				5A8494F21FAA8E7B00A2A91C /* LaunchScreen.storyboard */,
 				5A8494F51FAA8E7B00A2A91C /* Info.plist */,
+				5A2C08A11FB5671900D884B4 /* Handy.swift */,
 				5A8495171FB13AD400A2A91C /* HomeView.swift */,
 				5A84951F1FB3D72100A2A91C /* ItemView.swift */,
-				5A3140891FB9194C00C6A3BA /* ItemModel.swift */,
 				5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */,
 				5A2C089D1FB5470800D884B4 /* SignInTableView.swift */,
 				5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */,
-				5A2C08A11FB5671900D884B4 /* Handy.swift */,
 				5A84951D1FB3D65600A2A91C /* UserProfileView.swift */,
-				5AE94F2B1FBBDCD000E864D9 /* UserModel.swift */,
 				5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */,
 				5A49973D1FC6239300AB1A1A /* MenuTableView.swift */,
 				5A4397231FC66DE100606AA2 /* SearchTableView.swift */,
@@ -168,6 +167,15 @@
 				5A84950B1FAA8E7B00A2A91C /* Info.plist */,
 			);
 			path = MarketplaceUITests;
+			sourceTree = "<group>";
+		};
+		5AC840011FD5EA2200B8FC85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A3140891FB9194C00C6A3BA /* ItemModel.swift */,
+				5AE94F2B1FBBDCD000E864D9 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

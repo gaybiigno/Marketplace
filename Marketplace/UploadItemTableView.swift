@@ -69,6 +69,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 	}
 	
+	// Description character counter
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if textView == descriptionEntry {
 			descriptionCounter.textColor = UIColor.darkGray
@@ -87,6 +88,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		}
 	}
 
+	// Format Price
 	@IBAction func changedPrice(_ sender: UITextField) {
 		if !(priceEntry.text?.isEmpty)! {
 			let entry = self.priceEntry.text as! String
@@ -151,6 +153,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		checkValues()
 	}
 	
+	// Check for entry errors
 	private func checkValues() {
 		var errorFound = false
 		
@@ -187,39 +190,25 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		}
 	}
 	
+	// Format Category picker
 	func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-		if pickerView == catPicker {
-			let titleData = categories[row]
-			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
-			return myTitle
-		} else {
-			let titleData = "SUB OPTION" // categories[row]
-			let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
-			return myTitle
-		}
+		
+		let titleData = categories[row]
+		let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+		return myTitle
+		
 	}
 	
 	
 	//MARK: - Delegates and data sources
 
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		if pickerView == catPicker {
-			return categories.count
-		} else {
-			return 2 // TODO Placeholder
-		}
+		return categories.count
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		if pickerView == catPicker {
 			categoryChoice.text = categories[row]
-			if !(categoryChoice.text?.isEmpty)! {
-				subCatCell.isHidden = false
-			} else{
-				subCatCell.isHidden = true
-			}
-		} else {
-			subcategoryChoice.text = "Valid Option"
 		}
 	}
 	

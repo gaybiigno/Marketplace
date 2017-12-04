@@ -67,6 +67,7 @@ class ItemView: UIViewController {
 		setItemCategory()
 		setItemDescription()
 		displayCurrentImage()
+		setUserInfo()
 		msgSellerButton.layer.cornerRadius = 5
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
@@ -122,8 +123,12 @@ class ItemView: UIViewController {
         ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
     }
 
-	@IBAction func dismissVC(_ sender: Any) {
-		dismiss(animated: true, completion: nil)
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let vc = segue.destination as? SendMessageView,
+			segue.identifier == "itemToMsg" {
+			vc.setDefaultValues(userModel.getUserName(), item: itemModel.getTitle(), vc: self)
+		}
 	}
 
     /*
