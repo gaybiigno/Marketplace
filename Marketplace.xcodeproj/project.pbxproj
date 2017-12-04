@@ -28,6 +28,7 @@
 		5A8495201FB3D72100A2A91C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84951F1FB3D72100A2A91C /* ItemView.swift */; };
 		5A8495241FB3D8AC00A2A91C /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */; };
 		5AE94F2C1FBBDCD000E864D9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE94F2B1FBBDCD000E864D9 /* UserModel.swift */; };
+		5AF508A91FD5DE29006A397B /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF508A81FD5DE29006A397B /* SendMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5A84951F1FB3D72100A2A91C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		5AE94F2B1FBBDCD000E864D9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5AF508A81FD5DE29006A397B /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				5A4397271FC66FA300606AA2 /* ItemTableViewCell.swift */,
 				5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */,
 				3F95A7651FCF88D80024B8AA /* UploadImageView.swift */,
+				5AF508A81FD5DE29006A397B /* SendMessageView.swift */,
 			);
 			path = Marketplace;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				5A8494EA1FAA8E7B00A2A91C /* AppDelegate.swift in Sources */,
 				5A8495241FB3D8AC00A2A91C /* CheckoutView.swift in Sources */,
 				5A2C089E1FB5470800D884B4 /* SignInTableView.swift in Sources */,
+				5AF508A91FD5DE29006A397B /* SendMessageView.swift in Sources */,
 				5AE94F2C1FBBDCD000E864D9 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

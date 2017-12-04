@@ -40,7 +40,6 @@ class ItemModel: NSObject {
 		if currentIdx != numberOfImages() - 1 {
 			currentIdx += 1
 		}
-		//currentIdx = (currentIdx + 1) % imageNames.count
 	}
 	
 	func getTitle() -> String {

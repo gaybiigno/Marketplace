@@ -59,7 +59,7 @@ class RegisterTableView: UITableViewController {
 	
 	
 	@IBAction func backHome(_ sender: UIButton) {
-		self.performSegue(withIdentifier: "regToHome", sender: self)
+		dismiss(animated: true, completion: nil)
 	}
 	
 	

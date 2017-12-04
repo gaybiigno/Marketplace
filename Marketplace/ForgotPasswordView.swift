@@ -30,6 +30,11 @@ class ForgotPasswordView: UIViewController, MFMailComposeViewControllerDelegate 
         // Dispose of any resources that can be recreated.
     }
 	
+	@IBAction func clickedBack(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
+	
+	
 	@IBAction func pressedEnter(_ sender: UIButton) {
 		if !complete {
 			// TODO:: If email is not valid or empty

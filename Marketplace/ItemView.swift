@@ -121,8 +121,10 @@ class ItemView: UIViewController {
         usernameLabel.text = userModel.getUserName()
         ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
     }
-	
-	
+
+	@IBAction func dismissVC(_ sender: Any) {
+		dismiss(animated: true, completion: nil)
+	}
 
     /*
     // MARK: - Navigation

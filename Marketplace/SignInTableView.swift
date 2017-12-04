@@ -20,15 +20,15 @@ class SignInTableView: UITableViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
 		errorMessage.isHidden = true
 		self.view.backgroundColor = UIColor.white
+		
+		
     }
+	
+	@IBAction func clickedBack(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
 	
 	@IBAction func submit(_ sender: UIButton) {
 		if (email_entry.text?.isEmpty)! || (password_entry.text?.isEmpty)! {

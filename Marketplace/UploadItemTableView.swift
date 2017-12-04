@@ -32,6 +32,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	private var price: String = ""
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	
+	private var tags = [String]()
+	
 	var cv = UploadImageView()
 	
 	private var categoryChoice = UILabel()
@@ -57,6 +59,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
 	func start() {
 		uploadButton.isHidden = false
+		uploadButton.frame.size = CGSize(width: view.frame.width, height: 40)
+		
 		errorLabel.isHidden = true
 		categoryChoice.text = ""
 		descriptionEntry.clearsOnInsertion = true
@@ -139,11 +143,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	}
 	
 	@IBAction func backButton(_ sender: UIButton) {
-		
-		self.performSegue(withIdentifier: "uploadToHome", sender: self)
+		//self.performSegue(withIdentifier: "uploadToHome", sender: self)
+		dismiss(animated: true, completion: nil)
 	}
-	
-	
 	
 	@objc func clickUpload(_ sender: UIButton) {
 		checkValues()
