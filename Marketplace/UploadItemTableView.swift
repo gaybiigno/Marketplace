@@ -25,9 +25,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var priceEntry: UITextField!
 	@IBOutlet weak var quantityEntry: UITextField!
 	
-	@IBOutlet weak var ageEntry: UITextField!
-	
-	
 	@IBOutlet weak var catPicker: UIPickerView!
 	@IBOutlet weak var ageEntry: UITextField!
 	
@@ -36,6 +33,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var uploadButton: UIButton!
 	
 	private var price: String = ""
+	private var age = 0
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	private var categoryChoice = UILabel()
 	
@@ -73,9 +71,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		// Add targets
 		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 		
-		tagHintLabel.isUserInteractionEnabled = true
-		let tapLabel = UITapGestureRecognizer(target: tagHintLabel, action: #selector(clickLabel(_:)))
-		tagHintLabel.addGestureRecognizer(tapLabel)
+		//tagHintLabel.isUserInteractionEnabled = true
+//		let tapLabel = UIGestureRecognizer(target: tagHintLabel, action: #selector(clickLabel(_:)))
+//		tagHintLabel.addGestureRecognizer(tapLabel)
 	}
 	
 	// Description character counter
@@ -95,7 +93,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		}
 			
 		if textView == tagEntry {
-			tagHintLabel.isHidden = true
+			tagHintLabel.removeFromSuperview()
 			return true
 		} else {
 			return false
@@ -154,6 +152,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				priceEntry.text = ""
 			}
 		}
+		print(price)
 	}
 	
 	@IBAction func backButton(_ sender: UIButton) {
@@ -163,6 +162,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@objc func clickUpload(_ sender: UIButton) {
 		var weGood = checkValues()
 		if weGood {
+			
 			// Save all this shit
 		} else {
 			// Basically nothing
@@ -171,7 +171,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	}
 	
 	// Check for entry errors
-	private func checkValues() {
+	private func checkValues() -> Bool {
 		var errorFound = false
 		
 		// Check if title, price, and category are empty
@@ -216,19 +216,25 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         
         // IF NO ERROR
         else {
-            formatTagsAge()
+            formatVals()
 			return true
         }
 	}
 	
 	@objc func clickLabel(_ sender: UILabel) {
-		tagHintLabel.isHidden = true
+		tagHintLabel.removeFromSuperview()
+		//tagHintLabel.isHidden = true
 	}
     
-    func formatTagsAge() {
+    func formatVals() {
 		if !tagEntry.text.isEmpty {
 			tags = tagEntry.text.components(separatedBy: ",")
 		}
+		if !(ageEntry.text?.isEmpty)! {
+			age = Int(ageEntry.text!)!
+		}
+		//price = price[1..<price.cou]
+		
     }
 	
 	// Format Category picker
@@ -279,9 +285,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
             segue.identifier == "displayImgUpload" {
             vc.delegate = self
         }
-		if let vc = segue.destination as? UploadImageView,
+		if let vc = segue.destination as? ItemView,
 			segue.identifier == "presentUploadedItem" {
 			vc.editView = true
+			//vc.itemModel.setItemValues(Urls: false, ImageArray: itemImages, Title: title, Description: description, Price: <#T##Float#>, Tags: tags, Category: categoryChoice.text, Quantity: quantityEntry.text, Age: age)
 		}
 	}
 	

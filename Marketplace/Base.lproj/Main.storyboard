@@ -1019,10 +1019,11 @@
                                                     <rect key="frame" x="50" y="0.0" width="356" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Seperate tags with a single space"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Separate tags with a single space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tu6-66-VPq">
+                                                <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Separate tags with a single space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tu6-66-VPq">
                                                     <rect key="frame" x="59" y="8" width="256" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -1139,7 +1140,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="hlG-uQ-o4b">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="hlG-uQ-o4b">
                                         <rect key="frame" x="0.0" y="617" width="414" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlG-uQ-o4b" id="2OH-1F-6n2">
@@ -1226,7 +1227,6 @@
                         <outlet property="tagHintLabel" destination="Tu6-66-VPq" id="dZL-O1-hxG"/>
                         <outlet property="titleEntry" destination="dDC-sW-vBx" id="Cxe-wX-3aT"/>
                         <outlet property="uploadButton" destination="77R-uk-nNz" id="j3I-oh-hFD"/>
-                        <outletCollection property="stars" destination="Cdf-uA-oqf" collectionClass="NSMutableArray" id="yMm-3k-Rhp"/>
                         <segue destination="eyP-V4-qob" kind="presentation" identifier="presentUploadedItem" id="YMW-cZ-2uV"/>
                     </connections>
                 </tableViewController>

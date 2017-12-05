@@ -10,27 +10,57 @@ import UIKit
 
 class ItemModel: NSObject {
 	
-	private var imageArray = ["https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg", "https://calendarmedia.blob.core.windows.net/assets/af1c2286-2a2a-40be-b0f4-75c09bd32dc1.png", "https://regmedia.co.uk/2015/09/01/sale_648.jpg?x=442&y=293&crop=1"]
+	private var imageArrayURL = ["https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg", "https://calendarmedia.blob.core.windows.net/assets/af1c2286-2a2a-40be-b0f4-75c09bd32dc1.png", "https://regmedia.co.uk/2015/09/01/sale_648.jpg?x=442&y=293&crop=1"]
 	
 	private var currentIdx = 0
 	
+	private var imageArray = [UIImage]()
+	private var title = ""
+	private var descrip = ""
+	private var price = Float(0.0)
+	private var tags = [String]()
+	private var category = ""
+	private var quantity = 0
+	private var age = 0
+	
 	var urls = false
 	
-	func setItemValues(urls: Bool, imageArray: [UIImage], title: String, price: Float, )
+	func setItemValues(Urls: Bool, ImageArray: [UIImage], Title: String,
+	                   Description: String, Price: Float, Tags: [String],
+	                   Category: String, Quantity: Int, Age: Int) {
+		urls = Urls
+		imageArray = ImageArray
+		title = Title
+		descrip = Description
+		price = Price
+		tags = Tags
+		category = Category
+		quantity = Quantity
+		age = Age
+	}
     
     func getMainImage() -> UIImage? {
-        if let url = URL(string: imageArray[0]), let data = try? Data(contentsOf: url),
-            let image = UIImage(data: data), urls {
-            return image
-        }
+		if !urls {
+			return imageArray[0]
+		} else {
+			if let url = URL(string: imageArrayURL[0]), let data = try? Data(contentsOf: url),
+				let image = UIImage(data: data), urls {
+				return image
+			}
+		}
         return nil
     }
 	
 	func currentImage() -> UIImage? {
-		if let url = URL(string: imageArray[currentIdx]), let data = try? Data(contentsOf: url),
-			let image = UIImage(data: data), urls {
-			return image
+		if !urls {
+			return imageArray[currentIdx]
+		} else {
+			if let url = URL(string: imageArrayURL[currentIdx]), let data = try? Data(contentsOf: url),
+				let image = UIImage(data: data), urls {
+				return image
+			}
 		}
+		
 		return nil
 	}
 	
@@ -55,32 +85,49 @@ class ItemModel: NSObject {
 	}
 	
 	func getTitle() -> String {
+		if !urls {
+			return title
+		}
 		return "Example Item For Sale"
 	}
 	
 	func getPrice() -> Float {
+		if !urls {
+			return price
+		}
 		return 25.99
 	}
 	
 	func getCategory() -> String {
+		if !urls {
+			return category
+		}
 		return "Main Category"
 	}
 	
 	func getQuantity() -> Int {
+		if !urls {
+			return quantity
+		}
 		return 892
 	}
 	
 	func getTags() -> String {
-		if let tag = tags {
+		if !urls {
+			let tag = tags
 			var stringOfTags = ""
 			for t in tag {
 				stringOfTags += t + " "
 			}
-			tagEntry.text = stringOfTags
+			return stringOfTags
 		}
+		return ""
 	}
 	
 	func getDescription() -> String {
+		if !urls {
+			return description
+		}
 		return "This fake item is NOT real and therefore should not " +
 			"be purchased for actual money. It's completely imaginary " +
 			"and has no monetary value in the real world. Like maybe " +

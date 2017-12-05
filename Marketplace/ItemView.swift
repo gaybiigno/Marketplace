@@ -62,13 +62,7 @@ class ItemView: UIViewController {
 	}
 	
 	func start() {
-		setItemQuantity()
-		setImageCounter()
-		setItemPrice()
-		setItemTitle()
-		setItemCategory()
-		setItemDescription()
-		displayCurrentImage()
+		
 		
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
@@ -76,9 +70,17 @@ class ItemView: UIViewController {
 		msgSellerButton.layer.cornerRadius = 5
 		
 		if !editView {
+			setItemQuantity()
+			setImageCounter()
+			setItemPrice()
+			setItemTitle()
+			setItemCategory()
+			setItemDescription()
+			displayCurrentImage()
 			setUserInfo()
 			msgSellerButton.addTarget(self, action: #selector(clickMessage(_:)), for: .touchUpInside)
 		} else {
+			
 			profilePicture.isHidden = true
 			postedByLabel.isHidden = true
 			usernameLabel.isHidden = true
@@ -88,9 +90,6 @@ class ItemView: UIViewController {
 			msgSellerButton.setTitle("Edit", for: .normal)
 			msgSellerButton.addTarget(self, action: #selector(clickEdit(_:)), for: .touchUpInside)
 		}
-		
-		
-		
 	}
 	
 	@objc func next(_ sender: UIImageView) {
@@ -142,14 +141,12 @@ class ItemView: UIViewController {
     func setItemTags() {
 		itemTags.text = itemModel.getTags()
     }
-
     
     func setUserInfo() {
         profilePicture.image = userModel.getProfilePic()
         usernameLabel.text = userModel.getUserName()
         ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
     }
-
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
