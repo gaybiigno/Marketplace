@@ -10,28 +10,32 @@ import UIKit
 
 class ItemModel: NSObject {
 	
-	private var itemArray = ["https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg", "https://calendarmedia.blob.core.windows.net/assets/af1c2286-2a2a-40be-b0f4-75c09bd32dc1.png", "https://regmedia.co.uk/2015/09/01/sale_648.jpg?x=442&y=293&crop=1"]
+	private var imageArray = ["https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg", "https://calendarmedia.blob.core.windows.net/assets/af1c2286-2a2a-40be-b0f4-75c09bd32dc1.png", "https://regmedia.co.uk/2015/09/01/sale_648.jpg?x=442&y=293&crop=1"]
 	
 	private var currentIdx = 0
+	
+	var urls = false
+	
+	func setItemValues(urls: Bool, imageArray: [UIImage], title: String, price: Float, )
     
     func getMainImage() -> UIImage? {
-        if let url = URL(string: itemArray[0]), let data = try? Data(contentsOf: url),
-            let image = UIImage(data: data) {
+        if let url = URL(string: imageArray[0]), let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data), urls {
             return image
         }
         return nil
     }
 	
 	func currentImage() -> UIImage? {
-		if let url = URL(string: itemArray[currentIdx]), let data = try? Data(contentsOf: url),
-			let image = UIImage(data: data) {
+		if let url = URL(string: imageArray[currentIdx]), let data = try? Data(contentsOf: url),
+			let image = UIImage(data: data), urls {
 			return image
 		}
 		return nil
 	}
 	
 	func numberOfImages() -> Int {
-		return itemArray.count
+		return imageArray.count
 	}
 	
 	func currentImagePosition() -> Int {
@@ -64,6 +68,16 @@ class ItemModel: NSObject {
 	
 	func getQuantity() -> Int {
 		return 892
+	}
+	
+	func getTags() -> String {
+		if let tag = tags {
+			var stringOfTags = ""
+			for t in tag {
+				stringOfTags += t + " "
+			}
+			tagEntry.text = stringOfTags
+		}
 	}
 	
 	func getDescription() -> String {

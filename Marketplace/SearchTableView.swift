@@ -17,6 +17,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate {
 	var items = [ItemView]()
     
     var filteredItems = [ItemView]()
+	
+	var searchParameter = ""
     
     let searchController = UISearchController(searchResultsController: nil)
 	
@@ -27,6 +29,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+		searchController.searchBar.text = searchParameter
         definesPresentationContext = true
         
         // Uncomment the following line to preserve selection between presentations

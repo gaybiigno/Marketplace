@@ -70,10 +70,14 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		
 		
 		// Add targets
-        
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
 		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
         homeGardButton.addTarget(self, action: #selector(searchHomeGarden(_:)), for: .touchUpInside)
+		fashionButton.addTarget(self, action: #selector(searchFashion(_:)), for: .touchUpInside)
+		electronicsButton.addTarget(self, action: #selector(searchElectronics(_:)), for: .touchUpInside)
+		artCollectButton.addTarget(self, action: #selector(searchArtCollect(_:)), for: .touchUpInside)
+		autoVehiButton.addTarget(self, action: #selector(searchAutoVehicle(_:)), for: .touchUpInside)
+		sportingButton.addTarget(self, action: #selector(searchSportingGoods(_:)), for: .touchUpInside)
 		
 		// Add borders
 		let borderColor = homeGardButton.backgroundColor?.cgColor
@@ -111,6 +115,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			print("ERROR: Cannot sign out of NULL profile")
 			return
 		}
+		
 		endMenu(self)
 		
 		menuButton.isHidden = true
@@ -185,6 +190,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		}
         if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
+			endMenu(self)
+			vc.searchParameter = category
             vc.filterContentForSearchText(category)
         }
 	}

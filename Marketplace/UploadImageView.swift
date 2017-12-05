@@ -93,7 +93,7 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func showAllImages() {
@@ -103,7 +103,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			mainImage.image = defaultPic
 		}
 		
-
         for i in 1 ..< MAX_IMAGES {
             let y_value = i > 4 ? 95 : 29
             let x_value = i > 4 ? (146 + ((i - 5) * heightWidth)) : (146 + ((i - 1) * heightWidth))

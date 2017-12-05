@@ -35,6 +35,8 @@ class ItemView: UIViewController {
 	let itemModel = ItemModel()
     let userModel = UserModel()
 	
+	var editView = false
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.scrollView.backgroundColor = UIColor.white
@@ -67,11 +69,28 @@ class ItemView: UIViewController {
 		setItemCategory()
 		setItemDescription()
 		displayCurrentImage()
-		setUserInfo()
-		msgSellerButton.layer.cornerRadius = 5
+		
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
 		itemPriceLabel.layer.mask?.cornerRadius = 5
+		msgSellerButton.layer.cornerRadius = 5
+		
+		if !editView {
+			setUserInfo()
+			msgSellerButton.addTarget(self, action: #selector(clickMessage(_:)), for: .touchUpInside)
+		} else {
+			profilePicture.isHidden = true
+			postedByLabel.isHidden = true
+			usernameLabel.isHidden = true
+			ratingLabel.isHidden = true
+			let orig = msgSellerButton.frame.origin
+			msgSellerButton.frame.origin = CGPoint(x: orig.x, y: orig.y - 75.0)
+			msgSellerButton.setTitle("Edit", for: .normal)
+			msgSellerButton.addTarget(self, action: #selector(clickEdit(_:)), for: .touchUpInside)
+		}
+		
+		
+		
 	}
 	
 	@objc func next(_ sender: UIImageView) {
@@ -84,6 +103,14 @@ class ItemView: UIViewController {
 		itemModel.previousPic()
 		displayCurrentImage()
 		setImageCounter()
+	}
+	
+	@objc func clickEdit(_ sender: UIButton) {
+		self.performSegue(withIdentifier: "editItem", sender: self)
+	}
+	
+	@objc func clickMessage(_ sender: UIButton) {
+		self.performSegue(withIdentifier: "itemToMsg", sender: self)
 	}
 	
 	func setItemCategory() {
@@ -113,7 +140,7 @@ class ItemView: UIViewController {
 	}
     
     func setItemTags() {
-        // set tags
+		itemTags.text = itemModel.getTags()
     }
 
     
@@ -128,6 +155,11 @@ class ItemView: UIViewController {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "itemToMsg" {
 			vc.setDefaultValues(userModel.getUserName(), item: itemModel.getTitle(), vc: self)
+		}
+		if let vc = segue.destination as? UploadItemTableView,
+			segue.identifier == "editItem" {
+			
+			
 		}
 	}
 
