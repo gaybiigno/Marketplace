@@ -14,7 +14,7 @@ protocol SegueHandler: class {
 	func signOut()
 }
 
-class HomeView: UIViewController, SegueHandler {
+class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
 	
@@ -38,6 +38,11 @@ class HomeView: UIViewController, SegueHandler {
 	@IBOutlet weak var viewForMenu: UIView!
 	
 	private var embeddedViewController: MenuTableView!
+    
+    private let categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
+    
+    private var category = ""
+    
 	
 	let userData = UserModel()
 	
@@ -50,7 +55,7 @@ class HomeView: UIViewController, SegueHandler {
 		startValues()
 		self.view.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
-		
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,9 +70,10 @@ class HomeView: UIViewController, SegueHandler {
 		
 		
 		// Add targets
+        
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
-		
 		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
+        homeGardButton.addTarget(self, action: #selector(searchHomeGarden(_:)), for: .touchUpInside)
 		
 		// Add borders
 		let borderColor = homeGardButton.backgroundColor?.cgColor
@@ -114,6 +120,36 @@ class HomeView: UIViewController, SegueHandler {
 		
 		signedIn = false
 	}
+    
+    @objc func searchHomeGarden(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[1]
+    }
+    
+    @objc func searchFashion(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[2]
+    }
+    
+    @objc func searchElectronics(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[3]
+    }
+    
+    @objc func searchArtCollect(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[4]
+    }
+    
+    @objc func searchAutoVehicle(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[5]
+    }
+    
+    @objc func searchSportingGoods(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        category = categories[6]
+    }
 	
 	@objc func clickRegister(_ sender: UIButton) {
 		self.performSegue(withIdentifier: "homeToReg", sender: self)
@@ -136,7 +172,10 @@ class HomeView: UIViewController, SegueHandler {
 		viewForMenu.isHidden = true
 	}
 	
-	
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        self.performSegue(withIdentifier: "searchStart", sender: self)
+        return true
+    }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? MenuTableView,
@@ -144,12 +183,18 @@ class HomeView: UIViewController, SegueHandler {
 			vc.delegate = self
 			self.embeddedViewController = vc
 		}
+        if let vc = segue.destination as? SearchTableView,
+            segue.identifier == "searchStart" {
+            vc.filterContentForSearchText(category)
+        }
 	}
 	
 	func segueToNext(identifier: String) {
 		self.performSegue(withIdentifier: identifier, sender: self)
 	}
 
+    
+    
 	/*
     // MARK: - Navigation
 

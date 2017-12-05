@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -14,6 +15,8 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var mainImage: UIImageView!
 	
 	@IBOutlet weak var imgCountLabel: UILabel!
+    
+    weak var delegate: ImageHandler?
 	
     let MAX_IMAGES = 8
     let imagePicker = UIImagePickerController()
@@ -39,27 +42,54 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	}
     
     @objc func clickNew(_ sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        
-        present(imagePicker, animated: true, completion: nil)
+        checkPermission()
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func checkPermission() {
+        let photoAuthStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthStatus {
+        case .authorized:
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+            print("Access granted")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    self.imagePicker.allowsEditing = false
+                    self.imagePicker.sourceType = .photoLibrary
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            print("User does not have access")
+        case .denied:
+            print("Denied")
+        default:
+            print("Authorization status unknown")
+        }
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             allImages.append(pickedImage)
+            delegate?.setImages(pickedImage)
 			imgCountLabel.text = String(numImages())
 			showAllImages()
             if numImages() == 1 {
                 mainImage.contentMode = .scaleToFill
                 mainImage.image = pickedImage
-				
             } 
             if numImages() == MAX_IMAGES {
                 addButton.isHidden = true
             }
         }
-        dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -91,7 +121,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
             view.addSubview(currImageView)
         }
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

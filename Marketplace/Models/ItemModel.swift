@@ -13,6 +13,14 @@ class ItemModel: NSObject {
 	private var itemArray = ["https://st.depositphotos.com/1605004/1559/v/950/depositphotos_15599555-stock-illustration-new-item-stamp.jpg", "https://calendarmedia.blob.core.windows.net/assets/af1c2286-2a2a-40be-b0f4-75c09bd32dc1.png", "https://regmedia.co.uk/2015/09/01/sale_648.jpg?x=442&y=293&crop=1"]
 	
 	private var currentIdx = 0
+    
+    func getMainImage() -> UIImage? {
+        if let url = URL(string: itemArray[0]), let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) {
+            return image
+        }
+        return nil
+    }
 	
 	func currentImage() -> UIImage? {
 		if let url = URL(string: itemArray[currentIdx]), let data = try? Data(contentsOf: url),

@@ -8,7 +8,11 @@
 
 import UIKit
 
-class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource {
+protocol ImageHandler: class {
+    func setImages(_ imageList: UIImage)
+}
+
+class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource, ImageHandler {
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return 1
@@ -22,22 +26,20 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var quantityEntry: UITextField!
 	
 	@IBOutlet weak var catPicker: UIPickerView!
-	@IBOutlet weak var subcatPicker: UIPickerView!
 	
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var uploadButton: UIButton!
-	
-	@IBOutlet weak var subCatCell: UITableViewCell!
 	
 	private var price: String = ""
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	
 	private var tags = [String]()
+    
+    private var itemImages = [UIImage]()
 	
 	var cv = UploadImageView()
 	
 	private var categoryChoice = UILabel()
-	private var subcategoryChoice = UILabel()
 	
 	
     override func viewDidLoad() {
@@ -47,8 +49,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		priceEntry.delegate = self
 		catPicker.delegate = self
 		catPicker.dataSource = self
-		subcatPicker.delegate = self
-		subcatPicker.dataSource = self
 		
 		start()
     }
@@ -83,7 +83,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			}
 			descriptionCounter.text = String(count)
 			return true
-		} else {
+		}else {
 			return false
 		}
 	}
@@ -162,6 +162,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			errorFound = true
 			titleEntry.layer.borderWidth = 1.0
 			titleEntry.layer.borderColor = UIColor.red.cgColor
+            
+            print("title error")
 		} else {
 			titleEntry.layer.borderWidth = 0
 		}
@@ -169,6 +171,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			errorFound = true
 			priceEntry.layer.borderWidth = 1.0
 			priceEntry.layer.borderColor = UIColor.red.cgColor
+            
+            print("price error")
 		}
 		else {
 			priceEntry.layer.borderWidth = 0
@@ -177,18 +181,32 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			errorFound = true
 			catPicker.layer.borderWidth = 1.0
 			catPicker.layer.borderColor = UIColor.red.cgColor
+            
+            print("category error")
 		} else {
 			catPicker.layer.borderWidth = 0
 		}
 		
-		if cv.displayError() {
+		if itemImages.count == 0 {
 			errorFound = true
+            print("photo error")
 		}
 		
 		if errorFound {
 			errorLabel.isHidden = false
 		}
+        
+        // IF NO ERROR
+        else {
+            formatTags()
+        }
 	}
+    
+    func formatTags() {
+        // tags
+        tags = tagEntry.text.components(separatedBy: " ")
+        print(tags)
+    }
 	
 	// Format Category picker
 	func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -198,6 +216,11 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		return myTitle
 		
 	}
+    
+    func setImages(_ itemList: UIImage) {
+        itemImages.append(itemList)
+        print("saved \(itemImages)")
+    }
 	
 	
 	//MARK: - Delegates and data sources
@@ -230,6 +253,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			//vc.delegate = self
 			vc.signedIn = true
 		}
+        if let vc = segue.destination as? UploadImageView,
+            segue.identifier == "displayImgUpload" {
+            vc.delegate = self
+        }
 	}
 	
 	

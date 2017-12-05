@@ -8,13 +8,27 @@
 
 import UIKit
 
-class SearchTableView: UITableViewController {
+class SearchTableView: UITableViewController, UISearchBarDelegate {
 
-	
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let itemModel = ItemModel()
+    
+	var items = [ItemView]()
+    
+    var filteredItems = [ItemView]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        definesPresentationContext = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,23 +45,35 @@ class SearchTableView: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let item: ItemView
+        if isFiltering() {
+            item = filteredItems[indexPath.row]
+        } else {
+            item = items[indexPath.row]
+        }
 
-        // Configure the cell...
+        cell.imageView?.image = itemModel.getMainImage()
+        cell.textLabel?.text = itemModel.getTitle()
+        cell.detailTextLabel?.text = String(itemModel.getPrice())
 
         return cell
     }
-    */
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,14 +110,47 @@ class SearchTableView: UITableViewController {
     }
     */
 
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+//        filteredCandies = candies.filter({( candy : Candy) -> Bool in
+//            return candy.name.lowercased().contains(searchText.lowercased())
+//        })
+        
+        filteredItems = items.filter({(items : ItemView) -> Bool in
+            return items.itemCategory.text?.lowercased() == searchText.lowercased()
+        })
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     // MARK: - Navigation
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let candy = candies[indexPath.row]
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.detailCandy = candy
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
     */
+}
 
+extension SearchTableView: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
