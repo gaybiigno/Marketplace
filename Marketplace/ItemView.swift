@@ -25,6 +25,11 @@ class ItemView: UIViewController {
 	@IBOutlet weak var itemCategory: UILabel!
 	@IBOutlet weak var itemTags: UITextView!
 	
+	
+	@IBOutlet weak var tagTitle: UILabel!
+	@IBOutlet weak var ageTitle: UILabel!
+	@IBOutlet weak var ageLabel: UILabel!
+	
 	@IBOutlet var profilePicture: UIImageView!
 	@IBOutlet weak var postedByLabel: UILabel!
 	@IBOutlet weak var usernameLabel: UILabel!
@@ -82,6 +87,8 @@ class ItemView: UIViewController {
 		setItemTitle()
 		setItemCategory()
 		setItemDescription()
+		setItemTags()
+		setItemAge()
 		
 		if !editView {
 			setUserInfo()
@@ -97,7 +104,6 @@ class ItemView: UIViewController {
 			msgSellerButton.setTitle("Edit", for: .normal)
 			msgSellerButton.addTarget(self, action: #selector(clickEdit(_:)), for: .touchUpInside)
 		}
-		
 		displayCurrentImage()
 	}
 	
@@ -158,13 +164,32 @@ class ItemView: UIViewController {
 		let stringRep = tags.joined(separator: "  ")
 		
 		itemTags.text = editView ? stringRep : itemModel.getTags()
+		
+		if itemTags.text.isEmpty {
+			tagTitle.isHidden = true
+		}
     }
+	
+	func setItemAge() {
+		ageLabel.text = editView ? String(age) : String(itemModel.getAge())
+		
+		if ageLabel.text == "0" {
+			ageTitle.isHidden = true
+			ageLabel.isHidden = true
+		}
+	}
     
     func setUserInfo() {
         profilePicture.image = userModel.getProfilePic()
         usernameLabel.text = userModel.getUserName()
         ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
     }
+	
+	@IBAction func clickedBack(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
+	
+	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
@@ -182,18 +207,7 @@ class ItemView: UIViewController {
 			vc.age = age
 			vc.tagString = tags.joined(separator: "  ")
 			vc.cat = category
-			
-//			vc.titleEntry.text = self.givenTitle
-//			vc.descriptionEntry.text = self.descrip //itemDescription.text
-//			vc.priceEntry.text = String(price) //itemPriceLabel.text
-//			vc.ageEntry.text = (age != 0) ? String(age) : ""
-//			vc.age = age
-//			vc.quantityEntry.text = itemQuantity.text
-//			if tags.count != 0 {
-//				let stringRep = tags.joined(separator: "  ")
-//				vc.tagEntry.text = stringRep
 			}
-			
 		}
 	
 

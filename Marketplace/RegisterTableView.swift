@@ -10,6 +10,9 @@ import UIKit
 
 class RegisterTableView: UITableViewController {
 	
+	@IBOutlet weak var profilePicture: UIImageView!
+	@IBOutlet weak var addPicButton: UIButton!
+	
 	@IBOutlet weak var firstName: UITextField!
 	@IBOutlet weak var lastName: UITextField!
 	
@@ -47,6 +50,8 @@ class RegisterTableView: UITableViewController {
 		dateError.isHidden = true
 		personalError.isHidden = true
 		addressError.isHidden = true
+		
+		addPicButton.imageView?.contentMode = .scaleToFill
     }
 	
 	
