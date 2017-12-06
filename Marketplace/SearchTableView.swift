@@ -31,10 +31,18 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var latitude = 0.0
     var longitude = 0.0
     
+    let downloadAssistant = Download(withURLString: "http://localhost:3306/items/all")
+    var itemsSchema: ItemSchemaProcessor!
+    
+    var itemDataSource: ItemDataSource? = nil
+    
     //var currentLocation = CLLocation!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -63,6 +71,27 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        //        print(downloadAssistant.dataFromServer!)
+        itemsSchema = ItemSchemaProcessor(itemModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        print("---------items downloaded-----------")
+        let items_returned = itemsSchema.getAllItems()
+        
+        itemDataSource = ItemDataSource(dataSource: items_returned)
+        itemDataSource?.consolidate()
+        let specificItem = itemDataSource?.itemAt(2)
+        print(specificItem?.item_name)
+        print("recieved Items")
+        
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
+    }
+    
+    deinit {
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
@@ -133,24 +162,34 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return (itemDataSource?.numItems())!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        let item: ItemView
-        if isFiltering() {
-            item = filteredItems[indexPath.row]
-        } else {
-            item = items[indexPath.row]
+//        let item: ItemView
+//        if isFiltering() {
+//            item = filteredItems[indexPath.row]
+//        } else {
+//            item = items[indexPath.row]
+//        }
+//
+//        cell.imageView?.image = itemModel.getMainImage()
+//        cell.textLabel?.text = itemModel.getTitle()
+//        cell.detailTextLabel?.text = String(itemModel.getPrice())
+        
+        if let itemCell = cell as? ItemTableViewCell {
+            let thisItem = itemDataSource?.itemAt(indexPath.row)
+            print(thisItem!)
+            itemCell.useItem(thisItem)
         }
 
-        cell.imageView?.image = itemModel.getMainImage()
-        cell.textLabel?.text = itemModel.getTitle()
-        cell.detailTextLabel?.text = String(itemModel.getPrice())
-
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("tapped")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -214,21 +253,31 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         return searchController.isActive && !searchBarIsEmpty()
     }
     
-    /*
+    
      // MARK: - Navigation
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let items = itemDataSource?.items
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let candy = candies[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailCandy = candy
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let item = items![indexPath.row]
+                let controller = (segue.destination as! ItemView)
+                //controller.detailCandy = item
+                controller.givenTitle = item.item_name!
+                controller.descrip = item.item_description!
+                controller.category = item.item_category!
+                controller.quantity = Int(item.quantity)
+                controller.age = Int(item.minAge)
+                controller.price = Float(item.price)
+                controller.imageArray = [UIImage()]
+                controller.tags = [String()]
+                //controller.imageCounterLabel.text = "1"
+                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
-    */
+    
 }
 
 extension SearchTableView: UISearchResultsUpdating {

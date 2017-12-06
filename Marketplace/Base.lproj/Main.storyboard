@@ -1597,7 +1597,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="75" id="aY5-Jx-OmY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="75" id="aY5-Jx-OmY" customClass="ItemTableViewCell" customModule="Marketplace" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aY5-Jx-OmY" id="8TI-e1-vg2">
@@ -1624,6 +1624,13 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="cellImage" destination="dhk-YX-BeN" id="3le-qf-0TT"/>
+                                    <outlet property="cellLabel" destination="RK5-SV-kQb" id="G6u-Cg-ufk"/>
+                                    <outlet property="cellPrice" destination="1gc-h2-iyW" id="HAZ-el-Xdw"/>
+                                    <segue destination="eyP-V4-qob" kind="showDetail" identifier="showDetail" id="wR7-pD-Igu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1816,7 +1823,7 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cg0-5h-hio"/>
+        <segue reference="wR7-pD-Igu"/>
         <segue reference="5uY-PQ-cL7"/>
         <segue reference="nMo-Ch-E7i"/>
     </inferredMetricsTieBreakers>
