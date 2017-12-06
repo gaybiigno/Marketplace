@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class RegisterTableView: UITableViewController {
+class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
 	@IBOutlet weak var profilePicture: UIImageView!
 	@IBOutlet weak var addPicButton: UIButton!
@@ -35,14 +36,19 @@ class RegisterTableView: UITableViewController {
 	@IBOutlet weak var zipcode: UITextField!
 	
 	@IBOutlet weak var signUpButton: UIButton!
-	
+    
+    let imagePicker = UIImagePickerController()
 	
 	private var dateErrorFound = false
 	private var personalErrorFound = false
 	private var addressErrorFound = false
 	
+    private var username: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
 		
 		signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
@@ -52,13 +58,63 @@ class RegisterTableView: UITableViewController {
 		addressError.isHidden = true
 		
 		addPicButton.imageView?.contentMode = .scaleToFill
+        addPicButton.addTarget(self, action: #selector(clickNew(_:)), for: .touchUpInside)
+    }
+    
+    @objc func clickNew(_ sender: UIButton){
+        checkPermission()
+    }
+
+    func checkPermission() {
+        let photoAuthStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthStatus {
+        case .authorized:
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+            print("Access granted")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    self.imagePicker.allowsEditing = false
+                    self.imagePicker.sourceType = .photoLibrary
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            print("User does not have access")
+        case .denied:
+            print("Denied")
+        }
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            profilePicture.image = pickedImage
+            profilePicture.contentMode = .scaleToFill
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 	
 	
 	@IBAction func signUpsubmit(_ sender: UIButton) {
 		dateErrorFinder()
-		personalErrorFinder()
-		addressErrorFinder()
+        if !(personalErrorFinder() || addressErrorFinder()) {
+            // Set default profile picture
+            if profilePicture.image == nil {
+                profilePicture.image = UIImage(named: "DefaultProfileIcon")
+            }
+            self.performSegue(withIdentifier: "completeRegToHome", sender: self)
+            
+        }
 	}
 	
 	
@@ -69,7 +125,6 @@ class RegisterTableView: UITableViewController {
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -82,7 +137,7 @@ class RegisterTableView: UITableViewController {
         // I did this in such a stupid way lol sorry
 		switch section {
 		case 0:
-			return 1
+			return 2
 		case 1:
 			return 5
 		case 2:
@@ -117,7 +172,7 @@ class RegisterTableView: UITableViewController {
 	}
 	
 	// Checks if any personal sections empty or invalid
-	func personalErrorFinder() {
+	func personalErrorFinder() -> Bool {
 		personalErrorFound = false
 		var errorMessage = ""
 		
@@ -136,6 +191,7 @@ class RegisterTableView: UITableViewController {
 			personalErrorFound = true
 		} else {
 			if !(email.text?.contains("@"))! {
+                personalErrorFound = true
 				print("uh oh no @")
 			}
 		}
@@ -160,11 +216,17 @@ class RegisterTableView: UITableViewController {
 				personalError.text = "Password Confirmation does not match!"
 				personalError.isHidden = false
 			}
+            
+            let fname = firstName.text
+            let lname  = lastName.text!
+            username = fname! + " " + String(lname.characters[lname.characters.startIndex]) + "."
 		}
+        
+        return !personalError.isHidden
 	}
 	
 	// Checks if any address sections empty
-	func addressErrorFinder() {
+	func addressErrorFinder() -> Bool {
 		addressErrorFound = false
 		var errorMessage = ""
 		
@@ -194,6 +256,7 @@ class RegisterTableView: UITableViewController {
 		} else {
 			addressError.isHidden = true
 		}
+        return !addressError.isHidden
 		
 	}
 	
@@ -206,9 +269,17 @@ class RegisterTableView: UITableViewController {
 		let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
 		let calculateAge = calendar.components(.year, from: dob!, to: today, options: [])
 		let age = calculateAge.year
-		print("Age is \(String(describing: age))")
-		print()
 	}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "completeRegToHome" {
+            if segue.destination is HomeView {
+                let hv = segue.destination as! HomeView
+                hv.signedIn = true
+                hv.userName = username
+            }
+        }
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
