@@ -148,5 +148,12 @@ class ItemModel: NSObject {
 			"for listening. Good day!"
 	}
 	
+	func getAge() -> Int {
+		if !urls {
+			return age
+		}
+		return 18
+	}
+	
 	
 }

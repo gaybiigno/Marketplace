@@ -32,9 +32,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	@IBOutlet weak var sportingButton: UIButton!
 	
 	@IBOutlet weak var navBar: UINavigationItem!
-	
 	@IBOutlet weak var searchBar: UISearchBar!
-	
 	@IBOutlet weak var viewForMenu: UIView!
 	
 	private var embeddedViewController: MenuTableView!
@@ -42,9 +40,10 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     private let categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
     
     private var category = ""
-    
 	
 	let userData = UserModel()
+	
+	var uName: String!
 	
 	var signedIn = false
 	
@@ -64,6 +63,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     }
 	
 	func startValues() {
+		uName = uName == nil ? userData.getUserName() : uName
+		
 		// Set place of menu
 		let topY = searchBar.frame.minY
 		viewForMenu.frame.origin = CGPoint(x: 50, y: topY)
@@ -102,12 +103,20 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		signInButton.isHidden = true
 		registerButton.isHidden = true
 		
-		let username = userData.getUserName()
-		helloLabel.text = "Hello, " + username
+		let username = uName
+		
+		helloLabel.text = "Hello, " + username!
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
 		menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
+	}
+	
+	func updateUserName(_ newName: String) {
+		uName = (newName != nil) ? newName : userData.getUserName()
+		//let username = uName
+		helloLabel.text = "Hello, " + uName
+		helloLabel.isHidden = false
 	}
 	
 	func signOut() {
@@ -194,6 +203,14 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			vc.searchParameter = category
             vc.filterContentForSearchText(category)
         }
+		if let vc = segue.destination as? EditProfileView,
+			segue.identifier == "homeToEditProf" {
+			endMenu(self)
+			let name = uName.components(separatedBy: " ")
+			vc.firstName = name[0]
+			vc.lastName = name[1]
+			vc.hasVal = true
+		}
 	}
 	
 	func segueToNext(identifier: String) {

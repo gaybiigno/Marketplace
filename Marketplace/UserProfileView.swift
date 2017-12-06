@@ -14,8 +14,8 @@ class UserProfileView: UIViewController {
 	@IBOutlet weak var username: UILabel!
 	@IBOutlet weak var rating: UILabel!
 	
-	
 	let userData = UserModel()
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()

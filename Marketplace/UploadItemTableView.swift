@@ -28,15 +28,14 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var catPicker: UIPickerView!
 	@IBOutlet weak var ageEntry: UITextField!
 	
-	@IBOutlet weak var tagHintLabel: UILabel!
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var uploadButton: UIButton!
 	
 	
 	private var price: String = ""
 	private var finalPrice: Float = 0.0
-	
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
+	private var tags = [String]()
 	
 	var categoryChoice = UILabel()
 	var cat: String = ""
@@ -49,7 +48,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
 	var editingItem = false
 	
-	private var tags = [String]()
+	
 	
     var itemImages = [UIImage]()
 	
@@ -73,9 +72,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				catPicker.selectRow(index, inComponent: 0, animated: false)
 			}
 			categoryChoice.text = cat
-			
 		}
-		
 		start()
     }
 
@@ -209,7 +206,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			errorFound = true
 			catPicker.layer.borderWidth = 1.0
 			catPicker.layer.borderColor = UIColor.red.cgColor
-            
             print("category error")
 		} else {
 			catPicker.layer.borderWidth = 0
@@ -232,22 +228,14 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         }
 	}
 	
-	@objc func clickLabel(_ sender: UILabel) {
-		tagHintLabel.removeFromSuperview()
-		//tagHintLabel.isHidden = true
-	}
     
     func formatVals() {
 		if !tagEntry.text.isEmpty {
 			tags = tagEntry.text.components(separatedBy: " ")
-			print(tags)
-		}
-		if !(ageEntry.text?.isEmpty)! {
-			age = Int(ageEntry.text!)!
 		}
 		if let numChars = priceEntry.text?.characters.count {
 			let priceToRet = priceEntry.text![1 ..< numChars]
-			if let final = Float(priceToRet) {
+			if let final = Float(priceToRet), numChars > 1 {
 				finalPrice = Float(round(100.0 * final)/100.0)
 			}
 		}
@@ -255,7 +243,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		itemPrice = String(finalPrice)
 		itemTitle = titleEntry.text!
 		itemDescription = descriptionEntry.text
-		quantity = Int(quantityEntry.text!)!
+		quantity = (quantityEntry.text?.isEmpty)! ? 1 : Int(quantityEntry.text!)!
+		age = (ageEntry.text?.isEmpty)! ? 0 : Int(ageEntry.text!)!
+		
 		
     }
 	
@@ -299,7 +289,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? HomeView,
 			segue.identifier == "uploadToHome" {
-			//vc.delegate = self
 			vc.signedIn = true
 		}
         if let vc = segue.destination as? UploadImageView,
@@ -307,7 +296,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
             vc.delegate = self
 			if itemImages.count != 0 {
 				vc.allImages = itemImages
-				
 			}
         }
 		if let vc = segue.destination as? ItemView,
@@ -319,8 +307,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			vc.price = finalPrice
 			vc.tags = tags
 			vc.category = categoryChoice.text!
-			vc.quantity = Int(quantityEntry.text!)!
+			vc.quantity = quantity
 			vc.age = age
+			vc.imageCounterLabel.text = "1/" + String(itemImages.count)
 		}
 	}
 	

@@ -55,7 +55,7 @@ class MenuTableView: UITableViewController {
 	
 	@objc func clickProfile(_ sender: UIButton) {
 		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print("no prof yet")
+		delegate?.segueToNext(identifier: "homeToEditProf")
 	}
 
     // MARK: - Table view data source
