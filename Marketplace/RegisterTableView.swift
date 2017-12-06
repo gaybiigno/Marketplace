@@ -10,54 +10,54 @@ import UIKit
 import Photos
 
 class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-	
-	@IBOutlet weak var profilePicture: UIImageView!
-	@IBOutlet weak var addPicButton: UIButton!
-	
-	@IBOutlet weak var firstName: UITextField!
-	@IBOutlet weak var lastName: UITextField!
-	
-	@IBOutlet weak var email: UITextField!
-	@IBOutlet weak var password: UITextField!
-	@IBOutlet weak var confirmPassword: UITextField!
-	
-	@IBOutlet weak var month: UITextField!
-	@IBOutlet weak var day: UITextField!
-	@IBOutlet weak var year: UITextField!
-	
-	@IBOutlet weak var dateError: UITextView!
-	@IBOutlet weak var personalError: UITextView!
-	@IBOutlet weak var addressError: UITextView!
-	
-	@IBOutlet weak var addressOne: UITextField!
-	@IBOutlet weak var addressTwo: UITextField!
-	@IBOutlet weak var city: UITextField!
-	@IBOutlet weak var state: UITextField!
-	@IBOutlet weak var zipcode: UITextField!
-	
-	@IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var addPicButton: UIButton!
+    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
+    @IBOutlet weak var month: UITextField!
+    @IBOutlet weak var day: UITextField!
+    @IBOutlet weak var year: UITextField!
+    
+    @IBOutlet weak var dateError: UITextView!
+    @IBOutlet weak var personalError: UITextView!
+    @IBOutlet weak var addressError: UITextView!
+    
+    @IBOutlet weak var addressOne: UITextField!
+    @IBOutlet weak var addressTwo: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var zipcode: UITextField!
+    
+    @IBOutlet weak var signUpButton: UIButton!
     
     let imagePicker = UIImagePickerController()
-	
-	private var dateErrorFound = false
-	private var personalErrorFound = false
-	private var addressErrorFound = false
-	
+    
+    private var dateErrorFound = false
+    private var personalErrorFound = false
+    private var addressErrorFound = false
+    
     private var username: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-		
-		signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
+        
+        signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
-		self.view.backgroundColor = UIColor.white
-		dateError.isHidden = true
-		personalError.isHidden = true
-		addressError.isHidden = true
-		
-		addPicButton.imageView?.contentMode = .scaleToFill
+        self.view.backgroundColor = UIColor.white
+        dateError.isHidden = true
+        personalError.isHidden = true
+        addressError.isHidden = true
+        
+        addPicButton.imageView?.contentMode = .scaleToFill
         addPicButton.addTarget(self, action: #selector(clickNew(_:)), for: .touchUpInside)
     }
     
@@ -103,10 +103,10 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
-	
-	
-	@IBAction func signUpsubmit(_ sender: UIButton) {
-		dateErrorFinder()
+    
+    
+    @IBAction func signUpsubmit(_ sender: UIButton) {
+        dateErrorFinder()
         if !(personalErrorFinder() || addressErrorFinder()) {
             // Set default profile picture
             if profilePicture.image == nil {
@@ -115,14 +115,14 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
             self.performSegue(withIdentifier: "completeRegToHome", sender: self)
             
         }
-	}
-	
-	
-	@IBAction func backHome(_ sender: UIButton) {
-		dismiss(animated: true, completion: nil)
-	}
-	
-	
+    }
+    
+    
+    @IBAction func backHome(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -130,153 +130,153 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-		return 4
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // I did this in such a stupid way lol sorry
-		switch section {
-		case 0:
-			return 2
-		case 1:
-			return 5
-		case 2:
-			return 3
-		case 3:
-			return 6
-		default:
-			return 0
-		}
+        switch section {
+        case 0:
+            return 2
+        case 1:
+            return 5
+        case 2:
+            return 3
+        case 3:
+            return 6
+        default:
+            return 0
+        }
     }
-	
-	// Checks if any date sections empty or invalid
-	func dateErrorFinder() {
-		dateErrorFound = false
-		if !(month.text?.isEmpty)!, !(day.text?.isEmpty)!, !(year.text?.isEmpty)! {
-			if let uMonth = Int(month.text!), let uDay = Int(day.text!), let uYear = Int(year.text!) {
-				if (uMonth < 1 || uMonth > 12) ||
-					(uDay < 1 || uDay > 31) ||
-					(uYear < 1900 || uYear > 2014){
-					dateErrorFound = true
-				}
-			}
-		} else {
-			dateErrorFound = true
-		}
-		if dateErrorFound {
-			dateError.isHidden = false
-		} else {
-			dateError.isHidden = true
-			calculateAge()
-		}
-	}
-	
-	// Checks if any personal sections empty or invalid
-	func personalErrorFinder() -> Bool {
-		personalErrorFound = false
-		var errorMessage = ""
-		
-		if (firstName.text?.isEmpty)! {
-			errorMessage += "First name"
-			personalErrorFound = true
-		}
-		if (lastName.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Last name"
-			personalErrorFound = true
-		}
-		if (email.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Email"
-			personalErrorFound = true
-		} else {
-			if !(email.text?.contains("@"))! {
+    
+    // Checks if any date sections empty or invalid
+    func dateErrorFinder() {
+        dateErrorFound = false
+        if !(month.text?.isEmpty)!, !(day.text?.isEmpty)!, !(year.text?.isEmpty)! {
+            if let uMonth = Int(month.text!), let uDay = Int(day.text!), let uYear = Int(year.text!) {
+                if (uMonth < 1 || uMonth > 12) ||
+                    (uDay < 1 || uDay > 31) ||
+                    (uYear < 1900 || uYear > 2014){
+                    dateErrorFound = true
+                }
+            }
+        } else {
+            dateErrorFound = true
+        }
+        if dateErrorFound {
+            dateError.isHidden = false
+        } else {
+            dateError.isHidden = true
+            calculateAge()
+        }
+    }
+    
+    // Checks if any personal sections empty or invalid
+    func personalErrorFinder() -> Bool {
+        personalErrorFound = false
+        var errorMessage = ""
+        
+        if (firstName.text?.isEmpty)! {
+            errorMessage += "First name"
+            personalErrorFound = true
+        }
+        if (lastName.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "Last name"
+            personalErrorFound = true
+        }
+        if (email.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "Email"
+            personalErrorFound = true
+        } else {
+            if !(email.text?.contains("@"))! {
                 personalErrorFound = true
-				print("uh oh no @")
-			}
-		}
-		if (password.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Password"
-			personalErrorFound = true
-		}
-		if (confirmPassword.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Password Confirmation"
-			personalErrorFound = true
-		}
-		if personalErrorFound {
-			errorMessage += " required."
-			personalError.text = errorMessage
-			personalError.isHidden = false
-		} else {
-			personalError.isHidden = true
-			// Check if password == confirm password
-			if password.text! != confirmPassword.text! {
-				personalError.text = "Password Confirmation does not match!"
-				personalError.isHidden = false
-			}
+                print("uh oh no @")
+            }
+        }
+        if (password.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "Password"
+            personalErrorFound = true
+        }
+        if (confirmPassword.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "Password Confirmation"
+            personalErrorFound = true
+        }
+        if personalErrorFound {
+            errorMessage += " required."
+            personalError.text = errorMessage
+            personalError.isHidden = false
+        } else {
+            personalError.isHidden = true
+            // Check if password == confirm password
+            if password.text! != confirmPassword.text! {
+                personalError.text = "Password Confirmation does not match!"
+                personalError.isHidden = false
+            }
             
-            let fname = firstName.text
+            let fname = firstName.text!
             let lname  = lastName.text!
-            username = fname! + " " + String(lname.characters[lname.characters.startIndex]) + "."
-		}
+			username = fname + " " + String(lname.characters[lname.characters.startIndex]) + "."
+        }
         
         return !personalError.isHidden
-	}
-	
-	// Checks if any address sections empty
-	func addressErrorFinder() -> Bool {
-		addressErrorFound = false
-		var errorMessage = ""
-		
-		if (addressOne.text?.isEmpty)! {
-			errorMessage += "Address Line 1"
-			addressErrorFound = true
-		}
-		if (city.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "City"
-			addressErrorFound = true
-		}
-		if (state.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "State"
-			addressErrorFound = true
-		}
-		if (zipcode.text?.isEmpty)! {
-			errorMessage += errorMessage.isEmpty ? "" : ", "
-			errorMessage += "Zip Code"
-			addressErrorFound = true
-		}
-		if addressErrorFound {
-			errorMessage += " required."
-			addressError.text = errorMessage
-			addressError.isHidden = false
-		} else {
-			addressError.isHidden = true
-		}
+    }
+    
+    // Checks if any address sections empty
+    func addressErrorFinder() -> Bool {
+        addressErrorFound = false
+        var errorMessage = ""
+        
+        if (addressOne.text?.isEmpty)! {
+            errorMessage += "Address Line 1"
+            addressErrorFound = true
+        }
+        if (city.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "City"
+            addressErrorFound = true
+        }
+        if (state.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "State"
+            addressErrorFound = true
+        }
+        if (zipcode.text?.isEmpty)! {
+            errorMessage += errorMessage.isEmpty ? "" : ", "
+            errorMessage += "Zip Code"
+            addressErrorFound = true
+        }
+        if addressErrorFound {
+            errorMessage += " required."
+            addressError.text = errorMessage
+            addressError.isHidden = false
+        } else {
+            addressError.isHidden = true
+        }
         return !addressError.isHidden
-		
-	}
-	
-	func calculateAge() {
-		let today = Date()
-		let dob_string = month.text! + "/" + day.text! + "/" + year.text!
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MM/dd/yyy"
-		let dob = dateFormatter.date(from: dob_string)
-		let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
-		let calculateAge = calendar.components(.year, from: dob!, to: today, options: [])
-		let age = calculateAge.year
-	}
+        
+    }
+    
+    func calculateAge() {
+        let today = Date()
+        let dob_string = month.text! + "/" + day.text! + "/" + year.text!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyy"
+        let dob = dateFormatter.date(from: dob_string)
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let calculateAge = calendar.components(.year, from: dob!, to: today, options: [])
+        let age = calculateAge.year
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "completeRegToHome" {
-            if segue.destination is HomeView {
-                let hv = segue.destination as! HomeView
-                hv.signedIn = true
-                hv.userName = username
+            if let hv = segue.destination as! HomeView {
+				hv.signedIn = true
+                hv.uName = username
+				hv.updateUserName(username)
             }
         }
     }

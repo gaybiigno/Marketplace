@@ -65,8 +65,6 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 		if let lName  = lastName {
 			lastNameEntry.text = lName
 		}
-		
-		print(firstName, lastName)
 	}
 	
 	@objc func clickedNew(_ selector: UIButton) {

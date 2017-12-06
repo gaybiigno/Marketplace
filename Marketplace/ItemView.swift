@@ -41,6 +41,7 @@ class ItemView: UIViewController {
     let userModel = UserModel()
 	
 	var editView = false
+	var hasValues = false
 	
 	var imageArray = [UIImage]()
 	var givenTitle = ""
@@ -81,14 +82,16 @@ class ItemView: UIViewController {
 		itemPriceLabel.layer.mask?.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
-		setItemQuantity()
-		setImageCounter()
-		setItemPrice()
-		setItemTitle()
-		setItemCategory()
-		setItemDescription()
-		setItemTags()
-		setItemAge()
+		//if !hasValues {
+			setItemQuantity()
+			setImageCounter()
+			setItemPrice()
+			setItemTitle()
+			setItemCategory()
+			setItemDescription()
+			setItemTags()
+			setItemAge()
+		//}
 		
 		if !editView {
 			setUserInfo()

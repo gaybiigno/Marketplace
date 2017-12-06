@@ -63,7 +63,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     }
 	
 	func startValues() {
-		uName = userData.getUserName()
+		uName = uName == nil ? userData.getUserName() : uName
 		
 		// Set place of menu
 		let topY = searchBar.frame.minY
@@ -113,9 +113,9 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	}
 	
 	func updateUserName(_ newName: String) {
-		uName = (uName != nil) ? newName : userData.getUserName()
-		let username = uName
-		helloLabel.text = "Hello, " + username!
+		uName = (newName != nil) ? newName : userData.getUserName()
+		//let username = uName
+		helloLabel.text = "Hello, " + uName
 		helloLabel.isHidden = false
 	}
 	

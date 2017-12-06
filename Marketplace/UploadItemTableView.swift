@@ -72,9 +72,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				catPicker.selectRow(index, inComponent: 0, animated: false)
 			}
 			categoryChoice.text = cat
-			
 		}
-		
 		start()
     }
 
