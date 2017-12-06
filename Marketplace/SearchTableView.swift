@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SearchTableView: UITableViewController, UISearchBarDelegate {
+class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -21,10 +22,35 @@ class SearchTableView: UITableViewController, UISearchBarDelegate {
 	var searchParameter = ""
     
     let searchController = UISearchController(searchResultsController: nil)
+    
+    var locationManager = CLLocationManager()
+    
+    var currentLocation = CLLocation()
+    var previousLocation = CLLocation()
+//
+    var latitude = 0.0
+    var longitude = 0.0
+    
+    //var currentLocation = CLLocation!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        
+        locationManager.distanceFilter = 50
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = false
+        locationManager.startUpdatingLocation()
+        
+        currentLocation = locationManager.location!
+        latitude = (currentLocation.coordinate.latitude)
+        longitude = (currentLocation.coordinate.longitude)
+        print(latitude)
+        print(longitude)
+        
         searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -37,6 +63,60 @@ class SearchTableView: UITableViewController, UISearchBarDelegate {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
+        print("entered")
+        var address = searchBar.text
+        getCoordinatesOfAddress(addressString: address!)
+    }
+    
+    func getCoordinatesOfAddress(addressString: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(addressString) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+            else {
+                    return
+            }
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Get placemark from location to approximate current address
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
+            
+            if error != nil {
+                print("Error: " + error!.localizedDescription)
+                return
+            }
+            
+            let location = locations[0]
+            print(location)
+            if placemarks!.count > 0 {
+                // Store previous & current loactions
+                self.previousLocation = self.currentLocation
+                self.currentLocation = manager.location!
+                
+                
+                // Upload only address changes to database
+                if (self.currentLocation.distance(from: self.previousLocation) > 50) {
+                    //                    self.uploadLocation(place)
+                }
+            }
+        })
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // One of
+        // kCLErrorLocationUnknown (likely temporary. Keep waiting...)
+        // kCLErrorDenied  (User refuses to give you permission to CoreLocation)
+        // kCLErrorHeadingFailure  (too much magnetic interference. Keep waiting...)
+        print("Error: " + error.localizedDescription)
     }
 
     override func didReceiveMemoryWarning() {

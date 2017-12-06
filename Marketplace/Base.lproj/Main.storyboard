@@ -1816,7 +1816,8 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pjh-Hn-Bic"/>
+        <segue reference="cg0-5h-hio"/>
+        <segue reference="5uY-PQ-cL7"/>
         <segue reference="nMo-Ch-E7i"/>
     </inferredMetricsTieBreakers>
 </document>
