@@ -1,0 +1,490 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ItemSchemaProcessor"
+provides-nominal:
+- "11Marketplace19ItemSchemaProcessorC"
+provides-member:
+- ["11Marketplace19ItemSchemaProcessorC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "+="
+- "AnyObject"
+- !private "Array"
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "CoreDataCommonMethods"
+- !private "Dictionary"
+- !private "Double"
+- !private "Int16"
+- !private "Int32"
+- "Item"
+- "ItemSchemaProcessor"
+- !private "NSEntityDescription"
+- !private "NSFetchRequest"
+- !private "NSFetchRequestResult"
+- !private "NSLog"
+- "NSObject"
+- !private "NSSortDescriptor"
+- !private "String"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- !private "abort"
+- !private "print"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- ["s7CVarArgP", "CoreDataCommonMethods"]
+- !private ["s7CVarArgP", "NSEntityDescription"]
+- !private ["s7CVarArgP", "NSFetchRequest"]
+- !private ["s7CVarArgP", "NSLog"]
+- !private ["s7CVarArgP", "NSSortDescriptor"]
+- !private ["s7CVarArgP", "abort"]
+- !private ["s7CVarArgP", "backgroundContext"]
+- !private ["s7CVarArgP", "coreDataContext"]
+- !private ["s7CVarArgP", "fetch"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "insertNewObject"]
+- !private ["s7CVarArgP", "itemModelJSONString"]
+- !private ["s7CVarArgP", "item_category"]
+- !private ["s7CVarArgP", "item_description"]
+- !private ["s7CVarArgP", "item_id"]
+- !private ["s7CVarArgP", "item_name"]
+- !private ["s7CVarArgP", "managedObjectContext"]
+- !private ["s7CVarArgP", "minAge"]
+- !private ["s7CVarArgP", "price"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "processItemsJSON"]
+- !private ["s7CVarArgP", "processJSON"]
+- !private ["s7CVarArgP", "quantity"]
+- !private ["s7CVarArgP", "returnsObjectsAsFaults"]
+- !private ["s7CVarArgP", "saveContext"]
+- !private ["s7CVarArgP", "seller_email"]
+- !private ["s7CVarArgP", "sortDescriptors"]
+- !private ["s7CVarArgP", "subscript"]
+- ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10ComparableP", "init"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "backgroundContext"]
+- ["11Marketplace21CoreDataCommonMethodsC", "init"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "managedObjectContext"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "saveContext"]
+- ["s28CustomDebugStringConvertibleP", "CoreDataCommonMethods"]
+- !private ["s28CustomDebugStringConvertibleP", "NSEntityDescription"]
+- !private ["s28CustomDebugStringConvertibleP", "NSFetchRequest"]
+- !private ["s28CustomDebugStringConvertibleP", "NSLog"]
+- !private ["s28CustomDebugStringConvertibleP", "NSSortDescriptor"]
+- !private ["s28CustomDebugStringConvertibleP", "abort"]
+- !private ["s28CustomDebugStringConvertibleP", "backgroundContext"]
+- !private ["s28CustomDebugStringConvertibleP", "coreDataContext"]
+- !private ["s28CustomDebugStringConvertibleP", "fetch"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "insertNewObject"]
+- !private ["s28CustomDebugStringConvertibleP", "itemModelJSONString"]
+- !private ["s28CustomDebugStringConvertibleP", "item_category"]
+- !private ["s28CustomDebugStringConvertibleP", "item_description"]
+- !private ["s28CustomDebugStringConvertibleP", "item_id"]
+- !private ["s28CustomDebugStringConvertibleP", "item_name"]
+- !private ["s28CustomDebugStringConvertibleP", "managedObjectContext"]
+- !private ["s28CustomDebugStringConvertibleP", "minAge"]
+- !private ["s28CustomDebugStringConvertibleP", "price"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "processItemsJSON"]
+- !private ["s28CustomDebugStringConvertibleP", "processJSON"]
+- !private ["s28CustomDebugStringConvertibleP", "quantity"]
+- !private ["s28CustomDebugStringConvertibleP", "returnsObjectsAsFaults"]
+- !private ["s28CustomDebugStringConvertibleP", "saveContext"]
+- !private ["s28CustomDebugStringConvertibleP", "seller_email"]
+- !private ["s28CustomDebugStringConvertibleP", "sortDescriptors"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- ["s23CustomStringConvertibleP", "CoreDataCommonMethods"]
+- !private ["s23CustomStringConvertibleP", "NSEntityDescription"]
+- !private ["s23CustomStringConvertibleP", "NSFetchRequest"]
+- !private ["s23CustomStringConvertibleP", "NSLog"]
+- !private ["s23CustomStringConvertibleP", "NSSortDescriptor"]
+- !private ["s23CustomStringConvertibleP", "abort"]
+- !private ["s23CustomStringConvertibleP", "backgroundContext"]
+- !private ["s23CustomStringConvertibleP", "coreDataContext"]
+- !private ["s23CustomStringConvertibleP", "fetch"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "insertNewObject"]
+- !private ["s23CustomStringConvertibleP", "itemModelJSONString"]
+- !private ["s23CustomStringConvertibleP", "item_category"]
+- !private ["s23CustomStringConvertibleP", "item_description"]
+- !private ["s23CustomStringConvertibleP", "item_id"]
+- !private ["s23CustomStringConvertibleP", "item_name"]
+- !private ["s23CustomStringConvertibleP", "managedObjectContext"]
+- !private ["s23CustomStringConvertibleP", "minAge"]
+- !private ["s23CustomStringConvertibleP", "price"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "processItemsJSON"]
+- !private ["s23CustomStringConvertibleP", "processJSON"]
+- !private ["s23CustomStringConvertibleP", "quantity"]
+- !private ["s23CustomStringConvertibleP", "returnsObjectsAsFaults"]
+- !private ["s23CustomStringConvertibleP", "saveContext"]
+- !private ["s23CustomStringConvertibleP", "seller_email"]
+- !private ["s23CustomStringConvertibleP", "sortDescriptors"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "subscript"]
+- ["s9EquatableP", "CoreDataCommonMethods"]
+- !private ["s9EquatableP", "NSEntityDescription"]
+- !private ["s9EquatableP", "NSFetchRequest"]
+- !private ["s9EquatableP", "NSLog"]
+- !private ["s9EquatableP", "NSSortDescriptor"]
+- !private ["s9EquatableP", "abort"]
+- !private ["s9EquatableP", "backgroundContext"]
+- !private ["s9EquatableP", "coreDataContext"]
+- !private ["s9EquatableP", "fetch"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "insertNewObject"]
+- !private ["s9EquatableP", "itemModelJSONString"]
+- !private ["s9EquatableP", "item_category"]
+- !private ["s9EquatableP", "item_description"]
+- !private ["s9EquatableP", "item_id"]
+- !private ["s9EquatableP", "item_name"]
+- !private ["s9EquatableP", "managedObjectContext"]
+- !private ["s9EquatableP", "minAge"]
+- !private ["s9EquatableP", "price"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "processItemsJSON"]
+- !private ["s9EquatableP", "processJSON"]
+- !private ["s9EquatableP", "quantity"]
+- !private ["s9EquatableP", "returnsObjectsAsFaults"]
+- !private ["s9EquatableP", "saveContext"]
+- !private ["s9EquatableP", "seller_email"]
+- !private ["s9EquatableP", "sortDescriptors"]
+- ["s9EquatableP", ""]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "CoreDataCommonMethods"]
+- !private ["s8HashableP", "NSEntityDescription"]
+- !private ["s8HashableP", "NSFetchRequest"]
+- !private ["s8HashableP", "NSLog"]
+- !private ["s8HashableP", "NSSortDescriptor"]
+- !private ["s8HashableP", "abort"]
+- !private ["s8HashableP", "backgroundContext"]
+- !private ["s8HashableP", "coreDataContext"]
+- !private ["s8HashableP", "fetch"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "insertNewObject"]
+- !private ["s8HashableP", "itemModelJSONString"]
+- !private ["s8HashableP", "item_category"]
+- !private ["s8HashableP", "item_description"]
+- !private ["s8HashableP", "item_id"]
+- !private ["s8HashableP", "item_name"]
+- !private ["s8HashableP", "managedObjectContext"]
+- !private ["s8HashableP", "minAge"]
+- !private ["s8HashableP", "price"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "processItemsJSON"]
+- !private ["s8HashableP", "processJSON"]
+- !private ["s8HashableP", "quantity"]
+- !private ["s8HashableP", "returnsObjectsAsFaults"]
+- !private ["s8HashableP", "saveContext"]
+- !private ["s8HashableP", "seller_email"]
+- !private ["s8HashableP", "sortDescriptors"]
+- ["s8HashableP", ""]
+- !private ["11Marketplace4ItemC", "item_category"]
+- !private ["11Marketplace4ItemC", "item_description"]
+- !private ["11Marketplace4ItemC", "item_id"]
+- !private ["11Marketplace4ItemC", "item_name"]
+- !private ["11Marketplace4ItemC", "minAge"]
+- !private ["11Marketplace4ItemC", "price"]
+- !private ["11Marketplace4ItemC", "quantity"]
+- !private ["11Marketplace4ItemC", "seller_email"]
+- ["11Marketplace19ItemSchemaProcessorC", "AnyObject"]
+- ["11Marketplace19ItemSchemaProcessorC", "CoreDataCommonMethods"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "Dictionary"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "Double"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "Int16"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "Int32"]
+- ["11Marketplace19ItemSchemaProcessorC", "Item"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "NSEntityDescription"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "NSFetchRequest"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "NSFetchRequestResult"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "NSLog"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "NSSortDescriptor"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "String"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "abort"]
+- ["11Marketplace19ItemSchemaProcessorC", "coreDataContext"]
+- ["11Marketplace19ItemSchemaProcessorC", "deinit"]
+- ["11Marketplace19ItemSchemaProcessorC", "fetchAllItems"]
+- ["11Marketplace19ItemSchemaProcessorC", "getAllItems"]
+- ["11Marketplace19ItemSchemaProcessorC", "init"]
+- ["11Marketplace19ItemSchemaProcessorC", "itemModelJSONString"]
+- !private ["11Marketplace19ItemSchemaProcessorC", "print"]
+- ["11Marketplace19ItemSchemaProcessorC", "processItemsJSON"]
+- ["11Marketplace19ItemSchemaProcessorC", "processJSON"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "fetch"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "insertNewObject"]
+- !private ["So8NSCodingP", "returnsObjectsAsFaults"]
+- !private ["So8NSCodingP", "sortDescriptors"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "insertNewObject"]
+- !private ["So9NSCopyingP", "returnsObjectsAsFaults"]
+- !private ["So9NSCopyingP", "sortDescriptors"]
+- !private ["So19NSEntityDescriptionC", "insertNewObject"]
+- !private ["So17NSFastEnumerationP", "insertNewObject"]
+- !private ["So14NSFetchRequestC", "init"]
+- !private ["So14NSFetchRequestC", "returnsObjectsAsFaults"]
+- !private ["So14NSFetchRequestC", "sortDescriptors"]
+- !private ["So20NSFetchRequestResultP", "item_category"]
+- !private ["So20NSFetchRequestResultP", "item_description"]
+- !private ["So20NSFetchRequestResultP", "item_id"]
+- !private ["So20NSFetchRequestResultP", "item_name"]
+- !private ["So20NSFetchRequestResultP", "minAge"]
+- !private ["So20NSFetchRequestResultP", "price"]
+- !private ["So20NSFetchRequestResultP", "quantity"]
+- !private ["So20NSFetchRequestResultP", "seller_email"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "fetch"]
+- !private ["So15NSManagedObjectC", "item_category"]
+- !private ["So15NSManagedObjectC", "item_description"]
+- !private ["So15NSManagedObjectC", "item_id"]
+- !private ["So15NSManagedObjectC", "item_name"]
+- !private ["So15NSManagedObjectC", "minAge"]
+- !private ["So15NSManagedObjectC", "price"]
+- !private ["So15NSManagedObjectC", "quantity"]
+- !private ["So15NSManagedObjectC", "seller_email"]
+- !private ["So22NSManagedObjectContextC", "fetch"]
+- !private ["So16NSMutableCopyingP", "init"]
+- ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "CoreDataCommonMethods"]
+- !private ["So8NSObjectC", "Dictionary"]
+- !private ["So8NSObjectC", "Double"]
+- !private ["So8NSObjectC", "Int16"]
+- !private ["So8NSObjectC", "Int32"]
+- ["So8NSObjectC", "Item"]
+- !private ["So8NSObjectC", "NSEntityDescription"]
+- !private ["So8NSObjectC", "NSFetchRequest"]
+- !private ["So8NSObjectC", "NSFetchRequestResult"]
+- !private ["So8NSObjectC", "NSLog"]
+- !private ["So8NSObjectC", "NSSortDescriptor"]
+- !private ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "abort"]
+- !private ["So8NSObjectC", "backgroundContext"]
+- ["So8NSObjectC", "coreDataContext"]
+- !private ["So8NSObjectC", "fetch"]
+- ["So8NSObjectC", "fetchAllItems"]
+- ["So8NSObjectC", "getAllItems"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "insertNewObject"]
+- ["So8NSObjectC", "itemModelJSONString"]
+- !private ["So8NSObjectC", "item_category"]
+- !private ["So8NSObjectC", "item_description"]
+- !private ["So8NSObjectC", "item_id"]
+- !private ["So8NSObjectC", "item_name"]
+- !private ["So8NSObjectC", "managedObjectContext"]
+- !private ["So8NSObjectC", "minAge"]
+- !private ["So8NSObjectC", "price"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "processItemsJSON"]
+- ["So8NSObjectC", "processJSON"]
+- !private ["So8NSObjectC", "quantity"]
+- !private ["So8NSObjectC", "returnsObjectsAsFaults"]
+- !private ["So8NSObjectC", "saveContext"]
+- !private ["So8NSObjectC", "seller_email"]
+- !private ["So8NSObjectC", "sortDescriptors"]
+- ["So8NSObjectC", ""]
+- ["So16NSObjectProtocolP", "CoreDataCommonMethods"]
+- !private ["So16NSObjectProtocolP", "NSEntityDescription"]
+- !private ["So16NSObjectProtocolP", "NSFetchRequest"]
+- !private ["So16NSObjectProtocolP", "NSLog"]
+- !private ["So16NSObjectProtocolP", "NSSortDescriptor"]
+- !private ["So16NSObjectProtocolP", "abort"]
+- !private ["So16NSObjectProtocolP", "backgroundContext"]
+- !private ["So16NSObjectProtocolP", "coreDataContext"]
+- !private ["So16NSObjectProtocolP", "fetch"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "insertNewObject"]
+- !private ["So16NSObjectProtocolP", "itemModelJSONString"]
+- !private ["So16NSObjectProtocolP", "item_category"]
+- !private ["So16NSObjectProtocolP", "item_description"]
+- !private ["So16NSObjectProtocolP", "item_id"]
+- !private ["So16NSObjectProtocolP", "item_name"]
+- !private ["So16NSObjectProtocolP", "managedObjectContext"]
+- !private ["So16NSObjectProtocolP", "minAge"]
+- !private ["So16NSObjectProtocolP", "price"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "processItemsJSON"]
+- !private ["So16NSObjectProtocolP", "processJSON"]
+- !private ["So16NSObjectProtocolP", "quantity"]
+- !private ["So16NSObjectProtocolP", "returnsObjectsAsFaults"]
+- !private ["So16NSObjectProtocolP", "saveContext"]
+- !private ["So16NSObjectProtocolP", "seller_email"]
+- !private ["So16NSObjectProtocolP", "sortDescriptors"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So24NSPersistentStoreRequestC", "returnsObjectsAsFaults"]
+- !private ["So24NSPersistentStoreRequestC", "sortDescriptors"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So16NSSortDescriptorC", "init"]
+- !private ["So8NSStringC", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s12StaticStringV", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "subscript"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "CoreDataCommonMethods"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSEntityDescription"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSFetchRequest"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLog"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSSortDescriptor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "abort"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "coreDataContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fetch"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "insertNewObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "itemModelJSONString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "item_category"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "item_description"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "item_id"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "item_name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "managedObjectContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "minAge"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "price"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "processItemsJSON"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "processJSON"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "quantity"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "returnsObjectsAsFaults"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "saveContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "seller_email"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sortDescriptors"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "11Marketplace21CoreDataCommonMethodsC"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s10DictionaryV"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- !private "11Marketplace4ItemC"
+- "11Marketplace19ItemSchemaProcessorC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So19NSEntityDescriptionC"
+- !private "So17NSFastEnumerationP"
+- !private "So14NSFetchRequestC"
+- !private "So20NSFetchRequestResultP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So9NSLockingP"
+- !private "So15NSManagedObjectC"
+- !private "So22NSManagedObjectContextC"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So24NSPersistentStoreRequestC"
+- !private "So14NSSecureCodingP"
+- !private "So16NSSortDescriptorC"
+- !private "So8NSStringC"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s8SequenceP"
+- !private "s12StaticStringV"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+- !private "subscript"
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/student/Downloads/Marketplace/Marketplace-Bridging-Header.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "acfae8b07af930c9eb48b6160d246e44"
