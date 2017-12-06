@@ -1,0 +1,21 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "9f85a5423bcd294e80ed357f5f944297"
+build_time: [1512540139, 612051000]
+inputs:
+  "/Users/student/Marketplace/Marketplace/UserProfileView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/UploadItemTableView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/SearchTableView.swift": [1512540139, 0]
+  "/Users/student/Marketplace/Marketplace/UploadImageView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/Models/ItemModel.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/HomeView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/ItemTableViewCell.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/RegisterTableView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/MenuTableView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/Handy.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/ItemView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/ForgotPasswordView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/AppDelegate.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/CheckoutView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/SignInTableView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/SendMessageView.swift": [1512535430, 0]
+  "/Users/student/Marketplace/Marketplace/Models/UserModel.swift": [1512535430, 0]

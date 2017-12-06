@@ -1,0 +1,688 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MenuTableView"
+provides-nominal:
+- "11Marketplace13MenuTableViewC"
+provides-member:
+- ["11Marketplace13MenuTableViewC", ""]
+provides-dynamic-lookup:
+- "clickInbox"
+- "clickProfile"
+- "clickSignOut"
+- "clickUpload"
+- "didReceiveMemoryWarning"
+- "inboxButton"
+- "numberOfSections"
+- "profileButton"
+- "signOutButton"
+- "tableView"
+- "unreadIndicator"
+- "uploadButton"
+- "viewDidLoad"
+depends-top-level:
+- !private "!"
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- "Int"
+- "MenuTableView"
+- "SegueHandler"
+- !private "StringLiteralType"
+- "UIButton"
+- "UIImageView"
+- "UITableView"
+- "UITableViewController"
+- !private "print"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["So15CALayerDelegateP", "addTarget"]
+- !private ["So15CALayerDelegateP", "isHidden"]
+- !private ["s7CVarArgP", "addTarget"]
+- !private ["s7CVarArgP", "clickInbox"]
+- !private ["s7CVarArgP", "clickProfile"]
+- !private ["s7CVarArgP", "clickSignOut"]
+- !private ["s7CVarArgP", "clickUpload"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "didReceiveMemoryWarning"]
+- !private ["s7CVarArgP", "inboxButton"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isHidden"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "profileButton"]
+- !private ["s7CVarArgP", "signOutButton"]
+- !private ["s7CVarArgP", "start"]
+- !private ["s7CVarArgP", "unreadIndicator"]
+- !private ["s7CVarArgP", "unreadMessage"]
+- !private ["s7CVarArgP", "uploadButton"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "addTarget"]
+- !private ["s28CustomDebugStringConvertibleP", "clickInbox"]
+- !private ["s28CustomDebugStringConvertibleP", "clickProfile"]
+- !private ["s28CustomDebugStringConvertibleP", "clickSignOut"]
+- !private ["s28CustomDebugStringConvertibleP", "clickUpload"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s28CustomDebugStringConvertibleP", "inboxButton"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isHidden"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "profileButton"]
+- !private ["s28CustomDebugStringConvertibleP", "signOutButton"]
+- !private ["s28CustomDebugStringConvertibleP", "start"]
+- !private ["s28CustomDebugStringConvertibleP", "unreadIndicator"]
+- !private ["s28CustomDebugStringConvertibleP", "unreadMessage"]
+- !private ["s28CustomDebugStringConvertibleP", "uploadButton"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "addTarget"]
+- !private ["s23CustomStringConvertibleP", "clickInbox"]
+- !private ["s23CustomStringConvertibleP", "clickProfile"]
+- !private ["s23CustomStringConvertibleP", "clickSignOut"]
+- !private ["s23CustomStringConvertibleP", "clickUpload"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s23CustomStringConvertibleP", "inboxButton"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isHidden"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "profileButton"]
+- !private ["s23CustomStringConvertibleP", "signOutButton"]
+- !private ["s23CustomStringConvertibleP", "start"]
+- !private ["s23CustomStringConvertibleP", "unreadIndicator"]
+- !private ["s23CustomStringConvertibleP", "unreadMessage"]
+- !private ["s23CustomStringConvertibleP", "uploadButton"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "addTarget"]
+- !private ["s9EquatableP", "clickInbox"]
+- !private ["s9EquatableP", "clickProfile"]
+- !private ["s9EquatableP", "clickSignOut"]
+- !private ["s9EquatableP", "clickUpload"]
+- !private ["s9EquatableP", "delegate"]
+- !private ["s9EquatableP", "didReceiveMemoryWarning"]
+- !private ["s9EquatableP", "inboxButton"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "isHidden"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "profileButton"]
+- !private ["s9EquatableP", "signOutButton"]
+- !private ["s9EquatableP", "start"]
+- !private ["s9EquatableP", "touchUpInside"]
+- !private ["s9EquatableP", "unreadIndicator"]
+- !private ["s9EquatableP", "unreadMessage"]
+- !private ["s9EquatableP", "uploadButton"]
+- !private ["s9EquatableP", "viewDidLoad"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "touchUpInside"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "addTarget"]
+- !private ["s8HashableP", "clickInbox"]
+- !private ["s8HashableP", "clickProfile"]
+- !private ["s8HashableP", "clickSignOut"]
+- !private ["s8HashableP", "clickUpload"]
+- !private ["s8HashableP", "delegate"]
+- !private ["s8HashableP", "didReceiveMemoryWarning"]
+- !private ["s8HashableP", "inboxButton"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "isHidden"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "profileButton"]
+- !private ["s8HashableP", "signOutButton"]
+- !private ["s8HashableP", "start"]
+- !private ["s8HashableP", "unreadIndicator"]
+- !private ["s8HashableP", "unreadMessage"]
+- !private ["s8HashableP", "uploadButton"]
+- !private ["s8HashableP", "viewDidLoad"]
+- ["s8HashableP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- ["11Marketplace13MenuTableViewC", "Int"]
+- ["11Marketplace13MenuTableViewC", "SegueHandler"]
+- ["11Marketplace13MenuTableViewC", "UIButton"]
+- ["11Marketplace13MenuTableViewC", "UIImageView"]
+- ["11Marketplace13MenuTableViewC", "UITableView"]
+- ["11Marketplace13MenuTableViewC", "clickInbox"]
+- ["11Marketplace13MenuTableViewC", "clickProfile"]
+- ["11Marketplace13MenuTableViewC", "clickSignOut"]
+- ["11Marketplace13MenuTableViewC", "clickUpload"]
+- ["11Marketplace13MenuTableViewC", "deinit"]
+- ["11Marketplace13MenuTableViewC", "delegate"]
+- ["11Marketplace13MenuTableViewC", "didReceiveMemoryWarning"]
+- ["11Marketplace13MenuTableViewC", "inboxButton"]
+- ["11Marketplace13MenuTableViewC", "init"]
+- ["11Marketplace13MenuTableViewC", "numberOfSections"]
+- !private ["11Marketplace13MenuTableViewC", "print"]
+- ["11Marketplace13MenuTableViewC", "profileButton"]
+- ["11Marketplace13MenuTableViewC", "signOutButton"]
+- ["11Marketplace13MenuTableViewC", "start"]
+- ["11Marketplace13MenuTableViewC", "tableView"]
+- ["11Marketplace13MenuTableViewC", "unreadIndicator"]
+- !private ["11Marketplace13MenuTableViewC", "unreadMessage"]
+- ["11Marketplace13MenuTableViewC", "uploadButton"]
+- ["11Marketplace13MenuTableViewC", "viewDidLoad"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "addTarget"]
+- !private ["So8NSCodingP", "clickInbox"]
+- !private ["So8NSCodingP", "clickProfile"]
+- !private ["So8NSCodingP", "clickSignOut"]
+- !private ["So8NSCodingP", "clickUpload"]
+- !private ["So8NSCodingP", "delegate"]
+- !private ["So8NSCodingP", "didReceiveMemoryWarning"]
+- !private ["So8NSCodingP", "inboxButton"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "isHidden"]
+- !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "profileButton"]
+- !private ["So8NSCodingP", "signOutButton"]
+- !private ["So8NSCodingP", "start"]
+- !private ["So8NSCodingP", "unreadIndicator"]
+- !private ["So8NSCodingP", "unreadMessage"]
+- !private ["So8NSCodingP", "uploadButton"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- ["So8NSCodingP", ""]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "clickInbox"]
+- !private ["So26NSExtensionRequestHandlingP", "clickProfile"]
+- !private ["So26NSExtensionRequestHandlingP", "clickSignOut"]
+- !private ["So26NSExtensionRequestHandlingP", "clickUpload"]
+- !private ["So26NSExtensionRequestHandlingP", "delegate"]
+- !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
+- !private ["So26NSExtensionRequestHandlingP", "inboxButton"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
+- !private ["So26NSExtensionRequestHandlingP", "profileButton"]
+- !private ["So26NSExtensionRequestHandlingP", "signOutButton"]
+- !private ["So26NSExtensionRequestHandlingP", "start"]
+- !private ["So26NSExtensionRequestHandlingP", "unreadIndicator"]
+- !private ["So26NSExtensionRequestHandlingP", "unreadMessage"]
+- !private ["So26NSExtensionRequestHandlingP", "uploadButton"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "SegueHandler"]
+- ["So8NSObjectC", "UIButton"]
+- ["So8NSObjectC", "UIImageView"]
+- ["So8NSObjectC", "UITableView"]
+- !private ["So8NSObjectC", "addTarget"]
+- ["So8NSObjectC", "clickInbox"]
+- ["So8NSObjectC", "clickProfile"]
+- ["So8NSObjectC", "clickSignOut"]
+- ["So8NSObjectC", "clickUpload"]
+- ["So8NSObjectC", "delegate"]
+- ["So8NSObjectC", "didReceiveMemoryWarning"]
+- ["So8NSObjectC", "inboxButton"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isHidden"]
+- ["So8NSObjectC", "numberOfSections"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "profileButton"]
+- ["So8NSObjectC", "signOutButton"]
+- ["So8NSObjectC", "start"]
+- ["So8NSObjectC", "tableView"]
+- ["So8NSObjectC", "unreadIndicator"]
+- ["So8NSObjectC", "unreadMessage"]
+- ["So8NSObjectC", "uploadButton"]
+- ["So8NSObjectC", "viewDidLoad"]
+- !private ["So16NSObjectProtocolP", "addTarget"]
+- !private ["So16NSObjectProtocolP", "clickInbox"]
+- !private ["So16NSObjectProtocolP", "clickProfile"]
+- !private ["So16NSObjectProtocolP", "clickSignOut"]
+- !private ["So16NSObjectProtocolP", "clickUpload"]
+- !private ["So16NSObjectProtocolP", "delegate"]
+- !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
+- !private ["So16NSObjectProtocolP", "inboxButton"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "isHidden"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "profileButton"]
+- !private ["So16NSObjectProtocolP", "signOutButton"]
+- !private ["So16NSObjectProtocolP", "start"]
+- !private ["So16NSObjectProtocolP", "unreadIndicator"]
+- !private ["So16NSObjectProtocolP", "unreadMessage"]
+- !private ["So16NSObjectProtocolP", "uploadButton"]
+- !private ["So16NSObjectProtocolP", "viewDidLoad"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
+- !private ["s9OptionSetP", "touchUpInside"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "touchUpInside"]
+- !private ["11Marketplace12SegueHandlerP", "segueToNext"]
+- !private ["11Marketplace12SegueHandlerP", "signOut"]
+- !private ["s8SequenceP", "init"]
+- !private ["s10SetAlgebraP", "touchUpInside"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "addTarget"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isHidden"]
+- !private ["So29UIAccessibilityIdentificationP", "addTarget"]
+- !private ["So29UIAccessibilityIdentificationP", "isHidden"]
+- !private ["So12UIAppearanceP", "addTarget"]
+- !private ["So12UIAppearanceP", "isHidden"]
+- !private ["So21UIAppearanceContainerP", "addTarget"]
+- !private ["So21UIAppearanceContainerP", "clickInbox"]
+- !private ["So21UIAppearanceContainerP", "clickProfile"]
+- !private ["So21UIAppearanceContainerP", "clickSignOut"]
+- !private ["So21UIAppearanceContainerP", "clickUpload"]
+- !private ["So21UIAppearanceContainerP", "delegate"]
+- !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
+- !private ["So21UIAppearanceContainerP", "inboxButton"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "isHidden"]
+- !private ["So21UIAppearanceContainerP", "print"]
+- !private ["So21UIAppearanceContainerP", "profileButton"]
+- !private ["So21UIAppearanceContainerP", "signOutButton"]
+- !private ["So21UIAppearanceContainerP", "start"]
+- !private ["So21UIAppearanceContainerP", "unreadIndicator"]
+- !private ["So21UIAppearanceContainerP", "unreadMessage"]
+- !private ["So21UIAppearanceContainerP", "uploadButton"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So8UIButtonC", "addTarget"]
+- !private ["So18UIContentContainerP", "clickInbox"]
+- !private ["So18UIContentContainerP", "clickProfile"]
+- !private ["So18UIContentContainerP", "clickSignOut"]
+- !private ["So18UIContentContainerP", "clickUpload"]
+- !private ["So18UIContentContainerP", "delegate"]
+- !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
+- !private ["So18UIContentContainerP", "inboxButton"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "print"]
+- !private ["So18UIContentContainerP", "profileButton"]
+- !private ["So18UIContentContainerP", "signOutButton"]
+- !private ["So18UIContentContainerP", "start"]
+- !private ["So18UIContentContainerP", "unreadIndicator"]
+- !private ["So18UIContentContainerP", "unreadMessage"]
+- !private ["So18UIContentContainerP", "uploadButton"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", ""]
+- !private ["So9UIControlC", "addTarget"]
+- !private ["SC15UIControlEventsV", "touchUpInside"]
+- !private ["So17UICoordinateSpaceP", "addTarget"]
+- !private ["So17UICoordinateSpaceP", "isHidden"]
+- !private ["So13UIDynamicItemP", "addTarget"]
+- !private ["So13UIDynamicItemP", "isHidden"]
+- !private ["So18UIFocusEnvironmentP", "addTarget"]
+- !private ["So18UIFocusEnvironmentP", "clickInbox"]
+- !private ["So18UIFocusEnvironmentP", "clickProfile"]
+- !private ["So18UIFocusEnvironmentP", "clickSignOut"]
+- !private ["So18UIFocusEnvironmentP", "clickUpload"]
+- !private ["So18UIFocusEnvironmentP", "delegate"]
+- !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UIFocusEnvironmentP", "inboxButton"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "isHidden"]
+- !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "profileButton"]
+- !private ["So18UIFocusEnvironmentP", "signOutButton"]
+- !private ["So18UIFocusEnvironmentP", "start"]
+- !private ["So18UIFocusEnvironmentP", "unreadIndicator"]
+- !private ["So18UIFocusEnvironmentP", "unreadMessage"]
+- !private ["So18UIFocusEnvironmentP", "uploadButton"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "addTarget"]
+- !private ["So11UIFocusItemP", "isHidden"]
+- !private ["So11UIImageViewC", "isHidden"]
+- !private ["So30UIPasteConfigurationSupportingP", "addTarget"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickInbox"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickProfile"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickSignOut"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickUpload"]
+- !private ["So30UIPasteConfigurationSupportingP", "delegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
+- !private ["So30UIPasteConfigurationSupportingP", "inboxButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "profileButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "signOutButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "start"]
+- !private ["So30UIPasteConfigurationSupportingP", "unreadIndicator"]
+- !private ["So30UIPasteConfigurationSupportingP", "unreadMessage"]
+- !private ["So30UIPasteConfigurationSupportingP", "uploadButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So11UIResponderC", "Int"]
+- ["So11UIResponderC", "SegueHandler"]
+- ["So11UIResponderC", "UIButton"]
+- ["So11UIResponderC", "UIImageView"]
+- ["So11UIResponderC", "UITableView"]
+- !private ["So11UIResponderC", "addTarget"]
+- ["So11UIResponderC", "clickInbox"]
+- ["So11UIResponderC", "clickProfile"]
+- ["So11UIResponderC", "clickSignOut"]
+- ["So11UIResponderC", "clickUpload"]
+- ["So11UIResponderC", "delegate"]
+- ["So11UIResponderC", "didReceiveMemoryWarning"]
+- ["So11UIResponderC", "inboxButton"]
+- ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "isHidden"]
+- ["So11UIResponderC", "numberOfSections"]
+- !private ["So11UIResponderC", "print"]
+- ["So11UIResponderC", "profileButton"]
+- ["So11UIResponderC", "signOutButton"]
+- ["So11UIResponderC", "start"]
+- ["So11UIResponderC", "tableView"]
+- ["So11UIResponderC", "unreadIndicator"]
+- ["So11UIResponderC", "unreadMessage"]
+- ["So11UIResponderC", "uploadButton"]
+- ["So11UIResponderC", "viewDidLoad"]
+- !private ["So30UIResponderStandardEditActionsP", "addTarget"]
+- !private ["So30UIResponderStandardEditActionsP", "clickInbox"]
+- !private ["So30UIResponderStandardEditActionsP", "clickProfile"]
+- !private ["So30UIResponderStandardEditActionsP", "clickSignOut"]
+- !private ["So30UIResponderStandardEditActionsP", "clickUpload"]
+- !private ["So30UIResponderStandardEditActionsP", "delegate"]
+- !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
+- !private ["So30UIResponderStandardEditActionsP", "inboxButton"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "isHidden"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "profileButton"]
+- !private ["So30UIResponderStandardEditActionsP", "signOutButton"]
+- !private ["So30UIResponderStandardEditActionsP", "start"]
+- !private ["So30UIResponderStandardEditActionsP", "unreadIndicator"]
+- !private ["So30UIResponderStandardEditActionsP", "unreadMessage"]
+- !private ["So30UIResponderStandardEditActionsP", "uploadButton"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So20UIScrollViewDelegateP", "clickInbox"]
+- !private ["So20UIScrollViewDelegateP", "clickProfile"]
+- !private ["So20UIScrollViewDelegateP", "clickSignOut"]
+- !private ["So20UIScrollViewDelegateP", "clickUpload"]
+- !private ["So20UIScrollViewDelegateP", "delegate"]
+- !private ["So20UIScrollViewDelegateP", "didReceiveMemoryWarning"]
+- !private ["So20UIScrollViewDelegateP", "inboxButton"]
+- !private ["So20UIScrollViewDelegateP", "init"]
+- !private ["So20UIScrollViewDelegateP", "print"]
+- !private ["So20UIScrollViewDelegateP", "profileButton"]
+- !private ["So20UIScrollViewDelegateP", "signOutButton"]
+- !private ["So20UIScrollViewDelegateP", "start"]
+- !private ["So20UIScrollViewDelegateP", "unreadIndicator"]
+- !private ["So20UIScrollViewDelegateP", "unreadMessage"]
+- !private ["So20UIScrollViewDelegateP", "uploadButton"]
+- !private ["So20UIScrollViewDelegateP", "viewDidLoad"]
+- ["So20UIScrollViewDelegateP", ""]
+- !private ["So35UISpringLoadedInteractionSupportingP", "addTarget"]
+- !private ["So16UIStateRestoringP", "clickInbox"]
+- !private ["So16UIStateRestoringP", "clickProfile"]
+- !private ["So16UIStateRestoringP", "clickSignOut"]
+- !private ["So16UIStateRestoringP", "clickUpload"]
+- !private ["So16UIStateRestoringP", "delegate"]
+- !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
+- !private ["So16UIStateRestoringP", "inboxButton"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "print"]
+- !private ["So16UIStateRestoringP", "profileButton"]
+- !private ["So16UIStateRestoringP", "signOutButton"]
+- !private ["So16UIStateRestoringP", "start"]
+- !private ["So16UIStateRestoringP", "unreadIndicator"]
+- !private ["So16UIStateRestoringP", "unreadMessage"]
+- !private ["So16UIStateRestoringP", "uploadButton"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So16UIStateRestoringP", ""]
+- ["So21UITableViewControllerC", "Int"]
+- ["So21UITableViewControllerC", "SegueHandler"]
+- ["So21UITableViewControllerC", "UIButton"]
+- ["So21UITableViewControllerC", "UIImageView"]
+- ["So21UITableViewControllerC", "UITableView"]
+- ["So21UITableViewControllerC", "clickInbox"]
+- ["So21UITableViewControllerC", "clickProfile"]
+- ["So21UITableViewControllerC", "clickSignOut"]
+- ["So21UITableViewControllerC", "clickUpload"]
+- ["So21UITableViewControllerC", "delegate"]
+- ["So21UITableViewControllerC", "didReceiveMemoryWarning"]
+- ["So21UITableViewControllerC", "inboxButton"]
+- ["So21UITableViewControllerC", "init"]
+- ["So21UITableViewControllerC", "numberOfSections"]
+- !private ["So21UITableViewControllerC", "print"]
+- ["So21UITableViewControllerC", "profileButton"]
+- ["So21UITableViewControllerC", "signOutButton"]
+- ["So21UITableViewControllerC", "start"]
+- ["So21UITableViewControllerC", "tableView"]
+- ["So21UITableViewControllerC", "unreadIndicator"]
+- ["So21UITableViewControllerC", "unreadMessage"]
+- ["So21UITableViewControllerC", "uploadButton"]
+- ["So21UITableViewControllerC", "viewDidLoad"]
+- ["So21UITableViewControllerC", ""]
+- !private ["So21UITableViewDataSourceP", "clickInbox"]
+- !private ["So21UITableViewDataSourceP", "clickProfile"]
+- !private ["So21UITableViewDataSourceP", "clickSignOut"]
+- !private ["So21UITableViewDataSourceP", "clickUpload"]
+- !private ["So21UITableViewDataSourceP", "delegate"]
+- !private ["So21UITableViewDataSourceP", "didReceiveMemoryWarning"]
+- !private ["So21UITableViewDataSourceP", "inboxButton"]
+- !private ["So21UITableViewDataSourceP", "init"]
+- !private ["So21UITableViewDataSourceP", "print"]
+- !private ["So21UITableViewDataSourceP", "profileButton"]
+- !private ["So21UITableViewDataSourceP", "signOutButton"]
+- !private ["So21UITableViewDataSourceP", "start"]
+- !private ["So21UITableViewDataSourceP", "unreadIndicator"]
+- !private ["So21UITableViewDataSourceP", "unreadMessage"]
+- !private ["So21UITableViewDataSourceP", "uploadButton"]
+- !private ["So21UITableViewDataSourceP", "viewDidLoad"]
+- ["So21UITableViewDataSourceP", ""]
+- !private ["So19UITableViewDelegateP", "clickInbox"]
+- !private ["So19UITableViewDelegateP", "clickProfile"]
+- !private ["So19UITableViewDelegateP", "clickSignOut"]
+- !private ["So19UITableViewDelegateP", "clickUpload"]
+- !private ["So19UITableViewDelegateP", "delegate"]
+- !private ["So19UITableViewDelegateP", "didReceiveMemoryWarning"]
+- !private ["So19UITableViewDelegateP", "inboxButton"]
+- !private ["So19UITableViewDelegateP", "init"]
+- !private ["So19UITableViewDelegateP", "print"]
+- !private ["So19UITableViewDelegateP", "profileButton"]
+- !private ["So19UITableViewDelegateP", "signOutButton"]
+- !private ["So19UITableViewDelegateP", "start"]
+- !private ["So19UITableViewDelegateP", "unreadIndicator"]
+- !private ["So19UITableViewDelegateP", "unreadMessage"]
+- !private ["So19UITableViewDelegateP", "uploadButton"]
+- !private ["So19UITableViewDelegateP", "viewDidLoad"]
+- ["So19UITableViewDelegateP", ""]
+- !private ["So18UITraitEnvironmentP", "addTarget"]
+- !private ["So18UITraitEnvironmentP", "clickInbox"]
+- !private ["So18UITraitEnvironmentP", "clickProfile"]
+- !private ["So18UITraitEnvironmentP", "clickSignOut"]
+- !private ["So18UITraitEnvironmentP", "clickUpload"]
+- !private ["So18UITraitEnvironmentP", "delegate"]
+- !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UITraitEnvironmentP", "inboxButton"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "isHidden"]
+- !private ["So18UITraitEnvironmentP", "print"]
+- !private ["So18UITraitEnvironmentP", "profileButton"]
+- !private ["So18UITraitEnvironmentP", "signOutButton"]
+- !private ["So18UITraitEnvironmentP", "start"]
+- !private ["So18UITraitEnvironmentP", "unreadIndicator"]
+- !private ["So18UITraitEnvironmentP", "unreadMessage"]
+- !private ["So18UITraitEnvironmentP", "uploadButton"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So6UIViewC", "addTarget"]
+- !private ["So6UIViewC", "isHidden"]
+- ["So16UIViewControllerC", "Int"]
+- ["So16UIViewControllerC", "SegueHandler"]
+- ["So16UIViewControllerC", "UIButton"]
+- ["So16UIViewControllerC", "UIImageView"]
+- ["So16UIViewControllerC", "UITableView"]
+- ["So16UIViewControllerC", "clickInbox"]
+- ["So16UIViewControllerC", "clickProfile"]
+- ["So16UIViewControllerC", "clickSignOut"]
+- ["So16UIViewControllerC", "clickUpload"]
+- ["So16UIViewControllerC", "delegate"]
+- ["So16UIViewControllerC", "didReceiveMemoryWarning"]
+- ["So16UIViewControllerC", "inboxButton"]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "numberOfSections"]
+- !private ["So16UIViewControllerC", "print"]
+- ["So16UIViewControllerC", "profileButton"]
+- ["So16UIViewControllerC", "signOutButton"]
+- ["So16UIViewControllerC", "start"]
+- ["So16UIViewControllerC", "tableView"]
+- ["So16UIViewControllerC", "unreadIndicator"]
+- ["So16UIViewControllerC", "unreadMessage"]
+- ["So16UIViewControllerC", "uploadButton"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addTarget"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isHidden"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addTarget"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickInbox"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickProfile"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickSignOut"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickUpload"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "inboxButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "profileButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "signOutButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "start"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "unreadIndicator"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "unreadMessage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "uploadButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "So15CALayerDelegateP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- "11Marketplace13MenuTableViewC"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "s9OptionSetP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "11Marketplace12SegueHandlerP"
+- !private "s8SequenceP"
+- !private "s10SetAlgebraP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- !private "So8UIButtonC"
+- "So18UIContentContainerP"
+- !private "So9UIControlC"
+- !private "SC15UIControlEventsV"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So11UIImageViewC"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So20UIScrollViewDelegateP"
+- !private "So35UISpringLoadedInteractionSupportingP"
+- "So16UIStateRestoringP"
+- "So21UITableViewControllerC"
+- "So21UITableViewDataSourceP"
+- "So19UITableViewDelegateP"
+- "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "s23_BidirectionalIndexableP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "fe4f1556b78839fe7fbffbda4432cd6a"
