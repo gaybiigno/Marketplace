@@ -33,7 +33,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var uploadButton: UIButton!
 	
 	private var price: String = ""
-	private var age = 0
+	private var finalPrice: Float = 0.0
+	private var age: Int = 0
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	private var categoryChoice = UILabel()
 	
@@ -41,13 +42,12 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
     private var itemImages = [UIImage]()
 	
-	var cv = UploadImageView()
+	private var itemViewer: ItemView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		descriptionEntry.delegate = self
-		
 		priceEntry.delegate = self
 		catPicker.delegate = self
 		catPicker.dataSource = self
@@ -152,7 +152,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				priceEntry.text = ""
 			}
 		}
-		print(price)
+		//print(price)
 	}
 	
 	@IBAction func backButton(_ sender: UIButton) {
@@ -160,9 +160,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	}
 	
 	@objc func clickUpload(_ sender: UIButton) {
-		var weGood = checkValues()
+		let weGood = checkValues()
 		if weGood {
-			
+			self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 			// Save all this shit
 		} else {
 			// Basically nothing
@@ -228,13 +228,17 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func formatVals() {
 		if !tagEntry.text.isEmpty {
-			tags = tagEntry.text.components(separatedBy: ",")
+			tags = tagEntry.text.components(separatedBy: " ")
 		}
 		if !(ageEntry.text?.isEmpty)! {
 			age = Int(ageEntry.text!)!
 		}
-		//price = price[1..<price.cou]
-		
+		if let numChars = priceEntry.text?.characters.count {
+			let priceToRet = priceEntry.text![1 ..< numChars]
+			if let final = Float(priceToRet) {
+				finalPrice = Float(round(100.0 * final)/100.0)
+			}
+		}
     }
 	
 	// Format Category picker
@@ -247,7 +251,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func setImages(_ itemList: UIImage) {
         itemImages.append(itemList)
-        print("saved \(itemImages)")
+        //print("saved \(itemImages)")
     }
 	
 	
@@ -288,7 +292,14 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		if let vc = segue.destination as? ItemView,
 			segue.identifier == "presentUploadedItem" {
 			vc.editView = true
-			//vc.itemModel.setItemValues(Urls: false, ImageArray: itemImages, Title: title, Description: description, Price: <#T##Float#>, Tags: tags, Category: categoryChoice.text, Quantity: quantityEntry.text, Age: age)
+			vc.imageArray = itemImages
+			vc.givenTitle = titleEntry.text!
+			vc.descrip = descriptionEntry.text!
+			vc.price = finalPrice
+			vc.tags = tags
+			vc.category = categoryChoice.text!
+			vc.quantity = Int(quantityEntry.text!)!
+			vc.age = age
 		}
 	}
 	

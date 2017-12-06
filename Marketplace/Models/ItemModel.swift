@@ -38,6 +38,10 @@ class ItemModel: NSObject {
 		quantity = Quantity
 		age = Age
 	}
+	
+	func setImages(Imgs: [UIImage]) {
+		imageArray = Imgs
+	}
     
     func getMainImage() -> UIImage? {
 		if !urls {

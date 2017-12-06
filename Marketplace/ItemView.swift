@@ -37,6 +37,15 @@ class ItemView: UIViewController {
 	
 	var editView = false
 	
+	var imageArray = [UIImage]()
+	var givenTitle = ""
+	var descrip = ""
+	var price = Float(0.0)
+	var tags = [String]()
+	var category = ""
+	var quantity = 0
+	var age = 0
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.scrollView.backgroundColor = UIColor.white
@@ -62,25 +71,23 @@ class ItemView: UIViewController {
 	}
 	
 	func start() {
-		
-		
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
 		itemPriceLabel.layer.mask?.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
+		setItemQuantity()
+		setImageCounter()
+		setItemPrice()
+		setItemTitle()
+		setItemCategory()
+		setItemDescription()
+		
 		if !editView {
-			setItemQuantity()
-			setImageCounter()
-			setItemPrice()
-			setItemTitle()
-			setItemCategory()
-			setItemDescription()
-			displayCurrentImage()
 			setUserInfo()
 			msgSellerButton.addTarget(self, action: #selector(clickMessage(_:)), for: .touchUpInside)
 		} else {
-			
+			itemModel.setImages(Imgs: imageArray)
 			profilePicture.isHidden = true
 			postedByLabel.isHidden = true
 			usernameLabel.isHidden = true
@@ -90,6 +97,22 @@ class ItemView: UIViewController {
 			msgSellerButton.setTitle("Edit", for: .normal)
 			msgSellerButton.addTarget(self, action: #selector(clickEdit(_:)), for: .touchUpInside)
 		}
+		
+		displayCurrentImage()
+	}
+	
+	func setItemValues(Urls: Bool, ImageArray: [UIImage], Title: String,
+	                   Description: String, Price: Float, Tags: [String],
+	                   Category: String, Quantity: Int, Age: Int) {
+		itemModel.setItemValues(Urls: Urls, ImageArray: ImageArray, Title: Title, Description: Description, Price: Price, Tags: Tags, Category: Category, Quantity: Quantity, Age: Age)
+//		imageArray = ImageArray
+//		givenTitle = Title
+//		descrip = Description
+//		price = Price
+//		tags = Tags
+//		category = Category
+//		quantity = Quantity
+//		age = Age
 	}
 	
 	@objc func next(_ sender: UIImageView) {
@@ -113,16 +136,17 @@ class ItemView: UIViewController {
 	}
 	
 	func setItemCategory() {
-		itemCategory.text = itemModel.getCategory()
+		itemCategory.text = editView ? category : itemModel.getCategory()
 	}
 	
 	func setItemTitle() {
-		itemTitle.text = itemModel.getTitle()
+		itemTitle.text = editView ? givenTitle : itemModel.getTitle()
 	}
 	
 	func setItemPrice() {
-		let price = "$" + String(itemModel.getPrice())
-		itemPriceLabel.text = price
+		let modPrice = "$" + String(itemModel.getPrice())
+		let getPrice = "$" + String(price)
+		itemPriceLabel.text = editView ? getPrice : modPrice
 	}
 	
 	func setImageCounter() {
@@ -131,15 +155,17 @@ class ItemView: UIViewController {
 	}
 	
 	func setItemDescription() {
-		itemDescription.text = itemModel.getDescription()
+		itemDescription.text = editView ? descrip : itemModel.getDescription()
 	}
 	
 	func setItemQuantity() {
-		itemQuantity.text = String(itemModel.getQuantity())
+		itemQuantity.text = editView ? String(quantity) : String(itemModel.getQuantity())
 	}
     
     func setItemTags() {
-		itemTags.text = itemModel.getTags()
+		let stringRep = tags.joined(separator: "  ")
+		
+		itemTags.text = editView ? stringRep : itemModel.getTags()
     }
     
     func setUserInfo() {
