@@ -32,15 +32,26 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var uploadButton: UIButton!
 	
+	
 	private var price: String = ""
 	private var finalPrice: Float = 0.0
-	private var age: Int = 0
+	
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
-	private var categoryChoice = UILabel()
+	
+	var categoryChoice = UILabel()
+	var cat: String = ""
+	var age: Int = 0
+	var itemPrice: String = ""
+	var itemTitle: String = ""
+	var itemDescription: String = ""
+	var quantity: Int = 0
+	var tagString: String = ""
+	
+	var editingItem = false
 	
 	private var tags = [String]()
 	
-    private var itemImages = [UIImage]()
+    var itemImages = [UIImage]()
 	
 	private var itemViewer: ItemView!
 	
@@ -51,6 +62,19 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		priceEntry.delegate = self
 		catPicker.delegate = self
 		catPicker.dataSource = self
+		
+		if editingItem {
+			priceEntry.text = itemPrice
+			titleEntry.text = itemTitle
+			descriptionEntry.text = itemDescription
+			quantityEntry.text = String(quantity)
+			tagEntry.text = tagString
+			if let index = categories.index(of: cat) {
+				catPicker.selectRow(index, inComponent: 0, animated: false)
+			}
+			categoryChoice.text = cat
+			
+		}
 		
 		start()
     }
@@ -67,13 +91,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		categoryChoice.text = ""
 		descriptionEntry.clearsOnInsertion = true
 		
-		
 		// Add targets
 		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
 		
-		//tagHintLabel.isUserInteractionEnabled = true
-//		let tapLabel = UIGestureRecognizer(target: tagHintLabel, action: #selector(clickLabel(_:)))
-//		tagHintLabel.addGestureRecognizer(tapLabel)
+		
 	}
 	
 	// Description character counter
@@ -89,11 +110,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				return false
 			}
 			descriptionCounter.text = String(count)
-			return true
-		}
-			
-		if textView == tagEntry {
-			tagHintLabel.removeFromSuperview()
 			return true
 		} else {
 			return false
@@ -144,15 +160,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 					}
 					priceEntry.text?.insert(price[i], at: (priceEntry.text?.endIndex)!)
 				}
-//			case 9 ...< 11:
-//				priceEntry.textColor = UIColor.red
-//				priceEntry.text += "    Max price: "
-				
 			default:
 				priceEntry.text = ""
 			}
 		}
-		//print(price)
 	}
 	
 	@IBAction func backButton(_ sender: UIButton) {
@@ -162,8 +173,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@objc func clickUpload(_ sender: UIButton) {
 		let weGood = checkValues()
 		if weGood {
-			self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 			// Save all this shit
+			self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 		} else {
 			// Basically nothing
 		}
@@ -229,6 +240,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     func formatVals() {
 		if !tagEntry.text.isEmpty {
 			tags = tagEntry.text.components(separatedBy: " ")
+			print(tags)
 		}
 		if !(ageEntry.text?.isEmpty)! {
 			age = Int(ageEntry.text!)!
@@ -239,6 +251,12 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 				finalPrice = Float(round(100.0 * final)/100.0)
 			}
 		}
+		
+		itemPrice = String(finalPrice)
+		itemTitle = titleEntry.text!
+		itemDescription = descriptionEntry.text
+		quantity = Int(quantityEntry.text!)!
+		
     }
 	
 	// Format Category picker
@@ -251,7 +269,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func setImages(_ itemList: UIImage) {
         itemImages.append(itemList)
-        //print("saved \(itemImages)")
     }
 	
 	
@@ -288,6 +305,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         if let vc = segue.destination as? UploadImageView,
             segue.identifier == "displayImgUpload" {
             vc.delegate = self
+			if itemImages.count != 0 {
+				vc.allImages = itemImages
+				
+			}
         }
 		if let vc = segue.destination as? ItemView,
 			segue.identifier == "presentUploadedItem" {

@@ -105,14 +105,6 @@ class ItemView: UIViewController {
 	                   Description: String, Price: Float, Tags: [String],
 	                   Category: String, Quantity: Int, Age: Int) {
 		itemModel.setItemValues(Urls: Urls, ImageArray: ImageArray, Title: Title, Description: Description, Price: Price, Tags: Tags, Category: Category, Quantity: Quantity, Age: Age)
-//		imageArray = ImageArray
-//		givenTitle = Title
-//		descrip = Description
-//		price = Price
-//		tags = Tags
-//		category = Category
-//		quantity = Quantity
-//		age = Age
 	}
 	
 	@objc func next(_ sender: UIImageView) {
@@ -181,10 +173,29 @@ class ItemView: UIViewController {
 		}
 		if let vc = segue.destination as? UploadItemTableView,
 			segue.identifier == "editItem" {
+			vc.editingItem = true
+			vc.itemPrice = String(price)
+			vc.itemTitle = itemTitle.text
+			vc.itemDescription = itemDescription.text
+			vc.quantity = Int(itemQuantity.text!)!
+			vc.itemImages = imageArray
+			vc.age = age
+			vc.tagString = tags.joined(separator: "  ")
+			vc.cat = category
 			
+//			vc.titleEntry.text = self.givenTitle
+//			vc.descriptionEntry.text = self.descrip //itemDescription.text
+//			vc.priceEntry.text = String(price) //itemPriceLabel.text
+//			vc.ageEntry.text = (age != 0) ? String(age) : ""
+//			vc.age = age
+//			vc.quantityEntry.text = itemQuantity.text
+//			if tags.count != 0 {
+//				let stringRep = tags.joined(separator: "  ")
+//				vc.tagEntry.text = stringRep
+			}
 			
 		}
-	}
+	
 
     /*
     // MARK: - Navigation

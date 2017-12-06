@@ -20,12 +20,22 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
     let MAX_IMAGES = 8
     let imagePicker = UIImagePickerController()
-    
-	var allImages: [UIImage] = []
+	
+	let uploadTable = UploadItemTableView()
+	
+	var allImages = [UIImage]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+
+		if numImages() != 0 {
+			mainImage.contentMode = .scaleToFill
+			mainImage.image = allImages[0]
+		}
+		
+		showAllImages()
+		
         start()
     }
     
@@ -69,8 +79,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
             print("User does not have access")
         case .denied:
             print("Denied")
-        default:
-            print("Authorization status unknown")
         }
     }
     
@@ -89,14 +97,13 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
             }
         }
         imagePicker.dismiss(animated: true, completion: nil)
-        //dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    func showAllImages() {
+	func showAllImages() {
         let heightWidth = 60
 		if numImages() == 0 {
 			let defaultPic = UIImage(named: "PhotoIcon")
@@ -109,7 +116,7 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
             let currImageView = UIImageView(frame: CGRect(x: x_value, y: y_value, width: heightWidth, height: heightWidth))
             currImageView.contentMode = .scaleToFill
             
-            if i >= numImages() {
+			if i >= numImages() {
                 if let defaultPic = UIImage(named: "PhotoIcon") {
                     currImageView.image = defaultPic
                     currImageView.layer.opacity = 0.2
