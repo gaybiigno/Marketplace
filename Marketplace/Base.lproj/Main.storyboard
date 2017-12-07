@@ -1506,7 +1506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4Z-nR-3uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="-1286"/>
+            <point key="canvasLocation" x="996" y="-1284"/>
         </scene>
         <!--Menu Table View-->
         <scene sceneID="yWb-is-saa">
@@ -2064,10 +2064,9 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oWT-H2-naF"/>
         <segue reference="wR7-pD-Igu"/>
         <segue reference="5uY-PQ-cL7"/>
-        <segue reference="nMo-Ch-E7i"/>
-        <segue reference="oWT-H2-naF"/>
         <segue reference="Qbs-5V-959"/>
     </inferredMetricsTieBreakers>
 </document>
