@@ -16,6 +16,10 @@ class SendMessageView: UIViewController {
 	@IBOutlet weak var subjectLabel: UILabel!
 	@IBOutlet weak var messageBody: UITextView!
 	
+	
+	@IBOutlet weak var successMessage: UILabel!
+	@IBOutlet weak var sendMsgTitle: UILabel!
+	@IBOutlet weak var backButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
 	
 	var sender = ""
@@ -36,8 +40,9 @@ class SendMessageView: UIViewController {
     }
 	
 	func start() {
-		// Send button spans window
+		// Send button spans window, send target
 		sendButton.frame.size = CGSize(width: view.frame.width, height: 50)
+		sendButton.addTarget(self, action: #selector(clickedSend(_:)), for: .touchUpInside)
 		
 		// Set editable text border
 		messageBody.layer.borderColor = UIColor.black.cgColor
@@ -47,6 +52,12 @@ class SendMessageView: UIViewController {
 		setSender()
 		setRecipient()
 		setSubject()
+		
+		// Set tags for successful send
+		sendMsgTitle.tag = 50
+		backButton.tag = 50
+		successMessage.tag = 50
+		successMessage.frame.size = CGSize(width: view.frame.width, height: 50)
 		
 	}
 	
@@ -70,6 +81,38 @@ class SendMessageView: UIViewController {
 		recipient = rec
 		subject = item
 	}
+	
+	@objc func clickedSend(_ sender: UIButton) {
+		if successMessage.isHidden {
+			let msgBody = messageBody.text
+			
+			// SAVE MESSAGE VALUES
+			
+			for v in view.subviews {
+				if v.tag != 50 {
+					v.removeFromSuperview()
+				}
+			}
+			
+			successMessage.isHidden = false
+			sendButton.setTitle("Go To Messages", for: .normal)
+			let buttonFrame = sendButton.frame
+			sendButton.frame = CGRect(x: buttonFrame.minX, y: successMessage.frame.maxY + 20.0, width: view.frame.width, height: 50.0)
+		} else {
+			// Make it go to inbox
+		}
+		
+	}
+	
+	
+//	let homeButton = UIButton(frame: CGRect(x: sendButton.frame.minX, y: sendButton.frame.maxY + 10.0, width: view.frame.width, height: sendButton.frame.height))
+//	homeButton.addTarget(self, action: #selector(clickedHome(_:)), for: .touchUpInside)
+
+	
+	
+	
+	
+	
 	
     /*
     // MARK: - Navigation

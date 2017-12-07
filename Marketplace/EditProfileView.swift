@@ -26,6 +26,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	@IBOutlet weak var errorLabel: UILabel!
 	
 	let imagePicker = UIImagePickerController()
+	let defaultProfilePic = UIImage(named: "DefaultProfileIcon")
 	
 	var firstName: String!
 	var lastName: String!
@@ -41,7 +42,15 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
 		imagePicker.delegate = self
+		
+		self.view.backgroundColor = UIColor.white
+		profilePicture.layer.borderWidth = 0.6
+		profilePicture.layer.borderColor = UIColor.black.cgColor
+		
+		start()
+		
 		if self.hasVal {
 			setOldValues()
 		}
@@ -53,6 +62,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 		deletePictureButton.addTarget(self, action: #selector(clickedDelete(_:)), for: .touchUpInside)
 		
 		if profPicture == nil {
+			profilePicture.image = defaultProfilePic
 			deletePictureButton.layer.opacity = 0.6
 		}
 		
@@ -72,10 +82,10 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	}
 	
 	@objc func clickedDelete(_ selector: UIButton) {
-		if profPicture == nil {
+		if profPicture == defaultProfilePic {
 			return
 		}
-		profPicture = nil
+		profPicture = defaultProfilePic
 		profilePicture.image = profPicture
 		deletePictureButton.layer.opacity = 0.6
 	}
@@ -161,10 +171,10 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
 	@objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-			profilePicture.contentMode = .scaleToFill
 			profPicture = pickedImage
-			profilePicture.image = profPicture
-			deletePictureButton.layer.opacity = 0.6
+			profilePicture.image = profPicture // pickedImage
+			profilePicture.contentMode = .scaleToFill
+			deletePictureButton.layer.opacity = 1.0
 		}
 		imagePicker.dismiss(animated: true, completion: nil)
 	}

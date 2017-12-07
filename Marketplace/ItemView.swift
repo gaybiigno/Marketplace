@@ -84,7 +84,6 @@ class ItemView: UIViewController {
 		imageCounterLabel.text = "1/1"
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
-		itemPriceLabel.layer.mask?.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
 		setItemQuantity()
@@ -231,12 +230,10 @@ class ItemView: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	
-	
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "itemToMsg" {
-			vc.setDefaultValues(userModel.getUserName(), item: itemModel.getTitle(), vc: self)
+			vc.setDefaultValues(userModel.getUserName(), item: itemTitle.text, vc: self)
 		}
 		if let vc = segue.destination as? UploadItemTableView,
 			segue.identifier == "editItem" {
