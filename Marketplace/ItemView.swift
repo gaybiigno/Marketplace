@@ -65,33 +65,40 @@ class ItemView: UIViewController {
     }
 	
 	func displayCurrentImage() {
-		if let image = itemModel.currentImage()  {
-			itemImageView.image = image
-			let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(next(_:)))
-			swipeLeft.direction = .left
-			itemImageView.addGestureRecognizer(swipeLeft)
-			let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(prev(_:)))
-			swipeRight.direction = .right
-			itemImageView.addGestureRecognizer(swipeRight)
+		if let img = UIImage(named: "PhotoIcon"), hasValues {
+			itemImageView.image = img
+		} else {
+			if let image = itemModel.currentImage()  {
+				itemImageView.image = image
+				let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(next(_:)))
+				swipeLeft.direction = .left
+				itemImageView.addGestureRecognizer(swipeLeft)
+				let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(prev(_:)))
+				swipeRight.direction = .right
+				itemImageView.addGestureRecognizer(swipeRight)
+			}
 		}
 	}
 	
 	func start() {
+		imageCounterLabel.text = "1/1"
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
 		itemPriceLabel.layer.mask?.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
-		//if !hasValues {
-			setItemQuantity()
-			setImageCounter()
-			setItemPrice()
-			setItemTitle()
-			setItemCategory()
-			setItemDescription()
-			setItemTags()
-			setItemAge()
-		//}
+		setItemQuantity()
+		setImageCounter()
+		setItemPrice()
+		setItemTitle()
+		setItemCategory()
+		setItemDescription()
+		setItemTags()
+		setItemAge()
+		
+		if let img = UIImage(named: "PhotoIcon"), hasValues {
+			imageArray.append(img)
+		}
 		
 		if !editView {
 			setUserInfo()
@@ -137,36 +144,63 @@ class ItemView: UIViewController {
 	}
 	
 	func setItemCategory() {
-		itemCategory.text = editView ? category : itemModel.getCategory()
+		if hasValues {
+			itemCategory.text = hasValues ? category : itemModel.getCategory()
+		} else {
+			itemCategory.text = editView ? category : itemModel.getCategory()
+		}
 	}
 	
 	func setItemTitle() {
-		itemTitle.text = editView ? givenTitle : itemModel.getTitle()
+		if hasValues {
+			itemTitle.text = hasValues ? givenTitle : itemModel.getTitle()
+		} else {
+			itemTitle.text = editView ? givenTitle : itemModel.getTitle()
+		}
 	}
 	
 	func setItemPrice() {
 		let modPrice = "$" + String(itemModel.getPrice())
 		let getPrice = "$" + String(price)
-		itemPriceLabel.text = editView ? getPrice : modPrice
+		if hasValues {
+			itemPriceLabel.text = hasValues ? getPrice : modPrice
+		} else {
+			itemPriceLabel.text = editView ? getPrice : modPrice
+		}
+			
 	}
 	
 	func setImageCounter() {
-		let title = String(itemModel.currentImagePosition()) + "/" + String(itemModel.numberOfImages())
-		imageCounterLabel.text = title
+		if hasValues {
+			imageCounterLabel.text = "1/1"
+		} else {
+			let title = String(itemModel.currentImagePosition()) + "/" + String(itemModel.numberOfImages())
+			imageCounterLabel.text = title
+		}
 	}
 	
 	func setItemDescription() {
-		itemDescription.text = editView ? descrip : itemModel.getDescription()
+		if hasValues {
+			itemDescription.text = hasValues ? descrip : itemModel.getDescription()
+		} else {
+			itemDescription.text = editView ? descrip : itemModel.getDescription()
+		}
 	}
 	
 	func setItemQuantity() {
-		itemQuantity.text = editView ? String(quantity) : String(itemModel.getQuantity())
+		if hasValues {
+			itemQuantity.text = hasValues ? String(quantity) : String(itemModel.getQuantity())
+		} else {
+			itemQuantity.text = editView ? String(quantity) : String(itemModel.getQuantity())
+		}
 	}
     
     func setItemTags() {
-		let stringRep = tags.joined(separator: "  ")
-		
-		itemTags.text = editView ? stringRep : itemModel.getTags()
+		if !hasValues {
+			let stringRep = tags.joined(separator: "  ")
+			
+			itemTags.text = editView ? stringRep : itemModel.getTags()
+		}
 		
 		if itemTags.text.isEmpty {
 			tagTitle.isHidden = true
@@ -174,7 +208,12 @@ class ItemView: UIViewController {
     }
 	
 	func setItemAge() {
-		ageLabel.text = editView ? String(age) : String(itemModel.getAge())
+		if hasValues {
+			ageLabel.text = hasValues ? String(age) : String(itemModel.getAge())
+		} else {
+			ageLabel.text = editView ? String(age) : String(itemModel.getAge())
+		}
+		
 		
 		if ageLabel.text == "0" {
 			ageTitle.isHidden = true

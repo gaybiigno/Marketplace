@@ -268,12 +268,12 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         let dob = dateFormatter.date(from: dob_string)
         let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
         let calculateAge = calendar.components(.year, from: dob!, to: today, options: [])
-        let age = calculateAge.year
+		_ = calculateAge.year
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "completeRegToHome" {
-            if let hv = segue.destination as! HomeView {
+            if let hv = segue.destination as? HomeView {
 				hv.signedIn = true
                 hv.uName = username
 				hv.updateUserName(username)

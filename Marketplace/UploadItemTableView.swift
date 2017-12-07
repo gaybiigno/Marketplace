@@ -48,8 +48,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	
 	var editingItem = false
 	
-	
-	
     var itemImages = [UIImage]()
 	
 	private var itemViewer: ItemView!
@@ -309,7 +307,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			vc.category = categoryChoice.text!
 			vc.quantity = quantity
 			vc.age = age
-			vc.imageCounterLabel.text = "1/" + String(itemImages.count)
+			//vc.imageCounterLabel.text = "1/" + String(itemImages.count)
 		}
 	}
 	

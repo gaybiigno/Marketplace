@@ -95,7 +95,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
-        print("entered")
         var address = searchBar.text
         getCoordinatesOfAddress(addressString: address!)
     }
@@ -239,9 +238,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        filteredCandies = candies.filter({( candy : Candy) -> Bool in
-//            return candy.name.lowercased().contains(searchText.lowercased())
-//        })
         
         filteredItems = items.filter({(items : ItemView) -> Bool in
             return items.itemCategory.text?.lowercased() == searchText.lowercased()
@@ -263,17 +259,17 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 let item = items![indexPath.row]
                 let controller = (segue.destination as! ItemView)
                 //controller.detailCandy = item
+				controller.hasValues = true
                 controller.givenTitle = item.item_name!
                 controller.descrip = item.item_description!
                 controller.category = item.item_category!
                 controller.quantity = Int(item.quantity)
                 controller.age = Int(item.minAge)
-                controller.price = Float(item.price)
-                controller.imageArray = [UIImage()]
+                controller.price = Float(round(100.0 * item.price)/100.0)
+				let defaultPic = [UIImage(named: "PhotoIcon")]
+				controller.imageArray = defaultPic as! [UIImage]
                 controller.tags = [String()]
                 //controller.imageCounterLabel.text = "1"
-                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -283,6 +279,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 extension SearchTableView: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+		filterContentForSearchText(searchController.searchBar.text!)
     }
 }
