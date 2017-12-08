@@ -10,6 +10,7 @@ import UIKit
 
 class InboxMsgTableCell: UITableViewCell {
 
+
 	@IBOutlet weak var itemImage: UIImageView!
 	@IBOutlet weak var itemTitle: UILabel!
 	@IBOutlet weak var otherUserName: UILabel!
@@ -61,43 +62,58 @@ class InboxMsgTableCell: UITableViewCell {
 		if recognizer.state == .changed {
 			let translation = recognizer.translation(in: self)
 			center = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y)
+			print("center now is: \(center)")
+			
 			// has the user dragged the item far enough to initiate a delete/complete?
-			deleteOnDragRelease = frame.origin.x < -frame.size.width / 2.0
+			//recognizer.setTranslation(center, in: self)
+			deleteOnDragRelease = center.x < originalCenter.x - 100.0
+			//deleteOnDragRelease = frame.origin.x < frame.size.width / 2.0
+			//print("in changed")
 		}
 		// 3
 		if recognizer.state == .ended {
+			print("in ended")
 			// the frame this cell had before user dragged it
-			let originalFrame = CGRect(x: 0, y: frame.origin.y,
+			originalFrame = CGRect(x: 0, y: frame.origin.y,
 			                           width: bounds.size.width, height: bounds.size.height)
 			if !deleteOnDragRelease {
 				// if the item is not being deleted, snap back to the original location
-				UIView.animate(withDuration: 0.2, animations: {self.frame = originalFrame})
+				UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
+			} else {
+				popUp()
 			}
 		}
+		
+		
+		
+		
 	}
 	
-//	override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-//		if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
-//			let translation = panGestureRecognizer.translation(in: superview!)
-//			if fabs(translation.x) > fabs(translation.y) {
-//				return true
-//			}
-//			return false
-//		}
-//		return false
-//	}
+	func popUp() {
+		let alertController = UIAlertController(title: "Confirm Delete", message: "Are you sure you'd like to permanently delete this message thread?", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) {
+			UIAlertAction in
+			self.deleteMessage()
+			UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
+		})
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+			UIAlertAction in
+			UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
+		})
+		UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+	}
 	
-	// Check if user is recipient or sender
-//	func checkRole(_ recipient: String, _ sender: String) {
-//
-//	}
+	
+	
+	func deleteMessage() {
+		print("Message deleted!")
+	}
 	
 	/*
 	func useMessage(_ message: Message?) {
 		thisMessage = message
 		if let m = message {
-			itemTitle.text = message?.subject
-			otherUserName = message?.item_name
+			msgSubject.text = message?.subject
 			cellPrice.text = String (describing: message?.price)
 		} else {
 			cellLabel.text = "Item not found!"

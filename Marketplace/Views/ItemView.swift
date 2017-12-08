@@ -35,6 +35,7 @@ class ItemView: UIViewController {
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var ratingLabel: UILabel!
 	
+	@IBOutlet weak var purchaseButton: UIButton!
 	@IBOutlet weak var msgSellerButton: UIButton!
 	
 	let itemModel = ItemModel()
@@ -56,6 +57,13 @@ class ItemView: UIViewController {
         super.viewDidLoad()
 		self.scrollView.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 200)
+		
+		itemPriceLabel.numberOfLines = 2
+		itemPriceLabel.adjustsFontSizeToFitWidth = true
+		itemPriceLabel.clipsToBounds = true
+		itemPriceLabel.textAlignment = .left
+		itemPriceLabel.baselineAdjustment = .alignCenters
+
 		start()
     }
 
@@ -84,6 +92,8 @@ class ItemView: UIViewController {
 		imageCounterLabel.text = "1/1"
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
+
+		purchaseButton.layer.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
 		setItemQuantity()
@@ -99,6 +109,8 @@ class ItemView: UIViewController {
 			imageArray.append(img)
 		}
 		
+
+		purchaseButton.addTarget(self, action: #selector(clickPurchase(_:)), for: .touchUpInside)
 		if !editView {
 			setUserInfo()
 			msgSellerButton.addTarget(self, action: #selector(clickMessage(_:)), for: .touchUpInside)
@@ -140,6 +152,23 @@ class ItemView: UIViewController {
 	
 	@objc func clickMessage(_ sender: UIButton) {
 		self.performSegue(withIdentifier: "itemToMsg", sender: self)
+	}
+	
+	@objc func clickPurchase(_ sender: UIButton){
+		let alertController = UIAlertController(title: "Sucess!", message: "Purchase successful", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Continue Shopping", style: UIAlertActionStyle.default) {
+			UIAlertAction in
+			self.performSegue(withIdentifier: "purchaseToHome", sender: self)
+		})
+		alertController.addAction(UIAlertAction(title: "View Purchased Item", style: UIAlertActionStyle.cancel) {
+			UIAlertAction in
+			self.purchaseButton.alpha = 0.4
+			self.purchaseButton.isEnabled = false
+		})
+	UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+		
+		
+		
 	}
 	
 	func setItemCategory() {
@@ -247,7 +276,13 @@ class ItemView: UIViewController {
 			vc.tagString = tags.joined(separator: "  ")
 			vc.cat = category
 			}
+		if let vc = segue.destination as? HomeView,
+			segue.identifier == "purchaseToHome" {
+			vc.signedIn = true
+			vc.uName = "UPD IN ITEMVIEW"
 		}
+	}
+
 	
 
     /*

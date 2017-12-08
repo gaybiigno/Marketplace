@@ -35,6 +35,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     
     var itemDataSource: ItemDataSource? = nil
     var itemsToShow = [Item]()
+
     
     //var currentLocation = CLLocation!
 	
@@ -194,6 +195,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return itemsToShow.count
+
     }
 
     

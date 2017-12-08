@@ -52,8 +52,7 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         
         imagePicker.delegate = self
         
-        //uploadAssistant.addObserver(self, forKeyPath: "dataToServer", options: .old, context: nil)
-        
+
         signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
         self.view.backgroundColor = UIColor.white
@@ -153,7 +152,6 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         url = url + "&apikey=" + Upload.apikey
         return url
     }
-    
     
     @IBAction func backHome(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
