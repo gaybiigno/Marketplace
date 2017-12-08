@@ -29,6 +29,7 @@
         <attribute name="bmonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="byear" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="payment" optional="YES" attributeType="String" syncable="YES"/>
@@ -43,6 +44,6 @@
         <element name="Item" positionX="-594" positionY="75" width="128" height="210"/>
         <element name="Picture" positionX="-396" positionY="41" width="128" height="105"/>
         <element name="Tag" positionX="-252" positionY="81" width="128" height="90"/>
-        <element name="User" positionX="-776" positionY="59" width="128" height="240"/>
+        <element name="User" positionX="-776" positionY="59" width="128" height="255"/>
     </elements>
 </model>

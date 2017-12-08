@@ -16,6 +16,7 @@ provides-member:
 - ["11Marketplace4UserC", "state"]
 - ["11Marketplace4UserC", "street"]
 - ["11Marketplace4UserC", "zip"]
+- ["11Marketplace4UserC", "email"]
 - ["11Marketplace4UserC", "item"]
 - ["11Marketplace4UserC", "addToItem"]
 - ["11Marketplace4UserC", "removeFromItem"]
@@ -27,6 +28,7 @@ provides-dynamic-lookup:
 - "bmonth"
 - "byear"
 - "city"
+- "email"
 - "first_name"
 - "item"
 - "last_name"
@@ -87,6 +89,7 @@ depends-member:
 - ["So15NSManagedObjectC", "bmonth"]
 - ["So15NSManagedObjectC", "byear"]
 - ["So15NSManagedObjectC", "city"]
+- ["So15NSManagedObjectC", "email"]
 - ["So15NSManagedObjectC", "fetchRequest"]
 - ["So15NSManagedObjectC", "first_name"]
 - ["So15NSManagedObjectC", "item"]
@@ -111,6 +114,7 @@ depends-member:
 - ["So8NSObjectC", "bmonth"]
 - ["So8NSObjectC", "byear"]
 - ["So8NSObjectC", "city"]
+- ["So8NSObjectC", "email"]
 - ["So8NSObjectC", "fetchRequest"]
 - ["So8NSObjectC", "first_name"]
 - ["So8NSObjectC", "item"]
@@ -145,6 +149,7 @@ depends-member:
 - ["11Marketplace4UserC", "byear"]
 - ["11Marketplace4UserC", "city"]
 - ["11Marketplace4UserC", "deinit"]
+- ["11Marketplace4UserC", "email"]
 - ["11Marketplace4UserC", "fetchRequest"]
 - ["11Marketplace4UserC", "first_name"]
 - ["11Marketplace4UserC", "item"]
@@ -242,21 +247,5 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Downloads/Marketplace/Marketplace-Bridging-Header.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "585598bf750d1e5a1371c26df112bbdd"
+- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
+interface-hash: "31531f06e6a13f5529c025c92baf1d2e"
