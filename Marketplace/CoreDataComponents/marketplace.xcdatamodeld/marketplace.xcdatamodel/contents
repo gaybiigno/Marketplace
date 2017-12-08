@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Inbox" representedClassName=".Inbox" syncable="YES">
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msg_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="recipient_email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender_email" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="item_category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="item_description" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,17 +17,24 @@
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="seller_email" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="picture" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="item" inverseEntity="Picture" syncable="YES"/>
-        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="item" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="picture" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pictures" inverseName="item" inverseEntity="Pictures" syncable="YES"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tags" inverseName="item" inverseEntity="Tags" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="item" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Picture" representedClassName="Picture" syncable="YES">
+    <entity name="Pictures" representedClassName="Pictures" syncable="YES">
         <attribute name="img_data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="img_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="picture" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="Tag" representedClassName="Tag" syncable="YES">
+    <entity name="Sale" representedClassName=".Sale" syncable="YES">
+        <attribute name="buyer_email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sale_num" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" syncable="YES"/>
+        <relationship name="seller" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Tags" representedClassName="Tags" syncable="YES">
         <attribute name="item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="tag" inverseEntity="Item" syncable="YES"/>
@@ -42,8 +57,10 @@
     </entity>
     <elements>
         <element name="Item" positionX="-594" positionY="75" width="128" height="210"/>
-        <element name="Picture" positionX="-396" positionY="41" width="128" height="105"/>
-        <element name="Tag" positionX="-252" positionY="81" width="128" height="90"/>
+        <element name="Pictures" positionX="-396" positionY="41" width="128" height="105"/>
+        <element name="Sale" positionX="-567" positionY="162" width="128" height="120"/>
+        <element name="Tags" positionX="-252" positionY="81" width="128" height="90"/>
         <element name="User" positionX="-776" positionY="59" width="128" height="255"/>
+        <element name="Inbox" positionX="-558" positionY="171" width="128" height="135"/>
     </elements>
 </model>

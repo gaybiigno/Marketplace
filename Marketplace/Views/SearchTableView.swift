@@ -34,7 +34,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var itemsSchema: ItemSchemaProcessor!
     
     var itemDataSource: ItemDataSource? = nil
-    var itemsToShow: [Item]?
+    var itemsToShow = [Item]()
     
     //var currentLocation = CLLocation!
 	
@@ -79,7 +79,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         print(specificItem?.item_name)
         print("recieved Items")
         //itemsToShow = itemDataSource?.items
-        itemsToShow = [Item]()
+        //itemsToShow = [Item]()
     }
     
     deinit {
@@ -193,7 +193,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (itemsToShow?.count)!
+        return itemsToShow.count
     }
 
     
@@ -211,7 +211,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 //        cell.detailTextLabel?.text = String(itemModel.getPrice())
         
         if let itemCell = cell as? ItemTableViewCell {
-            let thisItem = itemsToShow![indexPath.row]
+            let thisItem = itemsToShow[indexPath.row]
             //let thisItem = itemDataSource?.itemAt(indexPath.row)
             print(thisItem)
             itemCell.useItem(thisItem)

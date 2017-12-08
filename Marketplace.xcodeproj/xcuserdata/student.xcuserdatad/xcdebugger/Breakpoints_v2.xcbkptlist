@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Marketplace/Views/SearchTableView.swift"
-            timestampString = "534400103.253346"
+            timestampString = "534466974.26132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "findItemsWithStrings(_:)"
+            landmarkName = "findCoordinatesOfItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Marketplace/Views/SearchTableView.swift"
-            timestampString = "534400103.253936"
+            timestampString = "534466974.26172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -202,12 +202,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Marketplace/Views/SearchTableView.swift"
-            timestampString = "534400103.254361"
+            timestampString = "534466974.261983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
             landmarkName = "findItemsWithStrings(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplace/CoreDataComponents/Network/Upload.swift"
+            timestampString = "534466974.262247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "upload_request()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplace/Views/RegisterTableView.swift"
+            timestampString = "534466974.2623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "signUpsubmit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplace/Views/RegisterTableView.swift"
+            timestampString = "534466974.262912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "signUpsubmit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplace/CoreDataComponents/Network/Upload.swift"
+            timestampString = "534466974.263434"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "upload_request()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

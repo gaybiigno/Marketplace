@@ -32,6 +32,7 @@ provides-dynamic-lookup:
 - "searchElectronics"
 - "searchFashion"
 - "searchHomeGarden"
+- "searchOptionsButton"
 - "searchSportingGoods"
 - "signInButton"
 - "sportingButton"
@@ -39,7 +40,6 @@ provides-dynamic-lookup:
 - "viewForMenu"
 depends-top-level:
 - !private "!"
-- !private "!="
 - !private "+"
 - !private "=="
 - "Array"
@@ -604,6 +604,7 @@ depends-member:
 - ["11Marketplace8HomeViewC", "searchElectronics"]
 - ["11Marketplace8HomeViewC", "searchFashion"]
 - ["11Marketplace8HomeViewC", "searchHomeGarden"]
+- ["11Marketplace8HomeViewC", "searchOptionsButton"]
 - ["11Marketplace8HomeViewC", "searchSportingGoods"]
 - ["11Marketplace8HomeViewC", "segueToNext"]
 - ["11Marketplace8HomeViewC", "signInButton"]
@@ -612,7 +613,6 @@ depends-member:
 - ["11Marketplace8HomeViewC", "sportingButton"]
 - ["11Marketplace8HomeViewC", "startValues"]
 - ["11Marketplace8HomeViewC", "uName"]
-- ["11Marketplace8HomeViewC", "updateUserName"]
 - ["11Marketplace8HomeViewC", "userData"]
 - !private ["11Marketplace8HomeViewC", "view"]
 - ["11Marketplace8HomeViewC", "viewDidLoad"]
@@ -849,6 +849,7 @@ depends-member:
 - ["So8NSObjectC", "searchElectronics"]
 - ["So8NSObjectC", "searchFashion"]
 - ["So8NSObjectC", "searchHomeGarden"]
+- ["So8NSObjectC", "searchOptionsButton"]
 - !private ["So8NSObjectC", "searchParameter"]
 - ["So8NSObjectC", "searchSportingGoods"]
 - ["So8NSObjectC", "segueToNext"]
@@ -859,7 +860,6 @@ depends-member:
 - ["So8NSObjectC", "startValues"]
 - !private ["So8NSObjectC", "text"]
 - ["So8NSObjectC", "uName"]
-- ["So8NSObjectC", "updateUserName"]
 - ["So8NSObjectC", "userData"]
 - !private ["So8NSObjectC", "view"]
 - ["So8NSObjectC", "viewDidLoad"]
@@ -1487,6 +1487,7 @@ depends-member:
 - ["So11UIResponderC", "searchElectronics"]
 - ["So11UIResponderC", "searchFashion"]
 - ["So11UIResponderC", "searchHomeGarden"]
+- ["So11UIResponderC", "searchOptionsButton"]
 - !private ["So11UIResponderC", "searchParameter"]
 - ["So11UIResponderC", "searchSportingGoods"]
 - ["So11UIResponderC", "segueToNext"]
@@ -1497,7 +1498,6 @@ depends-member:
 - ["So11UIResponderC", "startValues"]
 - !private ["So11UIResponderC", "text"]
 - ["So11UIResponderC", "uName"]
-- ["So11UIResponderC", "updateUserName"]
 - ["So11UIResponderC", "userData"]
 - !private ["So11UIResponderC", "view"]
 - ["So11UIResponderC", "viewDidLoad"]
@@ -1852,6 +1852,7 @@ depends-member:
 - ["So16UIViewControllerC", "searchElectronics"]
 - ["So16UIViewControllerC", "searchFashion"]
 - ["So16UIViewControllerC", "searchHomeGarden"]
+- ["So16UIViewControllerC", "searchOptionsButton"]
 - !private ["So16UIViewControllerC", "searchParameter"]
 - ["So16UIViewControllerC", "searchSportingGoods"]
 - ["So16UIViewControllerC", "segueToNext"]
@@ -1861,7 +1862,6 @@ depends-member:
 - ["So16UIViewControllerC", "sportingButton"]
 - ["So16UIViewControllerC", "startValues"]
 - ["So16UIViewControllerC", "uName"]
-- ["So16UIViewControllerC", "updateUserName"]
 - ["So16UIViewControllerC", "userData"]
 - !private ["So16UIViewControllerC", "view"]
 - ["So16UIViewControllerC", "viewDidLoad"]
@@ -2134,4 +2134,20 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
-interface-hash: "396052a3070fa4e0c98e0bd06fe430a5"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "59749ed106fd8e799ea3e8cec56472fb"
