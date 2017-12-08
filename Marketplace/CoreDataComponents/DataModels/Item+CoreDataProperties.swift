@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  Marketplace
 //
-//  Created by student on 12/6/17.
+//  Created by student on 12/8/17.
 //  Copyright © 2017 SSU. All rights reserved.
 //
 //
@@ -35,10 +35,10 @@ extension Item {
 extension Item {
 
     @objc(addPictureObject:)
-    @NSManaged public func addToPicture(_ value: Picture)
+    @NSManaged public func addToPicture(_ value: Pictures)
 
     @objc(removePictureObject:)
-    @NSManaged public func removeFromPicture(_ value: Picture)
+    @NSManaged public func removeFromPicture(_ value: Pictures)
 
     @objc(addPicture:)
     @NSManaged public func addToPicture(_ values: NSSet)
@@ -52,10 +52,10 @@ extension Item {
 extension Item {
 
     @objc(addTagObject:)
-    @NSManaged public func addToTag(_ value: Tag)
+    @NSManaged public func addToTag(_ value: Tags)
 
     @objc(removeTagObject:)
-    @NSManaged public func removeFromTag(_ value: Tag)
+    @NSManaged public func removeFromTag(_ value: Tags)
 
     @objc(addTag:)
     @NSManaged public func addToTag(_ values: NSSet)

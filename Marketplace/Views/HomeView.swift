@@ -34,6 +34,10 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	@IBOutlet weak var navBar: UINavigationItem!
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var viewForMenu: UIView!
+<<<<<<< ryan
+    @IBOutlet weak var searchOptionsButton: UIButton!
+=======
+>>>>>>> master
 	
 	private var embeddedViewController: MenuTableView!
     
@@ -112,12 +116,13 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
 	}
 	
-	func updateUserName(_ newName: String) {
-		uName = (newName != nil) ? newName : userData.getUserName()
-		//let username = uName
-		helloLabel.text = "Hello, " + uName
-		helloLabel.isHidden = false
-	}
+//    func updateUserName(_ newName: String) {
+//        uName = (newName != nil) ? newName : userData.getUserName()
+//        //let username = uName
+//        helloLabel.text = "Hello, " + uName
+//        helloLabel.isHidden = false
+//    }
+
 	
 	func signOut() {
 		if !signedIn {
@@ -135,6 +140,11 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		signedIn = false
 	}
     
+    //@objc func searchMenuOptions(_ sender: UIButton) {
+        
+    //}
+    
+
     @objc func searchHomeGarden(_ sender: UIButton) {
         self.performSegue(withIdentifier: "searchStart", sender: self)
         category = categories[1]

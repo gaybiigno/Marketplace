@@ -8,7 +8,6 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
-- !private "<"
 - !private "=="
 - !private ">"
 - "AssignmentPrecedence"
@@ -33,7 +32,6 @@ depends-member:
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "item_id"]
 - !private ["s7CVarArgP", "items"]
-- !private ["s7CVarArgP", "numItems"]
 - !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "remove"]
 - !private ["s7CVarArgP", "subscript"]
@@ -47,7 +45,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "item_id"]
 - !private ["s28CustomDebugStringConvertibleP", "items"]
-- !private ["s28CustomDebugStringConvertibleP", "numItems"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
@@ -65,7 +62,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "item_id"]
 - !private ["s23CustomStringConvertibleP", "items"]
-- !private ["s23CustomStringConvertibleP", "numItems"]
 - !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
@@ -85,7 +81,6 @@ depends-member:
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "item_id"]
 - !private ["s9EquatableP", "items"]
-- !private ["s9EquatableP", "numItems"]
 - !private ["s9EquatableP", "print"]
 - ["s9EquatableP", ""]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
@@ -102,7 +97,6 @@ depends-member:
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "item_id"]
 - !private ["s8HashableP", "items"]
-- !private ["s8HashableP", "numItems"]
 - !private ["s8HashableP", "print"]
 - ["s8HashableP", ""]
 - !private ["Si", "init"]
@@ -138,7 +132,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "item_id"]
 - !private ["So16NSObjectProtocolP", "items"]
-- !private ["So16NSObjectProtocolP", "numItems"]
 - !private ["So16NSObjectProtocolP", "print"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["s7NumericP", "init"]
@@ -180,7 +173,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "item_id"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "items"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "numItems"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s17_MutableIndexableP", "count"]
@@ -278,7 +270,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Downloads/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"

@@ -34,6 +34,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var itemsSchema: ItemSchemaProcessor!
     
     var itemDataSource: ItemDataSource? = nil
+    var itemsToShow = [Item]()
+
     
     //var currentLocation = CLLocation!
 	
@@ -77,10 +79,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         let specificItem = itemDataSource?.itemAt(2)
         print(specificItem?.item_name)
         print("recieved Items")
-        
-        DispatchQueue.main.async(execute: {
-            self.tableView.reloadData()
-        })
+        //itemsToShow = itemDataSource?.items
+        //itemsToShow = [Item]()
     }
     
     deinit {
@@ -88,8 +88,48 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
-        var address = searchBar.text
-        getCoordinatesOfAddress(addressString: address!)
+//        var address = searchBar.text
+//        getCoordinatesOfAddress(addressString: address!)
+        let searchString = searchBar.text
+        if var searchParams = searchString?.components(separatedBy: " ") {
+            for i in 0..<searchParams.count {
+                searchParams[i] = searchParams[i].lowercased()
+            }
+            print(searchParams)
+            let matchedItems = findItemsWithStrings(searchParams)
+            itemsToShow = matchedItems
+            tableView.reloadData()
+        }
+    }
+    
+    func findCoordinatesOfItem(_ item: Item) {
+        
+    }
+    
+    func findItemsWithStrings(_ params: [String]) -> [Item] {
+        var itemsWithStrings = [Item]()
+        for item in (itemDataSource?.items)! {
+            if var splitTitle = item.item_name?.components(separatedBy: " ") {
+                if var splitCategory = item.item_category?.components(separatedBy: " ") {
+                    for j in 0..<splitCategory.count {
+                        splitTitle.append(splitCategory[j])
+                    }
+                    for i in 0..<splitTitle.count {
+                        splitTitle[i] = splitTitle[i].lowercased()
+                    }
+                    for param in params {
+                        for titleToken in splitTitle {
+                            if param == titleToken {
+                                if !itemsWithStrings.contains(item) {
+                                itemsWithStrings.append(item)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return itemsWithStrings
     }
     
     func getCoordinatesOfAddress(addressString: String) {
@@ -154,7 +194,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (itemDataSource?.numItems())!
+        return itemsToShow.count
+
     }
 
     
@@ -172,8 +213,9 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 //        cell.detailTextLabel?.text = String(itemModel.getPrice())
         
         if let itemCell = cell as? ItemTableViewCell {
-            let thisItem = itemDataSource?.itemAt(indexPath.row)
-            print(thisItem!)
+            let thisItem = itemsToShow[indexPath.row]
+            //let thisItem = itemDataSource?.itemAt(indexPath.row)
+            print(thisItem)
             itemCell.useItem(thisItem)
         }
 

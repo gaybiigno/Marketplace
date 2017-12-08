@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  Marketplace
 //
-//  Created by student on 12/6/17.
+//  Created by student on 12/8/17.
 //  Copyright © 2017 SSU. All rights reserved.
 //
 //
@@ -21,6 +21,7 @@ extension User {
     @NSManaged public var bmonth: Int16
     @NSManaged public var byear: Int16
     @NSManaged public var city: String?
+    @NSManaged public var email: String?
     @NSManaged public var first_name: String?
     @NSManaged public var last_name: String?
     @NSManaged public var payment: String?

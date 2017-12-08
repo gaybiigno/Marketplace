@@ -39,8 +39,22 @@ class ItemTableViewCell: UITableViewCell {
         }
     }
 	
+//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        let deleteGesture = UIPanGestureRecognizer(target: self, action: #selector(deleteThread(_:)))
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 	
-	
+	@objc func deleteThread(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "Confirm Delete", message: "Are you sure you'd like to permanently delete this message thread?", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: nil))
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+		
+		//present(alertController, animated: true, completion: nil)
+	}
 	
 
     

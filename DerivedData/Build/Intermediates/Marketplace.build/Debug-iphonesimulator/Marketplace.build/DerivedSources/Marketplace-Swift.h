@@ -235,9 +235,40 @@ SWIFT_CLASS("_TtC11Marketplace8Download")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class UITextView;
-@class UITextField;
+@class UIImageView;
 @class UIButton;
+@class UITextField;
+@class UILabel;
+@class UIImagePickerController;
+
+SWIFT_CLASS("_TtC11Marketplace15EditProfileView")
+@interface EditProfileView : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicture;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified newPictureButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified deletePictureButton;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified firstNameEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified lastNameEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified addrLine1;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified addrLine2;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified cityEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified stateEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified zipEntry;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified errorLabel;
+- (void)viewDidLoad;
+- (void)clickedNew:(UIButton * _Nonnull)selector;
+- (void)clickedDelete:(UIButton * _Nonnull)selector;
+- (IBAction)clickedSubmit:(UIButton * _Nonnull)sender;
+- (IBAction)clickedChangePass:(UIButton * _Nonnull)sender;
+- (IBAction)clickedDeleteAcct:(UIButton * _Nonnull)sender;
+- (IBAction)clickedBack:(UIButton * _Nonnull)sender;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITextView;
 @class MFMailComposeViewController;
 
 SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
@@ -256,7 +287,6 @@ SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 @end
 
 @class UIScrollView;
-@class UILabel;
 @class UINavigationItem;
 @class UISearchBar;
 @class UIView;
@@ -278,6 +308,7 @@ SWIFT_CLASS("_TtC11Marketplace8HomeView")
 @property (nonatomic, weak) IBOutlet UINavigationItem * _Null_unspecified navBar;
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified viewForMenu;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified searchOptionsButton;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)searchHomeGarden:(UIButton * _Nonnull)sender;
@@ -299,31 +330,78 @@ SWIFT_CLASS("_TtC11Marketplace8HomeView")
 @class NSEntityDescription;
 @class NSManagedObjectContext;
 
+SWIFT_CLASS("_TtC11Marketplace5Inbox")
+@interface Inbox : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNumber;
+@class Item;
+@class User;
+
+@interface Inbox (SWIFT_EXTENSION(Marketplace))
+@property (nonatomic, copy) NSString * _Nullable recipient_email;
+@property (nonatomic, strong) NSNumber * _Nullable msg_id;
+@property (nonatomic, copy) NSString * _Nullable sender_email;
+@property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, strong) Item * _Nullable item;
+@property (nonatomic, strong) User * _Nullable user;
+@end
+
+@class UIPanGestureRecognizer;
+
+SWIFT_CLASS("_TtC11Marketplace17InboxMsgTableCell")
+@interface InboxMsgTableCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified itemImage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemTitle;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified otherUserName;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified msgIcon;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (void)handlePan:(UIPanGestureRecognizer * _Nonnull)recognizer;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+
+SWIFT_CLASS("_TtC11Marketplace14InboxTableView")
+@interface InboxTableView : UITableViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS_NAMED("Item")
 @interface Item : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class Tag;
+@class Pictures;
 @class NSSet;
 
 @interface Item (SWIFT_EXTENSION(Marketplace))
-- (void)addTagObject:(Tag * _Nonnull)value;
-- (void)removeTagObject:(Tag * _Nonnull)value;
-- (void)addTag:(NSSet * _Nonnull)values;
-- (void)removeTag:(NSSet * _Nonnull)values;
-@end
-
-@class Picture;
-
-@interface Item (SWIFT_EXTENSION(Marketplace))
-- (void)addPictureObject:(Picture * _Nonnull)value;
-- (void)removePictureObject:(Picture * _Nonnull)value;
+- (void)addPictureObject:(Pictures * _Nonnull)value;
+- (void)removePictureObject:(Pictures * _Nonnull)value;
 - (void)addPicture:(NSSet * _Nonnull)values;
 - (void)removePicture:(NSSet * _Nonnull)values;
 @end
 
-@class User;
+@class Tags;
+
+@interface Item (SWIFT_EXTENSION(Marketplace))
+- (void)addTagObject:(Tags * _Nonnull)value;
+- (void)removeTagObject:(Tags * _Nonnull)value;
+- (void)addTag:(NSSet * _Nonnull)values;
+- (void)removeTag:(NSSet * _Nonnull)values;
+@end
+
 
 @interface Item (SWIFT_EXTENSION(Marketplace))
 @property (nonatomic, copy) NSString * _Nullable item_category;
@@ -357,7 +435,6 @@ SWIFT_CLASS("_TtC11Marketplace19ItemSchemaProcessor")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class UIImageView;
 
 SWIFT_CLASS("_TtC11Marketplace17ItemTableViewCell")
 @interface ItemTableViewCell : UITableViewCell
@@ -366,6 +443,7 @@ SWIFT_CLASS("_TtC11Marketplace17ItemTableViewCell")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cellLabel;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (void)deleteThread:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -383,6 +461,9 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemQuantity;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemCategory;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified itemTags;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified tagTitle;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ageTitle;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ageLabel;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified profilePicture;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified postedByLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified usernameLabel;
@@ -394,12 +475,12 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 - (void)prev:(UIImageView * _Nonnull)sender;
 - (void)clickEdit:(UIButton * _Nonnull)sender;
 - (void)clickMessage:(UIButton * _Nonnull)sender;
+- (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
 
 SWIFT_CLASS("_TtC11Marketplace13MenuTableView")
 @interface MenuTableView : UITableViewController
@@ -422,14 +503,14 @@ SWIFT_CLASS("_TtC11Marketplace13MenuTableView")
 @end
 
 
-SWIFT_CLASS_NAMED("Picture")
-@interface Picture : NSManagedObject
+SWIFT_CLASS_NAMED("Pictures")
+@interface Pictures : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSData;
 
-@interface Picture (SWIFT_EXTENSION(Marketplace))
+@interface Pictures (SWIFT_EXTENSION(Marketplace))
 @property (nonatomic, strong) NSData * _Nullable img_data;
 @property (nonatomic) int32_t img_id;
 @property (nonatomic) int32_t item_id;
@@ -438,7 +519,9 @@ SWIFT_CLASS_NAMED("Picture")
 
 
 SWIFT_CLASS("_TtC11Marketplace17RegisterTableView")
-@interface RegisterTableView : UITableViewController
+@interface RegisterTableView : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicture;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified addPicButton;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified firstName;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified lastName;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified email;
@@ -457,14 +540,34 @@ SWIFT_CLASS("_TtC11Marketplace17RegisterTableView")
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified zipcode;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signUpButton;
 - (void)viewDidLoad;
+- (void)clickNew:(UIButton * _Nonnull)sender;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (IBAction)signUpsubmit:(UIButton * _Nonnull)sender;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (IBAction)backHome:(UIButton * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace4Sale")
+@interface Sale : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Sale (SWIFT_EXTENSION(Marketplace))
+@property (nonatomic, strong) NSNumber * _Nullable item_id;
+@property (nonatomic, copy) NSString * _Nullable buyer_email;
+@property (nonatomic, strong) NSNumber * _Nullable sale_num;
+@property (nonatomic, strong) Item * _Nullable item;
+@property (nonatomic, strong) User * _Nullable seller;
 @end
 
 @class CLLocationManager;
@@ -502,10 +605,14 @@ SWIFT_CLASS("_TtC11Marketplace15SendMessageView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified recipientLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified subjectLabel;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified messageBody;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified successMessage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sendMsgTitle;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified backButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sendButton;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
+- (void)clickedSend:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -530,13 +637,13 @@ SWIFT_CLASS("_TtC11Marketplace15SignInTableView")
 @end
 
 
-SWIFT_CLASS_NAMED("Tag")
-@interface Tag : NSManagedObject
+SWIFT_CLASS_NAMED("Tags")
+@interface Tags : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-@interface Tag (SWIFT_EXTENSION(Marketplace))
+@interface Tags (SWIFT_EXTENSION(Marketplace))
 @property (nonatomic) int32_t item_id;
 @property (nonatomic, copy) NSString * _Nullable tag;
 @property (nonatomic, strong) Item * _Nullable item;
@@ -548,7 +655,13 @@ SWIFT_CLASS_NAMED("Tag")
 - (void)fixWithTextField:(UITextField * _Nonnull)textField;
 @end
 
-@class UIImagePickerController;
+
+SWIFT_CLASS("_TtC11Marketplace6Upload")
+@interface Upload : NSObject
+@property (nonatomic, strong) id _Nullable dataFromServer;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC11Marketplace15UploadImageView")
 @interface UploadImageView : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -578,7 +691,6 @@ SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified quantityEntry;
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified catPicker;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ageEntry;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified tagHintLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified errorLabel;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified uploadButton;
 - (void)viewDidLoad;
@@ -587,7 +699,6 @@ SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
 - (IBAction)changedPrice:(UITextField * _Nonnull)sender;
 - (IBAction)backButton:(UIButton * _Nonnull)sender;
 - (void)clickUpload:(UIButton * _Nonnull)sender;
-- (void)clickLabel:(UILabel * _Nonnull)sender;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
@@ -619,6 +730,7 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic) int16_t bmonth;
 @property (nonatomic) int16_t byear;
 @property (nonatomic, copy) NSString * _Nullable city;
+@property (nonatomic, copy) NSString * _Nullable email;
 @property (nonatomic, copy) NSString * _Nullable first_name;
 @property (nonatomic, copy) NSString * _Nullable last_name;
 @property (nonatomic, copy) NSString * _Nullable payment;
@@ -628,6 +740,12 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSString * _Nullable street;
 @property (nonatomic, copy) NSString * _Nullable zip;
 @property (nonatomic, strong) NSSet * _Nullable item;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace14UserDataSource")
+@interface UserDataSource : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
@@ -646,6 +764,12 @@ SWIFT_CLASS("_TtC11Marketplace15UserProfileView")
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace22UsertemSchemaProcessor")
+@interface UsertemSchemaProcessor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 SWIFT_MODULE_NAMESPACE_POP

@@ -35,7 +35,6 @@ class ItemView: UIViewController {
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var ratingLabel: UILabel!
 	
-	
 	@IBOutlet weak var purchaseButton: UIButton!
 	@IBOutlet weak var msgSellerButton: UIButton!
 	
@@ -64,7 +63,7 @@ class ItemView: UIViewController {
 		itemPriceLabel.clipsToBounds = true
 		itemPriceLabel.textAlignment = .left
 		itemPriceLabel.baselineAdjustment = .alignCenters
-		
+
 		start()
     }
 
@@ -93,6 +92,7 @@ class ItemView: UIViewController {
 		imageCounterLabel.text = "1/1"
 		itemPriceLabel.layer.mask?.cornerRadius = 10
 		itemPriceLabel.layer.masksToBounds = true
+
 		purchaseButton.layer.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
@@ -109,8 +109,8 @@ class ItemView: UIViewController {
 			imageArray.append(img)
 		}
 		
+
 		purchaseButton.addTarget(self, action: #selector(clickPurchase(_:)), for: .touchUpInside)
-		
 		if !editView {
 			setUserInfo()
 			msgSellerButton.addTarget(self, action: #selector(clickMessage(_:)), for: .touchUpInside)
@@ -282,6 +282,7 @@ class ItemView: UIViewController {
 			vc.uName = "UPD IN ITEMVIEW"
 		}
 	}
+
 	
 
     /*

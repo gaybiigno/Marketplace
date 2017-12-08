@@ -136,7 +136,6 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			if !firstName.isEmpty && !lastName.isEmpty {
 				let name = firstName + " " + String(lastName[0]) + "."
 				presenter.uName = name
-				presenter.updateUserName(name)
 			}
 		}
 		dismiss(animated: true, completion: nil)

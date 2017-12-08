@@ -45,11 +45,14 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     
     private var username: String = ""
     
+    let uploadAssistant: Upload! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
         
+
         signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
         self.view.backgroundColor = UIColor.white
@@ -112,11 +115,43 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
             if profilePicture.image == nil {
                 profilePicture.image = UIImage(named: "DefaultProfileIcon")
             }
+            let queryURL = buildSubmissionURL()
+            let uploadAssistant = Upload(withURLString: queryURL)
+            uploadAssistant.addObserver(self, forKeyPath: "dataToServer", options: .old, context: nil)
+            uploadAssistant.upload_request()
+            
             self.performSegue(withIdentifier: "completeRegToHome", sender: self)
             
         }
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("items uploaded")
+    }
+    
+    deinit {
+        uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+    }
+    
+    func buildSubmissionURL() -> String {
+        var url = Upload.baseURL + "/users/insert?"
+        url = url + "email=" + email.text!
+        url = url + "&pass=" + password.text!
+        url = url + "&first_name=" + firstName.text!
+        url = url + "&last_name=" + lastName.text!
+        url = url + "&payment=" + "none"
+        url = url + "&picture=" + "none"
+        url = url + "&street=" + addressOne.text!.replacingOccurrences(of: " ", with: "_") +
+            addressTwo.text!.replacingOccurrences(of: " ", with: "_")
+        url = url + "&city=" + city.text!
+        url = url + "&zip=" + zipcode.text!
+        url = url + "&_state=" + state.text!
+        url = url + "&day=" + day.text!
+        url = url + "&month=" + month.text!
+        url = url + "&year=" + year.text!
+        url = url + "&apikey=" + Upload.apikey
+        return url
+    }
     
     @IBAction func backHome(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -276,6 +311,7 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
             if let hv = segue.destination as? HomeView {
 				hv.signedIn = true
                 hv.uName = username
+				//hv.updateUserName(username)
             }
         }
     }

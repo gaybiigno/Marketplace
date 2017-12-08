@@ -10,29 +10,19 @@ import UIKit
 
 class InboxMsgTableCell: UITableViewCell {
 
-	@IBOutlet weak var msgSubject: UILabel!
+
+	@IBOutlet weak var itemImage: UIImageView!
+	@IBOutlet weak var itemTitle: UILabel!
 	@IBOutlet weak var otherUserName: UILabel!
 	@IBOutlet weak var msgIcon: UIImageView!
 	
 	 //var thisMessage: Message? = nil
 	var originalCenter = CGPoint()
 	var deleteOnDragRelease = false
-	var originalFrame = CGRect()
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-		
-//		let deleteHold = UILongPressGestureRecognizer(target: self, action: #selector(deleteThat(_:)))
-//		deleteHold.minimumPressDuration = 1.0
-//		deleteHold.delaysTouchesBegan = true
-//		deleteHold.delegate = self
-//		self.addGestureRecognizer(deleteHold)
-		
-		let deleteGesture = UIPanGestureRecognizer(target: self, action: #selector(deleteThread(_:)))
-		deleteGesture.delegate = self
-		self.addGestureRecognizer(deleteGesture)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,18 +32,28 @@ class InboxMsgTableCell: UITableViewCell {
     }
 	
 	func useMessage(_ img: UIImage, _ subject: String, _ otherUser: String, _ iconShown: Bool) {
-		//itemImage.image = img
-		msgSubject.text = subject
+		itemImage.image = img
+		itemTitle.text = subject
 		otherUserName.text = otherUser
 		msgIcon.isHidden = !iconShown
 	}
 	
-	@objc func deleteThat(_ sender: UILongPressGestureRecognizer) {
-		print("Long pressed dat bish")
-		popUp()
-	}
+//	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+//		super.init(style: style, reuseIdentifier: reuseIdentifier)
+//
+//		// add a pan recognizer
+//		var recognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+//		recognizer.delegate = self
+//		addGestureRecognizer(recognizer)
+//	}
+//
+//	required init?(coder aDecoder: NSCoder) {
+//		fatalError("init(coder:) has not been implemented")
+//	}
 	
-	@objc func deleteThread(_ recognizer: UIPanGestureRecognizer) {
+	//MARK: - horizontal pan gesture methods
+	@objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
+		// 1
 		if recognizer.state == .began {
 			// when the gesture begins, record the current center location
 			originalCenter = center
@@ -108,7 +108,6 @@ class InboxMsgTableCell: UITableViewCell {
 	func deleteMessage() {
 		print("Message deleted!")
 	}
-	
 	
 	/*
 	func useMessage(_ message: Message?) {

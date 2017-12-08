@@ -3,10 +3,10 @@
 <plist version="1.0">
 <array>
 	<string>XCTest</string>
-	<string>Marketplace</string>
 	<string>Photos</string>
-	<string>CoreData</string>
+	<string>Marketplace</string>
 	<string>MessageUI</string>
+	<string>CoreData</string>
 	<string>UIKit</string>
 	<string>CoreLocation</string>
 	<string>Foundation</string>

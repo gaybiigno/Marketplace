@@ -1,9 +1,7 @@
 //
-//  ArtistSchemaProcessor.swift
-//  CoreDataForArtists
+//  ItemSchemaProcessor.swift
 //
-//  Created by AAK on 4/14/16.
-//  Copyright © 2016 SSU. All rights reserved.
+//  Created by RCG on 12/5/17.
 //
 
 import UIKit
@@ -18,9 +16,6 @@ class ItemSchemaProcessor: NSObject {
         itemModelJSONString = itemModelJSON
         super.init()
         processJSON(itemModelJSON)
-        //let _ = fetchArtistWithName("Beatles, The")
-        //let _ = fetchAlbumWithID("97269")
-        //fetchAllAlbums()
     }
     
     func processJSON(_ schema: [AnyObject]) {
@@ -30,7 +25,6 @@ class ItemSchemaProcessor: NSObject {
                     processItemsJSON(objects)
             }
         }
-        //integrateArtistsAndAlbums()
     }
     
     func fetchAllItems() {
