@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5wT-e6-kzb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W9I-Bn-CJz">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1967,7 +1967,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="gAN-b6-8x1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="msgCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCell" rowHeight="75" id="gAN-b6-8x1" customClass="InboxMsgTableCell" customModule="Marketplace" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gAN-b6-8x1" id="ajA-gw-mnK">
@@ -1999,6 +1999,13 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="itemImage" destination="4FM-5Q-8H1" id="7Ho-7J-Qqj"/>
+                                    <outlet property="itemTitle" destination="qzy-fi-rid" id="xiv-M5-BCD"/>
+                                    <outlet property="msgIcon" destination="VLP-7s-WBf" id="Aly-oC-geX"/>
+                                    <outlet property="otherUserName" destination="ywc-5x-RDK" id="EJ6-EI-ORj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2006,9 +2013,6 @@
                             <outlet property="delegate" destination="W9I-Bn-CJz" id="2hE-6d-fyi"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="itemImage" destination="4FM-5Q-8H1" id="Y92-Ks-Bz4"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilh-Dg-UEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

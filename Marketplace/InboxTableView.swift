@@ -10,11 +10,17 @@ import UIKit
 
 class InboxTableView: UITableViewController {
 	
-	@IBOutlet weak var itemImage: UIImageView!
+	private let dummyImg = UIImage(named: "PhotoIcon")
+	private let dummySubjects = ["Blue Patagonia Half-Zip", "2007 Silver Volvo XC90", "Homemade pants", "Brand New XBox 360!!!!"]
+	private let dummyPeople = ["DeAndre H.", "Josh G.", "Antonio B.", "Tom B."]
+	private let dummyRead = [true, false]
 	
-
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.view.backgroundColor = UIColor(red: 1.0, green: 0.3254, blue: 0.2392, alpha: 1.0)
+		self.tableView.rowHeight = 75.0
+		
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,24 +31,30 @@ class InboxTableView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+		return dummyPeople.count //TODO
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath)
+		cell.selectionStyle = .none
+		if let msgCell = cell as? InboxMsgTableCell {
+			msgCell.useMessage(dummyImg!, dummySubjects[indexPath.row], dummyPeople[indexPath.row], dummyRead[indexPath.row % 2])
+		}
+		
 
         // Configure the cell...
 
         return cell
     }
-    */
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		print("tapped")
+	}
+
 
     /*
     // Override to support conditional editing of the table view.

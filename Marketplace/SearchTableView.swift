@@ -27,7 +27,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     
     var currentLocation = CLLocation()
     var previousLocation = CLLocation()
-//
     var latitude = 0.0
     var longitude = 0.0
     
@@ -65,12 +64,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         searchController.searchBar.placeholder = "Search"
 		searchController.searchBar.text = searchParameter
         definesPresentationContext = true
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
