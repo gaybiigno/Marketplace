@@ -34,10 +34,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	@IBOutlet weak var navBar: UINavigationItem!
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var viewForMenu: UIView!
-<<<<<<< ryan
     @IBOutlet weak var searchOptionsButton: UIButton!
-=======
->>>>>>> master
 	
 	private var embeddedViewController: MenuTableView!
     

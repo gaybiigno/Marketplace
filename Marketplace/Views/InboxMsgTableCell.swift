@@ -19,6 +19,7 @@ class InboxMsgTableCell: UITableViewCell {
 	 //var thisMessage: Message? = nil
 	var originalCenter = CGPoint()
 	var deleteOnDragRelease = false
+	var originalFrame = CGRect()
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
