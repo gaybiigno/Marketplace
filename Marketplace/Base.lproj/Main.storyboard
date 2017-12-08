@@ -1642,19 +1642,19 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eyP-V4-qob" customClass="ItemView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wef-NW-vBS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3H-x4-k8b">
-                                <rect key="frame" x="0.0" y="25" width="414" height="825"/>
+                                <rect key="frame" x="0.0" y="25" width="414" height="900"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="The Item Title Would Go Here" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-bW-Szy">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="The Item Title Would Go Here" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-bW-Szy">
                                         <rect key="frame" x="52" y="20" width="237" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$9999.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-AB-frG">
@@ -1677,7 +1677,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fq-sP-bmf">
-                                        <rect key="frame" x="20" y="386" width="374" height="162"/>
+                                        <rect key="frame" x="20" y="386" width="374" height="237"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Description of the item would go into this (hopefully dynamic) text view. Description of the item would go into this (hopefully dynamic) text view. Description of the item would go into this (hopefully dynamic) text view. Description of the item would go into this (hopefully dynamic) text view. Description of the item would go into this (hopefully dynamic) text view. </string>
@@ -1747,8 +1747,25 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.97268694639999997" green="0.96495133639999997" blue="0.95224434140000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBc-jc-GeU">
+                                        <rect key="frame" x="20" y="32" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="BackIcon"/>
+                                        <connections>
+                                            <action selector="clickedBack:" destination="eyP-V4-qob" eventType="touchUpInside" id="STG-Rt-NTP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWr-vM-K0M">
+                                        <rect key="frame" x="20" y="679" width="374" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Purchase Item">
+                                            <color key="titleColor" red="0.97268694639999997" green="0.96495133639999997" blue="0.95224434140000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-g4-nd4">
-                                        <rect key="frame" x="20" y="775" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="813" width="374" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1079684606" green="0.14958996769999999" blue="0.28191985330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
@@ -1757,45 +1774,37 @@
                                         </state>
                                     </button>
                                     <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UG-hf-hjV">
-                                        <rect key="frame" x="20" y="692" width="74" height="74"/>
+                                        <rect key="frame" x="20" y="730" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Posted by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xg-8c-siS">
-                                        <rect key="frame" x="100" y="692" width="98" height="21"/>
+                                        <rect key="frame" x="100" y="730" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlU-rR-v8A">
-                                        <rect key="frame" x="100" y="718" width="294" height="22"/>
+                                        <rect key="frame" x="100" y="756" width="294" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:     ??/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS8-7r-c8Z">
-                                        <rect key="frame" x="100" y="744" width="125" height="21"/>
+                                        <rect key="frame" x="100" y="782" width="125" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBc-jc-GeU">
-                                        <rect key="frame" x="20" y="32" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="BackIcon"/>
-                                        <connections>
-                                            <action selector="clickedBack:" destination="eyP-V4-qob" eventType="touchUpInside" id="STG-Rt-NTP"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="goZ-dw-kzn"/>
                     </view>
-                    <size key="freeformSize" width="414" height="850"/>
+                    <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="ageLabel" destination="sRr-FN-Pbq" id="S7g-dL-3RJ"/>
                         <outlet property="ageTitle" destination="szN-NW-nlI" id="KEq-za-MPe"/>
@@ -1810,6 +1819,7 @@
                         <outlet property="msgSellerButton" destination="IAE-g4-nd4" id="ZA2-Ye-GUf"/>
                         <outlet property="postedByLabel" destination="7Xg-8c-siS" id="GrT-DQ-9KO"/>
                         <outlet property="profilePicture" destination="8UG-hf-hjV" id="49E-Mj-dkH"/>
+                        <outlet property="purchaseButton" destination="OWr-vM-K0M" id="y6T-xk-zdT"/>
                         <outlet property="ratingLabel" destination="DS8-7r-c8Z" id="www-f9-Mz3"/>
                         <outlet property="scrollView" destination="y3H-x4-k8b" id="Wiu-3S-hrH"/>
                         <outlet property="tagTitle" destination="qzg-nN-hK3" id="zoG-CA-eX1"/>
@@ -1817,11 +1827,12 @@
                         <outlet property="usernameLabel" destination="XlU-rR-v8A" id="jTl-FP-GMM"/>
                         <segue destination="Drn-GA-Ijx" kind="presentation" identifier="itemToMsg" modalPresentationStyle="fullScreen" id="DWp-tY-hng"/>
                         <segue destination="RDa-lc-3uC" kind="presentation" identifier="editItem" modalPresentationStyle="fullScreen" id="Pjh-Hn-Bic"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="purchaseToHome" id="WcH-0a-Du0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EP-wp-a36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-2177"/>
+            <point key="canvasLocation" x="995.65217391304361" y="-2177.445652173913"/>
         </scene>
         <!--Search Table View-->
         <scene sceneID="2km-lU-KYv">
@@ -2129,9 +2140,8 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oWT-H2-naF"/>
         <segue reference="wR7-pD-Igu"/>
-        <segue reference="5uY-PQ-cL7"/>
-        <segue reference="Qbs-5V-959"/>
+        <segue reference="Pjh-Hn-Bic"/>
+        <segue reference="WcH-0a-Du0"/>
     </inferredMetricsTieBreakers>
 </document>
