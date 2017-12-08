@@ -26,9 +26,6 @@
 		5A31408A1FB9194C00C6A3BA /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3140891FB9194C00C6A3BA /* ItemModel.swift */; };
 		5A3227611FD8944100AD0C1E /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3227601FD8944100AD0C1E /* EditProfileView.swift */; };
 		5A3D5F1D1FC9002E00472FB7 /* UploadItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */; };
-		5A3EDFA11FD8B6F300665BA2 /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EDF9E1FD8B6F300665BA2 /* CoreDataCommonMethods.swift */; };
-		5A3EDFA21FD8B6F300665BA2 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EDF9F1FD8B6F300665BA2 /* CoreDataStore.swift */; };
-		5A3EDFA31FD8B6F300665BA2 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EDFA01FD8B6F300665BA2 /* Download.swift */; };
 		5A3EDFA71FD9E65800665BA2 /* InboxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */; };
 		5A3EDFA91FD9EB3900665BA2 /* InboxMsgTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */; };
 		5A4397241FC66DE100606AA2 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4397231FC66DE100606AA2 /* SearchTableView.swift */; };
@@ -88,15 +85,15 @@
 		5A3140891FB9194C00C6A3BA /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		5A3227601FD8944100AD0C1E /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadItemTableView.swift; sourceTree = "<group>"; };
-		5A3EDF9E1FD8B6F300665BA2 /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCommonMethods.swift; path = ../../../../Downloads/CoreDataCommonMethods.swift; sourceTree = "<group>"; };
-		5A3EDF9F1FD8B6F300665BA2 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStore.swift; path = ../../../../Downloads/CoreDataStore.swift; sourceTree = "<group>"; };
-		5A3EDFA01FD8B6F300665BA2 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = ../../../../Downloads/Download.swift; sourceTree = "<group>"; };
 		5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableView.swift; sourceTree = "<group>"; };
 		5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxMsgTableCell.swift; sourceTree = "<group>"; };
 		5A4397231FC66DE100606AA2 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
 		5A4397271FC66FA300606AA2 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		5A49973D1FC6239300AB1A1A /* MenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableView.swift; sourceTree = "<group>"; };
+		5A63E1AA1FDB4FFB002178B5 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStore.swift; path = ../../../../../../Downloads/CoreDataStore.swift; sourceTree = "<group>"; };
+		5A63E1AB1FDB4FFB002178B5 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Download.swift; path = ../../../../../../Downloads/Download.swift; sourceTree = "<group>"; };
+		5A63E1AC1FDB4FFB002178B5 /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataCommonMethods.swift; path = ../../../../../../Downloads/CoreDataCommonMethods.swift; sourceTree = "<group>"; };
 		5A8494E61FAA8E7B00A2A91C /* Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A8494EE1FAA8E7B00A2A91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,7 +149,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5A8494DD1FAA8E7B00A2A91C = {
+		5A63E1A41FDB4F4F002178B5 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */,
+				5A2C08A11FB5671900D884B4 /* Handy.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		5A63E1A51FDB4F7F002178B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */,
+				5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */,
+				5A8495171FB13AD400A2A91C /* HomeView.swift */,
+				5A84951F1FB3D72100A2A91C /* ItemView.swift */,
+				5A4397271FC66FA300606AA2 /* ItemTableViewCell.swift */,
+				5A49973D1FC6239300AB1A1A /* MenuTableView.swift */,
+				5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */,
+				5A4397231FC66DE100606AA2 /* SearchTableView.swift */,
+				5AF508A81FD5DE29006A397B /* SendMessageView.swift */,
+				5A2C089D1FB5470800D884B4 /* SignInTableView.swift */,
+				5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */,
+				3F95A7651FCF88D80024B8AA /* UploadImageView.swift */,
+				5A84951D1FB3D65600A2A91C /* UserProfileView.swift */,
+				5A3227601FD8944100AD0C1E /* EditProfileView.swift */,
+				5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */,
+				5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A63E1A61FDB4FBD002178B5 /* CoreDataComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5A63E1B41FDB50F8002178B5 /* ObjectAdapters */,
+				5A63E1A91FDB4FE8002178B5 /* DataModels */,
+				5A63E1A71FDB4FD5002178B5 /* Network */,
+			);
+			path = CoreDataComponents;
+			sourceTree = "<group>";
+		};
+		5A63E1A71FDB4FD5002178B5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5A63E1AC1FDB4FFB002178B5 /* CoreDataCommonMethods.swift */,
+				5A63E1AA1FDB4FFB002178B5 /* CoreDataStore.swift */,
+				5A63E1AB1FDB4FFB002178B5 /* Download.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5A63E1A91FDB4FE8002178B5 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				3FA6407D1FD8998400294301 /* Item.swift */,
@@ -163,6 +212,22 @@
 				3FA640721FD88F6400294301 /* Tag+CoreDataProperties.swift */,
 				3FA640731FD88F6400294301 /* User+CoreDataClass.swift */,
 				3FA640741FD88F6400294301 /* User+CoreDataProperties.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		5A63E1B41FDB50F8002178B5 /* ObjectAdapters */ = {
+			isa = PBXGroup;
+			children = (
+				3F5773181FD881CF0022AE91 /* ItemSchemaProcessor.swift */,
+				3FA6407F1FD89E3100294301 /* ItemDataSource.swift */,
+			);
+			path = ObjectAdapters;
+			sourceTree = "<group>";
+		};
+		5A8494DD1FAA8E7B00A2A91C = {
+			isa = PBXGroup;
+			children = (
 				5A8494E81FAA8E7B00A2A91C /* Marketplace */,
 				5A8494FD1FAA8E7B00A2A91C /* MarketplaceTests */,
 				5A8495081FAA8E7B00A2A91C /* MarketplaceUITests */,
@@ -185,35 +250,15 @@
 		5A8494E81FAA8E7B00A2A91C /* Marketplace */ = {
 			isa = PBXGroup;
 			children = (
-				5A3EDF9E1FD8B6F300665BA2 /* CoreDataCommonMethods.swift */,
-				5A3EDF9F1FD8B6F300665BA2 /* CoreDataStore.swift */,
-				5A3EDFA01FD8B6F300665BA2 /* Download.swift */,
+				5A63E1A61FDB4FBD002178B5 /* CoreDataComponents */,
+				5A63E1A41FDB4F4F002178B5 /* Misc */,
 				5AC840011FD5EA2200B8FC85 /* Models */,
-				5A8494E91FAA8E7B00A2A91C /* AppDelegate.swift */,
 				3F5772FC1FD87B810022AE91 /* marketplace.xcdatamodeld */,
 				5A8494ED1FAA8E7B00A2A91C /* Main.storyboard */,
 				5A8494F01FAA8E7B00A2A91C /* Assets.xcassets */,
 				5A8494F21FAA8E7B00A2A91C /* LaunchScreen.storyboard */,
 				5A8494F51FAA8E7B00A2A91C /* Info.plist */,
-				5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */,
-				5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */,
-				5A2C08A11FB5671900D884B4 /* Handy.swift */,
-				5A8495171FB13AD400A2A91C /* HomeView.swift */,
-				5A84951F1FB3D72100A2A91C /* ItemView.swift */,
-				5A4397271FC66FA300606AA2 /* ItemTableViewCell.swift */,
-				5A49973D1FC6239300AB1A1A /* MenuTableView.swift */,
-				5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */,
-				5A4397231FC66DE100606AA2 /* SearchTableView.swift */,
-				5AF508A81FD5DE29006A397B /* SendMessageView.swift */,
-				5A2C089D1FB5470800D884B4 /* SignInTableView.swift */,
-				5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */,
-				3F95A7651FCF88D80024B8AA /* UploadImageView.swift */,
-				5A84951D1FB3D65600A2A91C /* UserProfileView.swift */,
-				3F5773181FD881CF0022AE91 /* ItemSchemaProcessor.swift */,
-				3FA6407F1FD89E3100294301 /* ItemDataSource.swift */,
-				5A3227601FD8944100AD0C1E /* EditProfileView.swift */,
-				5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */,
-				5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */,
+				5A63E1A51FDB4F7F002178B5 /* Views */,
 			);
 			path = Marketplace;
 			sourceTree = "<group>";
@@ -400,8 +445,6 @@
 				5A2C08A01FB54F7700D884B4 /* RegisterTableView.swift in Sources */,
 				3FA6407B1FD88F6400294301 /* User+CoreDataClass.swift in Sources */,
 				3FA6407C1FD88F6400294301 /* User+CoreDataProperties.swift in Sources */,
-				5A3EDFA11FD8B6F300665BA2 /* CoreDataCommonMethods.swift in Sources */,
-				5A3EDFA31FD8B6F300665BA2 /* Download.swift in Sources */,
 				5A49973E1FC6239300AB1A1A /* MenuTableView.swift in Sources */,
 				5A2C08A21FB5671900D884B4 /* Handy.swift in Sources */,
 				5A8495201FB3D72100A2A91C /* ItemView.swift in Sources */,
@@ -409,7 +452,6 @@
 				5A49973C1FC6178B00AB1A1A /* ForgotPasswordView.swift in Sources */,
 				5A8494EA1FAA8E7B00A2A91C /* AppDelegate.swift in Sources */,
 				5A8495241FB3D8AC00A2A91C /* CheckoutView.swift in Sources */,
-				5A3EDFA21FD8B6F300665BA2 /* CoreDataStore.swift in Sources */,
 				3FA640761FD88F6400294301 /* Item+CoreDataProperties.swift in Sources */,
 				5A2C089E1FB5470800D884B4 /* SignInTableView.swift in Sources */,
 				5AF508A91FD5DE29006A397B /* SendMessageView.swift in Sources */,
