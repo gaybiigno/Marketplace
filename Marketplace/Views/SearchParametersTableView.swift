@@ -10,24 +10,38 @@ import UIKit
 
 class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    // TODO: Upon submit, check vals and set bool for filter______ vars
+    
     
     @IBOutlet weak var backButton: UIButton!
-    
     @IBOutlet weak var filterPicker: UIPickerView!
+    
     @IBOutlet weak var distanceEntry: UITextField!
-	@IBOutlet weak var mileLabel: UILabel!
-	@IBOutlet weak var minPriceEntry: UITextField!
+
+    @IBOutlet weak var minPriceEntry: UITextField!
+    @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var maxPriceEntry: UITextField!
-	@IBOutlet weak var toLabel: UILabel!
-	@IBOutlet weak var categoryPicker: UIPickerView!
+    
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    
     @IBOutlet weak var rating: UILabel!
-	@IBOutlet weak var outtaTenLabel: UILabel!
-	@IBOutlet weak var ratingStepper: UIStepper!
+    @IBOutlet weak var outtaTenLabel: UILabel!
+    @IBOutlet weak var ratingStepper: UIStepper!
 	
-	private var selectedCellIndexPath: IndexPath?
-	
-	private let unselectedCellHeight = 50.0
-	private var selectedCellHeight = 60.0
+	@IBOutlet weak var toggleDistance: UISwitch!
+	@IBOutlet weak var togglePrice: UISwitch!
+	@IBOutlet weak var toggleCategory: UISwitch!
+	@IBOutlet weak var toggleRating: UISwitch!
+    
+    @IBOutlet weak var popupDistance: UITableViewCell!
+    @IBOutlet weak var popupPrice: UITableViewCell!
+    @IBOutlet weak var popupCategory: UITableViewCell!
+    @IBOutlet weak var popupRating: UITableViewCell!
+    
+    private var selectedCellIndexPath: IndexPath?
+    
+    private let unselectedCellHeight = 50.0
+    private var selectedCellHeight = 60.0
     
     private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
     var categoryChoice = UILabel()
@@ -41,11 +55,6 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     var lowerPrice: Double! // min 0.0
     var higherPrice: Double! //max 1000000.00
     var rate: Int!
-	
-	@IBOutlet weak var toggleDistance: UISwitch!
-	@IBOutlet weak var togglePrice: UISwitch!
-	@IBOutlet weak var toggleCategory: UISwitch!
-	@IBOutlet weak var toggleRating: UISwitch!
 	
 	var noFilters = true
 	var sort = false
@@ -66,6 +75,16 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
 
         // Preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
+        
+        let hiddenCells = [popupCategory, popupDistance, popupPrice, popupRating]
+        for cell in hiddenCells {
+            cell?.isHidden = true
+        }
+        
+        toggleDistance.setOn(false, animated: false)
+        togglePrice.setOn(false, animated: false)
+        toggleRating.setOn(false, animated: false)
+        toggleCategory.setOn(false, animated: false)
         
         if !noFilters {
             if let loc = locDiameter {
@@ -99,17 +118,33 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     }
     
     @objc func clickedBack(_ sender: UIButton) {
-        //print("back")
+        dismiss(animated: true, completion: nil)
     }
 	
 	@IBAction func switchForDistance(_ sender: UISwitch) {
+        popupDistance.isHidden = !(sender.isOn)
+        filterDistance = sender.isOn
+        self.tableView.reloadData()
 	}
 	
 	@IBAction func switchForPrice(_ sender: UISwitch) {
+        popupPrice.isHidden = !(sender.isOn)
+        filterPrice = sender.isOn
+        self.tableView.reloadData()
 	}
 	
 	
-	
+    @IBAction func switchForCategory(_ sender: UISwitch) {
+        popupCategory.isHidden = !(sender.isOn)
+        filterCategory = sender.isOn
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func switchForRating(_ sender: UISwitch) {
+        popupRating.isHidden = !(sender.isOn)
+        filterRating = sender.isOn
+         self.tableView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -119,13 +154,11 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 9
     }
     
     // Picker data source and formatting
@@ -161,53 +194,26 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
         }
     }
 	
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if selectedCellIndexPath == indexPath {
-			return CGFloat(selectedCellHeight)
-		}
-		return CGFloat(unselectedCellHeight)
-	}
-	
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
-		switch indexPath.row {
-		case 0:
-			return
-		case 1:
-			distanceEntry.isHidden = false
-			mileLabel.isHidden = false
-			filterDistance = true
-		case 2:
-			minPriceEntry.isHidden = false
-			maxPriceEntry.isHidden = false
-			toLabel.isHidden = false
-			filterPrice = true
-		case 3:
-			categoryPicker.isHidden = false
-			selectedCellHeight = 90.0
-			filterCategory = true
-		case 4:
-			rating.isHidden = false
-			outtaTenLabel.isHidden = false
-			ratingStepper.isHidden = false
-			filterRating = true
-		default:
-			print("Did not recognize click")
-		}
-		
-		if selectedCellIndexPath != nil && selectedCellIndexPath == indexPath {
-			selectedCellIndexPath = nil
-		} else {
-			selectedCellIndexPath = indexPath
-		}
-		
-		tableView.beginUpdates()
-		tableView.endUpdates()
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let titleRows = [1, 3, 5, 7]
+        if titleRows.contains(indexPath.row) {
+            return 60.0
+        }
+        if indexPath.row == 2 {
+            return toggleDistance.isOn ? 60.0 : 0.0
+        }
+        if indexPath.row == 4 {
+            return togglePrice.isOn ? 60.0 : 0.0
+        }
+        if indexPath.row == 6 {
+            return toggleCategory.isOn ? 90.0 : 0.0
+        }
+        if indexPath.row == 8 {
+            return toggleRating.isOn ? 60.0 : 0.0
+        }
+        return 150.0
+    }
 
-		if selectedCellIndexPath != nil {
-			tableView.scrollToRow(at: indexPath, at: .none, animated: true)
-		}
-	}
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

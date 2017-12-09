@@ -177,6 +177,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import MessageUI;
 @import CoreData;
+@import CoreGraphics;
 @import CoreLocation;
 #endif
 
@@ -273,6 +274,7 @@ SWIFT_CLASS("_TtC11Marketplace15EditProfileView")
 
 SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 @interface ForgotPasswordView : UIViewController <MFMailComposeViewControllerDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified titleLabel;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified firstPrompt;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified completePrompt;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified email;
@@ -295,6 +297,8 @@ SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 SWIFT_CLASS("_TtC11Marketplace8HomeView")
 @interface HomeView : UIViewController <UISearchBarDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView * _Null_unspecified scrollView;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified mainText;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified shopByLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified helloLabel;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified registerButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signInButton;
@@ -541,6 +545,7 @@ SWIFT_CLASS("_TtC11Marketplace10RatingView")
 
 SWIFT_CLASS("_TtC11Marketplace17RegisterTableView")
 @interface RegisterTableView : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified viewTitleLabel;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicture;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified addPicButton;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified firstName;
@@ -592,6 +597,7 @@ SWIFT_CLASS("_TtC11Marketplace4Sale")
 @end
 
 @class UIStepper;
+@class UISwitch;
 
 SWIFT_CLASS("_TtC11Marketplace25SearchParametersTableView")
 @interface SearchParametersTableView : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
@@ -599,12 +605,26 @@ SWIFT_CLASS("_TtC11Marketplace25SearchParametersTableView")
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified filterPicker;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified distanceEntry;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified minPriceEntry;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified toLabel;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified maxPriceEntry;
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified categoryPicker;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified rating;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified outtaTenLabel;
 @property (nonatomic, weak) IBOutlet UIStepper * _Null_unspecified ratingStepper;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified toggleDistance;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified togglePrice;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified toggleCategory;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified toggleRating;
+@property (nonatomic, weak) IBOutlet UITableViewCell * _Null_unspecified popupDistance;
+@property (nonatomic, weak) IBOutlet UITableViewCell * _Null_unspecified popupPrice;
+@property (nonatomic, weak) IBOutlet UITableViewCell * _Null_unspecified popupCategory;
+@property (nonatomic, weak) IBOutlet UITableViewCell * _Null_unspecified popupRating;
 - (void)viewDidLoad;
 - (void)clickedBack:(UIButton * _Nonnull)sender;
+- (IBAction)switchForDistance:(UISwitch * _Nonnull)sender;
+- (IBAction)switchForPrice:(UISwitch * _Nonnull)sender;
+- (IBAction)switchForCategory:(UISwitch * _Nonnull)sender;
+- (IBAction)switchForRating:(UISwitch * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -612,6 +632,7 @@ SWIFT_CLASS("_TtC11Marketplace25SearchParametersTableView")
 - (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
