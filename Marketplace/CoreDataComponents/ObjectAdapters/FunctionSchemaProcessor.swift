@@ -11,7 +11,7 @@ import CoreData
 
 class FunctionSchemaProcessor: NSObject {
     let response: [AnyObject]
-    let coreDataContext = CoreDataCommonMethods()
+    let accep
     
     init(responseJSON: [AnyObject]) {
         response = responseJSON
@@ -44,6 +44,10 @@ class FunctionSchemaProcessor: NSObject {
             }
         }
         coreDataContext.saveContext();
+    }
+    
+    func getResponse() -> Int? {
+        
     }
 }
 
