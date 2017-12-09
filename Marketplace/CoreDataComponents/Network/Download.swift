@@ -10,7 +10,7 @@ import UIKit
 
 class Download: NSObject {
     
-    static let baseURL = "http://localhost:3306"
+    static let baseURL = "http://localhost:8181"
     static let apikey = "2747808961751484"
     
     var urlString: String
@@ -33,8 +33,10 @@ class Download: NSObject {
                 }
             } catch {
                 // contents could not be loaded
+                print("server not connecting")
             }
         } else {
+            print("bad html")
             // the URL was bad!
         }
     }
@@ -48,8 +50,10 @@ class Download: NSObject {
                     dataFromServer = try! JSONSerialization.jsonObject(with: data, options: []) as! AnyObject
                 }
             } catch {
-                print("couldn't load")
+                print("server not connecting")
             }
+        } else {
+            print("bad html")
         }
     }
     

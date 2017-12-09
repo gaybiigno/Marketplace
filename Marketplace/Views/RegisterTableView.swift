@@ -51,6 +51,7 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        email.autocorrectionType = .no
 
         signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
@@ -134,7 +135,7 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     
     func buildSubmissionURL() -> String {
         var url = Upload.baseURL + "/users/insert?"
-        url = url + "email=" + email.text!
+        url = url + "email=" + email.text!.lowercased()
         url = url + "&pass=" + password.text!
         url = url + "&first_name=" + firstName.text!.replacingOccurrences(of: " ", with: "_")
         url = url + "&last_name=" + lastName.text!.replacingOccurrences(of: " ", with: "_")

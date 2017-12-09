@@ -28,6 +28,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	let imagePicker = UIImagePickerController()
 	let defaultProfilePic = UIImage(named: "DefaultProfileIcon")
 	
+    var currentUser: User!
 	var firstName: String!
 	var lastName: String!
 	var addLine1 = ""
@@ -39,6 +40,8 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
 	var errorMessage = ""
 	var hasVal = false
+    
+    var uploadAssistant: Upload! = nil
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,8 +106,27 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			state = (stateEntry.text?.uppercased())!
 			zip = Int(zipEntry.text!)!
 			errorLabel.text = "Success! Changes Saved."
+            uploadAssistant = Upload()
 		}
 	}
+    
+    func buildUpdateURL() -> String {
+        var url = Upload.baseURL + "/users/update?"
+        url = url + "email=" + email.text!.lowercased()
+        url = url + "&first_name=" + firstName.replacingOccurrences(of: " ", with: "_")
+        url = url + "&last_name=" + lastName.replacingOccurrences(of: " ", with: "_")
+        url = url + "&payment=" + "none"
+        url = url + "&picture=" + "none"
+        url = url + "&street=" + addLine1.replacingOccurrences(of: " ", with: "_") +
+            addLine2.replacingOccurrences(of: " ", with: "_")
+        url = url + "&city=" + city.replacingOccurrences(of: " ", with: "_")
+        url = url + "&_state=" + state
+        url = url + "&zip=" + String(zip)
+        url = url + "&day=" + day.text!
+        url = url + "&month=" + month.text!
+        url = url + "&year=" + year.text!
+        url = url + "&apikey=" + Upload.apikey
+    }
 	
 	func checkValues() -> Bool {
 		errorMessage = ""

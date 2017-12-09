@@ -75,13 +75,13 @@ class UserSchemaProcessor: NSObject {
                     user.last_name = last_name as? String
                 }
                 if let bday = userDict["bday"] {
-                    user.bday = (bday as? Int16)!
+                    user.bday = bday as? String
                 }
                 if let bmonth = userDict["bmonth"] {
-                    user.bmonth = (bmonth as? Int16)!
+                    user.bmonth = bmonth as? String
                 }
                 if let byear = userDict["byear"] {
-                    user.byear = (byear as? Int16)!
+                    user.byear = byear as? String
                 }
                 if let city = userDict["city"] {
                     user.city = city as? String

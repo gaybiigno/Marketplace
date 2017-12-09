@@ -46,6 +46,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	let userData = UserModel()
 	
 	var uName: String!
+    var currentUser: User!
 	
 	var signedIn = false
 	
@@ -107,7 +108,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		
 		let username = uName
 		
-		helloLabel.text = "Hello, " + username!
+		//helloLabel.text = "Hello, " + username!
+        helloLabel.text = "Hello, " + currentUser.first_name! + " " + currentUser.last_name![0] + "."
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
@@ -134,7 +136,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		helloLabel.isHidden = true
 		signInButton.isHidden = false
 		registerButton.isHidden = false
-		
+		currentUser = nil
 		signedIn = false
 	}
     

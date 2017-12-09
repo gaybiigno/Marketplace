@@ -21,16 +21,17 @@ class SignInTableView: UITableViewController {
     
     var downloadAssistant: Download! = nil
     
-    var userSchema: UserSchemaProcessor!
-    var userDataSource: UserDataSource? = nil
     var functionSchema: FunctionSchemaProcessor!
     var functionDataSource: FunctionDataSource? = nil
     
-    
+    var curUser: User! = nil
+    var signedIn: Bool = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		errorMessage.isHidden = true
+        email_entry.autocorrectionType = .no
+        password_entry.autocorrectionType = .no
 		self.view.backgroundColor = UIColor.white
 		
 		enterButton.frame.size = CGSize(width: view.frame.width, height: 45)
@@ -46,35 +47,64 @@ class SignInTableView: UITableViewController {
 			email_entry.text = ""
 			password_entry.text = ""
 		} else {
-            downloadAssistant = Download(withURLString: buildSubmissionURL())
+            downloadAssistant = Download(withURLString: buildSubmissionURL(typeOfSubmission: "verify"))
             downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
             downloadAssistant.verify_request()
-			self.performSegue(withIdentifier: "completeSignIn", sender: self)
 		}
 		// TODO:: If they aren't empty, do something with input
 	}
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("user verified")
-        functionSchema = FunctionSchemaProcessor(responseJSON: downloadAssistant.dataFromServer! as! [AnyObject])
-        functionDataSource = FunctionDataSource(dataSource: functionSchema.)
-        
-        userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
-        userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
-        //userDataSource?.consolidate()
-        print(userDataSource?.userAt(0)?.email)
+        if signedIn == false {
+            functionSchema = FunctionSchemaProcessor(responseJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            let check = functionSchema.accepted
+            if check == true {
+                signedIn = true
+                errorMessage.isHidden = true
+                getCurrentUser()
+                //self.performSegue(withIdentifier: "completeSignIn", sender: self)
+            } else {
+                errorMessage.isHidden = false
+                //wrong password prompt
+            }
+        } else {
+            let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            var userss = userSchema.getAllUsers()
+            let user = userss![0]
+            let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+            //userDataSource.consolidate()
+            curUser = userDataSource.userAt(0)
+            let name = curUser.first_name
+            self.performSegue(withIdentifier: "completeSignIn", sender: self)
+        }
         
     }
     
-    deinit {
+    func getCurrentUser() {
         downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        downloadAssistant = Download(withURLString: buildSubmissionURL(typeOfSubmission: "user"))
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
+    }
+    
+    deinit {
+        downloadAssistant.removeObserver(self, forKeyPath: "verifyDataFromServer", context: nil)
+        downloadAssistant.removeObserver(self, forKeyPath: "userDataFromServer", context: nil)
     }
 
-    func buildSubmissionURL() -> String {
-        var url = Download.baseURL + "/users/verify?"
-        url = url + "email=" + email_entry.text!
-        url = url + "&password=" + password_entry.text!
-        url = url + "&apikey=" + Download.apikey
+    func buildSubmissionURL(typeOfSubmission: String) -> String {
+        var url = Download.baseURL + "/users"
+        if (typeOfSubmission == "verify") {
+            url = url + "/verify?"
+            url = url + "email=" + email_entry.text!
+            url = url + "&password=" + password_entry.text!
+            url = url + "&apikey=" + Download.apikey
+        } else if (typeOfSubmission == "user") {
+            url = url + "?"
+            url = url + "email=" + email_entry.text!
+            url = url + "&password=" + password_entry.text!
+            url = url + "&apikey=" + Download.apikey
+        }
         return url
     }
     
@@ -149,6 +179,7 @@ class SignInTableView: UITableViewController {
 			if segue.destination is HomeView {
 				let hv = segue.destination as! HomeView
 				hv.signedIn = true
+                hv.currentUser = curUser
 			}
 		}
 		print("should be signed in")

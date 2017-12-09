@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  Marketplace
 //
-//  Created by student on 12/7/17.
+//  Created by student on 12/6/17.
 //  Copyright © 2017 SSU. All rights reserved.
 //
 //

@@ -11,11 +11,12 @@ import CoreData
 
 class FunctionSchemaProcessor: NSObject {
     let response: [AnyObject]
-    let accep
+    var accepted: Bool = false
     
     init(responseJSON: [AnyObject]) {
         response = responseJSON
         super.init()
+        processJSON(response)
     }
     
     func processJSON(_ schema: [AnyObject]) {
@@ -33,6 +34,11 @@ class FunctionSchemaProcessor: NSObject {
                 var verify: Int
                 if let verified = responseDict["verified"] {
                     verify = (verified as? Int)!
+                    if verify == 1 {
+                        accepted = true
+                    } else {
+                        accepted = false
+                    }
                 }
                 //let user = NSEntityDescription.insertNewObject(forEntityName: "User", into:
                     //coreDataContext.backgroundContext!) as! User
@@ -43,11 +49,11 @@ class FunctionSchemaProcessor: NSObject {
                 
             }
         }
-        coreDataContext.saveContext();
+        //coreDataContext.saveContext();
     }
     
-    func getResponse() -> Int? {
-        
+    func getResponse() -> Bool? {
+        return accepted
     }
 }
 

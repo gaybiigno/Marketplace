@@ -30,7 +30,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var latitude = 0.0
     var longitude = 0.0
     
-    let downloadAssistant = Download(withURLString: "http://localhost:3306/items/all")
+    var downloadAssistant: Download! // = Download(withURLString: "http://localhost:8181/items/all")
     var itemsSchema: ItemSchemaProcessor!
     
     var itemDataSource: ItemDataSource? = nil
@@ -42,8 +42,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
-        downloadAssistant.download_request()
+        //downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        //downloadAssistant.download_request()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -79,17 +79,24 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         let specificItem = itemDataSource?.itemAt(2)
         print(specificItem?.item_name)
         print("recieved Items")
-        //itemsToShow = itemDataSource?.items
-        //itemsToShow = [Item]()
+        itemsToShow = (itemDataSource?.items)!
+        if itemsToShow == nil {
+            itemsToShow = [Item]()
+        }
     }
     
     deinit {
-        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
 //        var address = searchBar.text
 //        getCoordinatesOfAddress(addressString: address!)
+        downloadAssistant = Download(withURLString: "http://localhost:8181/items/all")
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
         let searchString = searchBar.text
         if var searchParams = searchString?.components(separatedBy: " ") {
             for i in 0..<searchParams.count {
@@ -108,7 +115,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     
     func findItemsWithStrings(_ params: [String]) -> [Item] {
         var itemsWithStrings = [Item]()
-        for item in (itemDataSource?.items)! {
+        for item in (itemsToShow) {
             if var splitTitle = item.item_name?.components(separatedBy: " ") {
                 if var splitCategory = item.item_category?.components(separatedBy: " ") {
                     for j in 0..<splitCategory.count {

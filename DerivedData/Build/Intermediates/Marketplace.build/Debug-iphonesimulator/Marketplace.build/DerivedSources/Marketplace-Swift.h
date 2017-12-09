@@ -287,6 +287,12 @@ SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 @end
 
 
+SWIFT_CLASS("_TtC11Marketplace18FunctionDataSource")
+@interface FunctionDataSource : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11Marketplace23FunctionSchemaProcessor")
 @interface FunctionSchemaProcessor : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -735,9 +741,9 @@ SWIFT_CLASS_NAMED("User")
 
 
 @interface User (SWIFT_EXTENSION(Marketplace))
-@property (nonatomic) int16_t bday;
-@property (nonatomic) int16_t bmonth;
-@property (nonatomic) int16_t byear;
+@property (nonatomic, copy) NSString * _Nullable bday;
+@property (nonatomic, copy) NSString * _Nullable bmonth;
+@property (nonatomic, copy) NSString * _Nullable byear;
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable email;
 @property (nonatomic, copy) NSString * _Nullable first_name;

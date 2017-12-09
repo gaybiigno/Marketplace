@@ -10,7 +10,7 @@ import UIKit
 
 class Upload: NSObject {
     
-    static let baseURL = "http://localhost:3306"
+    static let baseURL = "http://localhost:8181"
     static let apikey = "2747808961751484"
     
     var urlString: String
