@@ -468,6 +468,7 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified postedByLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified usernameLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ratingLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified purchaseButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified msgSellerButton;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
@@ -475,6 +476,7 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 - (void)prev:(UIImageView * _Nonnull)sender;
 - (void)clickEdit:(UIButton * _Nonnull)sender;
 - (void)clickMessage:(UIButton * _Nonnull)sender;
+- (void)clickPurchase:(UIButton * _Nonnull)sender;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -515,6 +517,25 @@ SWIFT_CLASS_NAMED("Pictures")
 @property (nonatomic) int32_t img_id;
 @property (nonatomic) int32_t item_id;
 @property (nonatomic, strong) Item * _Nullable item;
+@end
+
+@class UIPickerView;
+@class NSAttributedString;
+
+SWIFT_CLASS("_TtC11Marketplace10RatingView")
+@interface RatingView : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified ratePicker;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified submitButton;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified errorMessage;
+- (void)viewDidLoad;
+- (void)clickedSubmit:(UIButton * _Nonnull)sender;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -568,6 +589,32 @@ SWIFT_CLASS("_TtC11Marketplace4Sale")
 @property (nonatomic, strong) NSNumber * _Nullable sale_num;
 @property (nonatomic, strong) Item * _Nullable item;
 @property (nonatomic, strong) User * _Nullable seller;
+@end
+
+@class UIStepper;
+
+SWIFT_CLASS("_TtC11Marketplace25SearchParametersTableView")
+@interface SearchParametersTableView : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified backButton;
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified filterPicker;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified distanceEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified minPriceEntry;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified maxPriceEntry;
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified categoryPicker;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified rating;
+@property (nonatomic, weak) IBOutlet UIStepper * _Null_unspecified ratingStepper;
+- (void)viewDidLoad;
+- (void)clickedBack:(UIButton * _Nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class CLLocationManager;
@@ -677,11 +724,10 @@ SWIFT_CLASS("_TtC11Marketplace15UploadImageView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIPickerView;
-@class NSAttributedString;
 
 SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
 @interface UploadItemTableView : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified titleEntry;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified descriptionEntry;
@@ -700,8 +746,6 @@ SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
 - (IBAction)backButton:(UIButton * _Nonnull)sender;
 - (void)clickUpload:(UIButton * _Nonnull)sender;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
-- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;

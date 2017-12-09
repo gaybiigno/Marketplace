@@ -25,7 +25,6 @@ class ItemView: UIViewController {
 	@IBOutlet weak var itemCategory: UILabel!
 	@IBOutlet weak var itemTags: UITextView!
 	
-	
 	@IBOutlet weak var tagTitle: UILabel!
 	@IBOutlet weak var ageTitle: UILabel!
 	@IBOutlet weak var ageLabel: UILabel!
@@ -58,11 +57,11 @@ class ItemView: UIViewController {
 		self.scrollView.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 200)
 		
-		itemPriceLabel.numberOfLines = 2
-		itemPriceLabel.adjustsFontSizeToFitWidth = true
-		itemPriceLabel.clipsToBounds = true
-		itemPriceLabel.textAlignment = .left
-		itemPriceLabel.baselineAdjustment = .alignCenters
+        
+        itemPriceLabel.adjustsFontSizeToFitWidth = true
+        itemPriceLabel.clipsToBounds = true
+        itemPriceLabel.textAlignment = .left
+        itemPriceLabel.baselineAdjustment = .alignCenters
 
 		start()
     }
@@ -160,15 +159,18 @@ class ItemView: UIViewController {
 			UIAlertAction in
 			self.performSegue(withIdentifier: "purchaseToHome", sender: self)
 		})
+        alertController.addAction(UIAlertAction(title: "Rate Seller", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            self.performSegue(withIdentifier: "toRateSeller", sender: self)
+        })
 		alertController.addAction(UIAlertAction(title: "View Purchased Item", style: UIAlertActionStyle.cancel) {
 			UIAlertAction in
 			self.purchaseButton.alpha = 0.4
 			self.purchaseButton.isEnabled = false
 		})
-	UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
-		
-		
-		
+        
+        
+        self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func setItemCategory() {

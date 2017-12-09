@@ -13,6 +13,11 @@ protocol ImageHandler: class {
 }
 
 class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource, ImageHandler {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return 1
@@ -258,19 +263,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     func setImages(_ itemList: UIImage) {
         itemImages.append(itemList)
     }
-	
-	
-	//MARK: - Delegates and data sources
-
-	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return categories.count
-	}
-	
-	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		if pickerView == catPicker {
-			categoryChoice.text = categories[row]
-		}
-	}
 	
     // MARK: - Table view data source
 
