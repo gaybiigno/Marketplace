@@ -10,7 +10,9 @@ import UIKit
 import Photos
 
 class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+	
+	@IBOutlet weak var viewTitleLabel: UITextField!
+	
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var addPicButton: UIButton!
     
@@ -51,8 +53,7 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        
-
+	
         signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
         self.view.backgroundColor = UIColor.white

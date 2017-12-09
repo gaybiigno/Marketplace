@@ -58,7 +58,7 @@
                                     </textView>
                                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop by Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-3i-Wxu">
                                         <rect key="frame" x="137" y="468" width="169" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -162,7 +162,7 @@
                                             <segue destination="UP6-fd-42J" kind="embed" identifier="showMenu" id="LMb-YX-0KW"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-en-Kll" userLabel="Search Options Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-en-Kll" userLabel="Search Options Button">
                                         <rect key="frame" x="379" y="72" width="55" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.67662793399999999" green="0.5976340175" blue="0.47552394869999998" alpha="0.95865426936619713" colorSpace="custom" customColorSpace="sRGB"/>
@@ -191,12 +191,14 @@
                         <outlet property="fashionButton" destination="lG0-dK-iXS" id="fgb-bp-cuh"/>
                         <outlet property="helloLabel" destination="MOr-bU-R9e" id="glq-4q-BsI"/>
                         <outlet property="homeGardButton" destination="a1n-8M-c5X" id="d2G-2Q-vz3"/>
+                        <outlet property="mainText" destination="uGd-st-GbQ" id="zma-Wt-i3Q"/>
                         <outlet property="menuButton" destination="Y9L-dn-i2H" id="6UQ-xT-PDP"/>
                         <outlet property="navBar" destination="uD5-lZ-RLq" id="lN6-6F-RYp"/>
                         <outlet property="registerButton" destination="TAm-08-9qu" id="vsa-2Q-3FU"/>
                         <outlet property="scrollView" destination="e3n-U3-MEs" id="eh0-3s-Q9S"/>
                         <outlet property="searchBar" destination="GgZ-ep-YEN" id="kxU-bH-Vl8"/>
                         <outlet property="searchOptionsButton" destination="Cvi-en-Kll" id="2Ed-f0-HT4"/>
+                        <outlet property="shopByLabel" destination="6nf-3i-Wxu" id="Mmx-BO-NYA"/>
                         <outlet property="signInButton" destination="cSD-QA-EoS" id="9M1-KK-S6U"/>
                         <outlet property="sportingButton" destination="sTw-Oc-Tpo" id="J6m-h3-tHi"/>
                         <outlet property="viewForMenu" destination="1go-gb-PkT" id="xnE-jX-Qo8"/>
@@ -455,6 +457,7 @@
                         <outlet property="email" destination="Yyx-OZ-XAa" id="Loa-L4-coJ"/>
                         <outlet property="enterButton" destination="0KI-tA-Eq9" id="Rqb-zN-XnM"/>
                         <outlet property="firstPrompt" destination="aOf-oY-6IN" id="XEE-Ft-8IT"/>
+                        <outlet property="titleLabel" destination="kjB-q5-LYs" id="Vwn-NW-CZC"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="forgotToHome" id="nMo-Ch-E7i"/>
                     </connections>
                 </viewController>
@@ -888,6 +891,7 @@
                         <outlet property="profilePicture" destination="1Zf-pL-tVi" id="479-6o-iSS"/>
                         <outlet property="signUpButton" destination="D2L-fo-TBu" id="YS2-3i-h8l"/>
                         <outlet property="state" destination="WcT-bY-jfi" id="dXC-m6-4Eu"/>
+                        <outlet property="viewTitleLabel" destination="k77-cr-e5n" id="e3s-0Y-Nd0"/>
                         <outlet property="year" destination="qFh-3b-mzl" id="AnM-NY-UD3"/>
                         <outlet property="zipcode" destination="aaO-wC-18u" id="PPH-IT-ZJ6"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="completeRegToHome" id="Qbs-5V-959"/>
@@ -1600,6 +1604,13 @@
                                                     <color key="textColor" red="0.058823529409999999" green="0.086274509799999996" blue="0.24313725489999999" alpha="0.96294564260000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQo-Ot-7jV">
+                                                    <rect key="frame" x="357" y="14" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchForDistance:" destination="Lzk-EX-6ES" eventType="valueChanged" id="Fs7-Oc-hsw"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1638,6 +1649,13 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWh-04-ey3">
+                                                    <rect key="frame" x="357" y="13" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchForPrice:" destination="Lzk-EX-6ES" eventType="valueChanged" id="sih-4p-1aw"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1648,15 +1666,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvd-lY-NIR">
-                                                    <rect key="frame" x="8" y="17" width="114" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Category:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvd-lY-NIR">
+                                                    <rect key="frame" x="8" y="17" width="90" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.058823529409999999" green="0.086274509799999996" blue="0.24313725489999999" alpha="0.96294564260000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFO-Y7-hok">
+                                                    <rect key="frame" x="357" y="29" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7n7-eC-HhT">
-                                                    <rect key="frame" x="130" y="0.0" width="284" height="90"/>
+                                                    <rect key="frame" x="91" y="0.0" width="258" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -1694,6 +1716,10 @@
                                                     <rect key="frame" x="237" y="15" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </stepper>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ju9-2S-i4G">
+                                                    <rect key="frame" x="357" y="13" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1711,9 +1737,17 @@
                         <outlet property="distanceEntry" destination="BAu-am-rqI" id="5ge-9d-hW1"/>
                         <outlet property="filterPicker" destination="5V4-Ui-bD8" id="ULT-8x-Doa"/>
                         <outlet property="maxPriceEntry" destination="pjb-fR-u62" id="ySg-ZY-f1O"/>
+                        <outlet property="mileLabel" destination="zNK-qw-wgw" id="fb4-4H-hU0"/>
                         <outlet property="minPriceEntry" destination="URb-3q-pIh" id="EDW-65-jvX"/>
+                        <outlet property="outtaTenLabel" destination="YGD-LR-7C5" id="lGk-Gu-qF9"/>
                         <outlet property="rating" destination="ast-Hr-fVw" id="NgN-bA-54h"/>
                         <outlet property="ratingStepper" destination="c2l-RU-66b" id="Yip-Mj-zpL"/>
+                        <outlet property="switchForPrice" destination="AWh-04-ey3" id="TFT-ux-mdE"/>
+                        <outlet property="toLabel" destination="67b-yc-f7G" id="NGA-u9-qUD"/>
+                        <outlet property="toggleCategory" destination="RFO-Y7-hok" id="cwe-ZV-Dpb"/>
+                        <outlet property="toggleDistance" destination="kQo-Ot-7jV" id="ty1-SG-hfs"/>
+                        <outlet property="togglePrice" destination="AWh-04-ey3" id="8gt-gN-JIR"/>
+                        <outlet property="toggleRating" destination="Ju9-2S-i4G" id="77S-nc-T5S"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB6-MP-Gbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2424,7 +2458,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YMW-cZ-2uV"/>
-        <segue reference="Pjh-Hn-Bic"/>
-        <segue reference="WcH-0a-Du0"/>
+        <segue reference="5uY-PQ-cL7"/>
+        <segue reference="Qbs-5V-959"/>
     </inferredMetricsTieBreakers>
 </document>

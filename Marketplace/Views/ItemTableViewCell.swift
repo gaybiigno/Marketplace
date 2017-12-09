@@ -32,8 +32,8 @@ class ItemTableViewCell: UITableViewCell {
     func useItem(_ item: Item?) {
         thisItem = item
         if let i = item {
-            cellLabel.text = item?.item_name
-            cellPrice.text = String (describing: item?.price)
+            cellLabel.text = i.item_name
+            cellPrice.text = String (describing: i.price)
         } else {
             cellLabel.text = "Item not found!"
         }

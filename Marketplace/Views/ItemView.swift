@@ -89,9 +89,6 @@ class ItemView: UIViewController {
 	
 	func start() {
 		imageCounterLabel.text = "1/1"
-		itemPriceLabel.layer.mask?.cornerRadius = 10
-		itemPriceLabel.layer.masksToBounds = true
-
 		purchaseButton.layer.cornerRadius = 5
 		msgSellerButton.layer.cornerRadius = 5
 		
@@ -107,7 +104,6 @@ class ItemView: UIViewController {
 		if let img = UIImage(named: "PhotoIcon"), hasValues {
 			imageArray.append(img)
 		}
-		
 
 		purchaseButton.addTarget(self, action: #selector(clickPurchase(_:)), for: .touchUpInside)
 		if !editView {
@@ -231,10 +227,20 @@ class ItemView: UIViewController {
 			
 			itemTags.text = editView ? stringRep : itemModel.getTags()
 		}
-		
+		/*
 		if itemTags.text.isEmpty {
 			tagTitle.isHidden = true
+			itemTags.isHidden = true
+			let heightToSub = itemTags.frame.height
+			
+			let moveUpObjects = [ageTitle, ageLabel, profilePicture, postedByLabel, usernameLabel, ra]
+			
+			ageTitle.center = CGPoint(ageTitle.center.x, ageTitle.center.y - heightToSub)
+			ageLabel.center = CGPoint(ageLabel.center.x, ageLabel.center.y - heightToSub)
+			let tOrigin = tagViewBox.frame.origin
+			tagViewBox.frame = CGRect(x: tOrigin.x, y: tOrigin.y, width: tagViewBox.frame.width, height: tagViewBox.frame.height - heightToSub)
 		}
+     */
     }
 	
 	func setItemAge() {

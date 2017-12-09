@@ -12,6 +12,7 @@ import MessageUI
 class ForgotPasswordView: UIViewController, MFMailComposeViewControllerDelegate {
 
 	
+	@IBOutlet weak var titleLabel: UITextField!
 	@IBOutlet weak var firstPrompt: UITextView!
 	@IBOutlet weak var completePrompt: UITextView!
 	@IBOutlet weak var email: UITextField!
@@ -23,7 +24,6 @@ class ForgotPasswordView: UIViewController, MFMailComposeViewControllerDelegate 
         super.viewDidLoad()
 		
 		enterButton.frame.size = CGSize(width: view.frame.width, height: 45)
-
         // Do any additional setup after loading the view.
     }
 

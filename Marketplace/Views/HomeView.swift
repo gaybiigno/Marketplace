@@ -18,19 +18,19 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
 	
+	@IBOutlet weak var mainText: UITextView!
+	@IBOutlet weak var shopByLabel: UILabel!
+	
 	@IBOutlet weak var helloLabel: UILabel!
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var signInButton: UIButton!
-	
 	@IBOutlet weak var menuButton: UIButton!
-	
 	@IBOutlet weak var homeGardButton: UIButton!
 	@IBOutlet weak var fashionButton: UIButton!
 	@IBOutlet weak var electronicsButton: UIButton!
 	@IBOutlet weak var artCollectButton: UIButton!
 	@IBOutlet weak var autoVehiButton: UIButton!
 	@IBOutlet weak var sportingButton: UIButton!
-	
 	@IBOutlet weak var navBar: UINavigationItem!
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var viewForMenu: UIView!
@@ -56,7 +56,18 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		self.view.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+10)
         searchBar.delegate = self
+		
+		searchBorders()
     }
+	
+	func searchBorders() {
+		searchOptionsButton.layer.borderColor = UIColor.black.cgColor
+		searchOptionsButton.layer.borderWidth = 0.2
+		
+		searchBar.layer.borderColor = UIColor.black.cgColor
+		searchBar.layer.borderWidth = 0.2
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
