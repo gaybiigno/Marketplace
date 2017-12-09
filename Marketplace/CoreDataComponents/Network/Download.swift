@@ -39,6 +39,20 @@ class Download: NSObject {
         }
     }
     
+    func verify_request() {
+        if let url = URL(string: urlString) {
+            do {
+                var contents = try String(contentsOf: url)
+                contents = makeJsonArray(string: contents)
+                if let data = contents.data(using: .utf8) {
+                    dataFromServer = try! JSONSerialization.jsonObject(with: data, options: []) as! AnyObject
+                }
+            } catch {
+                print("couldn't load")
+            }
+        }
+    }
+    
     func makeJsonArray(string: String) -> String {
         let newString = "[" + string + "]"
         return newString

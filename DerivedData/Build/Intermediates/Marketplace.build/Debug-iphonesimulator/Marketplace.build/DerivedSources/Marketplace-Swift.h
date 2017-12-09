@@ -286,6 +286,12 @@ SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC11Marketplace23FunctionSchemaProcessor")
+@interface FunctionSchemaProcessor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 @class UIScrollView;
 @class UINavigationItem;
 @class UISearchBar;
@@ -468,6 +474,7 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified postedByLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified usernameLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ratingLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified purchaseButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified msgSellerButton;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
@@ -475,6 +482,7 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 - (void)prev:(UIImageView * _Nonnull)sender;
 - (void)clickEdit:(UIButton * _Nonnull)sender;
 - (void)clickMessage:(UIButton * _Nonnull)sender;
+- (void)clickPurchase:(UIButton * _Nonnull)sender;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -627,6 +635,7 @@ SWIFT_CLASS("_TtC11Marketplace15SignInTableView")
 - (void)viewDidLoad;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (IBAction)submit:(UIButton * _Nonnull)sender;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -767,8 +776,8 @@ SWIFT_CLASS("_TtC11Marketplace15UserProfileView")
 @end
 
 
-SWIFT_CLASS("_TtC11Marketplace22UsertemSchemaProcessor")
-@interface UsertemSchemaProcessor : NSObject
+SWIFT_CLASS("_TtC11Marketplace19UserSchemaProcessor")
+@interface UserSchemaProcessor : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

@@ -19,6 +19,7 @@ class InboxMsgTableCell: UITableViewCell {
 	 //var thisMessage: Message? = nil
 	var originalCenter = CGPoint()
 	var deleteOnDragRelease = false
+    var originalFrame = CGRect()
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,11 +75,11 @@ class InboxMsgTableCell: UITableViewCell {
 		if recognizer.state == .ended {
 			print("in ended")
 			// the frame this cell had before user dragged it
-			originalFrame = CGRect(x: 0, y: frame.origin.y,
+            originalFrame = CGRect(x: 0, y: frame.origin.y,
 			                           width: bounds.size.width, height: bounds.size.height)
 			if !deleteOnDragRelease {
 				// if the item is not being deleted, snap back to the original location
-				UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
+                UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
 			} else {
 				popUp()
 			}

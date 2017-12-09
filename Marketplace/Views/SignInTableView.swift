@@ -18,6 +18,15 @@ class SignInTableView: UITableViewController {
 	@IBOutlet weak var enterButton: UIButton!
 	
 	let userInfo = UserModel()
+    
+    var downloadAssistant: Download! = nil
+    
+    var userSchema: UserSchemaProcessor!
+    var userDataSource: UserDataSource? = nil
+    var functionSchema: FunctionSchemaProcessor!
+    var functionDataSource: FunctionDataSource? = nil
+    
+    
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +46,38 @@ class SignInTableView: UITableViewController {
 			email_entry.text = ""
 			password_entry.text = ""
 		} else {
+            downloadAssistant = Download(withURLString: buildSubmissionURL())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.verify_request()
 			self.performSegue(withIdentifier: "completeSignIn", sender: self)
 		}
 		// TODO:: If they aren't empty, do something with input
 	}
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("user verified")
+        functionSchema = FunctionSchemaProcessor(responseJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        functionDataSource = FunctionDataSource(dataSource: functionSchema.)
+        
+        userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+        //userDataSource?.consolidate()
+        print(userDataSource?.userAt(0)?.email)
+        
+    }
+    
+    deinit {
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+    }
 
+    func buildSubmissionURL() -> String {
+        var url = Download.baseURL + "/users/verify?"
+        url = url + "email=" + email_entry.text!
+        url = url + "&password=" + password_entry.text!
+        url = url + "&apikey=" + Download.apikey
+        return url
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

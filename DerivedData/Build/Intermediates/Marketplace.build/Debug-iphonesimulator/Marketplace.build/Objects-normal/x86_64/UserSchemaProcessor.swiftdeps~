@@ -1,10 +1,10 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
-- "UsertemSchemaProcessor"
+- "UserSchemaProcessor"
 provides-nominal:
-- "11Marketplace22UsertemSchemaProcessorC"
+- "11Marketplace19UserSchemaProcessorC"
 provides-member:
-- ["11Marketplace22UsertemSchemaProcessorC", ""]
+- ["11Marketplace19UserSchemaProcessorC", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
@@ -27,7 +27,7 @@ depends-top-level:
 - !private "StringLiteralType"
 - !private "UnicodeScalarType"
 - "User"
-- "UsertemSchemaProcessor"
+- "UserSchemaProcessor"
 - !private "abort"
 - !private "print"
 depends-member:
@@ -346,27 +346,27 @@ depends-member:
 - !private ["11Marketplace4UserC", "rating"]
 - !private ["11Marketplace4UserC", "state"]
 - !private ["11Marketplace4UserC", "zip"]
-- ["11Marketplace22UsertemSchemaProcessorC", "AnyObject"]
-- ["11Marketplace22UsertemSchemaProcessorC", "CoreDataCommonMethods"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "Dictionary"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "Int16"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "NSEntityDescription"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "NSFetchRequest"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "NSFetchRequestResult"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "NSLog"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "NSSortDescriptor"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "String"]
-- ["11Marketplace22UsertemSchemaProcessorC", "User"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "abort"]
-- ["11Marketplace22UsertemSchemaProcessorC", "coreDataContext"]
-- ["11Marketplace22UsertemSchemaProcessorC", "deinit"]
-- ["11Marketplace22UsertemSchemaProcessorC", "fetchAllUsers"]
-- ["11Marketplace22UsertemSchemaProcessorC", "getAllUsers"]
-- ["11Marketplace22UsertemSchemaProcessorC", "init"]
-- !private ["11Marketplace22UsertemSchemaProcessorC", "print"]
-- ["11Marketplace22UsertemSchemaProcessorC", "processJSON"]
-- ["11Marketplace22UsertemSchemaProcessorC", "processUsersJSON"]
-- ["11Marketplace22UsertemSchemaProcessorC", "userModelJSONString"]
+- ["11Marketplace19UserSchemaProcessorC", "AnyObject"]
+- ["11Marketplace19UserSchemaProcessorC", "CoreDataCommonMethods"]
+- !private ["11Marketplace19UserSchemaProcessorC", "Dictionary"]
+- !private ["11Marketplace19UserSchemaProcessorC", "Int16"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSEntityDescription"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSFetchRequest"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSFetchRequestResult"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSLog"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSSortDescriptor"]
+- !private ["11Marketplace19UserSchemaProcessorC", "String"]
+- ["11Marketplace19UserSchemaProcessorC", "User"]
+- !private ["11Marketplace19UserSchemaProcessorC", "abort"]
+- ["11Marketplace19UserSchemaProcessorC", "coreDataContext"]
+- ["11Marketplace19UserSchemaProcessorC", "deinit"]
+- ["11Marketplace19UserSchemaProcessorC", "fetchAllUsers"]
+- ["11Marketplace19UserSchemaProcessorC", "getAllUsers"]
+- ["11Marketplace19UserSchemaProcessorC", "init"]
+- !private ["11Marketplace19UserSchemaProcessorC", "print"]
+- ["11Marketplace19UserSchemaProcessorC", "processJSON"]
+- ["11Marketplace19UserSchemaProcessorC", "processUsersJSON"]
+- ["11Marketplace19UserSchemaProcessorC", "userModelJSONString"]
 - !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
@@ -460,7 +460,7 @@ depends-nominal:
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
 - !private "11Marketplace4UserC"
-- "11Marketplace22UsertemSchemaProcessorC"
+- "11Marketplace19UserSchemaProcessorC"
 - !private "s23_BidirectionalIndexableP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
@@ -514,4 +514,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "00fbbb0f1a83230f46a8b6990191f086"
+interface-hash: "a1ca85185bd3b86813ef40d73b659807"

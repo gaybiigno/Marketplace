@@ -20,6 +20,7 @@ depends-top-level:
 - "StringLiteralType"
 - !private "URL"
 - !private "UnicodeScalarType"
+- !private "print"
 depends-member:
 - !private ["s23BidirectionalCollectionP", "data"]
 - ["s23BidirectionalCollectionP", "init"]
@@ -31,6 +32,7 @@ depends-member:
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "jsonObject"]
 - !private ["s7CVarArgP", "makeJsonArray"]
+- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "urlString"]
 - ["s7CVarArgP", ""]
 - !private ["s10CollectionP", "data"]
@@ -45,6 +47,7 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "jsonObject"]
 - !private ["s28CustomDebugStringConvertibleP", "makeJsonArray"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "urlString"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s29CustomPlaygroundQuickLookableP", "data"]
@@ -59,6 +62,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "jsonObject"]
 - !private ["s23CustomStringConvertibleP", "makeJsonArray"]
+- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "urlString"]
 - !private ["s23CustomStringConvertibleP", "utf8"]
 - ["s23CustomStringConvertibleP", ""]
@@ -75,7 +79,9 @@ depends-member:
 - ["11Marketplace8DownloadC", "download_request"]
 - ["11Marketplace8DownloadC", "init"]
 - ["11Marketplace8DownloadC", "makeJsonArray"]
+- !private ["11Marketplace8DownloadC", "print"]
 - ["11Marketplace8DownloadC", "urlString"]
+- ["11Marketplace8DownloadC", "verify_request"]
 - !private ["s9EncodableP", "data"]
 - ["s9EncodableP", "init"]
 - !private ["SS10FoundationE8EncodingV", "utf8"]
@@ -87,6 +93,7 @@ depends-member:
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "jsonObject"]
 - !private ["s9EquatableP", "makeJsonArray"]
+- !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "urlString"]
 - !private ["s9EquatableP", "utf8"]
 - ["s9EquatableP", ""]
@@ -104,6 +111,7 @@ depends-member:
 - ["s8HashableP", "init"]
 - !private ["s8HashableP", "jsonObject"]
 - !private ["s8HashableP", "makeJsonArray"]
+- !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "urlString"]
 - !private ["s8HashableP", "utf8"]
 - ["s8HashableP", ""]
@@ -134,7 +142,9 @@ depends-member:
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "jsonObject"]
 - ["So8NSObjectC", "makeJsonArray"]
+- !private ["So8NSObjectC", "print"]
 - ["So8NSObjectC", "urlString"]
+- ["So8NSObjectC", "verify_request"]
 - ["So8NSObjectC", ""]
 - !private ["So16NSObjectProtocolP", "JSONSerialization"]
 - !private ["So16NSObjectProtocolP", "String"]
@@ -144,6 +154,7 @@ depends-member:
 - ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "jsonObject"]
 - !private ["So16NSObjectProtocolP", "makeJsonArray"]
+- !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "urlString"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So14NSSecureCodingP", "data"]
@@ -193,6 +204,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObject"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "makeJsonArray"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "urlString"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s21_ObjectiveCBridgeableP", "data"]
@@ -294,4 +306,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "1390820fab06395300ac9c421a7ef419"
+interface-hash: "81bfe1ef7378c962a308be3ea01a37ba"
