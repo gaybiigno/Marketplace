@@ -906,7 +906,7 @@
             <objects>
                 <viewController id="crb-H0-5jg" customClass="EditProfileView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vAS-78-g0R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoi-Z5-tFb">
@@ -1530,7 +1530,7 @@
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lzk-EX-6ES" customClass="SearchParametersTableView" customModule="Marketplace" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W3B-wQ-taF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.67662793399999999" green="0.5976340175" blue="0.47552394869999998" alpha="0.95865426939999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1560,7 +1560,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5V4-Ui-bD8">
-                                                    <rect key="frame" x="76" y="64" width="338" height="86"/>
+                                                    <rect key="frame" x="76" y="64" width="330" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ5-Ky-pjH">
@@ -1748,7 +1748,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-bY-VC6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-bY-VC6">
                                                     <rect key="frame" x="124" y="17" width="35" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -1762,10 +1762,35 @@
                                                     <color key="textColor" red="0.058823529409999999" green="0.086274509799999996" blue="0.24313725489999999" alpha="0.96294564260000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-sz-apS">
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-sz-apS">
                                                     <rect key="frame" x="237" y="15" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="changeRating:" destination="Lzk-EX-6ES" eventType="valueChanged" id="L5k-ie-Vo1"/>
+                                                    </connections>
                                                 </stepper>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="DwA-14-8QQ">
+                                        <rect key="frame" x="0.0" y="660" width="414" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DwA-14-8QQ" id="LHs-fR-dlu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="39.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-z0-3RZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.31967264870000001" blue="0.2069118268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                    <state key="normal" title="Apply">
+                                                        <color key="titleColor" red="0.97268694639999997" green="0.96495133639999997" blue="0.95224434140000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="clickedApply:" destination="Lzk-EX-6ES" eventType="touchUpInside" id="bxB-BE-VIw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1777,6 +1802,7 @@
                             <outlet property="delegate" destination="Lzk-EX-6ES" id="Ore-36-Y6u"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="414" height="760"/>
                     <connections>
                         <outlet property="backButton" destination="zJ5-Ky-pjH" id="Z17-xJ-sH5"/>
                         <outlet property="categoryPicker" destination="Cdd-7l-VvK" id="0gK-7A-Rfq"/>
@@ -1784,18 +1810,17 @@
                         <outlet property="filterPicker" destination="5V4-Ui-bD8" id="ULT-8x-Doa"/>
                         <outlet property="maxPriceEntry" destination="WHT-qa-HE2" id="PIN-kN-mEk"/>
                         <outlet property="minPriceEntry" destination="9MI-wP-x0f" id="M4n-UY-jWO"/>
-                        <outlet property="outtaTenLabel" destination="onB-0u-Sh1" id="Hfl-cd-xeU"/>
                         <outlet property="popupCategory" destination="uew-pz-UVh" id="4sl-W2-hSf"/>
                         <outlet property="popupDistance" destination="WaZ-eT-sqb" id="4g9-Oq-g5P"/>
                         <outlet property="popupPrice" destination="KCS-p3-NFQ" id="Qpz-W2-0RF"/>
                         <outlet property="popupRating" destination="g0I-eL-deo" id="zb6-eJ-4Vp"/>
                         <outlet property="rating" destination="QzP-bY-VC6" id="cqr-0w-kNs"/>
                         <outlet property="ratingStepper" destination="Z5F-sz-apS" id="yhg-h0-ZQj"/>
-                        <outlet property="toLabel" destination="glf-By-apq" id="waO-Jq-WAn"/>
                         <outlet property="toggleCategory" destination="RFO-Y7-hok" id="cwe-ZV-Dpb"/>
                         <outlet property="toggleDistance" destination="kQo-Ot-7jV" id="ty1-SG-hfs"/>
                         <outlet property="togglePrice" destination="AWh-04-ey3" id="8gt-gN-JIR"/>
                         <outlet property="toggleRating" destination="Ju9-2S-i4G" id="77S-nc-T5S"/>
+                        <segue destination="ZTj-Ha-SCW" kind="presentation" identifier="paramsToSearch" modalPresentationStyle="fullScreen" id="PID-hA-ejW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB6-MP-Gbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2204,21 +2229,21 @@
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTj-Ha-SCW" customClass="SearchTableView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A8k-aj-g4N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" showsCancelButton="YES" id="1kL-Td-gUA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.67662793399999999" green="0.5976340175" blue="0.47552394869999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="75" id="aY5-Jx-OmY" customClass="ItemTableViewCell" customModule="Marketplace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="84" width="200" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aY5-Jx-OmY" id="8TI-e1-vg2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="74.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhk-YX-BeN">
@@ -2505,8 +2530,9 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PID-hA-ejW"/>
         <segue reference="YMW-cZ-2uV"/>
         <segue reference="5uY-PQ-cL7"/>
-        <segue reference="Qbs-5V-959"/>
+        <segue reference="S3O-V1-7Vh"/>
     </inferredMetricsTieBreakers>
 </document>

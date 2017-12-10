@@ -13,13 +13,22 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    private var filterChoices = ["", "Most Recent", "Price (High - Low)", "Price (Low - High)", "Item Name (A - Z)", "Item Name (Z - A)"]
+    
     let itemModel = ItemModel()
     
 	var items = [ItemView]()
     
     var filteredItems = [ItemView]()
 	
-	var searchParameter = ""
+    var searchParams = false
+	var keyWords = ""
+    // var sortBy: Int! // Index in filterChoices
+    var distanceParameter: Double!
+    var minPrice: Double!
+    var maxPrice: Double!
+    var category: String!
+    var rating: Int!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -36,6 +45,9 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var itemDataSource: ItemDataSource? = nil
     var itemsToShow = [Item]()
 
+    var usersSchema: UsertemSchemaProcessor!
+    var userDataSource: UserDataSource? = nil
+    
     
     //var currentLocation = CLLocation!
 	
@@ -64,8 +76,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
-		searchController.searchBar.text = searchParameter
+		searchController.searchBar.text = keyWords
         definesPresentationContext = true
+        
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -76,39 +90,95 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         
         itemDataSource = ItemDataSource(dataSource: items_returned)
         itemDataSource?.consolidate()
-        let specificItem = itemDataSource?.itemAt(2)
-        print(specificItem?.item_name)
-        print("recieved Items")
-        //itemsToShow = itemDataSource?.items
-        //itemsToShow = [Item]()
+        
+        usersSchema = UsertemSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        let users_returned = usersSchema.getAllUsers()
+        userDataSource = UserDataSource(dataSource: users_returned)
+        userDataSource?.consolidate()
+        
+        if searchParams {
+            setSearchies()
+        }
     }
     
     deinit {
         downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar!) {
-//        var address = searchBar.text
-//        getCoordinatesOfAddress(addressString: address!)
-        let searchString = searchBar.text
-        if var searchParams = searchString?.components(separatedBy: " ") {
-            for i in 0..<searchParams.count {
-                searchParams[i] = searchParams[i].lowercased()
-            }
-            print(searchParams)
-            let matchedItems = findItemsWithStrings(searchParams)
+    func setSearchies() {
+        if let matchedItems = filterBySearchParams() {
             itemsToShow = matchedItems
             tableView.reloadData()
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        var address = searchBar.text
+//        getCoordinatesOfAddress(addressString: address!)
+        let searchString = searchBar.text
+        if var searchText = searchString?.components(separatedBy: " ") {
+            for i in 0..<searchText.count {
+                searchText[i] = searchText[i].lowercased()
+            }
+            print(searchText)
+            let list = searchParams ? filterBySearchParams() : nil
+            let matchedItems = findItemsWithStrings(searchText, list)
+            itemsToShow = matchedItems
+            tableView.reloadData()
+        }
+    }
+    func findUserByEmail(_ senderEmail: String) -> User? {
+        for user in (userDataSource?.users)! {
+            if user.email == senderEmail {
+                return user
+            }
+        }
+        return nil
+    }
+    
+    func filterBySearchParams() -> [Item]? {
+        var filteredItems = [Item]()
+        for item in (itemDataSource?.items)! {
+            if let cat = category, item.item_category?.lowercased() != cat.lowercased() {
+                continue
+            }
+            if let rate = rating {
+                if let seller = findUserByEmail((item.seller_email?.lowercased())!) {
+                    if seller.rating < rate {
+                        continue
+                    }
+                }
+            }
+            if let lower = minPrice {
+                if lower > item.price {
+                    continue
+                }
+            }
+            if let higher = maxPrice {
+                if higher < item.price {
+                    continue
+                }
+            }
+            filteredItems.append(item)
+        }
+        return filteredItems
+    }
+    
+    
+    // Ryan???
     func findCoordinatesOfItem(_ item: Item) {
         
     }
     
-    func findItemsWithStrings(_ params: [String]) -> [Item] {
+    func findItemsWithStrings(_ params: [String], _ itemList: [Item]?) -> [Item] {
         var itemsWithStrings = [Item]()
-        for item in (itemDataSource?.items)! {
+        var lookList = [Item]()
+        if let valid = itemList {
+            lookList = valid
+        } else {
+            lookList = (itemDataSource?.items)!
+        }
+        for item in lookList {
             if var splitTitle = item.item_name?.components(separatedBy: " ") {
                 if var splitCategory = item.item_category?.components(separatedBy: " ") {
                     for j in 0..<splitCategory.count {

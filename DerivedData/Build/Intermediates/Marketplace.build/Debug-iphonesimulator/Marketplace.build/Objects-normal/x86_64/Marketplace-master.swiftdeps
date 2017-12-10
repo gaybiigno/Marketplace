@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "319a540938f7094bd3675b19dcbade00"
-build_time: [1512859307, 170099000]
+build_time: [1512867885, 865599000]
 inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Item+CoreDataProperties.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/InboxMsgTableCell.swift": [1512854952, 0]
@@ -13,10 +13,10 @@ inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Sale+CoreDataProperties.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Tags.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/Network/Download.swift": [1512854952, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchTableView.swift": [1512854952, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchTableView.swift": [1512867885, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures+CoreDataProperties.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/InboxTableView.swift": [1512854952, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1512859306, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1512867885, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/UploadImageView.swift": [1512854952, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Inbox.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemDataSource.swift": [1512854952, 0]
@@ -24,7 +24,7 @@ inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Tags+CoreDataProperties.swift": [1512854951, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Models/ItemModel.swift": [1512854952, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/User+CoreDataProperties.swift": [1512854952, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/HomeView.swift": [1512854952, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/HomeView.swift": [1512866364, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/ItemTableViewCell.swift": [1512854952, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/Network/CoreDataCommonMethods.swift": [1512854952, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemSchemaProcessor.swift": [1512854952, 0]

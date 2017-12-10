@@ -11,21 +11,15 @@ import UIKit
 class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // TODO: Upon submit, check vals and set bool for filter______ vars
-    
+    weak var delegate: SegueHandler?
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var filterPicker: UIPickerView!
-    
     @IBOutlet weak var distanceEntry: UITextField!
-
     @IBOutlet weak var minPriceEntry: UITextField!
-    @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var maxPriceEntry: UITextField!
-    
     @IBOutlet weak var categoryPicker: UIPickerView!
-    
     @IBOutlet weak var rating: UILabel!
-    @IBOutlet weak var outtaTenLabel: UILabel!
     @IBOutlet weak var ratingStepper: UIStepper!
 	
 	@IBOutlet weak var toggleDistance: UISwitch!
@@ -72,19 +66,18 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
         backButton.addTarget(self, action: #selector(clickedBack(_:)), for: .touchUpInside)
-
-        // Preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
         
         let hiddenCells = [popupCategory, popupDistance, popupPrice, popupRating]
         for cell in hiddenCells {
             cell?.isHidden = true
         }
-        
         toggleDistance.setOn(false, animated: false)
         togglePrice.setOn(false, animated: false)
         toggleRating.setOn(false, animated: false)
         toggleCategory.setOn(false, animated: false)
+
+        // Preserve selection between presentations
+        self.clearsSelectionOnViewWillAppear = false
         
         if !noFilters {
             if let loc = locDiameter {
@@ -112,6 +105,8 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
             if let r = rate {
                 rating.text = String(r)
 				filterRating = true
+            } else {
+                rate = 0
             }
         }
         
@@ -120,7 +115,29 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     @objc func clickedBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-	
+    
+    @IBAction func changeRating(_ sender: UIStepper) {
+        rate = Int(sender.value)
+        rating.text = String(rate)
+    }
+    
+    // paramsToSearch
+    @IBAction func clickedApply(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "paramsToSearch", sender: self)
+        if let pe = Double(minPriceEntry.text!) {
+            lowerPrice = pe
+        }
+        if let pe = Double(maxPriceEntry.text!) {
+            higherPrice = pe
+        }
+        if let r = Int(rating.text!) {
+            rate = r
+        }
+    }
+    
+    
+    
+    // MARK: - UISwitch functions controlling option cells
 	@IBAction func switchForDistance(_ sender: UISwitch) {
         popupDistance.isHidden = !(sender.isOn)
         filterDistance = sender.isOn
@@ -145,23 +162,45 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
         filterRating = sender.isOn
          self.tableView.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    // MARK: - Table view data source
-
+    // MARK: - Table view functions
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 10
     }
     
-    // Picker data source and formatting
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let titleRows = [1, 3, 5, 7]
+        if titleRows.contains(indexPath.row) {
+            return 60.0
+        }
+        if indexPath.row == 2 {
+            return toggleDistance.isOn ? 60.0 : 0.0
+        }
+        if indexPath.row == 4 {
+            return togglePrice.isOn ? 60.0 : 0.0
+        }
+        if indexPath.row == 6 {
+            return toggleCategory.isOn ? 90.0 : 0.0
+        }
+        if indexPath.row == 8 {
+            return toggleRating.isOn ? 60.0 : 0.0
+        }
+        if indexPath.row == 9 {
+            return 40.0
+        }
+        return 150.0
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Picker view functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -191,83 +230,25 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
             filterChoice.text = filterChoices[row]
         } else {
             categoryChoice.text = categories[row]
+            cat = categoryChoice.text!
         }
     }
-	
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let titleRows = [1, 3, 5, 7]
-        if titleRows.contains(indexPath.row) {
-            return 60.0
-        }
-        if indexPath.row == 2 {
-            return toggleDistance.isOn ? 60.0 : 0.0
-        }
-        if indexPath.row == 4 {
-            return togglePrice.isOn ? 60.0 : 0.0
-        }
-        if indexPath.row == 6 {
-            return toggleCategory.isOn ? 90.0 : 0.0
-        }
-        if indexPath.row == 8 {
-            return toggleRating.isOn ? 60.0 : 0.0
-        }
-        return 150.0
-    }
 
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? SearchTableView,
+            segue.identifier == "paramsToSearch" {
+            vc.searchParams = true
+            vc.category = cat.isEmpty ? nil : cat
+            vc.minPrice = lowerPrice
+            vc.maxPrice = higherPrice
+            vc.rating = rate
+            vc.keyWords = " "
+        }
     }
-    */
+ 
 
 }

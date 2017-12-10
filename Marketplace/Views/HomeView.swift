@@ -218,7 +218,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
         if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
 			endMenu(self)
-			vc.searchParameter = category
+			vc.keyWords = category
             vc.filterContentForSearchText(category)
         }
 		if let vc = segue.destination as? EditProfileView,
@@ -229,6 +229,9 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			vc.lastName = name[1]
 			vc.hasVal = true
 		}
+//        if let vc = segue.destination as? SearchParametersTableView,
+//            segue.identifier == "toSearchParams" {
+//            vc.delegate = self
 	}
 	
 	func segueToNext(identifier: String) {
