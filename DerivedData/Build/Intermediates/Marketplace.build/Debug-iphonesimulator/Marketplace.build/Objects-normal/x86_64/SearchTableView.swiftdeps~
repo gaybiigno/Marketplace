@@ -22,12 +22,14 @@ depends-top-level:
 - !private "!="
 - !private "&&"
 - !private "*"
-- !private "+"
+- "+"
+- !private "+="
 - !private "..<"
 - !private "/"
-- !private "<"
+- !private "<="
 - !private "=="
 - !private ">"
+- !private ">="
 - !private "??"
 - !private "AnyObject"
 - "Array"
@@ -56,7 +58,6 @@ depends-top-level:
 - "SearchTableView"
 - "String"
 - "StringLiteralType"
-- "TernaryPrecedence"
 - !private "UIImage"
 - "UISearchBar"
 - "UISearchBarDelegate"
@@ -180,6 +181,7 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "searchController"]
 - !private ["So25CLLocationManagerDelegateP", "searchParams"]
 - !private ["So25CLLocationManagerDelegateP", "tableView"]
+- !private ["So25CLLocationManagerDelegateP", "udownloadAssistant"]
 - ["So25CLLocationManagerDelegateP", "updateSearchResults"]
 - ["So25CLLocationManagerDelegateP", "updateSearchResultsForSearchController"]
 - !private ["So25CLLocationManagerDelegateP", "userDataSource"]
@@ -205,6 +207,7 @@ depends-member:
 - !private ["s7CVarArgP", "addObserver"]
 - !private ["s7CVarArgP", "age"]
 - !private ["s7CVarArgP", "allowsBackgroundLocationUpdates"]
+- ["s7CVarArgP", "apikey"]
 - !private ["s7CVarArgP", "append"]
 - !private ["s7CVarArgP", "category"]
 - !private ["s7CVarArgP", "components"]
@@ -299,6 +302,7 @@ depends-member:
 - !private ["s7CVarArgP", "tableView"]
 - !private ["s7CVarArgP", "tags"]
 - !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "udownloadAssistant"]
 - ["s7CVarArgP", "updateSearchResults"]
 - ["s7CVarArgP", "updateSearchResultsForSearchController"]
 - !private ["s7CVarArgP", "useItem"]
@@ -342,6 +346,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "addObserver"]
 - !private ["s28CustomDebugStringConvertibleP", "age"]
 - !private ["s28CustomDebugStringConvertibleP", "allowsBackgroundLocationUpdates"]
+- ["s28CustomDebugStringConvertibleP", "apikey"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "category"]
 - !private ["s28CustomDebugStringConvertibleP", "components"]
@@ -437,6 +442,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "tableView"]
 - !private ["s28CustomDebugStringConvertibleP", "tags"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "udownloadAssistant"]
 - ["s28CustomDebugStringConvertibleP", "updateSearchResults"]
 - ["s28CustomDebugStringConvertibleP", "updateSearchResultsForSearchController"]
 - !private ["s28CustomDebugStringConvertibleP", "useItem"]
@@ -482,6 +488,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "addObserver"]
 - !private ["s23CustomStringConvertibleP", "age"]
 - !private ["s23CustomStringConvertibleP", "allowsBackgroundLocationUpdates"]
+- ["s23CustomStringConvertibleP", "apikey"]
 - !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "category"]
 - !private ["s23CustomStringConvertibleP", "components"]
@@ -577,6 +584,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "tableView"]
 - !private ["s23CustomStringConvertibleP", "tags"]
 - !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "udownloadAssistant"]
 - ["s23CustomStringConvertibleP", "updateSearchResults"]
 - ["s23CustomStringConvertibleP", "updateSearchResultsForSearchController"]
 - !private ["s23CustomStringConvertibleP", "useItem"]
@@ -598,6 +606,7 @@ depends-member:
 - !private ["s9DecodableP", "row"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["11Marketplace8DownloadC", "addObserver"]
+- ["11Marketplace8DownloadC", "apikey"]
 - !private ["11Marketplace8DownloadC", "dataFromServer"]
 - !private ["11Marketplace8DownloadC", "download_request"]
 - ["11Marketplace8DownloadC", "init"]
@@ -634,6 +643,7 @@ depends-member:
 - !private ["s9EquatableP", "addObserver"]
 - !private ["s9EquatableP", "age"]
 - !private ["s9EquatableP", "allowsBackgroundLocationUpdates"]
+- ["s9EquatableP", "apikey"]
 - !private ["s9EquatableP", "category"]
 - !private ["s9EquatableP", "components"]
 - !private ["s9EquatableP", "consolidate"]
@@ -724,6 +734,7 @@ depends-member:
 - !private ["s9EquatableP", "tableView"]
 - !private ["s9EquatableP", "tags"]
 - !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "udownloadAssistant"]
 - ["s9EquatableP", "updateSearchResults"]
 - ["s9EquatableP", "updateSearchResultsForSearchController"]
 - !private ["s9EquatableP", "useItem"]
@@ -781,6 +792,7 @@ depends-member:
 - !private ["s8HashableP", "addObserver"]
 - !private ["s8HashableP", "age"]
 - !private ["s8HashableP", "allowsBackgroundLocationUpdates"]
+- ["s8HashableP", "apikey"]
 - !private ["s8HashableP", "category"]
 - !private ["s8HashableP", "components"]
 - !private ["s8HashableP", "consolidate"]
@@ -870,6 +882,7 @@ depends-member:
 - !private ["s8HashableP", "tableView"]
 - !private ["s8HashableP", "tags"]
 - !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "udownloadAssistant"]
 - ["s8HashableP", "updateSearchResults"]
 - ["s8HashableP", "updateSearchResultsForSearchController"]
 - !private ["s8HashableP", "useItem"]
@@ -1008,6 +1021,7 @@ depends-member:
 - !private ["So8NSCodingP", "tableView"]
 - !private ["So8NSCodingP", "tags"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "udownloadAssistant"]
 - ["So8NSCodingP", "updateSearchResults"]
 - ["So8NSCodingP", "updateSearchResultsForSearchController"]
 - !private ["So8NSCodingP", "useItem"]
@@ -1095,6 +1109,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "searchResultsUpdater"]
 - !private ["So26NSExtensionRequestHandlingP", "tableView"]
 - !private ["So26NSExtensionRequestHandlingP", "tags"]
+- !private ["So26NSExtensionRequestHandlingP", "udownloadAssistant"]
 - ["So26NSExtensionRequestHandlingP", "updateSearchResults"]
 - ["So26NSExtensionRequestHandlingP", "updateSearchResultsForSearchController"]
 - !private ["So26NSExtensionRequestHandlingP", "userDataSource"]
@@ -1166,6 +1181,7 @@ depends-member:
 - !private ["So8NSObjectC", "addObserver"]
 - !private ["So8NSObjectC", "age"]
 - !private ["So8NSObjectC", "allowsBackgroundLocationUpdates"]
+- ["So8NSObjectC", "apikey"]
 - ["So8NSObjectC", "category"]
 - !private ["So8NSObjectC", "components"]
 - !private ["So8NSObjectC", "consolidate"]
@@ -1264,6 +1280,7 @@ depends-member:
 - ["So8NSObjectC", "tableView"]
 - !private ["So8NSObjectC", "tags"]
 - !private ["So8NSObjectC", "text"]
+- ["So8NSObjectC", "udownloadAssistant"]
 - ["So8NSObjectC", "updateSearchResults"]
 - ["So8NSObjectC", "updateSearchResultsForSearchController"]
 - !private ["So8NSObjectC", "useItem"]
@@ -1290,6 +1307,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "addObserver"]
 - !private ["So16NSObjectProtocolP", "age"]
 - !private ["So16NSObjectProtocolP", "allowsBackgroundLocationUpdates"]
+- ["So16NSObjectProtocolP", "apikey"]
 - !private ["So16NSObjectProtocolP", "category"]
 - !private ["So16NSObjectProtocolP", "components"]
 - !private ["So16NSObjectProtocolP", "consolidate"]
@@ -1378,6 +1396,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "tableView"]
 - !private ["So16NSObjectProtocolP", "tags"]
 - !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "udownloadAssistant"]
 - ["So16NSObjectProtocolP", "updateSearchResults"]
 - ["So16NSObjectProtocolP", "updateSearchResultsForSearchController"]
 - !private ["So16NSObjectProtocolP", "useItem"]
@@ -1507,6 +1526,7 @@ depends-member:
 - ["11Marketplace15SearchTableViewC", "searchParams"]
 - ["11Marketplace15SearchTableViewC", "setSearchies"]
 - ["11Marketplace15SearchTableViewC", "tableView"]
+- ["11Marketplace15SearchTableViewC", "udownloadAssistant"]
 - ["11Marketplace15SearchTableViewC", "updateSearchResults"]
 - ["11Marketplace15SearchTableViewC", "updateSearchResultsForSearchController"]
 - ["11Marketplace15SearchTableViewC", "userDataSource"]
@@ -1637,6 +1657,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "tableView"]
 - !private ["So21UIAppearanceContainerP", "tags"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "udownloadAssistant"]
 - ["So21UIAppearanceContainerP", "updateSearchResults"]
 - ["So21UIAppearanceContainerP", "updateSearchResultsForSearchController"]
 - !private ["So21UIAppearanceContainerP", "useItem"]
@@ -1706,6 +1727,7 @@ depends-member:
 - !private ["So24UIBarPositioningDelegateP", "searchController"]
 - !private ["So24UIBarPositioningDelegateP", "searchParams"]
 - !private ["So24UIBarPositioningDelegateP", "tableView"]
+- !private ["So24UIBarPositioningDelegateP", "udownloadAssistant"]
 - ["So24UIBarPositioningDelegateP", "updateSearchResults"]
 - ["So24UIBarPositioningDelegateP", "updateSearchResultsForSearchController"]
 - !private ["So24UIBarPositioningDelegateP", "userDataSource"]
@@ -1784,6 +1806,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "searchResultsUpdater"]
 - !private ["So18UIContentContainerP", "tableView"]
 - !private ["So18UIContentContainerP", "tags"]
+- !private ["So18UIContentContainerP", "udownloadAssistant"]
 - ["So18UIContentContainerP", "updateSearchResults"]
 - ["So18UIContentContainerP", "updateSearchResultsForSearchController"]
 - !private ["So18UIContentContainerP", "userDataSource"]
@@ -1887,6 +1910,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "tableView"]
 - !private ["So18UIFocusEnvironmentP", "tags"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "udownloadAssistant"]
 - ["So18UIFocusEnvironmentP", "updateSearchResults"]
 - ["So18UIFocusEnvironmentP", "updateSearchResultsForSearchController"]
 - !private ["So18UIFocusEnvironmentP", "useItem"]
@@ -1984,6 +2008,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "tableView"]
 - !private ["So30UIPasteConfigurationSupportingP", "tags"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "udownloadAssistant"]
 - ["So30UIPasteConfigurationSupportingP", "updateSearchResults"]
 - ["So30UIPasteConfigurationSupportingP", "updateSearchResultsForSearchController"]
 - !private ["So30UIPasteConfigurationSupportingP", "useItem"]
@@ -2095,6 +2120,7 @@ depends-member:
 - ["So11UIResponderC", "tableView"]
 - !private ["So11UIResponderC", "tags"]
 - !private ["So11UIResponderC", "text"]
+- ["So11UIResponderC", "udownloadAssistant"]
 - ["So11UIResponderC", "updateSearchResults"]
 - ["So11UIResponderC", "updateSearchResultsForSearchController"]
 - !private ["So11UIResponderC", "useItem"]
@@ -2180,6 +2206,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "tableView"]
 - !private ["So30UIResponderStandardEditActionsP", "tags"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "udownloadAssistant"]
 - ["So30UIResponderStandardEditActionsP", "updateSearchResults"]
 - ["So30UIResponderStandardEditActionsP", "updateSearchResultsForSearchController"]
 - !private ["So30UIResponderStandardEditActionsP", "useItem"]
@@ -2251,6 +2278,7 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "searchController"]
 - !private ["So20UIScrollViewDelegateP", "searchParams"]
 - !private ["So20UIScrollViewDelegateP", "tableView"]
+- !private ["So20UIScrollViewDelegateP", "udownloadAssistant"]
 - ["So20UIScrollViewDelegateP", "updateSearchResults"]
 - ["So20UIScrollViewDelegateP", "updateSearchResultsForSearchController"]
 - !private ["So20UIScrollViewDelegateP", "userDataSource"]
@@ -2319,6 +2347,7 @@ depends-member:
 - !private ["So19UISearchBarDelegateP", "searchController"]
 - !private ["So19UISearchBarDelegateP", "searchParams"]
 - !private ["So19UISearchBarDelegateP", "tableView"]
+- !private ["So19UISearchBarDelegateP", "udownloadAssistant"]
 - ["So19UISearchBarDelegateP", "updateSearchResults"]
 - ["So19UISearchBarDelegateP", "updateSearchResultsForSearchController"]
 - !private ["So19UISearchBarDelegateP", "userDataSource"]
@@ -2388,6 +2417,7 @@ depends-member:
 - !private ["So23UISearchResultsUpdatingP", "searchController"]
 - !private ["So23UISearchResultsUpdatingP", "searchParams"]
 - !private ["So23UISearchResultsUpdatingP", "tableView"]
+- !private ["So23UISearchResultsUpdatingP", "udownloadAssistant"]
 - ["So23UISearchResultsUpdatingP", "updateSearchResults"]
 - ["So23UISearchResultsUpdatingP", "updateSearchResultsForSearchController"]
 - !private ["So23UISearchResultsUpdatingP", "userDataSource"]
@@ -2469,6 +2499,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "searchResultsUpdater"]
 - !private ["So16UIStateRestoringP", "tableView"]
 - !private ["So16UIStateRestoringP", "tags"]
+- !private ["So16UIStateRestoringP", "udownloadAssistant"]
 - ["So16UIStateRestoringP", "updateSearchResults"]
 - ["So16UIStateRestoringP", "updateSearchResultsForSearchController"]
 - !private ["So16UIStateRestoringP", "userDataSource"]
@@ -2567,6 +2598,7 @@ depends-member:
 - ["So21UITableViewControllerC", "searchParams"]
 - ["So21UITableViewControllerC", "setSearchies"]
 - ["So21UITableViewControllerC", "tableView"]
+- ["So21UITableViewControllerC", "udownloadAssistant"]
 - ["So21UITableViewControllerC", "updateSearchResults"]
 - ["So21UITableViewControllerC", "updateSearchResultsForSearchController"]
 - ["So21UITableViewControllerC", "userDataSource"]
@@ -2634,6 +2666,7 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "searchController"]
 - !private ["So21UITableViewDataSourceP", "searchParams"]
 - !private ["So21UITableViewDataSourceP", "tableView"]
+- !private ["So21UITableViewDataSourceP", "udownloadAssistant"]
 - ["So21UITableViewDataSourceP", "updateSearchResults"]
 - ["So21UITableViewDataSourceP", "updateSearchResultsForSearchController"]
 - !private ["So21UITableViewDataSourceP", "userDataSource"]
@@ -2701,6 +2734,7 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "searchController"]
 - !private ["So19UITableViewDelegateP", "searchParams"]
 - !private ["So19UITableViewDelegateP", "tableView"]
+- !private ["So19UITableViewDelegateP", "udownloadAssistant"]
 - ["So19UITableViewDelegateP", "updateSearchResults"]
 - ["So19UITableViewDelegateP", "updateSearchResultsForSearchController"]
 - !private ["So19UITableViewDelegateP", "userDataSource"]
@@ -2789,6 +2823,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "tableView"]
 - !private ["So18UITraitEnvironmentP", "tags"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "udownloadAssistant"]
 - ["So18UITraitEnvironmentP", "updateSearchResults"]
 - ["So18UITraitEnvironmentP", "updateSearchResultsForSearchController"]
 - !private ["So18UITraitEnvironmentP", "useItem"]
@@ -2901,6 +2936,7 @@ depends-member:
 - ["So16UIViewControllerC", "setSearchies"]
 - ["So16UIViewControllerC", "tableView"]
 - !private ["So16UIViewControllerC", "tags"]
+- ["So16UIViewControllerC", "udownloadAssistant"]
 - ["So16UIViewControllerC", "updateSearchResults"]
 - ["So16UIViewControllerC", "updateSearchResultsForSearchController"]
 - ["So16UIViewControllerC", "userDataSource"]
@@ -3029,6 +3065,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addObserver"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "age"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "allowsBackgroundLocationUpdates"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "apikey"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "category"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "components"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "consolidate"]
@@ -3117,6 +3154,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tableView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tags"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "udownloadAssistant"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "updateSearchResults"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "updateSearchResultsForSearchController"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "useItem"]
@@ -3340,20 +3378,6 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "67e9545c7051cf29ce73b61bc609e734"
+interface-hash: "903a5451fd865c553342b0ef68eb4f70"

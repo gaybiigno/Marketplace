@@ -14,8 +14,8 @@ class ItemDataSource: NSObject {
     
     init(dataSource: [Item]?) {
         items = dataSource
-        print(items!)
-        print(dataSource!.count)
+//        print(items!)
+//        print(dataSource!.count)
         
         super.init()
     }

@@ -67,7 +67,9 @@ class UserSchemaProcessor: NSObject {
             if let userDict = userObject as? Dictionary<String, AnyObject> {
                 let user = NSEntityDescription.insertNewObject(forEntityName: "User", into:
                     coreDataContext.backgroundContext!) as! User
-                
+                if let email = userDict["email"] {
+                    user.email = email as? String
+                }
                 if let first_name = userDict["first_name"] {
                     user.first_name = first_name as? String
                 }
@@ -82,6 +84,9 @@ class UserSchemaProcessor: NSObject {
                 }
                 if let byear = userDict["byear"] {
                     user.byear = (byear as? Int16)!
+                }
+                if let street = userDict["street"] {
+                    user.street = street as? String
                 }
                 if let city = userDict["city"] {
                     user.city = city as? String

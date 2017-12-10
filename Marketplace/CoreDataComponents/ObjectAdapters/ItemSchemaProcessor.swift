@@ -56,7 +56,7 @@ class ItemSchemaProcessor: NSObject {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
             return result as? [Item]
         } catch {
-            NSLog("Unable to fetch Artist from the database.")
+            NSLog("Unable to fetch Items from the database.")
             abort()
         }
         return nil

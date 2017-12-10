@@ -16,7 +16,6 @@ depends-top-level:
 - "ItemDataSource"
 - "NSObject"
 - !private "StringLiteralType"
-- !private "print"
 - !private "||"
 depends-member:
 - !private ["Sa", "count"]
@@ -32,7 +31,6 @@ depends-member:
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "item_id"]
 - !private ["s7CVarArgP", "items"]
-- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "remove"]
 - !private ["s7CVarArgP", "subscript"]
 - ["s7CVarArgP", ""]
@@ -45,7 +43,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "item_id"]
 - !private ["s28CustomDebugStringConvertibleP", "items"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - ["s28CustomDebugStringConvertibleP", ""]
@@ -62,7 +59,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "item_id"]
 - !private ["s23CustomStringConvertibleP", "items"]
-- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - ["s23CustomStringConvertibleP", ""]
@@ -81,7 +77,6 @@ depends-member:
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "item_id"]
 - !private ["s9EquatableP", "items"]
-- !private ["s9EquatableP", "print"]
 - ["s9EquatableP", ""]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
 - !private ["s25ExpressibleByArrayLiteralP", "remove"]
@@ -97,7 +92,6 @@ depends-member:
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "item_id"]
 - !private ["s8HashableP", "items"]
-- !private ["s8HashableP", "print"]
 - ["s8HashableP", ""]
 - !private ["Si", "init"]
 - !private ["11Marketplace4ItemC", "item_id"]
@@ -109,7 +103,6 @@ depends-member:
 - ["11Marketplace14ItemDataSourceC", "itemAt"]
 - ["11Marketplace14ItemDataSourceC", "items"]
 - ["11Marketplace14ItemDataSourceC", "numItems"]
-- !private ["11Marketplace14ItemDataSourceC", "print"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
@@ -126,13 +119,11 @@ depends-member:
 - !private ["So8NSObjectC", "item_id"]
 - ["So8NSObjectC", "items"]
 - ["So8NSObjectC", "numItems"]
-- !private ["So8NSObjectC", "print"]
 - ["So8NSObjectC", ""]
 - !private ["So16NSObjectProtocolP", "Int"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "item_id"]
 - !private ["So16NSObjectProtocolP", "items"]
-- !private ["So16NSObjectProtocolP", "print"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["s7NumericP", "init"]
 - !private ["s22RandomAccessCollectionP", "count"]
@@ -173,7 +164,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "item_id"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "items"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s17_MutableIndexableP", "count"]
 - !private ["s17_MutableIndexableP", "remove"]
@@ -271,20 +261,6 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 interface-hash: "20841b131db5d93ff1075ac71801c8c5"

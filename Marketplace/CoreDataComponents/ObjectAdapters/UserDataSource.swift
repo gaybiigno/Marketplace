@@ -14,9 +14,9 @@ class UserDataSource: NSObject {
     
     init(dataSource: [User]?) {
         users = dataSource
-        print(users!)
-        print(dataSource!.count)
-        
+//        print(users!)
+//        print(dataSource!.count)
+//        
         super.init()
     }
     

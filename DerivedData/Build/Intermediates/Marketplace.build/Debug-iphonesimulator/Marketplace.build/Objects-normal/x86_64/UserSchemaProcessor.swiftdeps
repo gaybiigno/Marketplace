@@ -60,6 +60,7 @@ depends-member:
 - !private ["s7CVarArgP", "saveContext"]
 - !private ["s7CVarArgP", "sortDescriptors"]
 - !private ["s7CVarArgP", "state"]
+- !private ["s7CVarArgP", "street"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "userModelJSONString"]
 - !private ["s7CVarArgP", "zip"]
@@ -99,6 +100,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "saveContext"]
 - !private ["s28CustomDebugStringConvertibleP", "sortDescriptors"]
 - !private ["s28CustomDebugStringConvertibleP", "state"]
+- !private ["s28CustomDebugStringConvertibleP", "street"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "userModelJSONString"]
 - !private ["s28CustomDebugStringConvertibleP", "zip"]
@@ -134,6 +136,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "saveContext"]
 - !private ["s23CustomStringConvertibleP", "sortDescriptors"]
 - !private ["s23CustomStringConvertibleP", "state"]
+- !private ["s23CustomStringConvertibleP", "street"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "userModelJSONString"]
 - !private ["s23CustomStringConvertibleP", "zip"]
@@ -171,6 +174,7 @@ depends-member:
 - !private ["s9EquatableP", "saveContext"]
 - !private ["s9EquatableP", "sortDescriptors"]
 - !private ["s9EquatableP", "state"]
+- !private ["s9EquatableP", "street"]
 - !private ["s9EquatableP", "userModelJSONString"]
 - !private ["s9EquatableP", "zip"]
 - ["s9EquatableP", ""]
@@ -206,6 +210,7 @@ depends-member:
 - !private ["s8HashableP", "saveContext"]
 - !private ["s8HashableP", "sortDescriptors"]
 - !private ["s8HashableP", "state"]
+- !private ["s8HashableP", "street"]
 - !private ["s8HashableP", "userModelJSONString"]
 - !private ["s8HashableP", "zip"]
 - ["s8HashableP", ""]
@@ -235,6 +240,7 @@ depends-member:
 - !private ["So20NSFetchRequestResultP", "payment"]
 - !private ["So20NSFetchRequestResultP", "rating"]
 - !private ["So20NSFetchRequestResultP", "state"]
+- !private ["So20NSFetchRequestResultP", "street"]
 - !private ["So20NSFetchRequestResultP", "zip"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
@@ -249,6 +255,7 @@ depends-member:
 - !private ["So15NSManagedObjectC", "payment"]
 - !private ["So15NSManagedObjectC", "rating"]
 - !private ["So15NSManagedObjectC", "state"]
+- !private ["So15NSManagedObjectC", "street"]
 - !private ["So15NSManagedObjectC", "zip"]
 - !private ["So22NSManagedObjectContextC", "fetch"]
 - !private ["So16NSMutableCopyingP", "init"]
@@ -288,6 +295,7 @@ depends-member:
 - !private ["So8NSObjectC", "saveContext"]
 - !private ["So8NSObjectC", "sortDescriptors"]
 - !private ["So8NSObjectC", "state"]
+- !private ["So8NSObjectC", "street"]
 - ["So8NSObjectC", "userModelJSONString"]
 - !private ["So8NSObjectC", "zip"]
 - ["So8NSObjectC", ""]
@@ -319,6 +327,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "saveContext"]
 - !private ["So16NSObjectProtocolP", "sortDescriptors"]
 - !private ["So16NSObjectProtocolP", "state"]
+- !private ["So16NSObjectProtocolP", "street"]
 - !private ["So16NSObjectProtocolP", "userModelJSONString"]
 - !private ["So16NSObjectProtocolP", "zip"]
 - ["So16NSObjectProtocolP", ""]
@@ -345,6 +354,7 @@ depends-member:
 - !private ["11Marketplace4UserC", "payment"]
 - !private ["11Marketplace4UserC", "rating"]
 - !private ["11Marketplace4UserC", "state"]
+- !private ["11Marketplace4UserC", "street"]
 - !private ["11Marketplace4UserC", "zip"]
 - ["11Marketplace19UserSchemaProcessorC", "AnyObject"]
 - ["11Marketplace19UserSchemaProcessorC", "CoreDataCommonMethods"]
@@ -406,6 +416,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "saveContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "sortDescriptors"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "state"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "street"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userModelJSONString"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zip"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
@@ -498,20 +509,6 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 interface-hash: "a1ca85185bd3b86813ef40d73b659807"
