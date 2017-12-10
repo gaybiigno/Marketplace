@@ -50,6 +50,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     var currentUser: User!
 	
 	var signedIn = false
+    
+    var downloadAssistant: Download! = nil
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -232,6 +234,30 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	func segueToNext(identifier: String) {
 		self.performSegue(withIdentifier: identifier, sender: self)
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if curEmail != nil {
+            downloadAssistant = Download(withURLString: buildURLString())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.download_request()
+        }
+    }
+    
+    func buildURLString() -> String {
+        var url = Download.baseURL
+        url += "/users/"
+        url += "?email=" + curEmail
+        url += "&apikey=" + Download.apikey
+        return url
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+        userDataSource.consolidate()
+        currentUser = userDataSource.userAt(0)
+        addHello()
+    }
 
     
     

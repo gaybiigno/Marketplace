@@ -69,6 +69,8 @@ depends-top-level:
 - !private "print"
 - !private "||"
 depends-member:
+- !private ["Sa", "count"]
+- !private ["s23BidirectionalCollectionP", "count"]
 - ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "isEmpty"]
 - !private ["s23BidirectionalCollectionP", "replacingOccurrences"]
@@ -128,13 +130,15 @@ depends-member:
 - !private ["s7CVarArgP", "clickedNew"]
 - !private ["s7CVarArgP", "consolidate"]
 - !private ["s7CVarArgP", "contentMode"]
+- !private ["s7CVarArgP", "coreDataContext"]
+- !private ["s7CVarArgP", "count"]
 - !private ["s7CVarArgP", "curEmail"]
 - !private ["s7CVarArgP", "currentUser"]
 - !private ["s7CVarArgP", "dataFromServer"]
 - !private ["s7CVarArgP", "defaultProfilePic"]
 - !private ["s7CVarArgP", "delegate"]
-- !private ["s7CVarArgP", "deleteAllData"]
 - !private ["s7CVarArgP", "deletePictureButton"]
+- !private ["s7CVarArgP", "deleteUserContext"]
 - !private ["s7CVarArgP", "didReceiveMemoryWarning"]
 - !private ["s7CVarArgP", "dismiss"]
 - !private ["s7CVarArgP", "downloadAssistant"]
@@ -186,12 +190,14 @@ depends-member:
 - !private ["s7CVarArgP", "userAt"]
 - !private ["s7CVarArgP", "userDataSource"]
 - !private ["s7CVarArgP", "userSchema"]
+- !private ["s7CVarArgP", "users"]
 - !private ["s7CVarArgP", "view"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - !private ["s7CVarArgP", "white"]
 - !private ["s7CVarArgP", "zip"]
 - !private ["s7CVarArgP", "zipEntry"]
 - ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "count"]
 - ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "isEmpty"]
 - !private ["s10CollectionP", "replacingOccurrences"]
@@ -202,6 +208,7 @@ depends-member:
 - !private ["s10ComparableP", "replacingOccurrences"]
 - !private ["s10ComparableP", "subscript"]
 - !private ["s10ComparableP", "uppercased"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "deleteUserContext"]
 - !private ["s28CustomDebugStringConvertibleP", "Download"]
 - !private ["s28CustomDebugStringConvertibleP", "Int"]
 - !private ["s28CustomDebugStringConvertibleP", "PHAuthorizationStatus"]
@@ -242,13 +249,15 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "clickedNew"]
 - !private ["s28CustomDebugStringConvertibleP", "consolidate"]
 - !private ["s28CustomDebugStringConvertibleP", "contentMode"]
+- !private ["s28CustomDebugStringConvertibleP", "coreDataContext"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
 - !private ["s28CustomDebugStringConvertibleP", "curEmail"]
 - !private ["s28CustomDebugStringConvertibleP", "currentUser"]
 - !private ["s28CustomDebugStringConvertibleP", "dataFromServer"]
 - !private ["s28CustomDebugStringConvertibleP", "defaultProfilePic"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
-- !private ["s28CustomDebugStringConvertibleP", "deleteAllData"]
 - !private ["s28CustomDebugStringConvertibleP", "deletePictureButton"]
+- !private ["s28CustomDebugStringConvertibleP", "deleteUserContext"]
 - !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s28CustomDebugStringConvertibleP", "dismiss"]
 - !private ["s28CustomDebugStringConvertibleP", "downloadAssistant"]
@@ -300,6 +309,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "userAt"]
 - !private ["s28CustomDebugStringConvertibleP", "userDataSource"]
 - !private ["s28CustomDebugStringConvertibleP", "userSchema"]
+- !private ["s28CustomDebugStringConvertibleP", "users"]
 - !private ["s28CustomDebugStringConvertibleP", "view"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - !private ["s28CustomDebugStringConvertibleP", "white"]
@@ -313,6 +323,7 @@ depends-member:
 - !private ["s29CustomPlaygroundQuickLookableP", "subscript"]
 - !private ["s29CustomPlaygroundQuickLookableP", "uppercased"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "count"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "isEmpty"]
 - !private ["s17CustomReflectableP", "replacingOccurrences"]
@@ -359,13 +370,15 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "clickedNew"]
 - !private ["s23CustomStringConvertibleP", "consolidate"]
 - !private ["s23CustomStringConvertibleP", "contentMode"]
+- !private ["s23CustomStringConvertibleP", "coreDataContext"]
+- !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "curEmail"]
 - !private ["s23CustomStringConvertibleP", "currentUser"]
 - !private ["s23CustomStringConvertibleP", "dataFromServer"]
 - !private ["s23CustomStringConvertibleP", "defaultProfilePic"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
-- !private ["s23CustomStringConvertibleP", "deleteAllData"]
 - !private ["s23CustomStringConvertibleP", "deletePictureButton"]
+- !private ["s23CustomStringConvertibleP", "deleteUserContext"]
 - !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s23CustomStringConvertibleP", "dismiss"]
 - !private ["s23CustomStringConvertibleP", "downloadAssistant"]
@@ -417,6 +430,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "userAt"]
 - !private ["s23CustomStringConvertibleP", "userDataSource"]
 - !private ["s23CustomStringConvertibleP", "userSchema"]
+- !private ["s23CustomStringConvertibleP", "users"]
 - !private ["s23CustomStringConvertibleP", "view"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - !private ["s23CustomStringConvertibleP", "white"]
@@ -424,6 +438,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "zipEntry"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "count"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "isEmpty"]
 - !private ["s9DecodableP", "replacingOccurrences"]
@@ -518,6 +533,7 @@ depends-member:
 - ["11Marketplace15EditProfileViewC", "zip"]
 - ["11Marketplace15EditProfileViewC", "zipEntry"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "count"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "isEmpty"]
 - !private ["s9EncodableP", "replacingOccurrences"]
@@ -565,13 +581,14 @@ depends-member:
 - !private ["s9EquatableP", "clickedNew"]
 - !private ["s9EquatableP", "consolidate"]
 - !private ["s9EquatableP", "contentMode"]
+- !private ["s9EquatableP", "coreDataContext"]
 - !private ["s9EquatableP", "curEmail"]
 - !private ["s9EquatableP", "currentUser"]
 - !private ["s9EquatableP", "dataFromServer"]
 - !private ["s9EquatableP", "defaultProfilePic"]
 - !private ["s9EquatableP", "delegate"]
-- !private ["s9EquatableP", "deleteAllData"]
 - !private ["s9EquatableP", "deletePictureButton"]
+- !private ["s9EquatableP", "deleteUserContext"]
 - ["s9EquatableP", "denied"]
 - !private ["s9EquatableP", "didReceiveMemoryWarning"]
 - !private ["s9EquatableP", "dismiss"]
@@ -630,12 +647,14 @@ depends-member:
 - !private ["s9EquatableP", "userAt"]
 - !private ["s9EquatableP", "userDataSource"]
 - !private ["s9EquatableP", "userSchema"]
+- !private ["s9EquatableP", "users"]
 - !private ["s9EquatableP", "view"]
 - !private ["s9EquatableP", "viewDidLoad"]
 - !private ["s9EquatableP", "white"]
 - !private ["s9EquatableP", "zip"]
 - !private ["s9EquatableP", "zipEntry"]
 - ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
 - !private ["s25ExpressibleByArrayLiteralP", "old"]
 - !private ["s25ExpressibleByArrayLiteralP", "touchUpInside"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
@@ -699,13 +718,14 @@ depends-member:
 - !private ["s8HashableP", "clickedNew"]
 - !private ["s8HashableP", "consolidate"]
 - !private ["s8HashableP", "contentMode"]
+- !private ["s8HashableP", "coreDataContext"]
 - !private ["s8HashableP", "curEmail"]
 - !private ["s8HashableP", "currentUser"]
 - !private ["s8HashableP", "dataFromServer"]
 - !private ["s8HashableP", "defaultProfilePic"]
 - !private ["s8HashableP", "delegate"]
-- !private ["s8HashableP", "deleteAllData"]
 - !private ["s8HashableP", "deletePictureButton"]
+- !private ["s8HashableP", "deleteUserContext"]
 - ["s8HashableP", "denied"]
 - !private ["s8HashableP", "didReceiveMemoryWarning"]
 - !private ["s8HashableP", "dismiss"]
@@ -762,6 +782,7 @@ depends-member:
 - !private ["s8HashableP", "userAt"]
 - !private ["s8HashableP", "userDataSource"]
 - !private ["s8HashableP", "userSchema"]
+- !private ["s8HashableP", "users"]
 - !private ["s8HashableP", "view"]
 - !private ["s8HashableP", "viewDidLoad"]
 - !private ["s8HashableP", "white"]
@@ -781,6 +802,7 @@ depends-member:
 - !private ["s10MirrorPathP", "replacingOccurrences"]
 - !private ["s10MirrorPathP", "subscript"]
 - !private ["s10MirrorPathP", "uppercased"]
+- !private ["s17MutableCollectionP", "count"]
 - !private ["So8NSCodingP", "Download"]
 - !private ["So8NSCodingP", "Int"]
 - !private ["So8NSCodingP", "PHAuthorizationStatus"]
@@ -1037,13 +1059,14 @@ depends-member:
 - ["So8NSObjectC", "clickedSubmit"]
 - !private ["So8NSObjectC", "consolidate"]
 - !private ["So8NSObjectC", "contentMode"]
+- !private ["So8NSObjectC", "coreDataContext"]
 - ["So8NSObjectC", "curEmail"]
 - ["So8NSObjectC", "currentUser"]
 - !private ["So8NSObjectC", "dataFromServer"]
 - ["So8NSObjectC", "defaultProfilePic"]
 - !private ["So8NSObjectC", "delegate"]
-- !private ["So8NSObjectC", "deleteAllData"]
 - ["So8NSObjectC", "deletePictureButton"]
+- !private ["So8NSObjectC", "deleteUserContext"]
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
 - !private ["So8NSObjectC", "dismiss"]
 - ["So8NSObjectC", "downloadAssistant"]
@@ -1097,6 +1120,7 @@ depends-member:
 - !private ["So8NSObjectC", "userAt"]
 - ["So8NSObjectC", "userDataSource"]
 - ["So8NSObjectC", "userSchema"]
+- !private ["So8NSObjectC", "users"]
 - !private ["So8NSObjectC", "view"]
 - ["So8NSObjectC", "viewDidLoad"]
 - !private ["So8NSObjectC", "white"]
@@ -1142,13 +1166,14 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "clickedNew"]
 - !private ["So16NSObjectProtocolP", "consolidate"]
 - !private ["So16NSObjectProtocolP", "contentMode"]
+- !private ["So16NSObjectProtocolP", "coreDataContext"]
 - !private ["So16NSObjectProtocolP", "curEmail"]
 - !private ["So16NSObjectProtocolP", "currentUser"]
 - !private ["So16NSObjectProtocolP", "dataFromServer"]
 - !private ["So16NSObjectProtocolP", "defaultProfilePic"]
 - !private ["So16NSObjectProtocolP", "delegate"]
-- !private ["So16NSObjectProtocolP", "deleteAllData"]
 - !private ["So16NSObjectProtocolP", "deletePictureButton"]
+- !private ["So16NSObjectProtocolP", "deleteUserContext"]
 - !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
 - !private ["So16NSObjectProtocolP", "dismiss"]
 - !private ["So16NSObjectProtocolP", "downloadAssistant"]
@@ -1200,6 +1225,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "userAt"]
 - !private ["So16NSObjectProtocolP", "userDataSource"]
 - !private ["So16NSObjectProtocolP", "userSchema"]
+- !private ["So16NSObjectProtocolP", "users"]
 - !private ["So16NSObjectProtocolP", "view"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - !private ["So16NSObjectProtocolP", "white"]
@@ -1231,6 +1257,8 @@ depends-member:
 - ["SC21PHAuthorizationStatusO", "restricted"]
 - !private ["So14PHPhotoLibraryC", "authorizationStatus"]
 - !private ["So14PHPhotoLibraryC", "requestAuthorization"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "isEmpty"]
 - !private ["s26RangeReplaceableCollectionP", "replacingOccurrences"]
@@ -1245,6 +1273,7 @@ depends-member:
 - !private ["s16RawRepresentableP", "scaleToFill"]
 - !private ["s16RawRepresentableP", "touchUpInside"]
 - !private ["11Marketplace12SegueHandlerP", "uName"]
+- !private ["s8SequenceP", "count"]
 - ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "isEmpty"]
 - !private ["s8SequenceP", "replacingOccurrences"]
@@ -2166,10 +2195,13 @@ depends-member:
 - !private ["11Marketplace14UserDataSourceC", "consolidate"]
 - !private ["11Marketplace14UserDataSourceC", "init"]
 - !private ["11Marketplace14UserDataSourceC", "userAt"]
+- !private ["11Marketplace14UserDataSourceC", "users"]
+- !private ["11Marketplace19UserSchemaProcessorC", "coreDataContext"]
 - !private ["11Marketplace19UserSchemaProcessorC", "deinit"]
-- !private ["11Marketplace19UserSchemaProcessorC", "deleteAllData"]
 - !private ["11Marketplace19UserSchemaProcessorC", "getAllUsers"]
 - !private ["11Marketplace19UserSchemaProcessorC", "init"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s23_BidirectionalIndexableP", "count"]
 - ["s23_BidirectionalIndexableP", "init"]
 - !private ["s23_BidirectionalIndexableP", "isEmpty"]
 - !private ["s23_BidirectionalIndexableP", "replacingOccurrences"]
@@ -2182,6 +2214,7 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "image"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "layer"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s24_DestructorSafeContainerP", "count"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "isEmpty"]
@@ -2218,11 +2251,13 @@ depends-member:
 - !private ["s35_HasCustomAnyHashableRepresentationP", "replacingOccurrences"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "uppercased"]
+- !private ["s10_IndexableP", "count"]
 - ["s10_IndexableP", "init"]
 - !private ["s10_IndexableP", "isEmpty"]
 - !private ["s10_IndexableP", "replacingOccurrences"]
 - !private ["s10_IndexableP", "subscript"]
 - !private ["s10_IndexableP", "uppercased"]
+- !private ["s14_IndexableBaseP", "count"]
 - ["s14_IndexableBaseP", "init"]
 - !private ["s14_IndexableBaseP", "isEmpty"]
 - !private ["s14_IndexableBaseP", "replacingOccurrences"]
@@ -2268,13 +2303,14 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "clickedNew"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "consolidate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "contentMode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "coreDataContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "curEmail"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "currentUser"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dataFromServer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "defaultProfilePic"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "deleteAllData"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "deletePictureButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deleteUserContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "downloadAssistant"]
@@ -2326,18 +2362,23 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userAt"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userDataSource"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userSchema"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "users"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "white"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zip"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zipEntry"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s17_MutableIndexableP", "count"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "isEmpty"]
 - !private ["s21_ObjectiveCBridgeableP", "replacingOccurrences"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - !private ["s21_ObjectiveCBridgeableP", "uppercased"]
+- !private ["s22_RandomAccessIndexableP", "count"]
+- !private ["s26_RangeReplaceableIndexableP", "count"]
 - ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "isEmpty"]
 - !private ["s26_RangeReplaceableIndexableP", "replacingOccurrences"]
@@ -2350,6 +2391,7 @@ depends-member:
 - !private ["s16_SwiftStringViewP", "subscript"]
 - !private ["s16_SwiftStringViewP", "uppercased"]
 depends-nominal:
+- !private "Sa"
 - "s23BidirectionalCollectionP"
 - !private "s13BinaryIntegerP"
 - !private "Sb"
@@ -2359,6 +2401,7 @@ depends-nominal:
 - "s7CVarArgP"
 - "s10CollectionP"
 - "s10ComparableP"
+- !private "11Marketplace21CoreDataCommonMethodsC"
 - "s28CustomDebugStringConvertibleP"
 - "s29CustomPlaygroundQuickLookableP"
 - "s17CustomReflectableP"
@@ -2382,6 +2425,7 @@ depends-nominal:
 - !private "Si"
 - "s25LosslessStringConvertibleP"
 - "s10MirrorPathP"
+- !private "s17MutableCollectionP"
 - "So8NSCodingP"
 - "So9NSCopyingP"
 - "So26NSExtensionRequestHandlingP"
@@ -2399,6 +2443,7 @@ depends-nominal:
 - !private "s9OptionSetP"
 - "SC21PHAuthorizationStatusO"
 - !private "So14PHPhotoLibraryC"
+- !private "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - "s16RawRepresentableP"
 - !private "11Marketplace12SegueHandlerP"
@@ -2456,9 +2501,11 @@ depends-nominal:
 - !private "11Marketplace4UserC"
 - !private "11Marketplace14UserDataSourceC"
 - !private "11Marketplace19UserSchemaProcessorC"
+- !private "s14_ArrayProtocolP"
 - "s23_BidirectionalIndexableP"
 - !private "s18_BitwiseOperationsP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
@@ -2472,7 +2519,9 @@ depends-nominal:
 - "s10_IndexableP"
 - "s14_IndexableBaseP"
 - "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s17_MutableIndexableP"
 - "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
 - "s26_RangeReplaceableIndexableP"
 - !private "s11_StrideableP"
 - "s16_SwiftStringViewP"

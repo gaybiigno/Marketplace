@@ -10,7 +10,6 @@ depends-top-level:
 - !private "+"
 - !private "+="
 - "AnyObject"
-- !private "Array"
 - "AssignmentPrecedence"
 - !private "BooleanLiteralType"
 - "CastingPrecedence"
@@ -21,8 +20,8 @@ depends-top-level:
 - !private "NSFetchRequest"
 - !private "NSFetchRequestResult"
 - !private "NSLog"
+- !private "NSManagedObject"
 - "NSObject"
-- !private "NSSortDescriptor"
 - !private "String"
 - !private "StringLiteralType"
 - !private "UnicodeScalarType"
@@ -36,7 +35,6 @@ depends-member:
 - !private ["s7CVarArgP", "NSEntityDescription"]
 - !private ["s7CVarArgP", "NSFetchRequest"]
 - !private ["s7CVarArgP", "NSLog"]
-- !private ["s7CVarArgP", "NSSortDescriptor"]
 - !private ["s7CVarArgP", "abort"]
 - !private ["s7CVarArgP", "backgroundContext"]
 - !private ["s7CVarArgP", "bday"]
@@ -44,6 +42,8 @@ depends-member:
 - !private ["s7CVarArgP", "byear"]
 - !private ["s7CVarArgP", "city"]
 - !private ["s7CVarArgP", "coreDataContext"]
+- !private ["s7CVarArgP", "delete"]
+- !private ["s7CVarArgP", "deleteAllUsers"]
 - !private ["s7CVarArgP", "email"]
 - !private ["s7CVarArgP", "fetch"]
 - !private ["s7CVarArgP", "first_name"]
@@ -58,8 +58,8 @@ depends-member:
 - !private ["s7CVarArgP", "rating"]
 - !private ["s7CVarArgP", "returnsObjectsAsFaults"]
 - !private ["s7CVarArgP", "saveContext"]
-- !private ["s7CVarArgP", "sortDescriptors"]
 - !private ["s7CVarArgP", "state"]
+- !private ["s7CVarArgP", "street"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "userModelJSONString"]
 - !private ["s7CVarArgP", "zip"]
@@ -75,7 +75,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "NSEntityDescription"]
 - !private ["s28CustomDebugStringConvertibleP", "NSFetchRequest"]
 - !private ["s28CustomDebugStringConvertibleP", "NSLog"]
-- !private ["s28CustomDebugStringConvertibleP", "NSSortDescriptor"]
 - !private ["s28CustomDebugStringConvertibleP", "abort"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundContext"]
 - !private ["s28CustomDebugStringConvertibleP", "bday"]
@@ -83,6 +82,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "byear"]
 - !private ["s28CustomDebugStringConvertibleP", "city"]
 - !private ["s28CustomDebugStringConvertibleP", "coreDataContext"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
+- !private ["s28CustomDebugStringConvertibleP", "deleteAllUsers"]
 - !private ["s28CustomDebugStringConvertibleP", "email"]
 - !private ["s28CustomDebugStringConvertibleP", "fetch"]
 - !private ["s28CustomDebugStringConvertibleP", "first_name"]
@@ -97,8 +98,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "rating"]
 - !private ["s28CustomDebugStringConvertibleP", "returnsObjectsAsFaults"]
 - !private ["s28CustomDebugStringConvertibleP", "saveContext"]
-- !private ["s28CustomDebugStringConvertibleP", "sortDescriptors"]
 - !private ["s28CustomDebugStringConvertibleP", "state"]
+- !private ["s28CustomDebugStringConvertibleP", "street"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "userModelJSONString"]
 - !private ["s28CustomDebugStringConvertibleP", "zip"]
@@ -110,7 +111,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "NSEntityDescription"]
 - !private ["s23CustomStringConvertibleP", "NSFetchRequest"]
 - !private ["s23CustomStringConvertibleP", "NSLog"]
-- !private ["s23CustomStringConvertibleP", "NSSortDescriptor"]
 - !private ["s23CustomStringConvertibleP", "abort"]
 - !private ["s23CustomStringConvertibleP", "backgroundContext"]
 - !private ["s23CustomStringConvertibleP", "bday"]
@@ -118,6 +118,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "byear"]
 - !private ["s23CustomStringConvertibleP", "city"]
 - !private ["s23CustomStringConvertibleP", "coreDataContext"]
+- !private ["s23CustomStringConvertibleP", "delete"]
+- !private ["s23CustomStringConvertibleP", "deleteAllUsers"]
 - !private ["s23CustomStringConvertibleP", "email"]
 - !private ["s23CustomStringConvertibleP", "fetch"]
 - !private ["s23CustomStringConvertibleP", "first_name"]
@@ -132,8 +134,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "rating"]
 - !private ["s23CustomStringConvertibleP", "returnsObjectsAsFaults"]
 - !private ["s23CustomStringConvertibleP", "saveContext"]
-- !private ["s23CustomStringConvertibleP", "sortDescriptors"]
 - !private ["s23CustomStringConvertibleP", "state"]
+- !private ["s23CustomStringConvertibleP", "street"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "userModelJSONString"]
 - !private ["s23CustomStringConvertibleP", "zip"]
@@ -147,7 +149,6 @@ depends-member:
 - !private ["s9EquatableP", "NSEntityDescription"]
 - !private ["s9EquatableP", "NSFetchRequest"]
 - !private ["s9EquatableP", "NSLog"]
-- !private ["s9EquatableP", "NSSortDescriptor"]
 - !private ["s9EquatableP", "abort"]
 - !private ["s9EquatableP", "backgroundContext"]
 - !private ["s9EquatableP", "bday"]
@@ -155,6 +156,8 @@ depends-member:
 - !private ["s9EquatableP", "byear"]
 - !private ["s9EquatableP", "city"]
 - !private ["s9EquatableP", "coreDataContext"]
+- !private ["s9EquatableP", "delete"]
+- !private ["s9EquatableP", "deleteAllUsers"]
 - !private ["s9EquatableP", "email"]
 - !private ["s9EquatableP", "fetch"]
 - !private ["s9EquatableP", "first_name"]
@@ -169,8 +172,8 @@ depends-member:
 - !private ["s9EquatableP", "rating"]
 - !private ["s9EquatableP", "returnsObjectsAsFaults"]
 - !private ["s9EquatableP", "saveContext"]
-- !private ["s9EquatableP", "sortDescriptors"]
 - !private ["s9EquatableP", "state"]
+- !private ["s9EquatableP", "street"]
 - !private ["s9EquatableP", "userModelJSONString"]
 - !private ["s9EquatableP", "zip"]
 - ["s9EquatableP", ""]
@@ -182,7 +185,6 @@ depends-member:
 - !private ["s8HashableP", "NSEntityDescription"]
 - !private ["s8HashableP", "NSFetchRequest"]
 - !private ["s8HashableP", "NSLog"]
-- !private ["s8HashableP", "NSSortDescriptor"]
 - !private ["s8HashableP", "abort"]
 - !private ["s8HashableP", "backgroundContext"]
 - !private ["s8HashableP", "bday"]
@@ -190,6 +192,8 @@ depends-member:
 - !private ["s8HashableP", "byear"]
 - !private ["s8HashableP", "city"]
 - !private ["s8HashableP", "coreDataContext"]
+- !private ["s8HashableP", "delete"]
+- !private ["s8HashableP", "deleteAllUsers"]
 - !private ["s8HashableP", "email"]
 - !private ["s8HashableP", "fetch"]
 - !private ["s8HashableP", "first_name"]
@@ -204,27 +208,25 @@ depends-member:
 - !private ["s8HashableP", "rating"]
 - !private ["s8HashableP", "returnsObjectsAsFaults"]
 - !private ["s8HashableP", "saveContext"]
-- !private ["s8HashableP", "sortDescriptors"]
 - !private ["s8HashableP", "state"]
+- !private ["s8HashableP", "street"]
 - !private ["s8HashableP", "userModelJSONString"]
 - !private ["s8HashableP", "zip"]
 - ["s8HashableP", ""]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "delete"]
 - !private ["So8NSCodingP", "fetch"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "insertNewObject"]
 - !private ["So8NSCodingP", "returnsObjectsAsFaults"]
-- !private ["So8NSCodingP", "sortDescriptors"]
 - !private ["So9NSCopyingP", "init"]
 - !private ["So9NSCopyingP", "insertNewObject"]
 - !private ["So9NSCopyingP", "returnsObjectsAsFaults"]
-- !private ["So9NSCopyingP", "sortDescriptors"]
 - !private ["So19NSEntityDescriptionC", "insertNewObject"]
 - !private ["So17NSFastEnumerationP", "insertNewObject"]
 - !private ["So14NSFetchRequestC", "init"]
 - !private ["So14NSFetchRequestC", "returnsObjectsAsFaults"]
-- !private ["So14NSFetchRequestC", "sortDescriptors"]
 - !private ["So20NSFetchRequestResultP", "bday"]
 - !private ["So20NSFetchRequestResultP", "bmonth"]
 - !private ["So20NSFetchRequestResultP", "byear"]
@@ -235,9 +237,11 @@ depends-member:
 - !private ["So20NSFetchRequestResultP", "payment"]
 - !private ["So20NSFetchRequestResultP", "rating"]
 - !private ["So20NSFetchRequestResultP", "state"]
+- !private ["So20NSFetchRequestResultP", "street"]
 - !private ["So20NSFetchRequestResultP", "zip"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "delete"]
 - !private ["So9NSLockingP", "fetch"]
 - !private ["So15NSManagedObjectC", "bday"]
 - !private ["So15NSManagedObjectC", "bmonth"]
@@ -249,7 +253,9 @@ depends-member:
 - !private ["So15NSManagedObjectC", "payment"]
 - !private ["So15NSManagedObjectC", "rating"]
 - !private ["So15NSManagedObjectC", "state"]
+- !private ["So15NSManagedObjectC", "street"]
 - !private ["So15NSManagedObjectC", "zip"]
+- !private ["So22NSManagedObjectContextC", "delete"]
 - !private ["So22NSManagedObjectContextC", "fetch"]
 - !private ["So16NSMutableCopyingP", "init"]
 - ["So8NSObjectC", "AnyObject"]
@@ -260,7 +266,7 @@ depends-member:
 - !private ["So8NSObjectC", "NSFetchRequest"]
 - !private ["So8NSObjectC", "NSFetchRequestResult"]
 - !private ["So8NSObjectC", "NSLog"]
-- !private ["So8NSObjectC", "NSSortDescriptor"]
+- !private ["So8NSObjectC", "NSManagedObject"]
 - !private ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "abort"]
@@ -270,6 +276,8 @@ depends-member:
 - !private ["So8NSObjectC", "byear"]
 - !private ["So8NSObjectC", "city"]
 - ["So8NSObjectC", "coreDataContext"]
+- !private ["So8NSObjectC", "delete"]
+- ["So8NSObjectC", "deleteAllUsers"]
 - !private ["So8NSObjectC", "email"]
 - !private ["So8NSObjectC", "fetch"]
 - ["So8NSObjectC", "fetchAllUsers"]
@@ -286,8 +294,8 @@ depends-member:
 - !private ["So8NSObjectC", "rating"]
 - !private ["So8NSObjectC", "returnsObjectsAsFaults"]
 - !private ["So8NSObjectC", "saveContext"]
-- !private ["So8NSObjectC", "sortDescriptors"]
 - !private ["So8NSObjectC", "state"]
+- !private ["So8NSObjectC", "street"]
 - ["So8NSObjectC", "userModelJSONString"]
 - !private ["So8NSObjectC", "zip"]
 - ["So8NSObjectC", ""]
@@ -295,7 +303,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "NSEntityDescription"]
 - !private ["So16NSObjectProtocolP", "NSFetchRequest"]
 - !private ["So16NSObjectProtocolP", "NSLog"]
-- !private ["So16NSObjectProtocolP", "NSSortDescriptor"]
 - !private ["So16NSObjectProtocolP", "abort"]
 - !private ["So16NSObjectProtocolP", "backgroundContext"]
 - !private ["So16NSObjectProtocolP", "bday"]
@@ -303,6 +310,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "byear"]
 - !private ["So16NSObjectProtocolP", "city"]
 - !private ["So16NSObjectProtocolP", "coreDataContext"]
+- !private ["So16NSObjectProtocolP", "delete"]
+- !private ["So16NSObjectProtocolP", "deleteAllUsers"]
 - !private ["So16NSObjectProtocolP", "email"]
 - !private ["So16NSObjectProtocolP", "fetch"]
 - !private ["So16NSObjectProtocolP", "first_name"]
@@ -317,15 +326,13 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "rating"]
 - !private ["So16NSObjectProtocolP", "returnsObjectsAsFaults"]
 - !private ["So16NSObjectProtocolP", "saveContext"]
-- !private ["So16NSObjectProtocolP", "sortDescriptors"]
 - !private ["So16NSObjectProtocolP", "state"]
+- !private ["So16NSObjectProtocolP", "street"]
 - !private ["So16NSObjectProtocolP", "userModelJSONString"]
 - !private ["So16NSObjectProtocolP", "zip"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So24NSPersistentStoreRequestC", "returnsObjectsAsFaults"]
-- !private ["So24NSPersistentStoreRequestC", "sortDescriptors"]
 - !private ["So14NSSecureCodingP", "init"]
-- !private ["So16NSSortDescriptorC", "init"]
 - !private ["So8NSStringC", "init"]
 - !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s8SequenceP", "init"]
@@ -345,6 +352,7 @@ depends-member:
 - !private ["11Marketplace4UserC", "payment"]
 - !private ["11Marketplace4UserC", "rating"]
 - !private ["11Marketplace4UserC", "state"]
+- !private ["11Marketplace4UserC", "street"]
 - !private ["11Marketplace4UserC", "zip"]
 - ["11Marketplace19UserSchemaProcessorC", "AnyObject"]
 - ["11Marketplace19UserSchemaProcessorC", "CoreDataCommonMethods"]
@@ -354,12 +362,13 @@ depends-member:
 - !private ["11Marketplace19UserSchemaProcessorC", "NSFetchRequest"]
 - !private ["11Marketplace19UserSchemaProcessorC", "NSFetchRequestResult"]
 - !private ["11Marketplace19UserSchemaProcessorC", "NSLog"]
-- !private ["11Marketplace19UserSchemaProcessorC", "NSSortDescriptor"]
+- !private ["11Marketplace19UserSchemaProcessorC", "NSManagedObject"]
 - !private ["11Marketplace19UserSchemaProcessorC", "String"]
 - ["11Marketplace19UserSchemaProcessorC", "User"]
 - !private ["11Marketplace19UserSchemaProcessorC", "abort"]
 - ["11Marketplace19UserSchemaProcessorC", "coreDataContext"]
 - ["11Marketplace19UserSchemaProcessorC", "deinit"]
+- ["11Marketplace19UserSchemaProcessorC", "deleteAllUsers"]
 - ["11Marketplace19UserSchemaProcessorC", "fetchAllUsers"]
 - ["11Marketplace19UserSchemaProcessorC", "getAllUsers"]
 - ["11Marketplace19UserSchemaProcessorC", "init"]
@@ -382,7 +391,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSEntityDescription"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSFetchRequest"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLog"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSSortDescriptor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "abort"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bday"]
@@ -390,6 +398,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "byear"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "city"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "coreDataContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deleteAllUsers"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "email"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fetch"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "first_name"]
@@ -404,8 +414,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "rating"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "returnsObjectsAsFaults"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "saveContext"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "sortDescriptors"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "state"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "street"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userModelJSONString"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zip"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
@@ -450,7 +460,6 @@ depends-nominal:
 - "So16NSObjectProtocolP"
 - !private "So24NSPersistentStoreRequestC"
 - !private "So14NSSecureCodingP"
-- !private "So16NSSortDescriptorC"
 - !private "So8NSStringC"
 - !private "s26RangeReplaceableCollectionP"
 - !private "s8SequenceP"
@@ -497,7 +506,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/testing/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/ryanMarketplace/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
@@ -514,4 +523,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "a1ca85185bd3b86813ef40d73b659807"
+interface-hash: "2245d2740067b14d37ec8ecb99be4de9"

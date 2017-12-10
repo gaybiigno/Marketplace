@@ -78,4 +78,34 @@ class CoreDataCommonMethods: NSObject {
             }
         }
     }
+    
+    func deleteUserContext(user: User) {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+//        do {
+//            let users = try managedObjectContext.execute(fetchRequest) as! [NSManagedObject]
+//            for user in users {
+//                managedObjectContext.delete(user)
+//            }
+//            try managedObjectContext.save()
+//        } catch {
+//
+//        }
+//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+//        do {
+//            let users = try backgroundContext?.execute(fetchRequest2) as! [NSManagedObject]
+//            for user in users {
+//                backgroundContext?.delete(user)
+//            }
+//            try backgroundContext?.save()
+//        } catch {
+//
+//        }
+        backgroundContext?.delete(user)
+        self.saveContext(self.backgroundContext!)
+    }
+    
+    func deleteItemContext(item: Item) {
+        backgroundContext?.delete(item)
+        self.saveContext(self.backgroundContext!)
+    }
 }

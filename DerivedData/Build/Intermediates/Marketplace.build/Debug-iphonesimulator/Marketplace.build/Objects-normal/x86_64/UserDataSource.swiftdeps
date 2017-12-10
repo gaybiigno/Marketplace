@@ -17,7 +17,6 @@ depends-top-level:
 - !private "StringLiteralType"
 - "User"
 - "UserDataSource"
-- !private "print"
 - !private "||"
 depends-member:
 - !private ["Sa", "count"]
@@ -31,7 +30,6 @@ depends-member:
 - !private ["s7CVarArgP", "count"]
 - !private ["s7CVarArgP", "email"]
 - !private ["s7CVarArgP", "init"]
-- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "remove"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "users"]
@@ -44,7 +42,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "count"]
 - !private ["s28CustomDebugStringConvertibleP", "email"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "users"]
@@ -60,7 +57,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "email"]
 - !private ["s23CustomStringConvertibleP", "init"]
-- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "users"]
@@ -78,7 +74,6 @@ depends-member:
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "email"]
 - !private ["s9EquatableP", "init"]
-- !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "users"]
 - ["s9EquatableP", ""]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
@@ -91,7 +86,6 @@ depends-member:
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "email"]
 - !private ["s8HashableP", "init"]
-- !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "users"]
 - ["s8HashableP", ""]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
@@ -113,13 +107,11 @@ depends-member:
 - !private ["So8NSObjectC", "email"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "numUsers"]
-- !private ["So8NSObjectC", "print"]
 - ["So8NSObjectC", "userAt"]
 - ["So8NSObjectC", "users"]
 - ["So8NSObjectC", ""]
 - !private ["So16NSObjectProtocolP", "email"]
 - !private ["So16NSObjectProtocolP", "init"]
-- !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "users"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So14NSSecureCodingP", "init"]
@@ -147,7 +139,6 @@ depends-member:
 - ["11Marketplace14UserDataSourceC", "deinit"]
 - ["11Marketplace14UserDataSourceC", "init"]
 - ["11Marketplace14UserDataSourceC", "numUsers"]
-- !private ["11Marketplace14UserDataSourceC", "print"]
 - ["11Marketplace14UserDataSourceC", "userAt"]
 - ["11Marketplace14UserDataSourceC", "users"]
 - !private ["s14_ArrayProtocolP", "count"]
@@ -177,7 +168,6 @@ depends-member:
 - !private ["s14_IndexableBaseP", "subscript"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "email"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "users"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s17_MutableIndexableP", "count"]

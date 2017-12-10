@@ -13,7 +13,11 @@ depends-top-level:
 - "CastingPrecedence"
 - "CoreDataCommonMethods"
 - "CoreDataStore"
+- "Item"
+- !private "NSFetchRequest"
+- !private "NSFetchRequestResult"
 - !private "NSLog"
+- !private "NSManagedObject"
 - "NSManagedObjectContext"
 - !private "NSNotification"
 - "NSObject"
@@ -26,6 +30,7 @@ depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "CoreDataCommonMethods"]
 - ["s7CVarArgP", "CoreDataStore"]
+- !private ["s7CVarArgP", "NSFetchRequest"]
 - !private ["s7CVarArgP", "NSLog"]
 - !private ["s7CVarArgP", "NSManagedObjectContext"]
 - !private ["s7CVarArgP", "NSNotification"]
@@ -36,6 +41,8 @@ depends-member:
 - !private ["s7CVarArgP", "backgroundContext"]
 - !private ["s7CVarArgP", "contextDidSaveContext"]
 - !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "delete"]
+- !private ["s7CVarArgP", "execute"]
 - !private ["s7CVarArgP", "hasChanges"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "managedObjectContext"]
@@ -51,7 +58,11 @@ depends-member:
 - !private ["s10ComparableP", "init"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "CoreDataCommonMethods"]
 - ["11Marketplace21CoreDataCommonMethodsC", "CoreDataStore"]
+- ["11Marketplace21CoreDataCommonMethodsC", "Item"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "NSFetchRequest"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "NSFetchRequestResult"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "NSLog"]
+- !private ["11Marketplace21CoreDataCommonMethodsC", "NSManagedObject"]
 - ["11Marketplace21CoreDataCommonMethodsC", "NSManagedObjectContext"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "NSNotification"]
 - ["11Marketplace21CoreDataCommonMethodsC", "Notification"]
@@ -61,6 +72,8 @@ depends-member:
 - !private ["11Marketplace21CoreDataCommonMethodsC", "backgroundContext.storage"]
 - ["11Marketplace21CoreDataCommonMethodsC", "contextDidSaveContext"]
 - ["11Marketplace21CoreDataCommonMethodsC", "deinit"]
+- ["11Marketplace21CoreDataCommonMethodsC", "deleteItemContext"]
+- ["11Marketplace21CoreDataCommonMethodsC", "deleteUserContext"]
 - ["11Marketplace21CoreDataCommonMethodsC", "init"]
 - ["11Marketplace21CoreDataCommonMethodsC", "managedObjectContext"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "managedObjectContext.storage"]
@@ -70,6 +83,7 @@ depends-member:
 - !private ["11Marketplace13CoreDataStoreC", "persistentStoreCoordinator"]
 - !private ["s28CustomDebugStringConvertibleP", "CoreDataCommonMethods"]
 - ["s28CustomDebugStringConvertibleP", "CoreDataStore"]
+- !private ["s28CustomDebugStringConvertibleP", "NSFetchRequest"]
 - !private ["s28CustomDebugStringConvertibleP", "NSLog"]
 - !private ["s28CustomDebugStringConvertibleP", "NSManagedObjectContext"]
 - !private ["s28CustomDebugStringConvertibleP", "NSNotification"]
@@ -80,6 +94,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "backgroundContext"]
 - !private ["s28CustomDebugStringConvertibleP", "contextDidSaveContext"]
 - !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
+- !private ["s28CustomDebugStringConvertibleP", "execute"]
 - !private ["s28CustomDebugStringConvertibleP", "hasChanges"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "managedObjectContext"]
@@ -99,6 +115,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "object"]
 - !private ["s23CustomStringConvertibleP", "CoreDataCommonMethods"]
 - ["s23CustomStringConvertibleP", "CoreDataStore"]
+- !private ["s23CustomStringConvertibleP", "NSFetchRequest"]
 - !private ["s23CustomStringConvertibleP", "NSLog"]
 - !private ["s23CustomStringConvertibleP", "NSManagedObjectContext"]
 - !private ["s23CustomStringConvertibleP", "NSNotification"]
@@ -110,6 +127,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "backgroundContext"]
 - !private ["s23CustomStringConvertibleP", "contextDidSaveContext"]
 - !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "delete"]
+- !private ["s23CustomStringConvertibleP", "execute"]
 - !private ["s23CustomStringConvertibleP", "hasChanges"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "managedObjectContext"]
@@ -128,6 +147,7 @@ depends-member:
 - !private ["s9EncodableP", "init"]
 - !private ["s9EquatableP", "CoreDataCommonMethods"]
 - ["s9EquatableP", "CoreDataStore"]
+- !private ["s9EquatableP", "NSFetchRequest"]
 - !private ["s9EquatableP", "NSLog"]
 - !private ["s9EquatableP", "NSManagedObjectContext"]
 - !private ["s9EquatableP", "NSManagedObjectContextDidSave"]
@@ -140,6 +160,8 @@ depends-member:
 - !private ["s9EquatableP", "backgroundContext"]
 - !private ["s9EquatableP", "contextDidSaveContext"]
 - !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "delete"]
+- !private ["s9EquatableP", "execute"]
 - !private ["s9EquatableP", "hasChanges"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "mainQueueConcurrencyType"]
@@ -160,6 +182,7 @@ depends-member:
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s8HashableP", "CoreDataCommonMethods"]
 - ["s8HashableP", "CoreDataStore"]
+- !private ["s8HashableP", "NSFetchRequest"]
 - !private ["s8HashableP", "NSLog"]
 - !private ["s8HashableP", "NSManagedObjectContext"]
 - !private ["s8HashableP", "NSManagedObjectContextDidSave"]
@@ -172,6 +195,8 @@ depends-member:
 - !private ["s8HashableP", "backgroundContext"]
 - !private ["s8HashableP", "contextDidSaveContext"]
 - !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "delete"]
+- !private ["s8HashableP", "execute"]
 - !private ["s8HashableP", "hasChanges"]
 - ["s8HashableP", "init"]
 - !private ["s8HashableP", "mainQueueConcurrencyType"]
@@ -190,6 +215,8 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "Name"]
+- !private ["So8NSCodingP", "delete"]
+- !private ["So8NSCodingP", "execute"]
 - !private ["So8NSCodingP", "hasChanges"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "mergeChanges"]
@@ -198,14 +225,19 @@ depends-member:
 - !private ["So8NSCodingP", "save"]
 - !private ["So9NSCopyingP", "Name"]
 - !private ["So9NSCopyingP", "init"]
+- !private ["So14NSFetchRequestC", "init"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "delete"]
+- !private ["So9NSLockingP", "execute"]
 - !private ["So9NSLockingP", "hasChanges"]
 - !private ["So9NSLockingP", "init"]
 - !private ["So9NSLockingP", "mergeChanges"]
 - !private ["So9NSLockingP", "perform"]
 - !private ["So9NSLockingP", "persistentStoreCoordinator"]
 - !private ["So9NSLockingP", "save"]
+- !private ["So22NSManagedObjectContextC", "delete"]
+- !private ["So22NSManagedObjectContextC", "execute"]
 - !private ["So22NSManagedObjectContextC", "hasChanges"]
 - !private ["So22NSManagedObjectContextC", "init"]
 - !private ["So22NSManagedObjectContextC", "mergeChanges"]
@@ -218,7 +250,11 @@ depends-member:
 - !private ["So14NSNotificationC", "Name"]
 - !private ["So8NSObjectC", "CoreDataCommonMethods"]
 - ["So8NSObjectC", "CoreDataStore"]
+- ["So8NSObjectC", "Item"]
+- !private ["So8NSObjectC", "NSFetchRequest"]
+- !private ["So8NSObjectC", "NSFetchRequestResult"]
 - !private ["So8NSObjectC", "NSLog"]
+- !private ["So8NSObjectC", "NSManagedObject"]
 - ["So8NSObjectC", "NSManagedObjectContext"]
 - !private ["So8NSObjectC", "NSNotification"]
 - !private ["So8NSObjectC", "Name"]
@@ -230,6 +266,10 @@ depends-member:
 - ["So8NSObjectC", "backgroundContext.storage"]
 - ["So8NSObjectC", "contextDidSaveContext"]
 - !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "delete"]
+- ["So8NSObjectC", "deleteItemContext"]
+- ["So8NSObjectC", "deleteUserContext"]
+- !private ["So8NSObjectC", "execute"]
 - !private ["So8NSObjectC", "hasChanges"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "managedObjectContext"]
@@ -244,6 +284,7 @@ depends-member:
 - ["So8NSObjectC", ""]
 - !private ["So16NSObjectProtocolP", "CoreDataCommonMethods"]
 - ["So16NSObjectProtocolP", "CoreDataStore"]
+- !private ["So16NSObjectProtocolP", "NSFetchRequest"]
 - !private ["So16NSObjectProtocolP", "NSLog"]
 - !private ["So16NSObjectProtocolP", "NSManagedObjectContext"]
 - !private ["So16NSObjectProtocolP", "NSNotification"]
@@ -254,6 +295,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "backgroundContext"]
 - !private ["So16NSObjectProtocolP", "contextDidSaveContext"]
 - !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "delete"]
+- !private ["So16NSObjectProtocolP", "execute"]
 - !private ["So16NSObjectProtocolP", "hasChanges"]
 - ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "managedObjectContext"]
@@ -295,6 +338,7 @@ depends-member:
 - !private ["s14_IndexableBaseP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CoreDataCommonMethods"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "CoreDataStore"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSFetchRequest"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLog"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSManagedObjectContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSNotification"]
@@ -305,6 +349,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "contextDidSaveContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "execute"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "hasChanges"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "managedObjectContext"]
@@ -347,6 +393,7 @@ depends-nominal:
 - !private "s10MirrorPathP"
 - !private "So8NSCodingP"
 - !private "So9NSCopyingP"
+- !private "So14NSFetchRequestC"
 - !private "So21NSItemProviderReadingP"
 - !private "So21NSItemProviderWritingP"
 - !private "So9NSLockingP"
@@ -406,7 +453,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/ryanMarketplace/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
@@ -423,4 +470,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "57d390a6fdb362cf6dfaa85a431c0dff"
+interface-hash: "27c3905c44626a30ee4b1af220421dba"

@@ -15,6 +15,7 @@ class UserSchemaProcessor: NSObject {
     init(userModelJSON: [AnyObject]) {
         userModelJSONString = userModelJSON
         super.init()
+        deleteAllUsers()
         processJSON(userModelJSON)
     }
     
@@ -56,10 +57,23 @@ class UserSchemaProcessor: NSObject {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
             return result as? [User]
         } catch {
-            NSLog("Unable to fetch Artist from the database.")
+            NSLog("Unable to fetch Users from the database.")
             abort()
         }
         return nil
+    }
+    
+    func deleteAllUsers() {
+        let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fReq.returnsObjectsAsFaults = false
+        do {
+            let results = try coreDataContext.managedObjectContext.fetch(fReq)
+            for result in results {
+                let r = try coreDataContext.managedObjectContext.delete(result as! NSManagedObject)
+            }
+        } catch {
+            abort()
+        }
     }
     
     func processUsersJSON(_ userObjects: [AnyObject]) {

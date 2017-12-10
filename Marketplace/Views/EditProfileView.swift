@@ -86,14 +86,22 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
         if uploading == false {
+            if userSchema != nil {
+                userSchema.coreDataContext.deleteUserContext(user: currentUser)
+            }
             print(downloadAssistant.dataFromServer)
-            userSchema.deleteAllData("User")
             
             userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            print(userSchema.getAllUsers())
+            //userSchema.coreDataContext.deleteUserContext(user: currentUser)
             print("---------items downloaded-----------")
             userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
             userDataSource.consolidate()
+            //print(userDataSource.users)
+            print(userDataSource.users?.count)
+            print(userDataSource.users)
             currentUser = userDataSource.userAt(0)
             print(currentUser)
             print("recieved Users")
@@ -106,6 +114,8 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
             dAssistant.download_request()
         }
     }
+    
+    
     
     deinit {
         if uploadAssistant != nil {

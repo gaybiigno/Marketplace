@@ -118,7 +118,7 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "CLGeocoder"]
 - ["So25CLLocationManagerDelegateP", "CLLocation"]
 - ["So25CLLocationManagerDelegateP", "CLLocationManager"]
-- ["So25CLLocationManagerDelegateP", "Download"]
+- !private ["So25CLLocationManagerDelegateP", "Download"]
 - !private ["So25CLLocationManagerDelegateP", "Float"]
 - !private ["So25CLLocationManagerDelegateP", "Int"]
 - ["So25CLLocationManagerDelegateP", "Item"]
@@ -172,7 +172,7 @@ depends-member:
 - !private ["s7CVarArgP", "CLGeocoder"]
 - ["s7CVarArgP", "CLLocation"]
 - ["s7CVarArgP", "CLLocationManager"]
-- ["s7CVarArgP", "Download"]
+- !private ["s7CVarArgP", "Download"]
 - !private ["s7CVarArgP", "Float"]
 - !private ["s7CVarArgP", "Int"]
 - ["s7CVarArgP", "Item"]
@@ -296,7 +296,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "CLGeocoder"]
 - ["s28CustomDebugStringConvertibleP", "CLLocation"]
 - ["s28CustomDebugStringConvertibleP", "CLLocationManager"]
-- ["s28CustomDebugStringConvertibleP", "Download"]
+- !private ["s28CustomDebugStringConvertibleP", "Download"]
 - !private ["s28CustomDebugStringConvertibleP", "Float"]
 - !private ["s28CustomDebugStringConvertibleP", "Int"]
 - ["s28CustomDebugStringConvertibleP", "Item"]
@@ -422,7 +422,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "CLGeocoder"]
 - ["s23CustomStringConvertibleP", "CLLocation"]
 - ["s23CustomStringConvertibleP", "CLLocationManager"]
-- ["s23CustomStringConvertibleP", "Download"]
+- !private ["s23CustomStringConvertibleP", "Download"]
 - !private ["s23CustomStringConvertibleP", "Float"]
 - !private ["s23CustomStringConvertibleP", "Int"]
 - ["s23CustomStringConvertibleP", "Item"]
@@ -543,8 +543,9 @@ depends-member:
 - !private ["s9DecodableP", "subscript"]
 - !private ["11Marketplace8DownloadC", "addObserver"]
 - !private ["11Marketplace8DownloadC", "dataFromServer"]
+- !private ["11Marketplace8DownloadC", "deinit"]
 - !private ["11Marketplace8DownloadC", "download_request"]
-- ["11Marketplace8DownloadC", "init"]
+- !private ["11Marketplace8DownloadC", "init"]
 - !private ["11Marketplace8DownloadC", "removeObserver"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "append"]
@@ -561,7 +562,7 @@ depends-member:
 - !private ["s9EquatableP", "CLGeocoder"]
 - ["s9EquatableP", "CLLocation"]
 - ["s9EquatableP", "CLLocationManager"]
-- ["s9EquatableP", "Download"]
+- !private ["s9EquatableP", "Download"]
 - !private ["s9EquatableP", "Float"]
 - !private ["s9EquatableP", "Int"]
 - ["s9EquatableP", "Item"]
@@ -695,7 +696,7 @@ depends-member:
 - !private ["s8HashableP", "CLGeocoder"]
 - ["s8HashableP", "CLLocation"]
 - ["s8HashableP", "CLLocationManager"]
-- ["s8HashableP", "Download"]
+- !private ["s8HashableP", "Download"]
 - !private ["s8HashableP", "Float"]
 - !private ["s8HashableP", "Int"]
 - ["s8HashableP", "Item"]
@@ -844,7 +845,7 @@ depends-member:
 - !private ["So8NSCodingP", "CLGeocoder"]
 - ["So8NSCodingP", "CLLocation"]
 - ["So8NSCodingP", "CLLocationManager"]
-- ["So8NSCodingP", "Download"]
+- !private ["So8NSCodingP", "Download"]
 - !private ["So8NSCodingP", "Float"]
 - !private ["So8NSCodingP", "Int"]
 - ["So8NSCodingP", "Item"]
@@ -933,7 +934,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "CLGeocoder"]
 - ["So26NSExtensionRequestHandlingP", "CLLocation"]
 - ["So26NSExtensionRequestHandlingP", "CLLocationManager"]
-- ["So26NSExtensionRequestHandlingP", "Download"]
+- !private ["So26NSExtensionRequestHandlingP", "Download"]
 - !private ["So26NSExtensionRequestHandlingP", "Float"]
 - !private ["So26NSExtensionRequestHandlingP", "Int"]
 - ["So26NSExtensionRequestHandlingP", "Item"]
@@ -1148,7 +1149,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "CLGeocoder"]
 - ["So16NSObjectProtocolP", "CLLocation"]
 - ["So16NSObjectProtocolP", "CLLocationManager"]
-- ["So16NSObjectProtocolP", "Download"]
+- !private ["So16NSObjectProtocolP", "Download"]
 - !private ["So16NSObjectProtocolP", "Float"]
 - !private ["So16NSObjectProtocolP", "Int"]
 - ["So16NSObjectProtocolP", "Item"]
@@ -1406,7 +1407,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "CLGeocoder"]
 - ["So21UIAppearanceContainerP", "CLLocation"]
 - ["So21UIAppearanceContainerP", "CLLocationManager"]
-- ["So21UIAppearanceContainerP", "Download"]
+- !private ["So21UIAppearanceContainerP", "Download"]
 - !private ["So21UIAppearanceContainerP", "Float"]
 - !private ["So21UIAppearanceContainerP", "Int"]
 - ["So21UIAppearanceContainerP", "Item"]
@@ -1485,7 +1486,7 @@ depends-member:
 - !private ["So24UIBarPositioningDelegateP", "CLGeocoder"]
 - ["So24UIBarPositioningDelegateP", "CLLocation"]
 - ["So24UIBarPositioningDelegateP", "CLLocationManager"]
-- ["So24UIBarPositioningDelegateP", "Download"]
+- !private ["So24UIBarPositioningDelegateP", "Download"]
 - !private ["So24UIBarPositioningDelegateP", "Float"]
 - !private ["So24UIBarPositioningDelegateP", "Int"]
 - ["So24UIBarPositioningDelegateP", "Item"]
@@ -1538,7 +1539,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "CLGeocoder"]
 - ["So18UIContentContainerP", "CLLocation"]
 - ["So18UIContentContainerP", "CLLocationManager"]
-- ["So18UIContentContainerP", "Download"]
+- !private ["So18UIContentContainerP", "Download"]
 - !private ["So18UIContentContainerP", "Float"]
 - !private ["So18UIContentContainerP", "Int"]
 - ["So18UIContentContainerP", "Item"]
@@ -1625,7 +1626,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "CLGeocoder"]
 - ["So18UIFocusEnvironmentP", "CLLocation"]
 - ["So18UIFocusEnvironmentP", "CLLocationManager"]
-- ["So18UIFocusEnvironmentP", "Download"]
+- !private ["So18UIFocusEnvironmentP", "Download"]
 - !private ["So18UIFocusEnvironmentP", "Float"]
 - !private ["So18UIFocusEnvironmentP", "Int"]
 - ["So18UIFocusEnvironmentP", "Item"]
@@ -1712,7 +1713,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "CLGeocoder"]
 - ["So30UIPasteConfigurationSupportingP", "CLLocation"]
 - ["So30UIPasteConfigurationSupportingP", "CLLocationManager"]
-- ["So30UIPasteConfigurationSupportingP", "Download"]
+- !private ["So30UIPasteConfigurationSupportingP", "Download"]
 - !private ["So30UIPasteConfigurationSupportingP", "Float"]
 - !private ["So30UIPasteConfigurationSupportingP", "Int"]
 - ["So30UIPasteConfigurationSupportingP", "Item"]
@@ -1883,7 +1884,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "CLGeocoder"]
 - ["So30UIResponderStandardEditActionsP", "CLLocation"]
 - ["So30UIResponderStandardEditActionsP", "CLLocationManager"]
-- ["So30UIResponderStandardEditActionsP", "Download"]
+- !private ["So30UIResponderStandardEditActionsP", "Download"]
 - !private ["So30UIResponderStandardEditActionsP", "Float"]
 - !private ["So30UIResponderStandardEditActionsP", "Int"]
 - ["So30UIResponderStandardEditActionsP", "Item"]
@@ -1962,7 +1963,7 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "CLGeocoder"]
 - ["So20UIScrollViewDelegateP", "CLLocation"]
 - ["So20UIScrollViewDelegateP", "CLLocationManager"]
-- ["So20UIScrollViewDelegateP", "Download"]
+- !private ["So20UIScrollViewDelegateP", "Download"]
 - !private ["So20UIScrollViewDelegateP", "Float"]
 - !private ["So20UIScrollViewDelegateP", "Int"]
 - ["So20UIScrollViewDelegateP", "Item"]
@@ -2021,7 +2022,7 @@ depends-member:
 - !private ["So19UISearchBarDelegateP", "CLGeocoder"]
 - ["So19UISearchBarDelegateP", "CLLocation"]
 - ["So19UISearchBarDelegateP", "CLLocationManager"]
-- ["So19UISearchBarDelegateP", "Download"]
+- !private ["So19UISearchBarDelegateP", "Download"]
 - !private ["So19UISearchBarDelegateP", "Float"]
 - !private ["So19UISearchBarDelegateP", "Int"]
 - ["So19UISearchBarDelegateP", "Item"]
@@ -2079,7 +2080,7 @@ depends-member:
 - !private ["So23UISearchResultsUpdatingP", "CLGeocoder"]
 - ["So23UISearchResultsUpdatingP", "CLLocation"]
 - ["So23UISearchResultsUpdatingP", "CLLocationManager"]
-- ["So23UISearchResultsUpdatingP", "Download"]
+- !private ["So23UISearchResultsUpdatingP", "Download"]
 - !private ["So23UISearchResultsUpdatingP", "Float"]
 - !private ["So23UISearchResultsUpdatingP", "Int"]
 - ["So23UISearchResultsUpdatingP", "Item"]
@@ -2135,7 +2136,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "CLGeocoder"]
 - ["So16UIStateRestoringP", "CLLocation"]
 - ["So16UIStateRestoringP", "CLLocationManager"]
-- ["So16UIStateRestoringP", "Download"]
+- !private ["So16UIStateRestoringP", "Download"]
 - !private ["So16UIStateRestoringP", "Float"]
 - !private ["So16UIStateRestoringP", "Int"]
 - ["So16UIStateRestoringP", "Item"]
@@ -2286,7 +2287,7 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "CLGeocoder"]
 - ["So21UITableViewDataSourceP", "CLLocation"]
 - ["So21UITableViewDataSourceP", "CLLocationManager"]
-- ["So21UITableViewDataSourceP", "Download"]
+- !private ["So21UITableViewDataSourceP", "Download"]
 - !private ["So21UITableViewDataSourceP", "Float"]
 - !private ["So21UITableViewDataSourceP", "Int"]
 - ["So21UITableViewDataSourceP", "Item"]
@@ -2342,7 +2343,7 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "CLGeocoder"]
 - ["So19UITableViewDelegateP", "CLLocation"]
 - ["So19UITableViewDelegateP", "CLLocationManager"]
-- ["So19UITableViewDelegateP", "Download"]
+- !private ["So19UITableViewDelegateP", "Download"]
 - !private ["So19UITableViewDelegateP", "Float"]
 - !private ["So19UITableViewDelegateP", "Int"]
 - ["So19UITableViewDelegateP", "Item"]
@@ -2401,7 +2402,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "CLGeocoder"]
 - ["So18UITraitEnvironmentP", "CLLocation"]
 - ["So18UITraitEnvironmentP", "CLLocationManager"]
-- ["So18UITraitEnvironmentP", "Download"]
+- !private ["So18UITraitEnvironmentP", "Download"]
 - !private ["So18UITraitEnvironmentP", "Float"]
 - !private ["So18UITraitEnvironmentP", "Int"]
 - ["So18UITraitEnvironmentP", "Item"]
@@ -2669,7 +2670,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CLGeocoder"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "CLLocation"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "CLLocationManager"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "Download"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Download"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Float"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Int"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "Item"]
@@ -2837,7 +2838,7 @@ depends-nominal:
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
 - "s9DecodableP"
-- "11Marketplace8DownloadC"
+- !private "11Marketplace8DownloadC"
 - "s9EncodableP"
 - "s9EquatableP"
 - !private "s5ErrorP"
@@ -2979,7 +2980,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/ryanMarketplace/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
@@ -2996,4 +2997,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "44ce0874be4d2a5debf9241b47aa38c4"
+interface-hash: "ad062f6f6396add610ca337477e28372"
