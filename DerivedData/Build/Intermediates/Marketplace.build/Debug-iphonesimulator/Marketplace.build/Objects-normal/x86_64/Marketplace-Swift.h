@@ -833,8 +833,8 @@ SWIFT_CLASS("_TtC11Marketplace15UserProfileView")
 @end
 
 
-SWIFT_CLASS("_TtC11Marketplace22UsertemSchemaProcessor")
-@interface UsertemSchemaProcessor : NSObject
+SWIFT_CLASS("_TtC11Marketplace19UserSchemaProcessor")
+@interface UserSchemaProcessor : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

@@ -43,6 +43,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     private var category = ""
 	
 	let userData = UserModel()
+    
+    var cUser: User!
 	
 	var uName: String!
 	
@@ -103,6 +105,10 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		sportingButton.layer.borderWidth = 1.0
 		sportingButton.layer.borderColor = borderColor
 		
+        if let u = cUser {
+            print(u)
+        }
+        
 		if signedIn {
 			addHello()
 		} else {

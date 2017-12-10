@@ -34,6 +34,7 @@ provides-dynamic-lookup:
 - "state"
 - "tableView"
 - "viewDidLoad"
+- "viewTitleLabel"
 - "year"
 - "zipcode"
 depends-top-level:
@@ -945,6 +946,7 @@ depends-member:
 - ["So8NSObjectC", "username"]
 - !private ["So8NSObjectC", "view"]
 - ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "viewTitleLabel"]
 - !private ["So8NSObjectC", "white"]
 - ["So8NSObjectC", "year"]
 - ["So8NSObjectC", "zipcode"]
@@ -1151,6 +1153,7 @@ depends-member:
 - !private ["11Marketplace17RegisterTableViewC", "username"]
 - !private ["11Marketplace17RegisterTableViewC", "view"]
 - ["11Marketplace17RegisterTableViewC", "viewDidLoad"]
+- ["11Marketplace17RegisterTableViewC", "viewTitleLabel"]
 - ["11Marketplace17RegisterTableViewC", "year"]
 - ["11Marketplace17RegisterTableViewC", "zipcode"]
 - !private ["11Marketplace12SegueHandlerP", "signedIn"]
@@ -1741,6 +1744,7 @@ depends-member:
 - ["So11UIResponderC", "username"]
 - !private ["So11UIResponderC", "view"]
 - ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "viewTitleLabel"]
 - ["So11UIResponderC", "year"]
 - ["So11UIResponderC", "zipcode"]
 - !private ["So30UIResponderStandardEditActionsP", "CGSize"]
@@ -2019,6 +2023,7 @@ depends-member:
 - ["So21UITableViewControllerC", "username"]
 - !private ["So21UITableViewControllerC", "view"]
 - ["So21UITableViewControllerC", "viewDidLoad"]
+- ["So21UITableViewControllerC", "viewTitleLabel"]
 - ["So21UITableViewControllerC", "year"]
 - ["So21UITableViewControllerC", "zipcode"]
 - ["So21UITableViewControllerC", ""]
@@ -2311,6 +2316,7 @@ depends-member:
 - ["So16UIViewControllerC", "username"]
 - !private ["So16UIViewControllerC", "view"]
 - ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "viewTitleLabel"]
 - ["So16UIViewControllerC", "year"]
 - ["So16UIViewControllerC", "zipcode"]
 - !private ["So10NSCalendarC4UnitV", "year"]
@@ -2679,4 +2685,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "a6696a4f55fbd5e74a5b8b5771821b91"
+interface-hash: "5c4f93b1e69b61458e0900fe243d41b2"

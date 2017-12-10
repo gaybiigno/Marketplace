@@ -1820,7 +1820,7 @@
                         <outlet property="toggleDistance" destination="kQo-Ot-7jV" id="ty1-SG-hfs"/>
                         <outlet property="togglePrice" destination="AWh-04-ey3" id="8gt-gN-JIR"/>
                         <outlet property="toggleRating" destination="Ju9-2S-i4G" id="77S-nc-T5S"/>
-                        <segue destination="ZTj-Ha-SCW" kind="presentation" identifier="paramsToSearch" modalPresentationStyle="fullScreen" id="PID-hA-ejW"/>
+                        <segue destination="ZTj-Ha-SCW" kind="show" identifier="paramsToSearch" id="PID-hA-ejW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB6-MP-Gbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2159,7 +2159,7 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="DRT-10-qDO" customClass="RatingView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLG-es-j7O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate Seller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4z-4z-3e3">
@@ -2191,7 +2191,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvi-cV-f4h">
-                                <rect key="frame" x="173" y="216" width="47" height="105"/>
+                                <rect key="frame" x="173" y="216" width="0.0" height="105"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqV-Vt-hbg">
@@ -2419,7 +2419,7 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Drn-GA-Ijx" customClass="SendMessageView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ncM-Nv-sWk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jas-LW-IVj">
@@ -2531,7 +2531,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PID-hA-ejW"/>
-        <segue reference="YMW-cZ-2uV"/>
+        <segue reference="wR7-pD-Igu"/>
         <segue reference="5uY-PQ-cL7"/>
         <segue reference="S3O-V1-7Vh"/>
     </inferredMetricsTieBreakers>

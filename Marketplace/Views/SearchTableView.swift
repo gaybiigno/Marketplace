@@ -45,7 +45,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var itemDataSource: ItemDataSource? = nil
     var itemsToShow = [Item]()
 
-    var usersSchema: UsertemSchemaProcessor!
+    var usersSchema: UserSchemaProcessor!
     var userDataSource: UserDataSource? = nil
     
     
@@ -91,14 +91,14 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         itemDataSource = ItemDataSource(dataSource: items_returned)
         itemDataSource?.consolidate()
         
-        usersSchema = UsertemSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        usersSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
         let users_returned = usersSchema.getAllUsers()
         userDataSource = UserDataSource(dataSource: users_returned)
         userDataSource?.consolidate()
         
-        if searchParams {
-            setSearchies()
-        }
+//        if searchParams {
+//            setSearchies()
+//        }
     }
     
     deinit {
@@ -122,7 +122,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
             }
             print(searchText)
             let list = searchParams ? filterBySearchParams() : nil
-            let matchedItems = findItemsWithStrings(searchText, list)
+            for l in list! {
+                print(l)
+            }
+            let matchedItems = findItemsWithStrings(searchText)
             itemsToShow = matchedItems
             tableView.reloadData()
         }
@@ -150,8 +153,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 }
             }
             if let lower = minPrice {
-                if lower > item.price {
-                    continue
+                if lower < item.price {
+                    filteredItems.append(item)
                 }
             }
             if let higher = maxPrice {
@@ -159,7 +162,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                     continue
                 }
             }
-            filteredItems.append(item)
+            print()
+            print(item)
+            print()
+            //filteredItems.append(item)
         }
         return filteredItems
     }
@@ -170,14 +176,19 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         
     }
     
-    func findItemsWithStrings(_ params: [String], _ itemList: [Item]?) -> [Item] {
+    func findItemsWithStrings(_ params: [String]) -> [Item] {
         var itemsWithStrings = [Item]()
         var lookList = [Item]()
-        if let valid = itemList {
-            lookList = valid
+        if searchParams {
+            lookList = filterBySearchParams()!
         } else {
             lookList = (itemDataSource?.items)!
         }
+//        if let valid = filterBySearchParams() {
+//            lookList = valid
+//        } else {
+//            lookList = (itemDataSource?.items)!
+//        }
         for item in lookList {
             if var splitTitle = item.item_name?.components(separatedBy: " ") {
                 if var splitCategory = item.item_category?.components(separatedBy: " ") {

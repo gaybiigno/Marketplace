@@ -246,7 +246,9 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
             vc.minPrice = lowerPrice
             vc.maxPrice = higherPrice
             vc.rating = rate
-            vc.keyWords = " "
+//            vc.keyWords = " "
+            vc.keyWords = "c"
+            //vc.filterContentForSearchText(cat)
         }
     }
  

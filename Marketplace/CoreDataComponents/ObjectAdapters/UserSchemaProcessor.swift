@@ -7,7 +7,7 @@
 import UIKit
 import CoreData
 
-class UsertemSchemaProcessor: NSObject {
+class UserSchemaProcessor: NSObject {
     
     let userModelJSONString: [AnyObject]
     let coreDataContext = CoreDataCommonMethods()
@@ -49,14 +49,14 @@ class UsertemSchemaProcessor: NSObject {
     
     func getAllUsers() -> [User]? {
         let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let sorter = NSSortDescriptor(key: "user_email", ascending: false)
+        let sorter = NSSortDescriptor(key: "email", ascending: false)
         fReq.sortDescriptors = [sorter]
         fReq.returnsObjectsAsFaults = false
         do {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
             return result as? [User]
         } catch {
-            NSLog("Unable to fetch Artist from the database.")
+            NSLog("Unable to fetch Users from the database.")
             abort()
         }
         return nil

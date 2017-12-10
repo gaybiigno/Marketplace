@@ -38,7 +38,7 @@ class UserDataSource: NSObject {
         var previd = ""
         var curIdx = 0
         for user in users! {
-            if user.email == previd {
+            if user.email == previd || user.email == nil {
                 users?.remove(at: curIdx)
             } else {
                 curIdx = curIdx + 1
