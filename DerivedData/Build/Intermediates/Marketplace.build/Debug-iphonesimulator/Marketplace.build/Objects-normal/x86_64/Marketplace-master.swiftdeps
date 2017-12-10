@@ -1,10 +1,10 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "703085a752d7a777a62d04ab6a4a8dd1"
-build_time: [1512870819, 223250000]
+build_time: [1512871373, 434008000]
 inputs:
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/DataModels/Item+CoreDataProperties.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/Views/InboxMsgTableCell.swift": [1512869525, 0]
-  "/Users/student/testing/Marketplace/Marketplace/Views/EditProfileView.swift": [1512869623, 0]
+  "/Users/student/testing/Marketplace/Marketplace/Views/EditProfileView.swift": [1512871184, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/DataModels/Item.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/Views/UserProfileView.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/Network/Upload.swift": [1512869525, 0]
@@ -23,7 +23,7 @@ inputs:
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/DataModels/Tags+CoreDataProperties.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/Models/ItemModel.swift": [1512869511, 0]
-  "/Users/student/testing/Marketplace/Marketplace/Views/HomeView.swift": [1512869525, 0]
+  "/Users/student/testing/Marketplace/Marketplace/Views/HomeView.swift": [1512871372, 0]
   "/Users/student/testing/Marketplace/Marketplace/Views/ItemTableViewCell.swift": [1512869525, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/Network/CoreDataCommonMethods.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemSchemaProcessor.swift": [1512869511, 0]
@@ -39,7 +39,7 @@ inputs:
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/Network/CoreDataStore.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/FunctionDataSource.swift": [1512869525, 0]
   "/Users/student/testing/Marketplace/Marketplace/Views/CheckoutView.swift": [1512869511, 0]
-  "/Users/student/testing/Marketplace/Marketplace/Views/SignInTableView.swift": [1512870548, 0]
+  "/Users/student/testing/Marketplace/Marketplace/Views/SignInTableView.swift": [1512870989, 0]
   "/Users/student/testing/Marketplace/Marketplace/Views/SendMessageView.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/Models/UserModel.swift": [1512869511, 0]
   "/Users/student/testing/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/FunctionSchemaProcessor.swift": [1512869525, 0]

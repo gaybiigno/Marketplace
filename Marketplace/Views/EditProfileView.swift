@@ -36,6 +36,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	var city = ""
 	var state = ""
 	var zip: Int = 0
+    var curEmail: String!
 	var profPicture: UIImage!
 	
 	var errorMessage = ""
@@ -51,7 +52,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 		self.view.backgroundColor = UIColor.white
 		profilePicture.layer.borderWidth = 0.6
 		profilePicture.layer.borderColor = UIColor.black.cgColor
-		
+		print(self.currentUser)
 		start()
 		
 		if self.hasVal {
@@ -106,6 +107,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			state = (stateEntry.text?.uppercased())!
 			zip = Int(zipEntry.text!)!
 			errorLabel.text = "Success! Changes Saved."
+            
 //            uploadAssistant = Upload()
 		}
 	}

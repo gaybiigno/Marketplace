@@ -46,6 +46,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	let userData = UserModel()
 	
 	var uName: String!
+    var curEmail: String!
     var currentUser: User!
 	
 	var signedIn = false
@@ -107,9 +108,11 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		registerButton.isHidden = true
 		
 		let username = uName
-		
+		curEmail = currentUser.email
+        print(curEmail)
 		//helloLabel.text = "Hello, " + username!
         helloLabel.text = "Hello, " + currentUser.first_name! + " " + currentUser.last_name![0] + "."
+        
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
@@ -207,19 +210,22 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			vc.delegate = self
 			self.embeddedViewController = vc
 		}
-        if let vc = segue.destination as? SearchTableView,
+        else if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
 			endMenu(self)
 			vc.searchParameter = category
             vc.filterContentForSearchText(category)
         }
-		if let vc = segue.destination as? EditProfileView,
+        else if let vc = segue.destination as? EditProfileView,
 			segue.identifier == "homeToEditProf" {
 			endMenu(self)
 			let name = uName.components(separatedBy: " ")
 			vc.firstName = name[0]
 			vc.lastName = name[1]
+            print(currentUser.email)
+            vc.curEmail = curEmail
 			vc.hasVal = true
+            vc.currentUser = currentUser
 		}
 	}
 	

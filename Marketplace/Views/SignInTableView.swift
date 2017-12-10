@@ -74,7 +74,7 @@ class SignInTableView: UITableViewController {
             let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
             userDataSource.consolidate()
             curUser = userDataSource.userAt(0)
-            print(curUser)
+            //print(curUser)
             let name = curUser.first_name
             self.performSegue(withIdentifier: "completeSignIn", sender: self)
         }
