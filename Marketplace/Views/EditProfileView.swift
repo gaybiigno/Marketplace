@@ -72,9 +72,9 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
         
 		start()
 		
-		if self.hasVal {
-			setOldValues()
-		}
+//        if self.hasVal {
+//            setOldValues()
+//        }
     }
     
     func buildURLString() -> String {
@@ -87,18 +87,18 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if uploading == false {
+            print(downloadAssistant.dataFromServer)
+            userSchema.deleteAllData("User")
+            
             userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
             print("---------items downloaded-----------")
-            let users_returned = userSchema.getAllUsers()
-            
-            userDataSource = UserDataSource(dataSource: users_returned)
-            userDataSource?.consolidate()
-            currentUser = nil
-            currentUser = userDataSource?.userAt(0)
-            let specificUser = userDataSource?.userAt(0)
-            print(specificUser?.street)
+            userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+            userDataSource.consolidate()
+            currentUser = userDataSource.userAt(0)
+            print(currentUser)
             print("recieved Users")
             setOldValues()
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
         } else {
             uploading = false
             let dAssistant = Download(withURLString: buildURLString())
@@ -108,7 +108,6 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     deinit {
-            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         if uploadAssistant != nil {
             uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         }
@@ -165,15 +164,19 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			errorLabel.text = "Success! Changes Saved."
             
             uploading = true
+            print(currentUser)
             uploadAssistant = Upload(withURLString: buildUpdateURL())
             uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
             uploadAssistant.upload_request()
+            print("update sent")
 		}
 	}
     
     func buildUpdateURL() -> String {
+        print(userDataSource.userAt(0))
+        print(self.currentUser)
         var url = Upload.baseURL + "/users/update?"
-        url = url + "email=" + currentUser.email!
+        url = url + "email=" + curEmail
         url = url + "&first_name=" + firstName.replacingOccurrences(of: " ", with: "_")
         url = url + "&last_name=" + lastName.replacingOccurrences(of: " ", with: "_")
         url = url + "&payment=" + currentUser.payment!

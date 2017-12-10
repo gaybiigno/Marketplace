@@ -133,6 +133,7 @@ depends-member:
 - !private ["s7CVarArgP", "dataFromServer"]
 - !private ["s7CVarArgP", "defaultProfilePic"]
 - !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "deleteAllData"]
 - !private ["s7CVarArgP", "deletePictureButton"]
 - !private ["s7CVarArgP", "didReceiveMemoryWarning"]
 - !private ["s7CVarArgP", "dismiss"]
@@ -145,7 +146,6 @@ depends-member:
 - !private ["s7CVarArgP", "firstNameEntry"]
 - !private ["s7CVarArgP", "first_name"]
 - !private ["s7CVarArgP", "getAllUsers"]
-- !private ["s7CVarArgP", "hasVal"]
 - !private ["s7CVarArgP", "image"]
 - !private ["s7CVarArgP", "imagePicker"]
 - ["s7CVarArgP", "imagePickerController"]
@@ -247,6 +247,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "dataFromServer"]
 - !private ["s28CustomDebugStringConvertibleP", "defaultProfilePic"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "deleteAllData"]
 - !private ["s28CustomDebugStringConvertibleP", "deletePictureButton"]
 - !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s28CustomDebugStringConvertibleP", "dismiss"]
@@ -259,7 +260,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "firstNameEntry"]
 - !private ["s28CustomDebugStringConvertibleP", "first_name"]
 - !private ["s28CustomDebugStringConvertibleP", "getAllUsers"]
-- !private ["s28CustomDebugStringConvertibleP", "hasVal"]
 - !private ["s28CustomDebugStringConvertibleP", "image"]
 - !private ["s28CustomDebugStringConvertibleP", "imagePicker"]
 - ["s28CustomDebugStringConvertibleP", "imagePickerController"]
@@ -364,6 +364,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "dataFromServer"]
 - !private ["s23CustomStringConvertibleP", "defaultProfilePic"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "deleteAllData"]
 - !private ["s23CustomStringConvertibleP", "deletePictureButton"]
 - !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s23CustomStringConvertibleP", "dismiss"]
@@ -376,7 +377,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "firstNameEntry"]
 - !private ["s23CustomStringConvertibleP", "first_name"]
 - !private ["s23CustomStringConvertibleP", "getAllUsers"]
-- !private ["s23CustomStringConvertibleP", "hasVal"]
 - !private ["s23CustomStringConvertibleP", "image"]
 - !private ["s23CustomStringConvertibleP", "imagePicker"]
 - ["s23CustomStringConvertibleP", "imagePickerController"]
@@ -570,6 +570,7 @@ depends-member:
 - !private ["s9EquatableP", "dataFromServer"]
 - !private ["s9EquatableP", "defaultProfilePic"]
 - !private ["s9EquatableP", "delegate"]
+- !private ["s9EquatableP", "deleteAllData"]
 - !private ["s9EquatableP", "deletePictureButton"]
 - ["s9EquatableP", "denied"]
 - !private ["s9EquatableP", "didReceiveMemoryWarning"]
@@ -583,7 +584,6 @@ depends-member:
 - !private ["s9EquatableP", "firstNameEntry"]
 - !private ["s9EquatableP", "first_name"]
 - !private ["s9EquatableP", "getAllUsers"]
-- !private ["s9EquatableP", "hasVal"]
 - !private ["s9EquatableP", "image"]
 - !private ["s9EquatableP", "imagePicker"]
 - ["s9EquatableP", "imagePickerController"]
@@ -704,6 +704,7 @@ depends-member:
 - !private ["s8HashableP", "dataFromServer"]
 - !private ["s8HashableP", "defaultProfilePic"]
 - !private ["s8HashableP", "delegate"]
+- !private ["s8HashableP", "deleteAllData"]
 - !private ["s8HashableP", "deletePictureButton"]
 - ["s8HashableP", "denied"]
 - !private ["s8HashableP", "didReceiveMemoryWarning"]
@@ -717,7 +718,6 @@ depends-member:
 - !private ["s8HashableP", "firstNameEntry"]
 - !private ["s8HashableP", "first_name"]
 - !private ["s8HashableP", "getAllUsers"]
-- !private ["s8HashableP", "hasVal"]
 - !private ["s8HashableP", "image"]
 - !private ["s8HashableP", "imagePicker"]
 - ["s8HashableP", "imagePickerController"]
@@ -825,7 +825,6 @@ depends-member:
 - !private ["So8NSCodingP", "errorMessage"]
 - !private ["So8NSCodingP", "firstName"]
 - !private ["So8NSCodingP", "firstNameEntry"]
-- !private ["So8NSCodingP", "hasVal"]
 - !private ["So8NSCodingP", "image"]
 - !private ["So8NSCodingP", "imagePicker"]
 - ["So8NSCodingP", "imagePickerController"]
@@ -910,7 +909,6 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "errorMessage"]
 - !private ["So26NSExtensionRequestHandlingP", "firstName"]
 - !private ["So26NSExtensionRequestHandlingP", "firstNameEntry"]
-- !private ["So26NSExtensionRequestHandlingP", "hasVal"]
 - !private ["So26NSExtensionRequestHandlingP", "imagePicker"]
 - ["So26NSExtensionRequestHandlingP", "imagePickerController"]
 - ["So26NSExtensionRequestHandlingP", "imagePickerControllerDidCancel"]
@@ -1044,6 +1042,7 @@ depends-member:
 - !private ["So8NSObjectC", "dataFromServer"]
 - ["So8NSObjectC", "defaultProfilePic"]
 - !private ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "deleteAllData"]
 - ["So8NSObjectC", "deletePictureButton"]
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
 - !private ["So8NSObjectC", "dismiss"]
@@ -1148,6 +1147,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "dataFromServer"]
 - !private ["So16NSObjectProtocolP", "defaultProfilePic"]
 - !private ["So16NSObjectProtocolP", "delegate"]
+- !private ["So16NSObjectProtocolP", "deleteAllData"]
 - !private ["So16NSObjectProtocolP", "deletePictureButton"]
 - !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
 - !private ["So16NSObjectProtocolP", "dismiss"]
@@ -1160,7 +1160,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "firstNameEntry"]
 - !private ["So16NSObjectProtocolP", "first_name"]
 - !private ["So16NSObjectProtocolP", "getAllUsers"]
-- !private ["So16NSObjectProtocolP", "hasVal"]
 - !private ["So16NSObjectProtocolP", "image"]
 - !private ["So16NSObjectProtocolP", "imagePicker"]
 - ["So16NSObjectProtocolP", "imagePickerController"]
@@ -1333,7 +1332,6 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "errorMessage"]
 - !private ["So21UIAppearanceContainerP", "firstName"]
 - !private ["So21UIAppearanceContainerP", "firstNameEntry"]
-- !private ["So21UIAppearanceContainerP", "hasVal"]
 - !private ["So21UIAppearanceContainerP", "image"]
 - !private ["So21UIAppearanceContainerP", "imagePicker"]
 - ["So21UIAppearanceContainerP", "imagePickerController"]
@@ -1410,7 +1408,6 @@ depends-member:
 - !private ["So18UIContentContainerP", "errorMessage"]
 - !private ["So18UIContentContainerP", "firstName"]
 - !private ["So18UIContentContainerP", "firstNameEntry"]
-- !private ["So18UIContentContainerP", "hasVal"]
 - !private ["So18UIContentContainerP", "imagePicker"]
 - ["So18UIContentContainerP", "imagePickerController"]
 - ["So18UIContentContainerP", "imagePickerControllerDidCancel"]
@@ -1498,7 +1495,6 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "errorMessage"]
 - !private ["So18UIFocusEnvironmentP", "firstName"]
 - !private ["So18UIFocusEnvironmentP", "firstNameEntry"]
-- !private ["So18UIFocusEnvironmentP", "hasVal"]
 - !private ["So18UIFocusEnvironmentP", "image"]
 - !private ["So18UIFocusEnvironmentP", "imagePicker"]
 - ["So18UIFocusEnvironmentP", "imagePickerController"]
@@ -1578,7 +1574,6 @@ depends-member:
 - !private ["So31UIImagePickerControllerDelegateP", "errorMessage"]
 - !private ["So31UIImagePickerControllerDelegateP", "firstName"]
 - !private ["So31UIImagePickerControllerDelegateP", "firstNameEntry"]
-- !private ["So31UIImagePickerControllerDelegateP", "hasVal"]
 - !private ["So31UIImagePickerControllerDelegateP", "imagePicker"]
 - ["So31UIImagePickerControllerDelegateP", "imagePickerController"]
 - ["So31UIImagePickerControllerDelegateP", "imagePickerControllerDidCancel"]
@@ -1651,7 +1646,6 @@ depends-member:
 - !private ["So30UINavigationControllerDelegateP", "errorMessage"]
 - !private ["So30UINavigationControllerDelegateP", "firstName"]
 - !private ["So30UINavigationControllerDelegateP", "firstNameEntry"]
-- !private ["So30UINavigationControllerDelegateP", "hasVal"]
 - !private ["So30UINavigationControllerDelegateP", "imagePicker"]
 - ["So30UINavigationControllerDelegateP", "imagePickerController"]
 - ["So30UINavigationControllerDelegateP", "imagePickerControllerDidCancel"]
@@ -1718,7 +1712,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "errorMessage"]
 - !private ["So30UIPasteConfigurationSupportingP", "firstName"]
 - !private ["So30UIPasteConfigurationSupportingP", "firstNameEntry"]
-- !private ["So30UIPasteConfigurationSupportingP", "hasVal"]
 - !private ["So30UIPasteConfigurationSupportingP", "image"]
 - !private ["So30UIPasteConfigurationSupportingP", "imagePicker"]
 - ["So30UIPasteConfigurationSupportingP", "imagePickerController"]
@@ -1880,7 +1873,6 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "errorMessage"]
 - !private ["So30UIResponderStandardEditActionsP", "firstName"]
 - !private ["So30UIResponderStandardEditActionsP", "firstNameEntry"]
-- !private ["So30UIResponderStandardEditActionsP", "hasVal"]
 - !private ["So30UIResponderStandardEditActionsP", "image"]
 - !private ["So30UIResponderStandardEditActionsP", "imagePicker"]
 - ["So30UIResponderStandardEditActionsP", "imagePickerController"]
@@ -1954,7 +1946,6 @@ depends-member:
 - !private ["So16UIStateRestoringP", "errorMessage"]
 - !private ["So16UIStateRestoringP", "firstName"]
 - !private ["So16UIStateRestoringP", "firstNameEntry"]
-- !private ["So16UIStateRestoringP", "hasVal"]
 - !private ["So16UIStateRestoringP", "imagePicker"]
 - ["So16UIStateRestoringP", "imagePickerController"]
 - ["So16UIStateRestoringP", "imagePickerControllerDidCancel"]
@@ -2031,7 +2022,6 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "errorMessage"]
 - !private ["So18UITraitEnvironmentP", "firstName"]
 - !private ["So18UITraitEnvironmentP", "firstNameEntry"]
-- !private ["So18UITraitEnvironmentP", "hasVal"]
 - !private ["So18UITraitEnvironmentP", "image"]
 - !private ["So18UITraitEnvironmentP", "imagePicker"]
 - ["So18UITraitEnvironmentP", "imagePickerController"]
@@ -2176,6 +2166,8 @@ depends-member:
 - !private ["11Marketplace14UserDataSourceC", "consolidate"]
 - !private ["11Marketplace14UserDataSourceC", "init"]
 - !private ["11Marketplace14UserDataSourceC", "userAt"]
+- !private ["11Marketplace19UserSchemaProcessorC", "deinit"]
+- !private ["11Marketplace19UserSchemaProcessorC", "deleteAllData"]
 - !private ["11Marketplace19UserSchemaProcessorC", "getAllUsers"]
 - !private ["11Marketplace19UserSchemaProcessorC", "init"]
 - ["s23_BidirectionalIndexableP", "init"]
@@ -2281,6 +2273,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dataFromServer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "defaultProfilePic"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deleteAllData"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "deletePictureButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
@@ -2293,7 +2286,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "firstNameEntry"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "first_name"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getAllUsers"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "hasVal"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "image"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "imagePicker"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "imagePickerController"]
@@ -2506,9 +2498,21 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/ryanMarketplace/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 interface-hash: "2a85259a94a7ff2a0349967b9bf990ee"

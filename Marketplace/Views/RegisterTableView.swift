@@ -130,7 +130,9 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     }
     
     deinit {
-        uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        if (uploadAssistant != nil) {
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
     
     func buildSubmissionURL() -> String {
