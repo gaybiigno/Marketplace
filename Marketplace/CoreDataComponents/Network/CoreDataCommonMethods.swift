@@ -27,7 +27,6 @@ class CoreDataCommonMethods: NSObject {
     
     
     lazy var managedObjectContext: NSManagedObjectContext = {
-
         // Return a managed object context that is tied to the persistent store that we have created.
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = CoreDataCommonMethods.store.persistentStoreCoordinator
@@ -45,6 +44,7 @@ class CoreDataCommonMethods: NSObject {
     func saveContext (_ context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
+                
                 try context.save()
             } catch {
                 // add appropriate code to provide a better feedback.
@@ -59,7 +59,6 @@ class CoreDataCommonMethods: NSObject {
     }
     
     @objc func contextDidSaveContext(_ notification: Notification) {
-        
         let sender = notification.object as! NSManagedObjectContext
         if sender === self.managedObjectContext {
             self.backgroundContext!.perform {

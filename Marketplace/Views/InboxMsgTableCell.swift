@@ -20,6 +20,12 @@ class InboxMsgTableCell: UITableViewCell {
 	var originalCenter = CGPoint()
 	var deleteOnDragRelease = false
 	var originalFrame = CGRect()
+    
+    var subject: String!
+    var content: String!
+    var thisUserEmail: String!
+    var otherUserEmail: String!
+    
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +38,15 @@ class InboxMsgTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 	
-	func useMessage(_ img: UIImage, _ subject: String, _ otherUser: String, _ iconShown: Bool) {
-		itemImage.image = img
-		itemTitle.text = subject
-		otherUserName.text = otherUser
+    func useMessage(_ subject: String, _ thisUser: String, _ otherUser: String, _ msgContent: String, _ iconShown: Bool) {
+		//itemImage.image = img
+		self.subject = subject
+		self.otherUserEmail = otherUser
+        self.content = msgContent
+        self.thisUserEmail = thisUser
+        
+        itemTitle.text = subject
+        otherUserName.text = otherUserEmail
 		msgIcon.isHidden = !iconShown
 	}
 	

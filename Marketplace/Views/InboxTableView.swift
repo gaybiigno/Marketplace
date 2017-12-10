@@ -14,6 +14,15 @@ class InboxTableView: UITableViewController {
 	private let dummySubjects = ["Blue Patagonia Half-Zip", "2007 Silver Volvo XC90", "Homemade pants", "Brand New XBox 360!!!!"]
 	private let dummyPeople = ["DeAndre H.", "Josh G.", "Antonio B.", "Tom B."]
 	private let dummyRead = [true, false]
+    
+    
+    var downloadAssistant = Download(withURLString: "http://localhost:8181/inbox/all?apikey=" + Download.apikey)
+    
+    var thisUser: User!
+    var inboxSchema: InboxSchemaProcessor!
+    var inboxDataSource: InboxDataSource!
+    
+    var inboxItems: [Inbox]!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +30,28 @@ class InboxTableView: UITableViewController {
 		self.view.backgroundColor = UIColor(red: 1.0, green: 0.3254, blue: 0.2392, alpha: 1.0)
 		self.tableView.rowHeight = 75.0
 		
+        
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
+        
+        if let t = thisUser {
+            inboxItems = inboxSchema.fetchForRecipient(t.email!)
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        //        print(downloadAssistant.dataFromServer!)
+            
+        inboxSchema = InboxSchemaProcessor(inboxModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        print("---------msgs downloaded-----------")
+        let inbox_returned = inboxSchema.getAllInboxs()
+        
+        inboxDataSource = InboxDataSource(dataSource: inbox_returned)
+        inboxDataSource?.consolidate()
+    }
+    
+    deinit {
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,14 +66,21 @@ class InboxTableView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dummyPeople.count //TODO
+        if let messages = inboxItems {
+            return messages.count
+        }
+		return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath)
 		cell.selectionStyle = .none
 		if let msgCell = cell as? InboxMsgTableCell {
-			msgCell.useMessage(dummyImg!, dummySubjects[indexPath.row], dummyPeople[indexPath.row], dummyRead[indexPath.row % 2])
+            let sub = inboxItems[indexPath.row].subject
+            let tUser = inboxItems[indexPath.row].recipient_email
+            let otherUser = inboxItems[indexPath.row].sender_email
+            let content = inboxItems[indexPath.row].message
+            msgCell.useMessage(sub!, tUser!, otherUser!, content!, true)
 		}
 		
 

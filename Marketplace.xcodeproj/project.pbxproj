@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0454BD1FDDE62700088976 /* InboxSchemaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454BC1FDDE62700088976 /* InboxSchemaProcessor.swift */; };
+		3F0454BF1FDDE63C00088976 /* InboxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454BE1FDDE63C00088976 /* InboxDataSource.swift */; };
 		3F127BA91FDB350800D329B1 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA61FDB350800D329B1 /* CoreDataStore.swift */; };
 		3F127BAA1FDB350800D329B1 /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA71FDB350800D329B1 /* CoreDataCommonMethods.swift */; };
 		3F127BAB1FDB350800D329B1 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA81FDB350800D329B1 /* Download.swift */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F0454BC1FDDE62700088976 /* InboxSchemaProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxSchemaProcessor.swift; sourceTree = "<group>"; };
+		3F0454BE1FDDE63C00088976 /* InboxDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxDataSource.swift; sourceTree = "<group>"; };
 		3F127BA61FDB350800D329B1 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		3F127BA71FDB350800D329B1 /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCommonMethods.swift; sourceTree = "<group>"; };
 		3F127BA81FDB350800D329B1 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				3FA6407F1FD89E3100294301 /* ItemDataSource.swift */,
 				3FAFBEBB1FDA362500391639 /* UserSchemaProcessor.swift */,
 				3FAFBEBF1FDA3B7600391639 /* UserDataSource.swift */,
+				3F0454BC1FDDE62700088976 /* InboxSchemaProcessor.swift */,
+				3F0454BE1FDDE63C00088976 /* InboxDataSource.swift */,
 			);
 			path = ObjectAdapters;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				3FAFBEBC1FDA362500391639 /* UserSchemaProcessor.swift in Sources */,
 				5A3D5F1D1FC9002E00472FB7 /* UploadItemTableView.swift in Sources */,
 				3F127BBB1FDB355A00D329B1 /* Sale+CoreDataProperties.swift in Sources */,
+				3F0454BD1FDDE62700088976 /* InboxSchemaProcessor.swift in Sources */,
 				3F127BD01FDB363A00D329B1 /* Tags.swift in Sources */,
 				3F127BAB1FDB350800D329B1 /* Download.swift in Sources */,
 				5A4397241FC66DE100606AA2 /* SearchTableView.swift in Sources */,
@@ -480,6 +487,7 @@
 				3F127BBD1FDB355A00D329B1 /* User+CoreDataProperties.swift in Sources */,
 				5A8495181FB13AD400A2A91C /* HomeView.swift in Sources */,
 				5A4397281FC66FA300606AA2 /* ItemTableViewCell.swift in Sources */,
+				3F0454BF1FDDE63C00088976 /* InboxDataSource.swift in Sources */,
 				3F127BAA1FDB350800D329B1 /* CoreDataCommonMethods.swift in Sources */,
 				3F5773191FD881CF0022AE91 /* ItemSchemaProcessor.swift in Sources */,
 				5A2C08A01FB54F7700D884B4 /* RegisterTableView.swift in Sources */,

@@ -21,6 +21,7 @@ extension Inbox {
     @NSManaged public var msg_id: NSNumber?
     @NSManaged public var sender_email: String?
     @NSManaged public var message: String?
+    @NSManaged public var subject: String?
     @NSManaged public var item: Item?
     @NSManaged public var user: User?
 

@@ -77,13 +77,16 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     }
 	
 	func startValues() {
+        
+        
 		uName = uName == nil ? userData.getUserName() : uName
 		
 		// Set place of menu
 		let topY = searchBar.frame.minY
 		viewForMenu.frame.origin = CGPoint(x: 50, y: topY)
 		
-		
+    
+        
 		// Add targets
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
 		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
