@@ -72,8 +72,9 @@ class SignInTableView: UITableViewController {
             var userss = userSchema.getAllUsers()
             let user = userss![0]
             let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
-            //userDataSource.consolidate()
+            userDataSource.consolidate()
             curUser = userDataSource.userAt(0)
+            print(curUser)
             let name = curUser.first_name
             self.performSegue(withIdentifier: "completeSignIn", sender: self)
         }
@@ -100,7 +101,7 @@ class SignInTableView: UITableViewController {
             url = url + "&password=" + password_entry.text!
             url = url + "&apikey=" + Download.apikey
         } else if (typeOfSubmission == "user") {
-            url = url + "?"
+            url = url + "/?"
             url = url + "email=" + email_entry.text!
             url = url + "&password=" + password_entry.text!
             url = url + "&apikey=" + Download.apikey

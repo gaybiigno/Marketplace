@@ -49,8 +49,8 @@ class UserSchemaProcessor: NSObject {
     
     func getAllUsers() -> [User]? {
         let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let sorter = NSSortDescriptor(key: "email", ascending: false)
-        fReq.sortDescriptors = [sorter]
+        //let sorter = NSSortDescriptor(key: "email", ascending: false)
+        //fReq.sortDescriptors = [sorter]
         fReq.returnsObjectsAsFaults = false
         do {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
@@ -67,7 +67,9 @@ class UserSchemaProcessor: NSObject {
             if let userDict = userObject as? Dictionary<String, AnyObject> {
                 let user = NSEntityDescription.insertNewObject(forEntityName: "User", into:
                     coreDataContext.backgroundContext!) as! User
-                
+                if let email = userDict["email"] {
+                    user.email = email as? String
+                }
                 if let first_name = userDict["first_name"] {
                     user.first_name = first_name as? String
                 }

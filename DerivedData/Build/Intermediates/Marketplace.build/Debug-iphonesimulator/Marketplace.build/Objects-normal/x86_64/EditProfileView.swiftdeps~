@@ -55,6 +55,8 @@ depends-top-level:
 - "UITextField"
 - "UIViewController"
 - !private "UnicodeScalarType"
+- "Upload"
+- "User"
 - !private "print"
 - !private "||"
 depends-member:
@@ -331,10 +333,13 @@ depends-member:
 - ["11Marketplace15EditProfileViewC", "UIImageView"]
 - ["11Marketplace15EditProfileViewC", "UILabel"]
 - ["11Marketplace15EditProfileViewC", "UITextField"]
+- ["11Marketplace15EditProfileViewC", "Upload"]
+- ["11Marketplace15EditProfileViewC", "User"]
 - ["11Marketplace15EditProfileViewC", "addLine1"]
 - ["11Marketplace15EditProfileViewC", "addLine2"]
 - ["11Marketplace15EditProfileViewC", "addrLine1"]
 - ["11Marketplace15EditProfileViewC", "addrLine2"]
+- ["11Marketplace15EditProfileViewC", "buildUpdateURL"]
 - ["11Marketplace15EditProfileViewC", "checkPermission"]
 - ["11Marketplace15EditProfileViewC", "checkValues"]
 - ["11Marketplace15EditProfileViewC", "city"]
@@ -345,6 +350,7 @@ depends-member:
 - ["11Marketplace15EditProfileViewC", "clickedDeleteAcct"]
 - ["11Marketplace15EditProfileViewC", "clickedNew"]
 - ["11Marketplace15EditProfileViewC", "clickedSubmit"]
+- ["11Marketplace15EditProfileViewC", "currentUser"]
 - ["11Marketplace15EditProfileViewC", "defaultProfilePic"]
 - ["11Marketplace15EditProfileViewC", "deinit"]
 - ["11Marketplace15EditProfileViewC", "deletePictureButton"]
@@ -374,6 +380,7 @@ depends-member:
 - ["11Marketplace15EditProfileViewC", "start"]
 - ["11Marketplace15EditProfileViewC", "state"]
 - ["11Marketplace15EditProfileViewC", "stateEntry"]
+- ["11Marketplace15EditProfileViewC", "uploadAssistant"]
 - !private ["11Marketplace15EditProfileViewC", "view"]
 - ["11Marketplace15EditProfileViewC", "viewDidLoad"]
 - ["11Marketplace15EditProfileViewC", "zip"]
@@ -734,6 +741,8 @@ depends-member:
 - ["So8NSObjectC", "UIImageView"]
 - ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "UITextField"]
+- ["So8NSObjectC", "Upload"]
+- ["So8NSObjectC", "User"]
 - ["So8NSObjectC", "addLine1"]
 - ["So8NSObjectC", "addLine2"]
 - !private ["So8NSObjectC", "addTarget"]
@@ -745,6 +754,7 @@ depends-member:
 - !private ["So8NSObjectC", "black"]
 - !private ["So8NSObjectC", "borderColor"]
 - !private ["So8NSObjectC", "borderWidth"]
+- ["So8NSObjectC", "buildUpdateURL"]
 - !private ["So8NSObjectC", "cgColor"]
 - ["So8NSObjectC", "checkPermission"]
 - ["So8NSObjectC", "checkValues"]
@@ -757,6 +767,7 @@ depends-member:
 - ["So8NSObjectC", "clickedNew"]
 - ["So8NSObjectC", "clickedSubmit"]
 - !private ["So8NSObjectC", "contentMode"]
+- ["So8NSObjectC", "currentUser"]
 - ["So8NSObjectC", "defaultProfilePic"]
 - !private ["So8NSObjectC", "delegate"]
 - ["So8NSObjectC", "deletePictureButton"]
@@ -795,6 +806,7 @@ depends-member:
 - !private ["So8NSObjectC", "subscript"]
 - !private ["So8NSObjectC", "text"]
 - !private ["So8NSObjectC", "uName"]
+- ["So8NSObjectC", "uploadAssistant"]
 - !private ["So8NSObjectC", "uppercased"]
 - !private ["So8NSObjectC", "view"]
 - ["So8NSObjectC", "viewDidLoad"]
@@ -1343,6 +1355,8 @@ depends-member:
 - ["So11UIResponderC", "UIImageView"]
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "UITextField"]
+- ["So11UIResponderC", "Upload"]
+- ["So11UIResponderC", "User"]
 - ["So11UIResponderC", "addLine1"]
 - ["So11UIResponderC", "addLine2"]
 - !private ["So11UIResponderC", "addTarget"]
@@ -1350,6 +1364,7 @@ depends-member:
 - ["So11UIResponderC", "addrLine2"]
 - !private ["So11UIResponderC", "allowsEditing"]
 - !private ["So11UIResponderC", "backgroundColor"]
+- ["So11UIResponderC", "buildUpdateURL"]
 - ["So11UIResponderC", "checkPermission"]
 - ["So11UIResponderC", "checkValues"]
 - ["So11UIResponderC", "city"]
@@ -1361,6 +1376,7 @@ depends-member:
 - ["So11UIResponderC", "clickedNew"]
 - ["So11UIResponderC", "clickedSubmit"]
 - !private ["So11UIResponderC", "contentMode"]
+- ["So11UIResponderC", "currentUser"]
 - ["So11UIResponderC", "defaultProfilePic"]
 - !private ["So11UIResponderC", "delegate"]
 - ["So11UIResponderC", "deletePictureButton"]
@@ -1395,6 +1411,7 @@ depends-member:
 - ["So11UIResponderC", "stateEntry"]
 - !private ["So11UIResponderC", "text"]
 - !private ["So11UIResponderC", "uName"]
+- ["So11UIResponderC", "uploadAssistant"]
 - !private ["So11UIResponderC", "view"]
 - ["So11UIResponderC", "viewDidLoad"]
 - ["So11UIResponderC", "zip"]
@@ -1606,11 +1623,14 @@ depends-member:
 - ["So16UIViewControllerC", "UIImageView"]
 - ["So16UIViewControllerC", "UILabel"]
 - ["So16UIViewControllerC", "UITextField"]
+- ["So16UIViewControllerC", "Upload"]
+- ["So16UIViewControllerC", "User"]
 - ["So16UIViewControllerC", "addLine1"]
 - ["So16UIViewControllerC", "addLine2"]
 - ["So16UIViewControllerC", "addrLine1"]
 - ["So16UIViewControllerC", "addrLine2"]
 - !private ["So16UIViewControllerC", "allowsEditing"]
+- ["So16UIViewControllerC", "buildUpdateURL"]
 - ["So16UIViewControllerC", "checkPermission"]
 - ["So16UIViewControllerC", "checkValues"]
 - ["So16UIViewControllerC", "city"]
@@ -1621,6 +1641,7 @@ depends-member:
 - ["So16UIViewControllerC", "clickedDeleteAcct"]
 - ["So16UIViewControllerC", "clickedNew"]
 - ["So16UIViewControllerC", "clickedSubmit"]
+- ["So16UIViewControllerC", "currentUser"]
 - ["So16UIViewControllerC", "defaultProfilePic"]
 - !private ["So16UIViewControllerC", "delegate"]
 - ["So16UIViewControllerC", "deletePictureButton"]
@@ -1652,6 +1673,7 @@ depends-member:
 - ["So16UIViewControllerC", "state"]
 - ["So16UIViewControllerC", "stateEntry"]
 - !private ["So16UIViewControllerC", "uName"]
+- ["So16UIViewControllerC", "uploadAssistant"]
 - !private ["So16UIViewControllerC", "view"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", "zip"]
@@ -1933,7 +1955,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/testing/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
@@ -1950,4 +1972,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "ee3f4e91f05ac22c999134e440b01c96"
+interface-hash: "20465cbe7dbc3afc946196104a1cdf7d"
