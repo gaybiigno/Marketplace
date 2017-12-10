@@ -18,10 +18,19 @@ class SignInTableView: UITableViewController {
 	@IBOutlet weak var enterButton: UIButton!
 	
 	let userInfo = UserModel()
+    var downloadAssistant: Download! = nil
+    
+    var functionSchema: FunctionSchemaProcessor!
+    var functionDataSource: FunctionDataSource? = nil
+    
+    var curUser: User! = nil
+    var signedIn: Bool = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		errorMessage.isHidden = true
+        email_entry.autocorrectionType = .no
+        password_entry.autocorrectionType = .no
 		self.view.backgroundColor = UIColor.white
 		
 		enterButton.frame.size = CGSize(width: view.frame.width, height: 45)
@@ -37,10 +46,70 @@ class SignInTableView: UITableViewController {
 			email_entry.text = ""
 			password_entry.text = ""
 		} else {
-			self.performSegue(withIdentifier: "completeSignIn", sender: self)
+            downloadAssistant = Download(withURLString: buildSubmissionURL(typeOfSubmission: "verify"))
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.verify_request()
+			//self.performSegue(withIdentifier: "completeSignIn", sender: self)
 		}
 		// TODO:: If they aren't empty, do something with input
 	}
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if signedIn == false {
+            print(downloadAssistant.dataFromServer)
+            functionSchema = FunctionSchemaProcessor(responseJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            let check = functionSchema.accepted
+            if check == true {
+                signedIn = true
+                errorMessage.isHidden = true
+                getCurrentUser()
+                //self.performSegue(withIdentifier: "completeSignIn", sender: self)
+            } else {
+                errorMessage.isHidden = false
+                //wrong password prompt
+            }
+        } else {
+            let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            var userss = userSchema.getAllUsers()
+            let user = userss![0]
+            let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+            userDataSource.consolidate()
+            curUser = userDataSource.userAt(0)
+            //print(curUser)
+            let name = curUser.first_name
+            self.performSegue(withIdentifier: "completeSignIn", sender: self)
+        }
+        
+    }
+    
+    func getCurrentUser() {
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        downloadAssistant = Download(withURLString: buildSubmissionURL(typeOfSubmission: "user"))
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
+    }
+    
+    deinit {
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
+    }
+    
+    func buildSubmissionURL(typeOfSubmission: String) -> String {
+        var url = Download.baseURL + "/users"
+        if (typeOfSubmission == "verify") {
+            url = url + "/verify?"
+            url = url + "email=" + email_entry.text!
+            url = url + "&password=" + password_entry.text!
+            url = url + "&apikey=" + Download.apikey
+        } else if (typeOfSubmission == "user") {
+            url = url + "/?"
+            url = url + "email=" + email_entry.text!
+            url = url + "&password=" + password_entry.text!
+            url = url + "&apikey=" + Download.apikey
+        }
+        return url
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,6 +182,7 @@ class SignInTableView: UITableViewController {
 			if segue.destination is HomeView {
 				let hv = segue.destination as! HomeView
 				hv.signedIn = true
+                hv.currentUser = curUser
 			}
 		}
 		print("should be signed in")

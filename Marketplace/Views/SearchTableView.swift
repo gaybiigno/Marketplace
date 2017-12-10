@@ -39,7 +39,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var latitude = 0.0
     var longitude = 0.0
     
-    let downloadAssistant = Download(withURLString: "http://localhost:8181/items/all?apikey=" + Download.apikey)
+    var downloadAssistant: Download! //= Download(withURLString: "http://localhost:8181/items/all?apikey=" + Download.apikey)
     let udownloadAssistant = Download(withURLString: "http://localhost:8181/users/all?apikey=" + Download.apikey)
     var itemsSchema: ItemSchemaProcessor!
     
@@ -55,8 +55,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
-        downloadAssistant.download_request()
+//        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+//        downloadAssistant.download_request()
         
         udownloadAssistant.addObserver(self, forKeyPath: "udataFromServer", options: .old, context: nil)
         udownloadAssistant.download_request()
@@ -96,8 +96,16 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
             
             itemDataSource = ItemDataSource(dataSource: items_returned)
             itemDataSource?.consolidate()
+            if searchParams {
+                setSearchies()
+            } else {
+                itemsToShow = (itemDataSource?.items)!
+                if itemsToShow == nil {
+                    itemsToShow = [Item]()
+                }
+
+            }
         } else {
-            
             usersSchema = UserSchemaProcessor(userModelJSON: udownloadAssistant.dataFromServer! as! [AnyObject])
             let users_returned = usersSchema.getAllUsers()
             userDataSource = UserDataSource(dataSource: users_returned)
@@ -107,8 +115,12 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     }
     
     deinit {
-        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
+        if udownloadAssistant != nil {
+            udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
     
     func setSearchies() {
@@ -121,6 +133,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //        var address = searchBar.text
         //        getCoordinatesOfAddress(addressString: address!)
+        downloadAssistant = Download(withURLString: "http://localhost:8181/items/all")
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
+        
         let searchString = searchBar.text
         if var searchText = searchString?.components(separatedBy: " ") {
             for i in 0..<searchText.count {
@@ -190,7 +206,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         if searchParams {
             lookList = filterBySearchParams()!
         } else {
-            lookList = (itemDataSource?.items)!
+            lookList = itemsToShow
         }
         for item in lookList {
             if var splitTitle = item.item_name?.components(separatedBy: " ") {

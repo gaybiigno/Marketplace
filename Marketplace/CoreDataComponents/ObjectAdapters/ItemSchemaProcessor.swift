@@ -15,6 +15,7 @@ class ItemSchemaProcessor: NSObject {
     init(itemModelJSON: [AnyObject]) {
         itemModelJSONString = itemModelJSON
         super.init()
+        deleteAllItems()
         processJSON(itemModelJSON)
     }
     
@@ -24,6 +25,19 @@ class ItemSchemaProcessor: NSObject {
                 let objects = result as! [AnyObject]
                     processItemsJSON(objects)
             }
+        }
+    }
+    
+    func deleteAllItems() {
+        let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        fReq.returnsObjectsAsFaults = false
+        do {
+            let results = try coreDataContext.managedObjectContext.fetch(fReq)
+            for result in results {
+                let r = try coreDataContext.managedObjectContext.delete(result as! NSManagedObject)
+            }
+        } catch {
+            abort()
         }
     }
     

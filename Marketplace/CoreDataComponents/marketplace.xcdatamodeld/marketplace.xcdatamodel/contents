@@ -40,9 +40,9 @@
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="tag" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="bday" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="bmonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="byear" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bmonth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="byear" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,11 +56,11 @@
         <relationship name="item" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="user" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Inbox" positionX="-558" positionY="171" width="128" height="135"/>
         <element name="Item" positionX="-594" positionY="75" width="128" height="210"/>
         <element name="Pictures" positionX="-396" positionY="41" width="128" height="105"/>
         <element name="Sale" positionX="-567" positionY="162" width="128" height="120"/>
         <element name="Tags" positionX="-252" positionY="81" width="128" height="90"/>
         <element name="User" positionX="-776" positionY="59" width="128" height="255"/>
-        <element name="Inbox" positionX="-558" positionY="171" width="128" height="135"/>
     </elements>
 </model>

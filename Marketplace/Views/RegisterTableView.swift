@@ -53,6 +53,8 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        email.autocorrectionType = .no
 	
         signUpButton.frame.size = CGSize(width: view.frame.width, height: 45)
 
@@ -131,20 +133,22 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
     }
     
     deinit {
-        uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        if (uploadAssistant != nil) {
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
     
     func buildSubmissionURL() -> String {
         var url = Upload.baseURL + "/users/insert?"
-        url = url + "email=" + email.text!
+        url = url + "email=" + email.text!.lowercased()
         url = url + "&pass=" + password.text!
-        url = url + "&first_name=" + firstName.text!
-        url = url + "&last_name=" + lastName.text!
+        url = url + "&first_name=" + firstName.text!.replacingOccurrences(of: " ", with: "_")
+        url = url + "&last_name=" + lastName.text!.replacingOccurrences(of: " ", with: "_")
         url = url + "&payment=" + "none"
         url = url + "&picture=" + "none"
         url = url + "&street=" + addressOne.text!.replacingOccurrences(of: " ", with: "_") +
             addressTwo.text!.replacingOccurrences(of: " ", with: "_")
-        url = url + "&city=" + city.text!
+        url = url + "&city=" + city.text!.replacingOccurrences(of: " ", with: "_")
         url = url + "&zip=" + zipcode.text!
         url = url + "&_state=" + state.text!
         url = url + "&day=" + day.text!

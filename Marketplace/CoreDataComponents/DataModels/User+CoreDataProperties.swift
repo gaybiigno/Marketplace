@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  Marketplace
 //
-//  Created by student on 12/8/17.
+//  Created by student on 12/10/17.
 //  Copyright © 2017 SSU. All rights reserved.
 //
 //
@@ -17,9 +17,9 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var bday: Int16
-    @NSManaged public var bmonth: Int16
-    @NSManaged public var byear: Int16
+    @NSManaged public var bday: String?
+    @NSManaged public var bmonth: String?
+    @NSManaged public var byear: String?
     @NSManaged public var city: String?
     @NSManaged public var email: String?
     @NSManaged public var first_name: String?

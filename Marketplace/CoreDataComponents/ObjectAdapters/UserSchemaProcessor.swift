@@ -15,6 +15,7 @@ class UserSchemaProcessor: NSObject {
     init(userModelJSON: [AnyObject]) {
         userModelJSONString = userModelJSON
         super.init()
+        deleteAllUsers()
         processJSON(userModelJSON)
     }
     
@@ -49,8 +50,8 @@ class UserSchemaProcessor: NSObject {
     
     func getAllUsers() -> [User]? {
         let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let sorter = NSSortDescriptor(key: "email", ascending: false)
-        fReq.sortDescriptors = [sorter]
+//        let sorter = NSSortDescriptor(key: "email", ascending: false)
+//        fReq.sortDescriptors = [sorter]
         fReq.returnsObjectsAsFaults = false
         do {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
@@ -62,11 +63,25 @@ class UserSchemaProcessor: NSObject {
         return nil
     }
     
+    func deleteAllUsers() {
+        let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fReq.returnsObjectsAsFaults = false
+        do {
+            let results = try coreDataContext.managedObjectContext.fetch(fReq)
+            for result in results {
+                let r = try coreDataContext.managedObjectContext.delete(result as! NSManagedObject)
+            }
+        } catch {
+            abort()
+        }
+    }
+    
     func processUsersJSON(_ userObjects: [AnyObject]) {
         for userObject in userObjects {
             if let userDict = userObject as? Dictionary<String, AnyObject> {
                 let user = NSEntityDescription.insertNewObject(forEntityName: "User", into:
                     coreDataContext.backgroundContext!) as! User
+                
                 if let email = userDict["email"] {
                     user.email = email as? String
                 }
@@ -77,13 +92,13 @@ class UserSchemaProcessor: NSObject {
                     user.last_name = last_name as? String
                 }
                 if let bday = userDict["bday"] {
-                    user.bday = (bday as? Int16)!
+                    user.bday = (bday as? String)
                 }
                 if let bmonth = userDict["bmonth"] {
-                    user.bmonth = (bmonth as? Int16)!
+                    user.bmonth = (bmonth as? String)
                 }
                 if let byear = userDict["byear"] {
-                    user.byear = (byear as? Int16)!
+                    user.byear = (byear as? String)
                 }
                 if let street = userDict["street"] {
                     user.street = street as? String

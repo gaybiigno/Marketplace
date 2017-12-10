@@ -39,6 +39,17 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	
 	var errorMessage = ""
 	var hasVal = false
+    
+    var currentUser: User!
+    var curEmail: String!
+    
+    var uploadAssistant: Upload! = nil
+    var downloadAssistant: Download! = nil
+    
+    var userSchema: UserSchemaProcessor! = nil
+    var userDataSource: UserDataSource! = nil
+    
+    var uploading: Bool = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +59,61 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 		self.view.backgroundColor = UIColor.white
 		profilePicture.layer.borderWidth = 0.6
 		profilePicture.layer.borderColor = UIColor.black.cgColor
-		
+        if downloadAssistant != nil {
+            downloadAssistant = nil
+        }
+        downloadAssistant = Download(withURLString: buildURLString())
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
+        
+        print("LOADING AGAIN----------------------------")
 		start()
-		
-		if self.hasVal {
-			setOldValues()
-		}
+    }
+    
+    func buildURLString() -> String {
+        var url = Download.baseURL
+        url += "/users/"
+        url += "?email=" + curEmail
+        url += "&apikey=" + Download.apikey
+        return url
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if uploading == false {
+            if userSchema != nil {
+                userSchema.coreDataContext.deleteUserContext(user: currentUser)
+            }
+            print(downloadAssistant.dataFromServer)
+            
+            userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            print(userSchema.getAllUsers())
+            //userSchema.coreDataContext.deleteUserContext(user: currentUser)
+            print("---------items downloaded-----------")
+            userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+            userDataSource.consolidate()
+            //print(userDataSource.users)
+            print(userDataSource.users?.count)
+            print(userDataSource.users)
+            currentUser = userDataSource.userAt(0)
+            print(currentUser)
+            print("recieved Users")
+            setOldValues()
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        } else {
+            uploading = false
+            let dAssistant = Download(withURLString: buildURLString())
+            dAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            dAssistant.download_request()
+        }
+    }
+    
+    
+    
+    deinit {
+        if uploadAssistant != nil {
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
 	
 	func start() {
@@ -69,12 +129,14 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 	}
 	
 	func setOldValues() {
-		if let fName = firstName {
-			firstNameEntry.text = fName
-		}
-		if let lName  = lastName {
-			lastNameEntry.text = lName
-		}
+        if currentUser.email != nil {
+            firstNameEntry.text = currentUser.first_name
+            lastNameEntry.text = currentUser.last_name
+            addrLine1.text = currentUser.street?.replacingOccurrences(of: "_", with: " ")
+            cityEntry.text = currentUser.city?.replacingOccurrences(of: "_", with: " ")
+            stateEntry.text = currentUser.state
+            zipEntry.text = currentUser.zip
+        }
 	}
 	
 	@objc func clickedNew(_ selector: UIButton) {
@@ -103,8 +165,35 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 			state = (stateEntry.text?.uppercased())!
 			zip = Int(zipEntry.text!)!
 			errorLabel.text = "Success! Changes Saved."
+            uploading = true
+            print(currentUser)
+            uploadAssistant = Upload(withURLString: buildUpdateURL())
+            uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            uploadAssistant.upload_request()
+            print("update sent")
 		}
 	}
+    
+    func buildUpdateURL() -> String {
+        print(userDataSource.userAt(0))
+        print(self.currentUser)
+        var url = Upload.baseURL + "/users/update?"
+        url = url + "email=" + curEmail
+        url = url + "&first_name=" + firstName.replacingOccurrences(of: " ", with: "_")
+        url = url + "&last_name=" + lastName.replacingOccurrences(of: " ", with: "_")
+        url = url + "&payment=" + currentUser.payment!
+        url = url + "&picture=" + "none"
+        url = url + "&street=" + addLine1.replacingOccurrences(of: " ", with: "_") +
+            addLine2.replacingOccurrences(of: " ", with: "_")
+        url = url + "&city=" + city.replacingOccurrences(of: " ", with: "_")
+        url = url + "&_state=" + state
+        url = url + "&zip=" + String(zip)
+        url = url + "&day=" + currentUser.bday!
+        url = url + "&month=" + currentUser.bmonth!
+        url = url + "&year=" + currentUser.byear!
+        url = url + "&apikey=" + Upload.apikey
+        return url
+    }
 	
 	func checkValues() -> Bool {
 		errorMessage = ""

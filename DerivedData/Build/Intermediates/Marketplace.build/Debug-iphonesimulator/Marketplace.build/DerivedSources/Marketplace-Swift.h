@@ -256,6 +256,7 @@ SWIFT_CLASS("_TtC11Marketplace15EditProfileView")
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified zipEntry;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified errorLabel;
 - (void)viewDidLoad;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)clickedNew:(UIButton * _Nonnull)selector;
 - (void)clickedDelete:(UIButton * _Nonnull)selector;
 - (IBAction)clickedSubmit:(UIButton * _Nonnull)sender;
@@ -286,6 +287,18 @@ SWIFT_CLASS("_TtC11Marketplace18ForgotPasswordView")
 - (void)mailComposeController:(MFMailComposeViewController * _Nonnull)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError * _Nullable)error;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace18FunctionDataSource")
+@interface FunctionDataSource : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace23FunctionSchemaProcessor")
+@interface FunctionSchemaProcessor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 @class UIScrollView;
@@ -327,6 +340,8 @@ SWIFT_CLASS("_TtC11Marketplace8HomeView")
 - (void)endMenu:(HomeView * _Nonnull)sender;
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar * _Nonnull)searchBar SWIFT_WARN_UNUSED_RESULT;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -710,6 +725,7 @@ SWIFT_CLASS("_TtC11Marketplace15SignInTableView")
 - (void)viewDidLoad;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (IBAction)submit:(UIButton * _Nonnull)sender;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -806,9 +822,9 @@ SWIFT_CLASS_NAMED("User")
 
 
 @interface User (SWIFT_EXTENSION(Marketplace))
-@property (nonatomic) int16_t bday;
-@property (nonatomic) int16_t bmonth;
-@property (nonatomic) int16_t byear;
+@property (nonatomic, copy) NSString * _Nullable bday;
+@property (nonatomic, copy) NSString * _Nullable bmonth;
+@property (nonatomic, copy) NSString * _Nullable byear;
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable email;
 @property (nonatomic, copy) NSString * _Nullable first_name;

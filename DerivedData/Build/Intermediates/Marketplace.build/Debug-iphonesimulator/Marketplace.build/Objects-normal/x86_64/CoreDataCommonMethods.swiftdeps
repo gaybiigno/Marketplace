@@ -13,6 +13,7 @@ depends-top-level:
 - "CastingPrecedence"
 - "CoreDataCommonMethods"
 - "CoreDataStore"
+- "Item"
 - !private "NSLog"
 - "NSManagedObjectContext"
 - !private "NSNotification"
@@ -20,6 +21,7 @@ depends-top-level:
 - "Notification"
 - !private "NotificationCenter"
 - !private "StringLiteralType"
+- "User"
 - !private "abort"
 depends-member:
 - !private ["s23BidirectionalCollectionP", "init"]
@@ -36,6 +38,7 @@ depends-member:
 - !private ["s7CVarArgP", "backgroundContext"]
 - !private ["s7CVarArgP", "contextDidSaveContext"]
 - !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "delete"]
 - !private ["s7CVarArgP", "hasChanges"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "managedObjectContext"]
@@ -51,16 +54,20 @@ depends-member:
 - !private ["s10ComparableP", "init"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "CoreDataCommonMethods"]
 - ["11Marketplace21CoreDataCommonMethodsC", "CoreDataStore"]
+- ["11Marketplace21CoreDataCommonMethodsC", "Item"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "NSLog"]
 - ["11Marketplace21CoreDataCommonMethodsC", "NSManagedObjectContext"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "NSNotification"]
 - ["11Marketplace21CoreDataCommonMethodsC", "Notification"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "NotificationCenter"]
+- ["11Marketplace21CoreDataCommonMethodsC", "User"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "abort"]
 - ["11Marketplace21CoreDataCommonMethodsC", "backgroundContext"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "backgroundContext.storage"]
 - ["11Marketplace21CoreDataCommonMethodsC", "contextDidSaveContext"]
 - ["11Marketplace21CoreDataCommonMethodsC", "deinit"]
+- ["11Marketplace21CoreDataCommonMethodsC", "deleteItemContext"]
+- ["11Marketplace21CoreDataCommonMethodsC", "deleteUserContext"]
 - ["11Marketplace21CoreDataCommonMethodsC", "init"]
 - ["11Marketplace21CoreDataCommonMethodsC", "managedObjectContext"]
 - !private ["11Marketplace21CoreDataCommonMethodsC", "managedObjectContext.storage"]
@@ -80,6 +87,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "backgroundContext"]
 - !private ["s28CustomDebugStringConvertibleP", "contextDidSaveContext"]
 - !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
 - !private ["s28CustomDebugStringConvertibleP", "hasChanges"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "managedObjectContext"]
@@ -110,6 +118,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "backgroundContext"]
 - !private ["s23CustomStringConvertibleP", "contextDidSaveContext"]
 - !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "delete"]
 - !private ["s23CustomStringConvertibleP", "hasChanges"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "managedObjectContext"]
@@ -140,6 +149,7 @@ depends-member:
 - !private ["s9EquatableP", "backgroundContext"]
 - !private ["s9EquatableP", "contextDidSaveContext"]
 - !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "delete"]
 - !private ["s9EquatableP", "hasChanges"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "mainQueueConcurrencyType"]
@@ -172,6 +182,7 @@ depends-member:
 - !private ["s8HashableP", "backgroundContext"]
 - !private ["s8HashableP", "contextDidSaveContext"]
 - !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "delete"]
 - !private ["s8HashableP", "hasChanges"]
 - ["s8HashableP", "init"]
 - !private ["s8HashableP", "mainQueueConcurrencyType"]
@@ -190,6 +201,7 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "Name"]
+- !private ["So8NSCodingP", "delete"]
 - !private ["So8NSCodingP", "hasChanges"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "mergeChanges"]
@@ -200,12 +212,14 @@ depends-member:
 - !private ["So9NSCopyingP", "init"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "delete"]
 - !private ["So9NSLockingP", "hasChanges"]
 - !private ["So9NSLockingP", "init"]
 - !private ["So9NSLockingP", "mergeChanges"]
 - !private ["So9NSLockingP", "perform"]
 - !private ["So9NSLockingP", "persistentStoreCoordinator"]
 - !private ["So9NSLockingP", "save"]
+- !private ["So22NSManagedObjectContextC", "delete"]
 - !private ["So22NSManagedObjectContextC", "hasChanges"]
 - !private ["So22NSManagedObjectContextC", "init"]
 - !private ["So22NSManagedObjectContextC", "mergeChanges"]
@@ -218,18 +232,23 @@ depends-member:
 - !private ["So14NSNotificationC", "Name"]
 - !private ["So8NSObjectC", "CoreDataCommonMethods"]
 - ["So8NSObjectC", "CoreDataStore"]
+- ["So8NSObjectC", "Item"]
 - !private ["So8NSObjectC", "NSLog"]
 - ["So8NSObjectC", "NSManagedObjectContext"]
 - !private ["So8NSObjectC", "NSNotification"]
 - !private ["So8NSObjectC", "Name"]
 - ["So8NSObjectC", "Notification"]
 - !private ["So8NSObjectC", "NotificationCenter"]
+- ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "abort"]
 - !private ["So8NSObjectC", "addObserver"]
 - ["So8NSObjectC", "backgroundContext"]
 - ["So8NSObjectC", "backgroundContext.storage"]
 - ["So8NSObjectC", "contextDidSaveContext"]
 - !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "delete"]
+- ["So8NSObjectC", "deleteItemContext"]
+- ["So8NSObjectC", "deleteUserContext"]
 - !private ["So8NSObjectC", "hasChanges"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "managedObjectContext"]
@@ -254,6 +273,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "backgroundContext"]
 - !private ["So16NSObjectProtocolP", "contextDidSaveContext"]
 - !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "delete"]
 - !private ["So16NSObjectProtocolP", "hasChanges"]
 - ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "managedObjectContext"]
@@ -305,6 +325,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "contextDidSaveContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "hasChanges"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "managedObjectContext"]
@@ -407,20 +428,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "57d390a6fdb362cf6dfaa85a431c0dff"
+interface-hash: "8e608c5550526caf1759b4a4fef1b1cb"

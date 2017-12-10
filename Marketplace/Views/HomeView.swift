@@ -44,7 +44,10 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	
 	let userData = UserModel()
     
-    var cUser: User!
+    var curEmail: String!
+    var currentUser: User!
+    
+    var downloadAssistant: Download! = nil
 	
 	var uName: String!
 	
@@ -107,10 +110,6 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		artCollectButton.layer.borderColor = borderColor
 		sportingButton.layer.borderWidth = 1.0
 		sportingButton.layer.borderColor = borderColor
-		
-        if let u = cUser {
-            print(u)
-        }
         
 		if signedIn {
 			addHello()
@@ -124,9 +123,10 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		signInButton.isHidden = true
 		registerButton.isHidden = true
 		
-		let username = uName
-		
-		helloLabel.text = "Hello, " + username!
+        let username = uName
+        curEmail = currentUser.email
+        print(curEmail)
+        helloLabel.text = "Hello, " + currentUser.first_name! + " " + currentUser.last_name![0] + "."
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
@@ -154,6 +154,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		signInButton.isHidden = false
 		registerButton.isHidden = false
 		
+        currentUser = nil
 		signedIn = false
 	}
     
@@ -224,19 +225,22 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			vc.delegate = self
 			self.embeddedViewController = vc
 		}
-        if let vc = segue.destination as? SearchTableView,
+        else if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
 			endMenu(self)
 			vc.keyWords = category
             vc.filterContentForSearchText(category)
         }
-		if let vc = segue.destination as? EditProfileView,
+		else if let vc = segue.destination as? EditProfileView,
 			segue.identifier == "homeToEditProf" {
 			endMenu(self)
 			let name = uName.components(separatedBy: " ")
 			vc.firstName = name[0]
 			vc.lastName = name[1]
-			vc.hasVal = true
+            print(currentUser.email)
+            vc.curEmail = curEmail
+            vc.hasVal = true
+            vc.currentUser = currentUser
 		}
 //        if let vc = segue.destination as? SearchParametersTableView,
 //            segue.identifier == "toSearchParams" {
@@ -247,6 +251,30 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		self.performSegue(withIdentifier: identifier, sender: self)
 	}
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if curEmail != nil {
+            downloadAssistant = Download(withURLString: buildURLString())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.download_request()
+        }
+    }
+    
+    func buildURLString() -> String {
+        var url = Download.baseURL
+        url += "/users/"
+        url += "?email=" + curEmail
+        url += "&apikey=" + Download.apikey
+        return url
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+        userDataSource.consolidate()
+        currentUser = userDataSource.userAt(0)
+        addHello()
+    }
     
     
 	/*
