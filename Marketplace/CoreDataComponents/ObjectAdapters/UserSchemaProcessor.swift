@@ -85,6 +85,9 @@ class UserSchemaProcessor: NSObject {
                 if let byear = userDict["byear"] {
                     user.byear = byear as? String
                 }
+                if let street = userDict["street"] {
+                    user.street = street as? String
+                }
                 if let city = userDict["city"] {
                     user.city = city as? String
                 }
