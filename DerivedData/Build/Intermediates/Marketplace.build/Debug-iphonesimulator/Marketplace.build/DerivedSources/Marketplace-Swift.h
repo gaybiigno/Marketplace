@@ -520,6 +520,7 @@ SWIFT_CLASS("_TtC11Marketplace8ItemView")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified purchaseButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified msgSellerButton;
 - (void)viewDidLoad;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (void)next:(UIImageView * _Nonnull)sender;
 - (void)prev:(UIImageView * _Nonnull)sender;
@@ -753,6 +754,12 @@ SWIFT_CLASS("_TtC11Marketplace15SignInTableView")
 @end
 
 
+SWIFT_CLASS("_TtC11Marketplace18TagSchemaProcessor")
+@interface TagSchemaProcessor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS_NAMED("Tags")
 @interface Tags : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
@@ -763,6 +770,12 @@ SWIFT_CLASS_NAMED("Tags")
 @property (nonatomic) int32_t item_id;
 @property (nonatomic, copy) NSString * _Nullable tag;
 @property (nonatomic, strong) Item * _Nullable item;
+@end
+
+
+SWIFT_CLASS("_TtC11Marketplace14TagsDataSource")
+@interface TagsDataSource : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 

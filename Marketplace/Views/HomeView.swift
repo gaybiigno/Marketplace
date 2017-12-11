@@ -89,12 +89,12 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		userDataSource.consolidate()
 		currentUser = userDataSource.userAt(0)
 		addHello()
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
 	}
 	
 	func searchBorders() {
 		searchOptionsButton.layer.borderColor = UIColor.black.cgColor
 		searchOptionsButton.layer.borderWidth = 0.2
-		
 		searchBar.layer.borderColor = UIColor.black.cgColor
 		searchBar.layer.borderWidth = 0.2
 	}
@@ -237,6 +237,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			print("guestBrowsing in home:", signedIn)
 			vc.guestBrowsing = !signedIn
 			vc.keyWords = category
+            vc.currentUserEmail = curEmail
             vc.filterContentForSearchText(category)
         }
 		else if let vc = segue.destination as? EditProfileView,

@@ -427,6 +427,7 @@ depends-member:
 - !private ["So8NSObjectC", "black"]
 - !private ["So8NSObjectC", "borderColor"]
 - !private ["So8NSObjectC", "borderWidth"]
+- ["So8NSObjectC", "buyerEmail"]
 - !private ["So8NSObjectC", "cgColor"]
 - ["So8NSObjectC", "clickedBack"]
 - ["So8NSObjectC", "clickedSend"]
@@ -447,6 +448,7 @@ depends-member:
 - ["So8NSObjectC", "recipientLabel"]
 - !private ["So8NSObjectC", "removeFromSuperview"]
 - ["So8NSObjectC", "reply"]
+- ["So8NSObjectC", "sellerEmail"]
 - ["So8NSObjectC", "sendButton"]
 - ["So8NSObjectC", "sendMsgTitle"]
 - ["So8NSObjectC", "sender"]
@@ -533,6 +535,7 @@ depends-member:
 - ["11Marketplace15SendMessageViewC", "UITextView"]
 - ["11Marketplace15SendMessageViewC", "Upload"]
 - ["11Marketplace15SendMessageViewC", "backButton"]
+- ["11Marketplace15SendMessageViewC", "buyerEmail"]
 - ["11Marketplace15SendMessageViewC", "clickedBack"]
 - ["11Marketplace15SendMessageViewC", "clickedSend"]
 - ["11Marketplace15SendMessageViewC", "deinit"]
@@ -547,6 +550,7 @@ depends-member:
 - ["11Marketplace15SendMessageViewC", "recipient"]
 - ["11Marketplace15SendMessageViewC", "recipientLabel"]
 - ["11Marketplace15SendMessageViewC", "reply"]
+- ["11Marketplace15SendMessageViewC", "sellerEmail"]
 - ["11Marketplace15SendMessageViewC", "sendButton"]
 - ["11Marketplace15SendMessageViewC", "sendMsgTitle"]
 - ["11Marketplace15SendMessageViewC", "sender"]
@@ -796,6 +800,7 @@ depends-member:
 - ["So11UIResponderC", "Upload"]
 - !private ["So11UIResponderC", "addTarget"]
 - ["So11UIResponderC", "backButton"]
+- ["So11UIResponderC", "buyerEmail"]
 - ["So11UIResponderC", "clickedBack"]
 - ["So11UIResponderC", "clickedSend"]
 - ["So11UIResponderC", "didReceiveMemoryWarning"]
@@ -813,6 +818,7 @@ depends-member:
 - ["So11UIResponderC", "recipientLabel"]
 - !private ["So11UIResponderC", "removeFromSuperview"]
 - ["So11UIResponderC", "reply"]
+- ["So11UIResponderC", "sellerEmail"]
 - ["So11UIResponderC", "sendButton"]
 - ["So11UIResponderC", "sendMsgTitle"]
 - ["So11UIResponderC", "sender"]
@@ -982,6 +988,7 @@ depends-member:
 - ["So16UIViewControllerC", "UITextView"]
 - ["So16UIViewControllerC", "Upload"]
 - ["So16UIViewControllerC", "backButton"]
+- ["So16UIViewControllerC", "buyerEmail"]
 - ["So16UIViewControllerC", "clickedBack"]
 - ["So16UIViewControllerC", "clickedSend"]
 - ["So16UIViewControllerC", "didReceiveMemoryWarning"]
@@ -995,6 +1002,7 @@ depends-member:
 - ["So16UIViewControllerC", "recipient"]
 - ["So16UIViewControllerC", "recipientLabel"]
 - ["So16UIViewControllerC", "reply"]
+- ["So16UIViewControllerC", "sellerEmail"]
 - ["So16UIViewControllerC", "sendButton"]
 - ["So16UIViewControllerC", "sendMsgTitle"]
 - ["So16UIViewControllerC", "sender"]
@@ -1224,4 +1232,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "07e09bd17f571d44d7c60691acad3178"
+interface-hash: "eda807ea3616d9926b177023263c8d6c"

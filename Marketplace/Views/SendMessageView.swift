@@ -26,9 +26,12 @@ class SendMessageView: UIViewController {
 	var recipient: String!
 	var subject: String!
 	var msgBody: String!
-	
-	var uploadAssistant: Upload! = nil
-	
+    
+    var buyerEmail: String!
+    var sellerEmail: String!
+
+	//var uploadAssistant: Upload! = nil
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,7 +79,7 @@ class SendMessageView: UIViewController {
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 		print("uploaded new item")
 	}
-	*/
+*/
 	func setSender() {
 		senderLabel.text = sender
 	}
@@ -120,9 +123,9 @@ class SendMessageView: UIViewController {
 			let buttonFrame = sendButton.frame
 			sendButton.frame = CGRect(x: buttonFrame.minX, y: successMessage.frame.maxY + 20.0, width: view.frame.width, height: 50.0)
 		} else {
-//			uploadAssistant = Upload(withURLString: buildUploadURL())
-//			uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
-//			uploadAssistant.upload_request()
+//            uploadAssistant = Upload(withURLString: buildUploadURL())
+//            uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+//            uploadAssistant.upload_request()
 			self.performSegue(withIdentifier: "sendMsgToInbox", sender: self)
 			// Make it go to inbox
 		}

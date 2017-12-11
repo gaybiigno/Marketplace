@@ -45,6 +45,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	private var tags = [String]()
 	
+     var itemImages = [UIImage]()
 	var categoryChoice = UILabel()
 	var cat: String = ""
 	var age: Int = 0
@@ -53,16 +54,16 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	var itemDescription: String = ""
 	var quantity: Int = 0
 	var tagString: String = ""
+    var currentEmail: String!
+    var itemId: Int = 0
 	
 	var editingItem = false
-	
-    var itemImages = [UIImage]()
+    var downloading = false
 	
 	private var itemViewer: ItemView!
-    
-    var currentEmail: String!
 
     var uploadAssistant: Upload! = nil
+    var downloadAssistant: Download!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +92,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         url += "?email=" + currentEmail
         url += "&name=" + itemTitle.replacingOccurrences(of: " ", with: "_")
         url += "&description=" + itemDescription.replacingOccurrences(of: " ", with: "_")
-        url += "&category=" + cat.replacingOccurrences(of: " ", with: "_")
+        url += "&category=" + cat.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: "&", with: "and")
         url += "&quantity=" + String(quantity)
         url += "&price=" + itemPrice
         url += "&minage=" + String(age)
@@ -99,8 +100,41 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         return url
     }
     
+    func buildUploadTagURL(tag: String) -> String {
+        var url = Upload.baseURL + "/tags/insert"
+        url += "?item_id=" + String(itemId)
+        url += "&tag=" + tag
+        return url
+    }
+    
+    func buildGetItemsByUserURL() -> String {
+        var url = Download.baseURL + "/items/seller"
+        url += "?seller_email=" + currentEmail
+        return url
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("uploaded new item")
+        if downloading == false {
+            print("uploaded new item")
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        } else {
+            downloading = false
+            let itemSchema = ItemSchemaProcessor(itemModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            let itemDataSource = ItemDataSource(dataSource: itemSchema.getAllItems())
+            itemDataSource.consolidate()
+            //print(itemDataSource.items)
+            for item in itemDataSource.items! {
+                if item.item_id > itemId {
+                    itemId = Int(item.item_id)
+                }
+            }
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+            for tag in tags {
+                uploadAssistant = Upload(withURLString: buildUploadTagURL(tag: String(tag)))
+                uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+                uploadAssistant.upload_request()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -197,11 +231,16 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@objc func clickUpload(_ sender: UIButton) {
 		let weGood = checkValues()
 		if weGood {
-			// Save all this shit
+            // Save all of the values
             uploadAssistant = Upload(withURLString: buildUploadURL())
             uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
             uploadAssistant.upload_request()
-			//self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
+            
+            downloading = true
+            downloadAssistant = Download(withURLString: buildGetItemsByUserURL())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.download_request()
+			self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 		} else {
 			// Basically nothing
 		}
@@ -261,7 +300,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func formatVals() {
 		if !tagEntry.text.isEmpty {
-			tags = tagEntry.text.components(separatedBy: " ")
+			tags = tagEntry.text.replacingOccurrences(of: ",", with: "").components(separatedBy: " ")
 		}
 		if let numChars = priceEntry.text?.characters.count {
 			let priceToRet = priceEntry.text![1 ..< numChars]
@@ -275,8 +314,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		itemDescription = descriptionEntry.text
 		quantity = (quantityEntry.text?.isEmpty)! ? 1 : Int(quantityEntry.text!)!
 		age = (ageEntry.text?.isEmpty)! ? 0 : Int(ageEntry.text!)!
-		
-		
     }
 	
 	// Format Category picker
@@ -305,12 +342,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 11
     }
 	
@@ -337,7 +372,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			vc.category = categoryChoice.text!
 			vc.quantity = quantity
 			vc.age = age
-			//vc.imageCounterLabel.text = "1/" + String(itemImages.count)
 		}
 	}
 	
