@@ -822,6 +822,7 @@ depends-member:
 - ["So30UINavigationControllerDelegateP", "imagePickerController"]
 - ["So30UINavigationControllerDelegateP", "imagePickerControllerDidCancel"]
 - !private ["So30UINavigationControllerDelegateP", "imgCountLabel"]
+- ["So30UINavigationControllerDelegateP", "init"]
 - !private ["So30UINavigationControllerDelegateP", "mainImage"]
 - ["So30UINavigationControllerDelegateP", "navigationController"]
 - ["So30UINavigationControllerDelegateP", "navigationControllerPreferredInterfaceOrientationForPresentation"]

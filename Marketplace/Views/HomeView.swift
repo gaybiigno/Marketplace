@@ -242,6 +242,11 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
             vc.hasVal = true
             vc.currentUser = currentUser
 		}
+        else if let vc = segue.destination as? UploadItemTableView,
+            segue.identifier == "homeToUp" {
+            vc.currentEmail = curEmail
+        }
+            
         else if let vc = segue.destination as? InboxTableView,
             segue.identifier == "homeToInbox" {
             endMenu(self)

@@ -81,6 +81,7 @@ depends-top-level:
 - "UIViewController"
 - !private "UnicodeScalarType"
 - "UnsafeMutableRawPointer"
+- !private "UploadItemTableView"
 - "User"
 - !private "UserDataSource"
 - "UserModel"
@@ -144,6 +145,7 @@ depends-member:
 - !private ["s7CVarArgP", "consolidate"]
 - !private ["s7CVarArgP", "contentSize"]
 - !private ["s7CVarArgP", "curEmail"]
+- !private ["s7CVarArgP", "currentEmail"]
 - !private ["s7CVarArgP", "currentUser"]
 - !private ["s7CVarArgP", "dataFromServer"]
 - !private ["s7CVarArgP", "delegate"]
@@ -250,6 +252,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "consolidate"]
 - !private ["s28CustomDebugStringConvertibleP", "contentSize"]
 - !private ["s28CustomDebugStringConvertibleP", "curEmail"]
+- !private ["s28CustomDebugStringConvertibleP", "currentEmail"]
 - !private ["s28CustomDebugStringConvertibleP", "currentUser"]
 - !private ["s28CustomDebugStringConvertibleP", "dataFromServer"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
@@ -371,6 +374,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "consolidate"]
 - !private ["s23CustomStringConvertibleP", "contentSize"]
 - !private ["s23CustomStringConvertibleP", "curEmail"]
+- !private ["s23CustomStringConvertibleP", "currentEmail"]
 - !private ["s23CustomStringConvertibleP", "currentUser"]
 - !private ["s23CustomStringConvertibleP", "dataFromServer"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
@@ -499,6 +503,7 @@ depends-member:
 - !private ["s9EquatableP", "consolidate"]
 - !private ["s9EquatableP", "contentSize"]
 - !private ["s9EquatableP", "curEmail"]
+- !private ["s9EquatableP", "currentEmail"]
 - !private ["s9EquatableP", "currentUser"]
 - !private ["s9EquatableP", "dataFromServer"]
 - !private ["s9EquatableP", "delegate"]
@@ -619,6 +624,7 @@ depends-member:
 - !private ["s8HashableP", "consolidate"]
 - !private ["s8HashableP", "contentSize"]
 - !private ["s8HashableP", "curEmail"]
+- !private ["s8HashableP", "currentEmail"]
 - !private ["s8HashableP", "currentUser"]
 - !private ["s8HashableP", "dataFromServer"]
 - !private ["s8HashableP", "delegate"]
@@ -711,6 +717,7 @@ depends-member:
 - ["11Marketplace8HomeViewC", "UITextView"]
 - ["11Marketplace8HomeViewC", "UIView"]
 - ["11Marketplace8HomeViewC", "UnsafeMutableRawPointer"]
+- !private ["11Marketplace8HomeViewC", "UploadItemTableView"]
 - ["11Marketplace8HomeViewC", "User"]
 - !private ["11Marketplace8HomeViewC", "UserDataSource"]
 - ["11Marketplace8HomeViewC", "UserModel"]
@@ -777,6 +784,7 @@ depends-member:
 - ["11Marketplace8HomeViewC", "viewDidLoad"]
 - ["11Marketplace8HomeViewC", "viewForMenu"]
 - ["11Marketplace8HomeViewC", "viewWillAppear"]
+- !private ["11Marketplace12ImageHandlerP", "currentEmail"]
 - !private ["11Marketplace14InboxTableViewC", "thisUserEmail"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "components"]
@@ -814,6 +822,7 @@ depends-member:
 - !private ["So8NSCodingP", "components"]
 - !private ["So8NSCodingP", "contentSize"]
 - !private ["So8NSCodingP", "curEmail"]
+- !private ["So8NSCodingP", "currentEmail"]
 - !private ["So8NSCodingP", "currentUser"]
 - !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "didReceiveMemoryWarning"]
@@ -897,6 +906,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "clickRegister"]
 - !private ["So26NSExtensionRequestHandlingP", "clickSignIn"]
 - !private ["So26NSExtensionRequestHandlingP", "curEmail"]
+- !private ["So26NSExtensionRequestHandlingP", "currentEmail"]
 - !private ["So26NSExtensionRequestHandlingP", "currentUser"]
 - !private ["So26NSExtensionRequestHandlingP", "delegate"]
 - !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
@@ -995,6 +1005,7 @@ depends-member:
 - ["So8NSObjectC", "UITextView"]
 - ["So8NSObjectC", "UIView"]
 - ["So8NSObjectC", "UnsafeMutableRawPointer"]
+- !private ["So8NSObjectC", "UploadItemTableView"]
 - ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "UserDataSource"]
 - ["So8NSObjectC", "UserModel"]
@@ -1022,6 +1033,7 @@ depends-member:
 - !private ["So8NSObjectC", "consolidate"]
 - !private ["So8NSObjectC", "contentSize"]
 - ["So8NSObjectC", "curEmail"]
+- !private ["So8NSObjectC", "currentEmail"]
 - ["So8NSObjectC", "currentUser"]
 - !private ["So8NSObjectC", "dataFromServer"]
 - !private ["So8NSObjectC", "delegate"]
@@ -1127,6 +1139,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "consolidate"]
 - !private ["So16NSObjectProtocolP", "contentSize"]
 - !private ["So16NSObjectProtocolP", "curEmail"]
+- !private ["So16NSObjectProtocolP", "currentEmail"]
 - !private ["So16NSObjectProtocolP", "currentUser"]
 - !private ["So16NSObjectProtocolP", "dataFromServer"]
 - !private ["So16NSObjectProtocolP", "delegate"]
@@ -1340,6 +1353,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "clickSignIn"]
 - !private ["So21UIAppearanceContainerP", "contentSize"]
 - !private ["So21UIAppearanceContainerP", "curEmail"]
+- !private ["So21UIAppearanceContainerP", "currentEmail"]
 - !private ["So21UIAppearanceContainerP", "currentUser"]
 - !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
@@ -1488,6 +1502,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "clickRegister"]
 - !private ["So18UIContentContainerP", "clickSignIn"]
 - !private ["So18UIContentContainerP", "curEmail"]
+- !private ["So18UIContentContainerP", "currentEmail"]
 - !private ["So18UIContentContainerP", "currentUser"]
 - !private ["So18UIContentContainerP", "delegate"]
 - !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
@@ -1588,6 +1603,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "clickSignIn"]
 - !private ["So18UIFocusEnvironmentP", "contentSize"]
 - !private ["So18UIFocusEnvironmentP", "curEmail"]
+- !private ["So18UIFocusEnvironmentP", "currentEmail"]
 - !private ["So18UIFocusEnvironmentP", "currentUser"]
 - !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
@@ -1663,6 +1679,7 @@ depends-member:
 - !private ["So7UILabelC", "isHidden"]
 - !private ["So7UILabelC", "text"]
 - !private ["So30UINavigationControllerDelegateP", "curEmail"]
+- !private ["So30UINavigationControllerDelegateP", "currentEmail"]
 - !private ["So30UINavigationControllerDelegateP", "currentUser"]
 - !private ["So30UINavigationControllerDelegateP", "firstName"]
 - !private ["So30UINavigationControllerDelegateP", "hasVal"]
@@ -1689,6 +1706,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "clickSignIn"]
 - !private ["So30UIPasteConfigurationSupportingP", "contentSize"]
 - !private ["So30UIPasteConfigurationSupportingP", "curEmail"]
+- !private ["So30UIPasteConfigurationSupportingP", "currentEmail"]
 - !private ["So30UIPasteConfigurationSupportingP", "currentUser"]
 - !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
@@ -1746,6 +1764,8 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewForMenu"]
 - ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So22UIPickerViewDataSourceP", "currentEmail"]
+- !private ["So20UIPickerViewDelegateP", "currentEmail"]
 - !private ["So11UIResponderC", "AnyObject"]
 - ["So11UIResponderC", "Bool"]
 - !private ["So11UIResponderC", "CGPoint"]
@@ -1769,6 +1789,7 @@ depends-member:
 - ["So11UIResponderC", "UITextView"]
 - ["So11UIResponderC", "UIView"]
 - ["So11UIResponderC", "UnsafeMutableRawPointer"]
+- !private ["So11UIResponderC", "UploadItemTableView"]
 - ["So11UIResponderC", "User"]
 - !private ["So11UIResponderC", "UserDataSource"]
 - ["So11UIResponderC", "UserModel"]
@@ -1787,6 +1808,7 @@ depends-member:
 - ["So11UIResponderC", "clickSignIn"]
 - !private ["So11UIResponderC", "contentSize"]
 - ["So11UIResponderC", "curEmail"]
+- !private ["So11UIResponderC", "currentEmail"]
 - ["So11UIResponderC", "currentUser"]
 - !private ["So11UIResponderC", "delegate"]
 - ["So11UIResponderC", "didReceiveMemoryWarning"]
@@ -1871,6 +1893,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "clickSignIn"]
 - !private ["So30UIResponderStandardEditActionsP", "contentSize"]
 - !private ["So30UIResponderStandardEditActionsP", "curEmail"]
+- !private ["So30UIResponderStandardEditActionsP", "currentEmail"]
 - !private ["So30UIResponderStandardEditActionsP", "currentUser"]
 - !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
@@ -1929,6 +1952,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "viewForMenu"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So12UIScrollViewC", "contentSize"]
+- !private ["So20UIScrollViewDelegateP", "currentEmail"]
 - !private ["So20UIScrollViewDelegateP", "delegate"]
 - !private ["So20UIScrollViewDelegateP", "filterContentForSearchText"]
 - !private ["So20UIScrollViewDelegateP", "keyWords"]
@@ -2023,6 +2047,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "clickRegister"]
 - !private ["So16UIStateRestoringP", "clickSignIn"]
 - !private ["So16UIStateRestoringP", "curEmail"]
+- !private ["So16UIStateRestoringP", "currentEmail"]
 - !private ["So16UIStateRestoringP", "currentUser"]
 - !private ["So16UIStateRestoringP", "delegate"]
 - !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
@@ -2078,22 +2103,27 @@ depends-member:
 - ["So16UIStateRestoringP", ""]
 - !private ["So17UIStoryboardSegueC", "destination"]
 - !private ["So17UIStoryboardSegueC", "identifier"]
+- !private ["So21UITableViewControllerC", "currentEmail"]
 - !private ["So21UITableViewControllerC", "delegate"]
 - !private ["So21UITableViewControllerC", "filterContentForSearchText"]
 - !private ["So21UITableViewControllerC", "keyWords"]
 - !private ["So21UITableViewControllerC", "thisUserEmail"]
+- !private ["So21UITableViewDataSourceP", "currentEmail"]
 - !private ["So21UITableViewDataSourceP", "delegate"]
 - !private ["So21UITableViewDataSourceP", "filterContentForSearchText"]
 - !private ["So21UITableViewDataSourceP", "keyWords"]
 - !private ["So21UITableViewDataSourceP", "thisUserEmail"]
+- !private ["So19UITableViewDelegateP", "currentEmail"]
 - !private ["So19UITableViewDelegateP", "delegate"]
 - !private ["So19UITableViewDelegateP", "filterContentForSearchText"]
 - !private ["So19UITableViewDelegateP", "keyWords"]
 - !private ["So19UITableViewDelegateP", "thisUserEmail"]
 - !private ["So22UITapGestureRecognizerC", "init"]
+- !private ["So19UITextFieldDelegateP", "currentEmail"]
 - !private ["So17UITextInputTraitsP", "delegate"]
 - !private ["So17UITextInputTraitsP", "frame"]
 - !private ["So17UITextInputTraitsP", "layer"]
+- !private ["So18UITextViewDelegateP", "currentEmail"]
 - !private ["So18UITraitEnvironmentP", "CGPoint"]
 - !private ["So18UITraitEnvironmentP", "CGSize"]
 - !private ["So18UITraitEnvironmentP", "Download"]
@@ -2116,6 +2146,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "clickSignIn"]
 - !private ["So18UITraitEnvironmentP", "contentSize"]
 - !private ["So18UITraitEnvironmentP", "curEmail"]
+- !private ["So18UITraitEnvironmentP", "currentEmail"]
 - !private ["So18UITraitEnvironmentP", "currentUser"]
 - !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
@@ -2205,6 +2236,7 @@ depends-member:
 - ["So16UIViewControllerC", "UITextView"]
 - ["So16UIViewControllerC", "UIView"]
 - ["So16UIViewControllerC", "UnsafeMutableRawPointer"]
+- !private ["So16UIViewControllerC", "UploadItemTableView"]
 - ["So16UIViewControllerC", "User"]
 - !private ["So16UIViewControllerC", "UserDataSource"]
 - ["So16UIViewControllerC", "UserModel"]
@@ -2219,6 +2251,7 @@ depends-member:
 - ["So16UIViewControllerC", "clickRegister"]
 - ["So16UIViewControllerC", "clickSignIn"]
 - ["So16UIViewControllerC", "curEmail"]
+- !private ["So16UIViewControllerC", "currentEmail"]
 - ["So16UIViewControllerC", "currentUser"]
 - !private ["So16UIViewControllerC", "delegate"]
 - ["So16UIViewControllerC", "didReceiveMemoryWarning"]
@@ -2278,6 +2311,7 @@ depends-member:
 - ["So16UIViewControllerC", "viewForMenu"]
 - ["So16UIViewControllerC", "viewWillAppear"]
 - ["So16UIViewControllerC", ""]
+- !private ["11Marketplace19UploadItemTableViewC", "currentEmail"]
 - !private ["11Marketplace4UserC", "email"]
 - !private ["11Marketplace4UserC", "first_name"]
 - !private ["11Marketplace4UserC", "last_name"]
@@ -2361,6 +2395,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "consolidate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "contentSize"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "curEmail"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "currentEmail"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "currentUser"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dataFromServer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
@@ -2476,6 +2511,7 @@ depends-nominal:
 - "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - "11Marketplace8HomeViewC"
+- !private "11Marketplace12ImageHandlerP"
 - !private "11Marketplace14InboxTableViewC"
 - "s25LosslessStringConvertibleP"
 - !private "11Marketplace13MenuTableViewC"
@@ -2527,6 +2563,8 @@ depends-nominal:
 - !private "So7UILabelC"
 - !private "So30UINavigationControllerDelegateP"
 - "So30UIPasteConfigurationSupportingP"
+- !private "So22UIPickerViewDataSourceP"
+- !private "So20UIPickerViewDelegateP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
 - !private "So12UIScrollViewC"
@@ -2541,10 +2579,13 @@ depends-nominal:
 - !private "So21UITableViewDataSourceP"
 - !private "So19UITableViewDelegateP"
 - !private "So22UITapGestureRecognizerC"
+- !private "So19UITextFieldDelegateP"
 - !private "So17UITextInputTraitsP"
+- !private "So18UITextViewDelegateP"
 - "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
+- !private "11Marketplace19UploadItemTableViewC"
 - !private "11Marketplace4UserC"
 - !private "11Marketplace14UserDataSourceC"
 - "11Marketplace9UserModelC"

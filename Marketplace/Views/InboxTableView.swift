@@ -16,7 +16,7 @@ class InboxTableView: UITableViewController {
 	private let dummyRead = [true, false]
     
     
-    var downloadAssistant = Download(withURLString: "http://localhost:8181/inbox/all?apikey=" + Download.apikey)
+    var downloadAssistant = Download(withURLString: "http://localhost:8181/inbox/all") //?apikey=" + Download.apikey)
     
     var thisUserEmail: String!
     var inboxSchema: InboxSchemaProcessor!
@@ -51,6 +51,7 @@ class InboxTableView: UITableViewController {
     }
     
     deinit {
+        // check if nil
         downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
     }
 
