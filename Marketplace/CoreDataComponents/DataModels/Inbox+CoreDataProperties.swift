@@ -1,9 +1,8 @@
 //
 //  Inbox+CoreDataProperties.swift
-//  Marketplace
+//  
 //
-//  Created by student on 12/8/17.
-//  Copyright © 2017 SSU. All rights reserved.
+//  Created by student on 12/10/17.
 //
 //
 
@@ -17,10 +16,10 @@ extension Inbox {
         return NSFetchRequest<Inbox>(entityName: "Inbox")
     }
 
-    @NSManaged public var recipient_email: String?
-    @NSManaged public var msg_id: NSNumber?
-    @NSManaged public var sender_email: String?
     @NSManaged public var message: String?
+    @NSManaged public var msg_id: NSNumber?
+    @NSManaged public var recipient_email: String?
+    @NSManaged public var sender_email: String?
     @NSManaged public var subject: String?
     @NSManaged public var item: Item?
     @NSManaged public var user: User?

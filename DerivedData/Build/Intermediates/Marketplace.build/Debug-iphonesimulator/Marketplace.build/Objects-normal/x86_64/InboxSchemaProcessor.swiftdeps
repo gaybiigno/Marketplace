@@ -23,6 +23,7 @@ depends-top-level:
 - !private "NSFetchRequest"
 - !private "NSFetchRequestResult"
 - !private "NSLog"
+- !private "NSManagedObject"
 - !private "NSNumber"
 - "NSObject"
 - !private "NSPredicate"
@@ -43,6 +44,8 @@ depends-member:
 - !private ["s7CVarArgP", "abort"]
 - !private ["s7CVarArgP", "backgroundContext"]
 - !private ["s7CVarArgP", "coreDataContext"]
+- !private ["s7CVarArgP", "delete"]
+- !private ["s7CVarArgP", "deleteAllInboxs"]
 - !private ["s7CVarArgP", "fetch"]
 - !private ["s7CVarArgP", "filtered"]
 - !private ["s7CVarArgP", "inboxModelJSONString"]
@@ -78,6 +81,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "abort"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundContext"]
 - !private ["s28CustomDebugStringConvertibleP", "coreDataContext"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
+- !private ["s28CustomDebugStringConvertibleP", "deleteAllInboxs"]
 - !private ["s28CustomDebugStringConvertibleP", "fetch"]
 - !private ["s28CustomDebugStringConvertibleP", "filtered"]
 - !private ["s28CustomDebugStringConvertibleP", "inboxModelJSONString"]
@@ -110,6 +115,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "abort"]
 - !private ["s23CustomStringConvertibleP", "backgroundContext"]
 - !private ["s23CustomStringConvertibleP", "coreDataContext"]
+- !private ["s23CustomStringConvertibleP", "delete"]
+- !private ["s23CustomStringConvertibleP", "deleteAllInboxs"]
 - !private ["s23CustomStringConvertibleP", "fetch"]
 - !private ["s23CustomStringConvertibleP", "filtered"]
 - !private ["s23CustomStringConvertibleP", "inboxModelJSONString"]
@@ -143,6 +150,8 @@ depends-member:
 - !private ["s9EquatableP", "abort"]
 - !private ["s9EquatableP", "backgroundContext"]
 - !private ["s9EquatableP", "coreDataContext"]
+- !private ["s9EquatableP", "delete"]
+- !private ["s9EquatableP", "deleteAllInboxs"]
 - !private ["s9EquatableP", "fetch"]
 - !private ["s9EquatableP", "filtered"]
 - !private ["s9EquatableP", "inboxModelJSONString"]
@@ -175,6 +184,8 @@ depends-member:
 - !private ["s8HashableP", "abort"]
 - !private ["s8HashableP", "backgroundContext"]
 - !private ["s8HashableP", "coreDataContext"]
+- !private ["s8HashableP", "delete"]
+- !private ["s8HashableP", "deleteAllInboxs"]
 - !private ["s8HashableP", "fetch"]
 - !private ["s8HashableP", "filtered"]
 - !private ["s8HashableP", "inboxModelJSONString"]
@@ -207,6 +218,7 @@ depends-member:
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSFetchRequest"]
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSFetchRequestResult"]
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSLog"]
+- !private ["11Marketplace20InboxSchemaProcessorC", "NSManagedObject"]
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSNumber"]
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSPredicate"]
 - !private ["11Marketplace20InboxSchemaProcessorC", "NSSortDescriptor"]
@@ -214,6 +226,7 @@ depends-member:
 - !private ["11Marketplace20InboxSchemaProcessorC", "abort"]
 - ["11Marketplace20InboxSchemaProcessorC", "coreDataContext"]
 - ["11Marketplace20InboxSchemaProcessorC", "deinit"]
+- ["11Marketplace20InboxSchemaProcessorC", "deleteAllInboxs"]
 - ["11Marketplace20InboxSchemaProcessorC", "fetchAllInboxs"]
 - ["11Marketplace20InboxSchemaProcessorC", "fetchForRecipient"]
 - ["11Marketplace20InboxSchemaProcessorC", "getAllInboxs"]
@@ -225,6 +238,7 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["So7NSArrayC", "filtered"]
+- !private ["So8NSCodingP", "delete"]
 - !private ["So8NSCodingP", "fetch"]
 - !private ["So8NSCodingP", "filtered"]
 - !private ["So8NSCodingP", "init"]
@@ -249,12 +263,14 @@ depends-member:
 - !private ["So20NSFetchRequestResultP", "subject"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "delete"]
 - !private ["So9NSLockingP", "fetch"]
 - !private ["So15NSManagedObjectC", "message"]
 - !private ["So15NSManagedObjectC", "msg_id"]
 - !private ["So15NSManagedObjectC", "recipient_email"]
 - !private ["So15NSManagedObjectC", "sender_email"]
 - !private ["So15NSManagedObjectC", "subject"]
+- !private ["So22NSManagedObjectContextC", "delete"]
 - !private ["So22NSManagedObjectContextC", "fetch"]
 - !private ["So16NSMutableCopyingP", "filtered"]
 - !private ["So16NSMutableCopyingP", "init"]
@@ -267,6 +283,7 @@ depends-member:
 - !private ["So8NSObjectC", "NSFetchRequest"]
 - !private ["So8NSObjectC", "NSFetchRequestResult"]
 - !private ["So8NSObjectC", "NSLog"]
+- !private ["So8NSObjectC", "NSManagedObject"]
 - !private ["So8NSObjectC", "NSNumber"]
 - !private ["So8NSObjectC", "NSPredicate"]
 - !private ["So8NSObjectC", "NSSortDescriptor"]
@@ -274,6 +291,8 @@ depends-member:
 - !private ["So8NSObjectC", "abort"]
 - !private ["So8NSObjectC", "backgroundContext"]
 - ["So8NSObjectC", "coreDataContext"]
+- !private ["So8NSObjectC", "delete"]
+- ["So8NSObjectC", "deleteAllInboxs"]
 - !private ["So8NSObjectC", "fetch"]
 - ["So8NSObjectC", "fetchAllInboxs"]
 - ["So8NSObjectC", "fetchForRecipient"]
@@ -304,6 +323,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "abort"]
 - !private ["So16NSObjectProtocolP", "backgroundContext"]
 - !private ["So16NSObjectProtocolP", "coreDataContext"]
+- !private ["So16NSObjectProtocolP", "delete"]
+- !private ["So16NSObjectProtocolP", "deleteAllInboxs"]
 - !private ["So16NSObjectProtocolP", "fetch"]
 - !private ["So16NSObjectProtocolP", "filtered"]
 - !private ["So16NSObjectProtocolP", "inboxModelJSONString"]
@@ -358,6 +379,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "abort"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "coreDataContext"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deleteAllInboxs"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fetch"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "filtered"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "inboxModelJSONString"]
@@ -468,4 +491,12 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-interface-hash: "ac1fd004e4efaa0badee3976ed6d9ac8"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+interface-hash: "e85d99b7408f61f131279cfc9ed4e7a0"

@@ -49,8 +49,7 @@ class MenuTableView: UITableViewController {
 	
 	
 	@objc func clickInbox(_ sender: UIButton) {
-		//self.performSegue(withIdentifier: "homeToReg", sender: self)
-		print("no inbox yet")
+        delegate?.segueToNext(identifier: "homeToInbox")
 	}
 	
 	@objc func clickProfile(_ sender: UIButton) {

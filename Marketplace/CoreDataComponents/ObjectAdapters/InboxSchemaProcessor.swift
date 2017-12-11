@@ -18,6 +18,7 @@ class InboxSchemaProcessor: NSObject {
     init(inboxModelJSON: [AnyObject]) {
         inboxModelJSONString = inboxModelJSON
         super.init()
+        deleteAllInboxs()
         processJSON(inboxModelJSON)
     }
     
@@ -81,6 +82,19 @@ class InboxSchemaProcessor: NSObject {
             abort()
         }
         return nil
+    }
+    
+    func deleteAllInboxs() {
+        let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Inbox")
+        fReq.returnsObjectsAsFaults = false
+        do {
+            let results = try coreDataContext.managedObjectContext.fetch(fReq)
+            for result in results {
+                let r = try coreDataContext.managedObjectContext.delete(result as! NSManagedObject)
+            }
+        } catch {
+            abort()
+        }
     }
     
     func processInboxJSON(_ inboxObjects: [AnyObject]) {

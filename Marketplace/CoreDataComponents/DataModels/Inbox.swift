@@ -1,9 +1,8 @@
 //
 //  Inbox+CoreDataClass.swift
-//  Marketplace
+//  
 //
-//  Created by student on 12/8/17.
-//  Copyright © 2017 SSU. All rights reserved.
+//  Created by student on 12/10/17.
 //
 //
 

@@ -13,6 +13,7 @@
 		3F0454C31FDDF49500088976 /* FunctionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454C21FDDF49500088976 /* FunctionDataSource.swift */; };
 		3F0454C81FDDFCEC00088976 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454C61FDDFCEB00088976 /* User+CoreDataProperties.swift */; };
 		3F0454C91FDDFCEC00088976 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454C71FDDFCEB00088976 /* User.swift */; };
+		3F0454CB1FDE0C6F00088976 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0454CA1FDE0C6F00088976 /* Inbox.swift */; };
 		3F127BA91FDB350800D329B1 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA61FDB350800D329B1 /* CoreDataStore.swift */; };
 		3F127BAA1FDB350800D329B1 /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA71FDB350800D329B1 /* CoreDataCommonMethods.swift */; };
 		3F127BAB1FDB350800D329B1 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BA81FDB350800D329B1 /* Download.swift */; };
@@ -25,7 +26,6 @@
 		3F127BD21FDB363A00D329B1 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BCE1FDB363A00D329B1 /* Pictures.swift */; };
 		3F127BD31FDB363A00D329B1 /* Pictures+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BCF1FDB363A00D329B1 /* Pictures+CoreDataProperties.swift */; };
 		3F127BD51FDB36EF00D329B1 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BD41FDB36EF00D329B1 /* Upload.swift */; };
-		3F127BD81FDB4B3600D329B1 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BD61FDB4B3600D329B1 /* Inbox.swift */; };
 		3F127BD91FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BD71FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift */; };
 		3F5772FE1FD87B810022AE91 /* marketplace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F5772FC1FD87B810022AE91 /* marketplace.xcdatamodeld */; };
 		3F5773191FD881CF0022AE91 /* ItemSchemaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5773181FD881CF0022AE91 /* ItemSchemaProcessor.swift */; };
@@ -86,6 +86,7 @@
 		3F0454C21FDDF49500088976 /* FunctionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionDataSource.swift; sourceTree = "<group>"; };
 		3F0454C61FDDFCEB00088976 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		3F0454C71FDDFCEB00088976 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = /Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/User.swift; sourceTree = "<absolute>"; };
+		3F0454CA1FDE0C6F00088976 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		3F127BA61FDB350800D329B1 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		3F127BA71FDB350800D329B1 /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCommonMethods.swift; sourceTree = "<group>"; };
 		3F127BA81FDB350800D329B1 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		3F127BCE1FDB363A00D329B1 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		3F127BCF1FDB363A00D329B1 /* Pictures+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pictures+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F127BD41FDB36EF00D329B1 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		3F127BD61FDB4B3600D329B1 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		3F127BD71FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbox+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F5772BD1FD87A150022AE91 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3F5772FD1FD87B810022AE91 /* marketplace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = marketplace.xcdatamodel; sourceTree = "<group>"; };
@@ -203,9 +203,9 @@
 		3FAFBEC41FDA3CB300391639 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				3F0454CA1FDE0C6F00088976 /* Inbox.swift */,
 				3F0454C71FDDFCEB00088976 /* User.swift */,
 				3F0454C61FDDFCEB00088976 /* User+CoreDataProperties.swift */,
-				3F127BD61FDB4B3600D329B1 /* Inbox.swift */,
 				3F127BD71FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift */,
 				3F127BCC1FDB363A00D329B1 /* Tags.swift */,
 				3F127BCD1FDB363A00D329B1 /* Tags+CoreDataProperties.swift */,
@@ -486,7 +486,6 @@
 				5A3EDFA71FD9E65800665BA2 /* InboxTableView.swift in Sources */,
 				3FC6B38F1FDB5B3A00B9DB4E /* SearchParametersTableView.swift in Sources */,
 				3F95A7661FCF88D80024B8AA /* UploadImageView.swift in Sources */,
-				3F127BD81FDB4B3600D329B1 /* Inbox.swift in Sources */,
 				3FA640801FD89E3100294301 /* ItemDataSource.swift in Sources */,
 				3F127BD21FDB363A00D329B1 /* Pictures.swift in Sources */,
 				3F127BD11FDB363A00D329B1 /* Tags+CoreDataProperties.swift in Sources */,
@@ -498,6 +497,7 @@
 				3F5773191FD881CF0022AE91 /* ItemSchemaProcessor.swift in Sources */,
 				5A2C08A01FB54F7700D884B4 /* RegisterTableView.swift in Sources */,
 				3FC6B3911FDB6C5600B9DB4E /* RatingView.swift in Sources */,
+				3F0454CB1FDE0C6F00088976 /* Inbox.swift in Sources */,
 				5A49973E1FC6239300AB1A1A /* MenuTableView.swift in Sources */,
 				3F127BD91FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift in Sources */,
 				5A2C08A21FB5671900D884B4 /* Handy.swift in Sources */,

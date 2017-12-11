@@ -242,6 +242,13 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
             vc.hasVal = true
             vc.currentUser = currentUser
 		}
+        else if let vc = segue.destination as? InboxTableView,
+            segue.identifier == "homeToInbox" {
+            endMenu(self)
+            vc.thisUserEmail = curEmail
+        }
+        
+        
 //        if let vc = segue.destination as? SearchParametersTableView,
 //            segue.identifier == "toSearchParams" {
 //            vc.delegate = self

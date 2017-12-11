@@ -59,6 +59,7 @@ depends-top-level:
 - "Download"
 - !private "EditProfileView"
 - "HomeView"
+- !private "InboxTableView"
 - "MenuTableView"
 - "NSKeyValueChangeKey"
 - !private "SearchTableView"
@@ -203,6 +204,7 @@ depends-member:
 - !private ["s7CVarArgP", "startValues"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "thisUserEmail"]
 - !private ["s7CVarArgP", "uName"]
 - !private ["s7CVarArgP", "userAt"]
 - !private ["s7CVarArgP", "userData"]
@@ -311,6 +313,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "startValues"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "thisUserEmail"]
 - !private ["s28CustomDebugStringConvertibleP", "uName"]
 - !private ["s28CustomDebugStringConvertibleP", "userAt"]
 - !private ["s28CustomDebugStringConvertibleP", "userData"]
@@ -428,6 +431,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "startValues"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "thisUserEmail"]
 - !private ["s23CustomStringConvertibleP", "uName"]
 - !private ["s23CustomStringConvertibleP", "userAt"]
 - !private ["s23CustomStringConvertibleP", "userData"]
@@ -559,6 +563,7 @@ depends-member:
 - !private ["s9EquatableP", "startValues"]
 - !private ["s9EquatableP", "subscript"]
 - !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "thisUserEmail"]
 - !private ["s9EquatableP", "touchUpInside"]
 - !private ["s9EquatableP", "uName"]
 - !private ["s9EquatableP", "userAt"]
@@ -674,6 +679,7 @@ depends-member:
 - !private ["s8HashableP", "startValues"]
 - !private ["s8HashableP", "subscript"]
 - !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "thisUserEmail"]
 - !private ["s8HashableP", "uName"]
 - !private ["s8HashableP", "userAt"]
 - !private ["s8HashableP", "userData"]
@@ -689,6 +695,7 @@ depends-member:
 - ["11Marketplace8HomeViewC", "Download"]
 - !private ["11Marketplace8HomeViewC", "EditProfileView"]
 - ["11Marketplace8HomeViewC", "HomeView"]
+- !private ["11Marketplace8HomeViewC", "InboxTableView"]
 - ["11Marketplace8HomeViewC", "MenuTableView"]
 - ["11Marketplace8HomeViewC", "NSKeyValueChangeKey"]
 - !private ["11Marketplace8HomeViewC", "SearchTableView"]
@@ -770,6 +777,7 @@ depends-member:
 - ["11Marketplace8HomeViewC", "viewDidLoad"]
 - ["11Marketplace8HomeViewC", "viewForMenu"]
 - ["11Marketplace8HomeViewC", "viewWillAppear"]
+- !private ["11Marketplace14InboxTableViewC", "thisUserEmail"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "components"]
 - ["s25LosslessStringConvertibleP", "init"]
@@ -857,6 +865,7 @@ depends-member:
 - !private ["So8NSCodingP", "startValues"]
 - !private ["So8NSCodingP", "subscript"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "thisUserEmail"]
 - !private ["So8NSCodingP", "uName"]
 - !private ["So8NSCodingP", "userData"]
 - !private ["So8NSCodingP", "view"]
@@ -934,6 +943,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "signedIn"]
 - !private ["So26NSExtensionRequestHandlingP", "sportingButton"]
 - !private ["So26NSExtensionRequestHandlingP", "startValues"]
+- !private ["So26NSExtensionRequestHandlingP", "thisUserEmail"]
 - !private ["So26NSExtensionRequestHandlingP", "uName"]
 - !private ["So26NSExtensionRequestHandlingP", "userData"]
 - !private ["So26NSExtensionRequestHandlingP", "view"]
@@ -969,6 +979,7 @@ depends-member:
 - ["So8NSObjectC", "Download"]
 - !private ["So8NSObjectC", "EditProfileView"]
 - ["So8NSObjectC", "HomeView"]
+- !private ["So8NSObjectC", "InboxTableView"]
 - ["So8NSObjectC", "MenuTableView"]
 - ["So8NSObjectC", "NSKeyValueChangeKey"]
 - !private ["So8NSObjectC", "SearchTableView"]
@@ -1076,6 +1087,7 @@ depends-member:
 - ["So8NSObjectC", "startValues"]
 - !private ["So8NSObjectC", "subscript"]
 - !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectC", "thisUserEmail"]
 - ["So8NSObjectC", "uName"]
 - !private ["So8NSObjectC", "userAt"]
 - ["So8NSObjectC", "userData"]
@@ -1175,6 +1187,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "startValues"]
 - !private ["So16NSObjectProtocolP", "subscript"]
 - !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "thisUserEmail"]
 - !private ["So16NSObjectProtocolP", "uName"]
 - !private ["So16NSObjectProtocolP", "userAt"]
 - !private ["So16NSObjectProtocolP", "userData"]
@@ -1377,6 +1390,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "sportingButton"]
 - !private ["So21UIAppearanceContainerP", "startValues"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "thisUserEmail"]
 - !private ["So21UIAppearanceContainerP", "uName"]
 - !private ["So21UIAppearanceContainerP", "userData"]
 - !private ["So21UIAppearanceContainerP", "view"]
@@ -1520,6 +1534,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "signedIn"]
 - !private ["So18UIContentContainerP", "sportingButton"]
 - !private ["So18UIContentContainerP", "startValues"]
+- !private ["So18UIContentContainerP", "thisUserEmail"]
 - !private ["So18UIContentContainerP", "uName"]
 - !private ["So18UIContentContainerP", "userData"]
 - !private ["So18UIContentContainerP", "view"]
@@ -1623,6 +1638,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "sportingButton"]
 - !private ["So18UIFocusEnvironmentP", "startValues"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "thisUserEmail"]
 - !private ["So18UIFocusEnvironmentP", "uName"]
 - !private ["So18UIFocusEnvironmentP", "userData"]
 - !private ["So18UIFocusEnvironmentP", "view"]
@@ -1723,6 +1739,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "sportingButton"]
 - !private ["So30UIPasteConfigurationSupportingP", "startValues"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "thisUserEmail"]
 - !private ["So30UIPasteConfigurationSupportingP", "uName"]
 - !private ["So30UIPasteConfigurationSupportingP", "userData"]
 - !private ["So30UIPasteConfigurationSupportingP", "view"]
@@ -1736,6 +1753,7 @@ depends-member:
 - ["So11UIResponderC", "Download"]
 - !private ["So11UIResponderC", "EditProfileView"]
 - ["So11UIResponderC", "HomeView"]
+- !private ["So11UIResponderC", "InboxTableView"]
 - ["So11UIResponderC", "MenuTableView"]
 - ["So11UIResponderC", "NSKeyValueChangeKey"]
 - !private ["So11UIResponderC", "SearchTableView"]
@@ -1824,6 +1842,7 @@ depends-member:
 - ["So11UIResponderC", "sportingButton"]
 - ["So11UIResponderC", "startValues"]
 - !private ["So11UIResponderC", "text"]
+- !private ["So11UIResponderC", "thisUserEmail"]
 - ["So11UIResponderC", "uName"]
 - ["So11UIResponderC", "userData"]
 - !private ["So11UIResponderC", "view"]
@@ -1902,6 +1921,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "sportingButton"]
 - !private ["So30UIResponderStandardEditActionsP", "startValues"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "thisUserEmail"]
 - !private ["So30UIResponderStandardEditActionsP", "uName"]
 - !private ["So30UIResponderStandardEditActionsP", "userData"]
 - !private ["So30UIResponderStandardEditActionsP", "view"]
@@ -1912,6 +1932,7 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "delegate"]
 - !private ["So20UIScrollViewDelegateP", "filterContentForSearchText"]
 - !private ["So20UIScrollViewDelegateP", "keyWords"]
+- !private ["So20UIScrollViewDelegateP", "thisUserEmail"]
 - !private ["So11UISearchBarC", "delegate"]
 - !private ["So11UISearchBarC", "frame"]
 - !private ["So11UISearchBarC", "layer"]
@@ -2048,6 +2069,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "signedIn"]
 - !private ["So16UIStateRestoringP", "sportingButton"]
 - !private ["So16UIStateRestoringP", "startValues"]
+- !private ["So16UIStateRestoringP", "thisUserEmail"]
 - !private ["So16UIStateRestoringP", "uName"]
 - !private ["So16UIStateRestoringP", "userData"]
 - !private ["So16UIStateRestoringP", "view"]
@@ -2059,12 +2081,15 @@ depends-member:
 - !private ["So21UITableViewControllerC", "delegate"]
 - !private ["So21UITableViewControllerC", "filterContentForSearchText"]
 - !private ["So21UITableViewControllerC", "keyWords"]
+- !private ["So21UITableViewControllerC", "thisUserEmail"]
 - !private ["So21UITableViewDataSourceP", "delegate"]
 - !private ["So21UITableViewDataSourceP", "filterContentForSearchText"]
 - !private ["So21UITableViewDataSourceP", "keyWords"]
+- !private ["So21UITableViewDataSourceP", "thisUserEmail"]
 - !private ["So19UITableViewDelegateP", "delegate"]
 - !private ["So19UITableViewDelegateP", "filterContentForSearchText"]
 - !private ["So19UITableViewDelegateP", "keyWords"]
+- !private ["So19UITableViewDelegateP", "thisUserEmail"]
 - !private ["So22UITapGestureRecognizerC", "init"]
 - !private ["So17UITextInputTraitsP", "delegate"]
 - !private ["So17UITextInputTraitsP", "frame"]
@@ -2141,6 +2166,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "sportingButton"]
 - !private ["So18UITraitEnvironmentP", "startValues"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "thisUserEmail"]
 - !private ["So18UITraitEnvironmentP", "uName"]
 - !private ["So18UITraitEnvironmentP", "userData"]
 - !private ["So18UITraitEnvironmentP", "view"]
@@ -2163,6 +2189,7 @@ depends-member:
 - ["So16UIViewControllerC", "Download"]
 - !private ["So16UIViewControllerC", "EditProfileView"]
 - ["So16UIViewControllerC", "HomeView"]
+- !private ["So16UIViewControllerC", "InboxTableView"]
 - ["So16UIViewControllerC", "MenuTableView"]
 - ["So16UIViewControllerC", "NSKeyValueChangeKey"]
 - !private ["So16UIViewControllerC", "SearchTableView"]
@@ -2243,6 +2270,7 @@ depends-member:
 - ["So16UIViewControllerC", "signedIn"]
 - ["So16UIViewControllerC", "sportingButton"]
 - ["So16UIViewControllerC", "startValues"]
+- !private ["So16UIViewControllerC", "thisUserEmail"]
 - ["So16UIViewControllerC", "uName"]
 - ["So16UIViewControllerC", "userData"]
 - !private ["So16UIViewControllerC", "view"]
@@ -2393,6 +2421,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startValues"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "subscript"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "thisUserEmail"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "uName"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userAt"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userData"]
@@ -2447,6 +2476,7 @@ depends-nominal:
 - "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - "11Marketplace8HomeViewC"
+- !private "11Marketplace14InboxTableViewC"
 - "s25LosslessStringConvertibleP"
 - !private "11Marketplace13MenuTableViewC"
 - "s10MirrorPathP"
@@ -2562,4 +2592,12 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 interface-hash: "725f5d8147d3b330d3c932f89c4cb1c5"

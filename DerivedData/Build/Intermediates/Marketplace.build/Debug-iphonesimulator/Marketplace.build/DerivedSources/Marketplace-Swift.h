@@ -359,10 +359,10 @@ SWIFT_CLASS("_TtC11Marketplace5Inbox")
 @class User;
 
 @interface Inbox (SWIFT_EXTENSION(Marketplace))
-@property (nonatomic, copy) NSString * _Nullable recipient_email;
-@property (nonatomic, strong) NSNumber * _Nullable msg_id;
-@property (nonatomic, copy) NSString * _Nullable sender_email;
 @property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, strong) NSNumber * _Nullable msg_id;
+@property (nonatomic, copy) NSString * _Nullable recipient_email;
+@property (nonatomic, copy) NSString * _Nullable sender_email;
 @property (nonatomic, copy) NSString * _Nullable subject;
 @property (nonatomic, strong) Item * _Nullable item;
 @property (nonatomic, strong) User * _Nullable user;
@@ -378,13 +378,12 @@ SWIFT_CLASS("_TtC11Marketplace15InboxDataSource")
 
 SWIFT_CLASS("_TtC11Marketplace17InboxMsgTableCell")
 @interface InboxMsgTableCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified itemImage;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemTitle;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified msgSubject;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified otherUserName;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified msgIcon;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
-- (void)handlePan:(UIPanGestureRecognizer * _Nonnull)recognizer;
+- (void)handlePann:(UIPanGestureRecognizer * _Nonnull)recognizer;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

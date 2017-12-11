@@ -31,7 +31,6 @@ depends-top-level:
 - "UIImageView"
 - "UITableView"
 - "UITableViewController"
-- !private "print"
 depends-member:
 - !private ["s23BidirectionalCollectionP", "init"]
 - !private ["So15CALayerDelegateP", "addTarget"]
@@ -46,7 +45,6 @@ depends-member:
 - !private ["s7CVarArgP", "inboxButton"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isHidden"]
-- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "profileButton"]
 - !private ["s7CVarArgP", "signOutButton"]
 - !private ["s7CVarArgP", "start"]
@@ -67,7 +65,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "inboxButton"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isHidden"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "profileButton"]
 - !private ["s28CustomDebugStringConvertibleP", "signOutButton"]
 - !private ["s28CustomDebugStringConvertibleP", "start"]
@@ -88,7 +85,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "inboxButton"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isHidden"]
-- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "profileButton"]
 - !private ["s23CustomStringConvertibleP", "signOutButton"]
 - !private ["s23CustomStringConvertibleP", "start"]
@@ -109,7 +105,6 @@ depends-member:
 - !private ["s9EquatableP", "inboxButton"]
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "isHidden"]
-- !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "profileButton"]
 - !private ["s9EquatableP", "signOutButton"]
 - !private ["s9EquatableP", "start"]
@@ -133,7 +128,6 @@ depends-member:
 - !private ["s8HashableP", "inboxButton"]
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "isHidden"]
-- !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "profileButton"]
 - !private ["s8HashableP", "signOutButton"]
 - !private ["s8HashableP", "start"]
@@ -158,7 +152,6 @@ depends-member:
 - ["11Marketplace13MenuTableViewC", "inboxButton"]
 - ["11Marketplace13MenuTableViewC", "init"]
 - ["11Marketplace13MenuTableViewC", "numberOfSections"]
-- !private ["11Marketplace13MenuTableViewC", "print"]
 - ["11Marketplace13MenuTableViewC", "profileButton"]
 - ["11Marketplace13MenuTableViewC", "signOutButton"]
 - ["11Marketplace13MenuTableViewC", "start"]
@@ -178,7 +171,6 @@ depends-member:
 - !private ["So8NSCodingP", "inboxButton"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isHidden"]
-- !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "profileButton"]
 - !private ["So8NSCodingP", "signOutButton"]
 - !private ["So8NSCodingP", "start"]
@@ -196,7 +188,6 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
 - !private ["So26NSExtensionRequestHandlingP", "inboxButton"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
-- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "profileButton"]
 - !private ["So26NSExtensionRequestHandlingP", "signOutButton"]
 - !private ["So26NSExtensionRequestHandlingP", "start"]
@@ -224,7 +215,6 @@ depends-member:
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isHidden"]
 - ["So8NSObjectC", "numberOfSections"]
-- !private ["So8NSObjectC", "print"]
 - ["So8NSObjectC", "profileButton"]
 - ["So8NSObjectC", "signOutButton"]
 - ["So8NSObjectC", "start"]
@@ -243,7 +233,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "inboxButton"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "isHidden"]
-- !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "profileButton"]
 - !private ["So16NSObjectProtocolP", "signOutButton"]
 - !private ["So16NSObjectProtocolP", "start"]
@@ -281,7 +270,6 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "inboxButton"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "isHidden"]
-- !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "profileButton"]
 - !private ["So21UIAppearanceContainerP", "signOutButton"]
 - !private ["So21UIAppearanceContainerP", "start"]
@@ -299,7 +287,6 @@ depends-member:
 - !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
 - !private ["So18UIContentContainerP", "inboxButton"]
 - !private ["So18UIContentContainerP", "init"]
-- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "profileButton"]
 - !private ["So18UIContentContainerP", "signOutButton"]
 - !private ["So18UIContentContainerP", "start"]
@@ -324,7 +311,6 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "inboxButton"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "isHidden"]
-- !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "profileButton"]
 - !private ["So18UIFocusEnvironmentP", "signOutButton"]
 - !private ["So18UIFocusEnvironmentP", "start"]
@@ -346,7 +332,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "inboxButton"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
-- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "profileButton"]
 - !private ["So30UIPasteConfigurationSupportingP", "signOutButton"]
 - !private ["So30UIPasteConfigurationSupportingP", "start"]
@@ -371,7 +356,6 @@ depends-member:
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "isHidden"]
 - ["So11UIResponderC", "numberOfSections"]
-- !private ["So11UIResponderC", "print"]
 - ["So11UIResponderC", "profileButton"]
 - ["So11UIResponderC", "signOutButton"]
 - ["So11UIResponderC", "start"]
@@ -390,7 +374,6 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "inboxButton"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "isHidden"]
-- !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "profileButton"]
 - !private ["So30UIResponderStandardEditActionsP", "signOutButton"]
 - !private ["So30UIResponderStandardEditActionsP", "start"]
@@ -407,7 +390,6 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "didReceiveMemoryWarning"]
 - !private ["So20UIScrollViewDelegateP", "inboxButton"]
 - !private ["So20UIScrollViewDelegateP", "init"]
-- !private ["So20UIScrollViewDelegateP", "print"]
 - !private ["So20UIScrollViewDelegateP", "profileButton"]
 - !private ["So20UIScrollViewDelegateP", "signOutButton"]
 - !private ["So20UIScrollViewDelegateP", "start"]
@@ -425,7 +407,6 @@ depends-member:
 - !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
 - !private ["So16UIStateRestoringP", "inboxButton"]
 - !private ["So16UIStateRestoringP", "init"]
-- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "profileButton"]
 - !private ["So16UIStateRestoringP", "signOutButton"]
 - !private ["So16UIStateRestoringP", "start"]
@@ -448,7 +429,6 @@ depends-member:
 - ["So21UITableViewControllerC", "inboxButton"]
 - ["So21UITableViewControllerC", "init"]
 - ["So21UITableViewControllerC", "numberOfSections"]
-- !private ["So21UITableViewControllerC", "print"]
 - ["So21UITableViewControllerC", "profileButton"]
 - ["So21UITableViewControllerC", "signOutButton"]
 - ["So21UITableViewControllerC", "start"]
@@ -466,7 +446,6 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "didReceiveMemoryWarning"]
 - !private ["So21UITableViewDataSourceP", "inboxButton"]
 - !private ["So21UITableViewDataSourceP", "init"]
-- !private ["So21UITableViewDataSourceP", "print"]
 - !private ["So21UITableViewDataSourceP", "profileButton"]
 - !private ["So21UITableViewDataSourceP", "signOutButton"]
 - !private ["So21UITableViewDataSourceP", "start"]
@@ -483,7 +462,6 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "didReceiveMemoryWarning"]
 - !private ["So19UITableViewDelegateP", "inboxButton"]
 - !private ["So19UITableViewDelegateP", "init"]
-- !private ["So19UITableViewDelegateP", "print"]
 - !private ["So19UITableViewDelegateP", "profileButton"]
 - !private ["So19UITableViewDelegateP", "signOutButton"]
 - !private ["So19UITableViewDelegateP", "start"]
@@ -502,7 +480,6 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "inboxButton"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "isHidden"]
-- !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "profileButton"]
 - !private ["So18UITraitEnvironmentP", "signOutButton"]
 - !private ["So18UITraitEnvironmentP", "start"]
@@ -527,7 +504,6 @@ depends-member:
 - ["So16UIViewControllerC", "inboxButton"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "numberOfSections"]
-- !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "profileButton"]
 - ["So16UIViewControllerC", "signOutButton"]
 - ["So16UIViewControllerC", "start"]
@@ -557,7 +533,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "inboxButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "profileButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "signOutButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "start"]
@@ -672,4 +647,12 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 interface-hash: "fe4f1556b78839fe7fbffbda4432cd6a"

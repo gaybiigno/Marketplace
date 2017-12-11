@@ -11,9 +11,8 @@ import UIKit
 class InboxMsgTableCell: UITableViewCell {
 
 
-	@IBOutlet weak var itemImage: UIImageView!
-	@IBOutlet weak var itemTitle: UILabel!
-	@IBOutlet weak var otherUserName: UILabel!
+    @IBOutlet weak var msgSubject: UILabel!
+    @IBOutlet weak var otherUserName: UILabel!
 	@IBOutlet weak var msgIcon: UIImageView!
 	
 	 //var thisMessage: Message? = nil
@@ -30,6 +29,10 @@ class InboxMsgTableCell: UITableViewCell {
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        // add a pan recognizer
+//        let recognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePann(_:)))
+//        recognizer.delegate = self
+//        addGestureRecognizer(recognizer)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,26 +48,14 @@ class InboxMsgTableCell: UITableViewCell {
         self.content = msgContent
         self.thisUserEmail = thisUser
         
-        itemTitle.text = subject
+        msgSubject.text = subject
         otherUserName.text = otherUserEmail
 		msgIcon.isHidden = !iconShown
 	}
-	
-//	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//		super.init(style: style, reuseIdentifier: reuseIdentifier)
-//
-//		// add a pan recognizer
-//		var recognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-//		recognizer.delegate = self
-//		addGestureRecognizer(recognizer)
-//	}
-//
-//	required init?(coder aDecoder: NSCoder) {
-//		fatalError("init(coder:) has not been implemented")
-//	}
+
 	
 	//MARK: - horizontal pan gesture methods
-	@objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
+	@objc func handlePann(_ recognizer: UIPanGestureRecognizer) {
 		// 1
 		if recognizer.state == .began {
 			// when the gesture begins, record the current center location
@@ -96,9 +87,6 @@ class InboxMsgTableCell: UITableViewCell {
 			}
 		}
 		
-		
-		
-		
 	}
 	
 	func popUp() {
@@ -112,7 +100,10 @@ class InboxMsgTableCell: UITableViewCell {
 			UIAlertAction in
 			UIView.animate(withDuration: 0.2, animations: {self.frame = self.originalFrame})
 		})
-		UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+        let inboxTable = InboxTableView()
+        inboxTable.present(alertController, animated: true, completion: nil)
+        //self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+		//UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
 	}
 	
 	

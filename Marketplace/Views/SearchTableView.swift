@@ -96,15 +96,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
             
             itemDataSource = ItemDataSource(dataSource: items_returned)
             itemDataSource?.consolidate()
-            if searchParams {
-                setSearchies()
-            } else {
-                itemsToShow = (itemDataSource?.items)!
-                if itemsToShow == nil {
-                    itemsToShow = [Item]()
-                }
-
-            }
+            itemsToShow = (itemDataSource?.items)!
+//            if itemsToShow == nil {
+//                itemsToShow = [Item]()
+//            }
         } else {
             usersSchema = UserSchemaProcessor(userModelJSON: udownloadAssistant.dataFromServer! as! [AnyObject])
             let users_returned = usersSchema.getAllUsers()
@@ -118,9 +113,9 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         if downloadAssistant != nil {
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         }
-        if udownloadAssistant != nil {
+        //if udownloadAssistant != nil {
             udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        }
+        //}
     }
     
     func setSearchies() {
@@ -161,11 +156,12 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     func filterBySearchParams() -> [Item]? {
         var endResults = [Item]()
         
-        for item in (itemDataSource?.items)! {
+        for item in itemsToShow {
             var count = 0
             var fcount = 0
             if let cat = category, item.item_category?.lowercased() == cat.lowercased() {
                 count += 1
+                fcount += 1
             }
             if let rate = rating {
                 count += 1
@@ -187,10 +183,11 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                     fcount += 1
                 }
             }
-            if count == fcount {
+            if count == fcount, count != 0 {
                 endResults.append(item)
             }
         }
+        print(endResults)
         return endResults
     }
     

@@ -22,7 +22,7 @@ class FunctionSchemaProcessor: NSObject {
         for entity in schema {
             if let result = entity["result"] {
                 let objects = result as! [AnyObject]
-                processResponseJSON(objects)
+                    processResponseJSON(objects)
             }
         }
     }

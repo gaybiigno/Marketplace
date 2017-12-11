@@ -18,25 +18,20 @@ class InboxTableView: UITableViewController {
     
     var downloadAssistant = Download(withURLString: "http://localhost:8181/inbox/all?apikey=" + Download.apikey)
     
-    var thisUser: User!
+    var thisUserEmail: String!
     var inboxSchema: InboxSchemaProcessor!
     var inboxDataSource: InboxDataSource!
     
     var inboxItems: [Inbox]!
-	
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.view.backgroundColor = UIColor(red: 1.0, green: 0.3254, blue: 0.2392, alpha: 1.0)
 		self.tableView.rowHeight = 75.0
 		
-        
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         downloadAssistant.download_request()
-        
-        if let t = thisUser {
-            inboxItems = inboxSchema.fetchForRecipient(t.email!)
-        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -48,6 +43,11 @@ class InboxTableView: UITableViewController {
         
         inboxDataSource = InboxDataSource(dataSource: inbox_returned)
         inboxDataSource?.consolidate()
+        
+        if let t = thisUserEmail {
+            inboxItems = inboxSchema.fetchForRecipient(t)
+            self.tableView.reloadData()
+        }
     }
     
     deinit {
@@ -92,6 +92,8 @@ class InboxTableView: UITableViewController {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print("tapped")
 	}
+    
+    
 
 
     /*
@@ -140,3 +142,6 @@ class InboxTableView: UITableViewController {
     */
 
 }
+
+
+
