@@ -70,6 +70,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			downloadAssistant = Download(withURLString: buildURLString())
 			downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
 			downloadAssistant.download_request()
+		} else {
+			signedIn = false
 		}
 	}
 	
@@ -232,6 +234,8 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
         else if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
 			endMenu(self)
+			print("guestBrowsing in home:", signedIn)
+			vc.guestBrowsing = !signedIn
 			vc.keyWords = category
             vc.filterContentForSearchText(category)
         }

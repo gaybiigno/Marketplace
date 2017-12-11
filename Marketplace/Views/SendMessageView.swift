@@ -100,13 +100,14 @@ class SendMessageView: UIViewController {
 	}
 	
 	@objc func clickedSend(_ sender: UIButton) {
+		if let msg = messageBody.text {
+			msgBody = msg
+		} else {
+			return
+		}
 		if successMessage.isHidden {
 			successMessage.isHidden = false
-			if let msg = messageBody.text {
-				msgBody = msg
-			} else {
-				return
-			}
+			
 			// SAVE MESSAGE VALUES
 			
 			for v in view.subviews {

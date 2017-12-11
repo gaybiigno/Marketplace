@@ -20,6 +20,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var items = [ItemView]()
     
     var filteredItems = [ItemView]()
+	var guestBrowsing = true
+	
     
     var searchParams = false
     var keyWords = ""
@@ -391,6 +393,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 let item = items![indexPath.row]
                 let controller = (segue.destination as! ItemView)
                 //controller.detailCandy = item
+				print("guestBrowsing in search:", guestBrowsing)
+				controller.guestBrowsing = guestBrowsing
                 controller.hasValues = true
                 controller.givenTitle = item.item_name!
                 controller.descrip = item.item_description!

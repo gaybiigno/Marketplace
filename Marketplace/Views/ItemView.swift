@@ -40,6 +40,7 @@ class ItemView: UIViewController {
 	let itemModel = ItemModel()
     let userModel = UserModel()
 	
+	var guestBrowsing = true
 	var editView = false
 	var hasValues = false
 	
@@ -60,7 +61,6 @@ class ItemView: UIViewController {
         
         itemPriceLabel.adjustsFontSizeToFitWidth = true
         itemPriceLabel.clipsToBounds = true
-        itemPriceLabel.textAlignment = .left
         itemPriceLabel.baselineAdjustment = .alignCenters
 
 		start()
@@ -120,6 +120,13 @@ class ItemView: UIViewController {
 			msgSellerButton.setTitle("Edit", for: .normal)
 			msgSellerButton.addTarget(self, action: #selector(clickEdit(_:)), for: .touchUpInside)
 		}
+		
+		if guestBrowsing {
+			print("guestBrowsing in item:", guestBrowsing)
+			msgSellerButton.isHidden = true
+			purchaseButton.isHidden = true
+		}
+		
 		displayCurrentImage()
 	}
 	
