@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Marketplace/CoreDataComponents/DataModels/Inbox+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../Marketplace/CoreDataComponents/DataModels/Inbox+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/User+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/User+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

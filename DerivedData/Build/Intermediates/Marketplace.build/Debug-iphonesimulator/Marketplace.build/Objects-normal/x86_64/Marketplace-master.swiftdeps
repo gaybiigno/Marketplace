@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "319a540938f7094bd3675b19dcbade00"
-build_time: [1513031526, 785216000]
+build_time: [1513033210, 225710000]
 inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Item+CoreDataProperties.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/Inbox/InboxMsgTableCell.swift": [1513029947, 0]
@@ -16,7 +16,7 @@ inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/Network/Download.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/SearchTableView.swift": [1513022390, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures+CoreDataProperties.swift": [1513022389, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/Inbox/InboxTableView.swift": [1513031519, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/Inbox/InboxTableView.swift": [1513032069, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1513022390, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/UploadImageView.swift": [1513022390, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemDataSource.swift": [1513022389, 0]
