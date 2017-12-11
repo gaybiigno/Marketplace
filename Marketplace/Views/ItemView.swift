@@ -257,7 +257,6 @@ class ItemView: UIViewController {
 			ageLabel.text = editView ? String(age) : String(itemModel.getAge())
 		}
 		
-		
 		if ageLabel.text == "0" {
 			ageTitle.isHidden = true
 			ageLabel.isHidden = true

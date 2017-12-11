@@ -39,7 +39,7 @@ depends-member:
 - !private ["s7CVarArgP", "Data"]
 - ["s7CVarArgP", "Float"]
 - ["s7CVarArgP", "String"]
-- ["s7CVarArgP", "UIImage"]
+- !private ["s7CVarArgP", "UIImage"]
 - !private ["s7CVarArgP", "URL"]
 - !private ["s7CVarArgP", "age"]
 - !private ["s7CVarArgP", "category"]
@@ -65,7 +65,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "Data"]
 - ["s28CustomDebugStringConvertibleP", "Float"]
 - ["s28CustomDebugStringConvertibleP", "String"]
-- ["s28CustomDebugStringConvertibleP", "UIImage"]
+- !private ["s28CustomDebugStringConvertibleP", "UIImage"]
 - !private ["s28CustomDebugStringConvertibleP", "URL"]
 - !private ["s28CustomDebugStringConvertibleP", "age"]
 - !private ["s28CustomDebugStringConvertibleP", "category"]
@@ -93,7 +93,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "Data"]
 - ["s23CustomStringConvertibleP", "Float"]
 - ["s23CustomStringConvertibleP", "String"]
-- ["s23CustomStringConvertibleP", "UIImage"]
+- !private ["s23CustomStringConvertibleP", "UIImage"]
 - !private ["s23CustomStringConvertibleP", "URL"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "age"]
@@ -125,7 +125,7 @@ depends-member:
 - !private ["s9EquatableP", "Data"]
 - ["s9EquatableP", "Float"]
 - ["s9EquatableP", "String"]
-- ["s9EquatableP", "UIImage"]
+- !private ["s9EquatableP", "UIImage"]
 - !private ["s9EquatableP", "URL"]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "age"]
@@ -157,7 +157,7 @@ depends-member:
 - !private ["s8HashableP", "Data"]
 - ["s8HashableP", "Float"]
 - ["s8HashableP", "String"]
-- ["s8HashableP", "UIImage"]
+- !private ["s8HashableP", "UIImage"]
 - !private ["s8HashableP", "URL"]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "age"]
@@ -261,7 +261,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "Data"]
 - ["So16NSObjectProtocolP", "Float"]
 - ["So16NSObjectProtocolP", "String"]
-- ["So16NSObjectProtocolP", "UIImage"]
+- !private ["So16NSObjectProtocolP", "UIImage"]
 - !private ["So16NSObjectProtocolP", "URL"]
 - !private ["So16NSObjectProtocolP", "age"]
 - !private ["So16NSObjectProtocolP", "category"]
@@ -332,7 +332,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Data"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "Float"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "String"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "age"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "category"]
@@ -467,11 +467,19 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-interface-hash: "35afd3e1dd87f04d5bc7fc1382bcdf07"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "952729bb64ab14e4df90e5428b8700ac"

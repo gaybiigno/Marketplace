@@ -14,7 +14,7 @@ class ItemModel: NSObject {
 	
 	private var currentIdx = 0
 	
-	private var imageArray = [UIImage]()
+    private var imageArray: [UIImage]!
 	private var title = ""
 	private var descrip = ""
 	private var price = Float(0.0)
@@ -69,7 +69,10 @@ class ItemModel: NSObject {
 	}
 	
 	func numberOfImages() -> Int {
-		return imageArray.count
+        if let ia = imageArray {
+            return ia.count
+        }
+		return 0
 	}
 	
 	func currentImagePosition() -> Int {
@@ -92,28 +95,28 @@ class ItemModel: NSObject {
 		if !urls {
 			return title
 		}
-		return "Example Item For Sale"
+		return "General Item"
 	}
 	
 	func getPrice() -> Float {
 		if !urls {
 			return price
 		}
-		return 25.99
+		return 0.00
 	}
 	
 	func getCategory() -> String {
 		if !urls {
 			return category
 		}
-		return "Main Category"
+		return "Home & Garden"
 	}
 	
 	func getQuantity() -> Int {
 		if !urls {
 			return quantity
 		}
-		return 892
+		return 1
 	}
 	
 	func getTags() -> String {
@@ -132,27 +135,14 @@ class ItemModel: NSObject {
 		if !urls {
 			return description
 		}
-		return "This fake item is NOT real and therefore should not " +
-			"be purchased for actual money. It's completely imaginary " +
-			"and has no monetary value in the real world. Like maybe " +
-			"it has come sentimental value because I'll be able to " +
-			"remember the time I sat and wrote out this description for " +
-			"an item that doesn't exist. Ah the memories, the sweet, " +
-			"sweet memories. In other news, I found a bump on my " +
-			"finger and got really worried I had a cyst or something " +
-			"but instead it was just a callus. Turns out, I had been " +
-			"playing so many video games on my bfs xbox that holding " +
-			"the controller literally game me a callus. Probably bc " +
-			"I'm used to PS4 controllers and they're smaller/lighter. " +
-			"No idea why you actually have read to this point but thanks " +
-			"for listening. Good day!"
+		return "No item description available."
 	}
 	
 	func getAge() -> Int {
 		if !urls {
 			return age
 		}
-		return 18
+		return 0
 	}
 	
 	

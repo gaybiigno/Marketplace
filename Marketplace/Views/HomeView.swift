@@ -266,9 +266,6 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	}
 
     
-	
-    
-    
 	/*
     // MARK: - Navigation
 

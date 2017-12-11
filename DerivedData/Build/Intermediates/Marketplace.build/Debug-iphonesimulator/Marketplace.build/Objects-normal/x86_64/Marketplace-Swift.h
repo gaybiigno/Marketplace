@@ -327,6 +327,8 @@ SWIFT_CLASS("_TtC11Marketplace8HomeView")
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified viewForMenu;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified searchOptionsButton;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (void)searchHomeGarden:(UIButton * _Nonnull)sender;
 - (void)searchFashion:(UIButton * _Nonnull)sender;
@@ -340,8 +342,6 @@ SWIFT_CLASS("_TtC11Marketplace8HomeView")
 - (void)endMenu:(HomeView * _Nonnull)sender;
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar * _Nonnull)searchBar SWIFT_WARN_UNUSED_RESULT;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -374,16 +374,31 @@ SWIFT_CLASS("_TtC11Marketplace15InboxDataSource")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class UIPanGestureRecognizer;
+
+SWIFT_CLASS("_TtC11Marketplace15InboxDetailView")
+@interface InboxDetailView : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified backButton;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified msgSubject;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified senderLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified recipientLabel;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified msgContent;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified replyButton;
+- (void)viewDidLoad;
+- (void)clickedBack:(UIButton * _Nonnull)sender;
+- (void)clickedReply:(UIButton * _Nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC11Marketplace17InboxMsgTableCell")
 @interface InboxMsgTableCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified msgSubject;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified otherUserName;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified msgIcon;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
-- (void)handlePann:(UIPanGestureRecognizer * _Nonnull)recognizer;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -399,11 +414,13 @@ SWIFT_CLASS("_TtC11Marketplace20InboxSchemaProcessor")
 SWIFT_CLASS("_TtC11Marketplace14InboxTableView")
 @interface InboxTableView : UITableViewController
 - (void)viewDidLoad;
+- (void)clickedBack:(UIButton * _Nonnull)sender;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -710,6 +727,7 @@ SWIFT_CLASS("_TtC11Marketplace15SendMessageView")
 - (void)didReceiveMemoryWarning;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (void)clickedSend:(UIButton * _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

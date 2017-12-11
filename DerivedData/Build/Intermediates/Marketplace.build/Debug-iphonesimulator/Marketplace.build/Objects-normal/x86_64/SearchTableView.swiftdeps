@@ -148,6 +148,7 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "filteredItems"]
 - !private ["So25CLLocationManagerDelegateP", "findItemsWithStrings"]
 - !private ["So25CLLocationManagerDelegateP", "findUserByEmail"]
+- !private ["So25CLLocationManagerDelegateP", "guestBrowsing"]
 - !private ["So25CLLocationManagerDelegateP", "itemDataSource"]
 - !private ["So25CLLocationManagerDelegateP", "items"]
 - !private ["So25CLLocationManagerDelegateP", "itemsSchema"]
@@ -241,6 +242,7 @@ depends-member:
 - !private ["s7CVarArgP", "getAllItems"]
 - !private ["s7CVarArgP", "getAllUsers"]
 - !private ["s7CVarArgP", "givenTitle"]
+- !private ["s7CVarArgP", "guestBrowsing"]
 - !private ["s7CVarArgP", "hasValues"]
 - !private ["s7CVarArgP", "identifier"]
 - !private ["s7CVarArgP", "imageArray"]
@@ -381,6 +383,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "getAllItems"]
 - !private ["s28CustomDebugStringConvertibleP", "getAllUsers"]
 - !private ["s28CustomDebugStringConvertibleP", "givenTitle"]
+- !private ["s28CustomDebugStringConvertibleP", "guestBrowsing"]
 - !private ["s28CustomDebugStringConvertibleP", "hasValues"]
 - !private ["s28CustomDebugStringConvertibleP", "identifier"]
 - !private ["s28CustomDebugStringConvertibleP", "imageArray"]
@@ -524,6 +527,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "getAllItems"]
 - !private ["s23CustomStringConvertibleP", "getAllUsers"]
 - !private ["s23CustomStringConvertibleP", "givenTitle"]
+- !private ["s23CustomStringConvertibleP", "guestBrowsing"]
 - !private ["s23CustomStringConvertibleP", "hasValues"]
 - !private ["s23CustomStringConvertibleP", "identifier"]
 - !private ["s23CustomStringConvertibleP", "imageArray"]
@@ -676,6 +680,7 @@ depends-member:
 - !private ["s9EquatableP", "getAllItems"]
 - !private ["s9EquatableP", "getAllUsers"]
 - !private ["s9EquatableP", "givenTitle"]
+- !private ["s9EquatableP", "guestBrowsing"]
 - !private ["s9EquatableP", "hasValues"]
 - !private ["s9EquatableP", "identifier"]
 - !private ["s9EquatableP", "imageArray"]
@@ -829,6 +834,7 @@ depends-member:
 - !private ["s8HashableP", "getAllItems"]
 - !private ["s8HashableP", "getAllUsers"]
 - !private ["s8HashableP", "givenTitle"]
+- !private ["s8HashableP", "guestBrowsing"]
 - !private ["s8HashableP", "hasValues"]
 - !private ["s8HashableP", "identifier"]
 - !private ["s8HashableP", "imageArray"]
@@ -920,6 +926,7 @@ depends-member:
 - !private ["11Marketplace8ItemViewC", "category"]
 - !private ["11Marketplace8ItemViewC", "descrip"]
 - !private ["11Marketplace8ItemViewC", "givenTitle"]
+- !private ["11Marketplace8ItemViewC", "guestBrowsing"]
 - !private ["11Marketplace8ItemViewC", "hasValues"]
 - !private ["11Marketplace8ItemViewC", "imageArray"]
 - !private ["11Marketplace8ItemViewC", "itemCategory"]
@@ -982,6 +989,7 @@ depends-member:
 - !private ["So8NSCodingP", "findItemsWithStrings"]
 - !private ["So8NSCodingP", "findUserByEmail"]
 - !private ["So8NSCodingP", "givenTitle"]
+- !private ["So8NSCodingP", "guestBrowsing"]
 - !private ["So8NSCodingP", "hasValues"]
 - !private ["So8NSCodingP", "imageArray"]
 - !private ["So8NSCodingP", "indexPathForSelectedRow"]
@@ -1078,6 +1086,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "findItemsWithStrings"]
 - !private ["So26NSExtensionRequestHandlingP", "findUserByEmail"]
 - !private ["So26NSExtensionRequestHandlingP", "givenTitle"]
+- !private ["So26NSExtensionRequestHandlingP", "guestBrowsing"]
 - !private ["So26NSExtensionRequestHandlingP", "hasValues"]
 - !private ["So26NSExtensionRequestHandlingP", "imageArray"]
 - ["So26NSExtensionRequestHandlingP", "init"]
@@ -1230,6 +1239,7 @@ depends-member:
 - !private ["So8NSObjectC", "getAllUsers"]
 - ["So8NSObjectC", "getCoordinatesOfAddress"]
 - !private ["So8NSObjectC", "givenTitle"]
+- ["So8NSObjectC", "guestBrowsing"]
 - !private ["So8NSObjectC", "hasValues"]
 - !private ["So8NSObjectC", "identifier"]
 - !private ["So8NSObjectC", "imageArray"]
@@ -1353,6 +1363,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "getAllItems"]
 - !private ["So16NSObjectProtocolP", "getAllUsers"]
 - !private ["So16NSObjectProtocolP", "givenTitle"]
+- !private ["So16NSObjectProtocolP", "guestBrowsing"]
 - !private ["So16NSObjectProtocolP", "hasValues"]
 - !private ["So16NSObjectProtocolP", "identifier"]
 - !private ["So16NSObjectProtocolP", "imageArray"]
@@ -1505,6 +1516,7 @@ depends-member:
 - ["11Marketplace15SearchTableViewC", "findItemsWithStrings"]
 - ["11Marketplace15SearchTableViewC", "findUserByEmail"]
 - ["11Marketplace15SearchTableViewC", "getCoordinatesOfAddress"]
+- ["11Marketplace15SearchTableViewC", "guestBrowsing"]
 - ["11Marketplace15SearchTableViewC", "init"]
 - ["11Marketplace15SearchTableViewC", "isFiltering"]
 - ["11Marketplace15SearchTableViewC", "itemDataSource"]
@@ -1633,6 +1645,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "findItemsWithStrings"]
 - !private ["So21UIAppearanceContainerP", "findUserByEmail"]
 - !private ["So21UIAppearanceContainerP", "givenTitle"]
+- !private ["So21UIAppearanceContainerP", "guestBrowsing"]
 - !private ["So21UIAppearanceContainerP", "hasValues"]
 - !private ["So21UIAppearanceContainerP", "imageArray"]
 - !private ["So21UIAppearanceContainerP", "indexPathForSelectedRow"]
@@ -1717,6 +1730,7 @@ depends-member:
 - !private ["So24UIBarPositioningDelegateP", "filteredItems"]
 - !private ["So24UIBarPositioningDelegateP", "findItemsWithStrings"]
 - !private ["So24UIBarPositioningDelegateP", "findUserByEmail"]
+- !private ["So24UIBarPositioningDelegateP", "guestBrowsing"]
 - !private ["So24UIBarPositioningDelegateP", "itemDataSource"]
 - !private ["So24UIBarPositioningDelegateP", "items"]
 - !private ["So24UIBarPositioningDelegateP", "itemsSchema"]
@@ -1786,6 +1800,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "findItemsWithStrings"]
 - !private ["So18UIContentContainerP", "findUserByEmail"]
 - !private ["So18UIContentContainerP", "givenTitle"]
+- !private ["So18UIContentContainerP", "guestBrowsing"]
 - !private ["So18UIContentContainerP", "hasValues"]
 - !private ["So18UIContentContainerP", "imageArray"]
 - ["So18UIContentContainerP", "init"]
@@ -1886,6 +1901,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "findItemsWithStrings"]
 - !private ["So18UIFocusEnvironmentP", "findUserByEmail"]
 - !private ["So18UIFocusEnvironmentP", "givenTitle"]
+- !private ["So18UIFocusEnvironmentP", "guestBrowsing"]
 - !private ["So18UIFocusEnvironmentP", "hasValues"]
 - !private ["So18UIFocusEnvironmentP", "imageArray"]
 - !private ["So18UIFocusEnvironmentP", "indexPathForSelectedRow"]
@@ -1984,6 +2000,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "findItemsWithStrings"]
 - !private ["So30UIPasteConfigurationSupportingP", "findUserByEmail"]
 - !private ["So30UIPasteConfigurationSupportingP", "givenTitle"]
+- !private ["So30UIPasteConfigurationSupportingP", "guestBrowsing"]
 - !private ["So30UIPasteConfigurationSupportingP", "hasValues"]
 - !private ["So30UIPasteConfigurationSupportingP", "imageArray"]
 - !private ["So30UIPasteConfigurationSupportingP", "indexPathForSelectedRow"]
@@ -2090,6 +2107,7 @@ depends-member:
 - ["So11UIResponderC", "findUserByEmail"]
 - ["So11UIResponderC", "getCoordinatesOfAddress"]
 - !private ["So11UIResponderC", "givenTitle"]
+- ["So11UIResponderC", "guestBrowsing"]
 - !private ["So11UIResponderC", "hasValues"]
 - !private ["So11UIResponderC", "imageArray"]
 - !private ["So11UIResponderC", "indexPathForSelectedRow"]
@@ -2182,6 +2200,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "findItemsWithStrings"]
 - !private ["So30UIResponderStandardEditActionsP", "findUserByEmail"]
 - !private ["So30UIResponderStandardEditActionsP", "givenTitle"]
+- !private ["So30UIResponderStandardEditActionsP", "guestBrowsing"]
 - !private ["So30UIResponderStandardEditActionsP", "hasValues"]
 - !private ["So30UIResponderStandardEditActionsP", "imageArray"]
 - !private ["So30UIResponderStandardEditActionsP", "indexPathForSelectedRow"]
@@ -2267,6 +2286,7 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "filteredItems"]
 - !private ["So20UIScrollViewDelegateP", "findItemsWithStrings"]
 - !private ["So20UIScrollViewDelegateP", "findUserByEmail"]
+- !private ["So20UIScrollViewDelegateP", "guestBrowsing"]
 - !private ["So20UIScrollViewDelegateP", "init"]
 - !private ["So20UIScrollViewDelegateP", "itemDataSource"]
 - !private ["So20UIScrollViewDelegateP", "items"]
@@ -2337,6 +2357,7 @@ depends-member:
 - !private ["So19UISearchBarDelegateP", "filteredItems"]
 - !private ["So19UISearchBarDelegateP", "findItemsWithStrings"]
 - !private ["So19UISearchBarDelegateP", "findUserByEmail"]
+- !private ["So19UISearchBarDelegateP", "guestBrowsing"]
 - !private ["So19UISearchBarDelegateP", "itemDataSource"]
 - !private ["So19UISearchBarDelegateP", "items"]
 - !private ["So19UISearchBarDelegateP", "itemsSchema"]
@@ -2407,6 +2428,7 @@ depends-member:
 - !private ["So23UISearchResultsUpdatingP", "filteredItems"]
 - !private ["So23UISearchResultsUpdatingP", "findItemsWithStrings"]
 - !private ["So23UISearchResultsUpdatingP", "findUserByEmail"]
+- !private ["So23UISearchResultsUpdatingP", "guestBrowsing"]
 - !private ["So23UISearchResultsUpdatingP", "itemDataSource"]
 - !private ["So23UISearchResultsUpdatingP", "items"]
 - !private ["So23UISearchResultsUpdatingP", "itemsSchema"]
@@ -2479,6 +2501,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "findItemsWithStrings"]
 - !private ["So16UIStateRestoringP", "findUserByEmail"]
 - !private ["So16UIStateRestoringP", "givenTitle"]
+- !private ["So16UIStateRestoringP", "guestBrowsing"]
 - !private ["So16UIStateRestoringP", "hasValues"]
 - !private ["So16UIStateRestoringP", "imageArray"]
 - ["So16UIStateRestoringP", "init"]
@@ -2581,6 +2604,7 @@ depends-member:
 - ["So21UITableViewControllerC", "findItemsWithStrings"]
 - ["So21UITableViewControllerC", "findUserByEmail"]
 - ["So21UITableViewControllerC", "getCoordinatesOfAddress"]
+- ["So21UITableViewControllerC", "guestBrowsing"]
 - ["So21UITableViewControllerC", "init"]
 - ["So21UITableViewControllerC", "isFiltering"]
 - ["So21UITableViewControllerC", "itemDataSource"]
@@ -2655,6 +2679,7 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "filteredItems"]
 - !private ["So21UITableViewDataSourceP", "findItemsWithStrings"]
 - !private ["So21UITableViewDataSourceP", "findUserByEmail"]
+- !private ["So21UITableViewDataSourceP", "guestBrowsing"]
 - !private ["So21UITableViewDataSourceP", "init"]
 - !private ["So21UITableViewDataSourceP", "itemDataSource"]
 - !private ["So21UITableViewDataSourceP", "items"]
@@ -2723,6 +2748,7 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "filteredItems"]
 - !private ["So19UITableViewDelegateP", "findItemsWithStrings"]
 - !private ["So19UITableViewDelegateP", "findUserByEmail"]
+- !private ["So19UITableViewDelegateP", "guestBrowsing"]
 - !private ["So19UITableViewDelegateP", "init"]
 - !private ["So19UITableViewDelegateP", "itemDataSource"]
 - !private ["So19UITableViewDelegateP", "items"]
@@ -2799,6 +2825,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "findItemsWithStrings"]
 - !private ["So18UITraitEnvironmentP", "findUserByEmail"]
 - !private ["So18UITraitEnvironmentP", "givenTitle"]
+- !private ["So18UITraitEnvironmentP", "guestBrowsing"]
 - !private ["So18UITraitEnvironmentP", "hasValues"]
 - !private ["So18UITraitEnvironmentP", "imageArray"]
 - !private ["So18UITraitEnvironmentP", "indexPathForSelectedRow"]
@@ -2910,6 +2937,7 @@ depends-member:
 - ["So16UIViewControllerC", "findUserByEmail"]
 - ["So16UIViewControllerC", "getCoordinatesOfAddress"]
 - !private ["So16UIViewControllerC", "givenTitle"]
+- ["So16UIViewControllerC", "guestBrowsing"]
 - !private ["So16UIViewControllerC", "hasValues"]
 - !private ["So16UIViewControllerC", "imageArray"]
 - ["So16UIViewControllerC", "init"]
@@ -3124,6 +3152,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getAllItems"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getAllUsers"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "givenTitle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "guestBrowsing"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "hasValues"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "identifier"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "imageArray"]
@@ -3410,11 +3439,19 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Photos.framework/Headers/Photos.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-interface-hash: "65c28c7b4a14124dd801181a35ca64dc"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "7bdb254b4907aa57e2940d7957679bcb"

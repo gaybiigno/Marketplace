@@ -182,6 +182,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		3F5E94D71FDF1B8200F3B325 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */,
+				5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */,
+				5A436B831FDE536100B567FE /* InboxDetailView.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
 		3F82482A1FD7B26A00996C45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,24 +235,22 @@
 			isa = PBXGroup;
 			children = (
 				5A8495231FB3D8AC00A2A91C /* CheckoutView.swift */,
+				5A3227601FD8944100AD0C1E /* EditProfileView.swift */,
 				5A49973B1FC6178B00AB1A1A /* ForgotPasswordView.swift */,
 				5A8495171FB13AD400A2A91C /* HomeView.swift */,
+				3F5E94D71FDF1B8200F3B325 /* Inbox */,
 				5A84951F1FB3D72100A2A91C /* ItemView.swift */,
 				5A4397271FC66FA300606AA2 /* ItemTableViewCell.swift */,
 				5A49973D1FC6239300AB1A1A /* MenuTableView.swift */,
+				3FC6B3901FDB6C5600B9DB4E /* RatingView.swift */,
 				5A2C089F1FB54F7700D884B4 /* RegisterTableView.swift */,
+				3FC6B38E1FDB5B3A00B9DB4E /* SearchParametersTableView.swift */,
 				5A4397231FC66DE100606AA2 /* SearchTableView.swift */,
 				5AF508A81FD5DE29006A397B /* SendMessageView.swift */,
 				5A2C089D1FB5470800D884B4 /* SignInTableView.swift */,
 				5A3D5F1C1FC9002E00472FB7 /* UploadItemTableView.swift */,
 				3F95A7651FCF88D80024B8AA /* UploadImageView.swift */,
 				5A84951D1FB3D65600A2A91C /* UserProfileView.swift */,
-				5A3227601FD8944100AD0C1E /* EditProfileView.swift */,
-				5A3EDFA61FD9E65800665BA2 /* InboxTableView.swift */,
-				5A3EDFA81FD9EB3900665BA2 /* InboxMsgTableCell.swift */,
-				3FC6B38E1FDB5B3A00B9DB4E /* SearchParametersTableView.swift */,
-				3FC6B3901FDB6C5600B9DB4E /* RatingView.swift */,
-				5A436B831FDE536100B567FE /* InboxDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

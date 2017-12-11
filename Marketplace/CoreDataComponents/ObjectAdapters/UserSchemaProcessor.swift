@@ -50,8 +50,6 @@ class UserSchemaProcessor: NSObject {
     
     func getAllUsers() -> [User]? {
         let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-//        let sorter = NSSortDescriptor(key: "email", ascending: false)
-//        fReq.sortDescriptors = [sorter]
         fReq.returnsObjectsAsFaults = false
         do {
             let result = try coreDataContext.managedObjectContext.fetch(fReq)
@@ -62,6 +60,8 @@ class UserSchemaProcessor: NSObject {
         }
         return nil
     }
+    
+    
     
     func deleteAllUsers() {
         let fReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
