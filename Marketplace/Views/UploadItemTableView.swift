@@ -363,16 +363,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		
 	}
 	
-	
-	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if (segue.identifier == "displayImgUpload") {
-//			if segue.destination is UploadImageView {
-//				let cv = segue.destination as! UploadImageView
-//
-//			}
-//		}
-//	}
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

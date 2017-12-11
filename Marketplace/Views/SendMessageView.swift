@@ -15,16 +15,19 @@ class SendMessageView: UIViewController {
 	
 	@IBOutlet weak var subjectLabel: UILabel!
 	@IBOutlet weak var messageBody: UITextView!
-	
-	
+
 	@IBOutlet weak var successMessage: UILabel!
 	@IBOutlet weak var sendMsgTitle: UILabel!
 	@IBOutlet weak var backButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
 	
-	var sender = ""
-	var recipient = ""
-	var subject = ""
+	var reply = false
+	var sender: String!
+	var recipient: String!
+	var subject: String!
+	var msgBody: String!
+	
+	var uploadAssistant: Upload! = nil
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +57,26 @@ class SendMessageView: UIViewController {
 		setSubject()
 		
 		// Set tags for successful send
+		sendButton.tag = 50
 		sendMsgTitle.tag = 50
 		backButton.tag = 50
 		successMessage.tag = 50
 		successMessage.frame.size = CGSize(width: view.frame.width, height: 50)
-		
+	}
+	/*
+	func buildUploadURL() -> String {
+		var url = Upload.baseURL + "/inbox/insert"
+		url += "?recipient_email=" + recipient
+		url += "&sender_email=" + sender
+		url += "&message=" + msgBody
+		url += "&subject=" + subject
+		return url
 	}
 	
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		print("uploaded new item")
+	}
+	*/
 	func setSender() {
 		senderLabel.text = sender
 	}
@@ -77,15 +93,20 @@ class SendMessageView: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	
-	func setDefaultValues(_ rec: String, item: String, vc: ItemView) {
-		recipient = rec
-		subject = item
+	func setDefaultValues(_ sender: String, _ rec: String, _ item: String) {
+		self.sender = sender
+		self.recipient = rec
+		self.subject = item
 	}
 	
 	@objc func clickedSend(_ sender: UIButton) {
 		if successMessage.isHidden {
-			let msgBody = messageBody.text
-			
+			successMessage.isHidden = false
+			if let msg = messageBody.text {
+				msgBody = msg
+			} else {
+				return
+			}
 			// SAVE MESSAGE VALUES
 			
 			for v in view.subviews {
@@ -94,34 +115,27 @@ class SendMessageView: UIViewController {
 				}
 			}
 			
-			successMessage.isHidden = false
 			sendButton.setTitle("Go To Messages", for: .normal)
 			let buttonFrame = sendButton.frame
 			sendButton.frame = CGRect(x: buttonFrame.minX, y: successMessage.frame.maxY + 20.0, width: view.frame.width, height: 50.0)
 		} else {
+//			uploadAssistant = Upload(withURLString: buildUploadURL())
+//			uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+//			uploadAssistant.upload_request()
+			self.performSegue(withIdentifier: "sendMsgToInbox", sender: self)
 			// Make it go to inbox
 		}
-		
 	}
 	
-	
-//	let homeButton = UIButton(frame: CGRect(x: sendButton.frame.minX, y: sendButton.frame.maxY + 10.0, width: view.frame.width, height: sendButton.frame.height))
-//	homeButton.addTarget(self, action: #selector(clickedHome(_:)), for: .touchUpInside)
-
-	
-	
-	
-	
-	
-	
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+		if let vc = segue.destination as? InboxTableView,
+			segue.identifier == "sendMsgToInbox" {
+			vc.thisUserEmail = self.sender
+			print(sender!, recipient!, subject!, msgBody!)
+		}
     }
-    */
+	
 
 }

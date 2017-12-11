@@ -106,8 +106,6 @@ class InboxMsgTableCell: UITableViewCell {
 		//UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
 	}
 	
-	
-	
 	func deleteMessage() {
 		print("Message deleted!")
 	}

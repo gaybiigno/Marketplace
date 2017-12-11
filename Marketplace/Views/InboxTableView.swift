@@ -9,12 +9,6 @@
 import UIKit
 
 class InboxTableView: UITableViewController {
-	
-	private let dummyImg = UIImage(named: "PhotoIcon")
-	private let dummySubjects = ["Blue Patagonia Half-Zip", "2007 Silver Volvo XC90", "Homemade pants", "Brand New XBox 360!!!!"]
-	private let dummyPeople = ["DeAndre H.", "Josh G.", "Antonio B.", "Tom B."]
-	private let dummyRead = [true, false]
-    
     
     var downloadAssistant = Download(withURLString: "http://localhost:8181/inbox/all") //?apikey=" + Download.apikey)
     
@@ -23,6 +17,8 @@ class InboxTableView: UITableViewController {
     var inboxDataSource: InboxDataSource!
     
     var inboxItems: [Inbox]!
+	
+	private var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,18 +79,25 @@ class InboxTableView: UITableViewController {
             let content = inboxItems[indexPath.row].message
             msgCell.useMessage(sub!, tUser!, otherUser!, content!, true)
 		}
-		
-
-        // Configure the cell...
-
         return cell
     }
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print("tapped")
+	// MARK: - Navigation
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let vc = segue.destination as? InboxDetailView,
+			segue.identifier == "cellToDetail" {
+			if let cell = sender as? InboxMsgTableCell, let indexPath = tableView.indexPath(for: cell) {
+				index = indexPath.row
+				let sub = inboxItems[index].subject
+				let tUser = inboxItems[index].recipient_email
+				let otherUser = inboxItems[index].sender_email
+				let content = inboxItems[index].message
+				vc.showMessage(sub!, tUser!, otherUser!, content!)
+			}
+		}
 	}
-    
-    
+
 
 
     /*
@@ -132,15 +135,6 @@ class InboxTableView: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

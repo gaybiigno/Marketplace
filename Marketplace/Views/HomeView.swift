@@ -65,13 +65,36 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		searchBorders()
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		if curEmail != nil {
+			downloadAssistant = Download(withURLString: buildURLString())
+			downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+			downloadAssistant.download_request()
+		}
+	}
+	
+	func buildURLString() -> String {
+		var url = Download.baseURL
+		url += "/users/"
+		url += "?email=" + curEmail
+		url += "&apikey=" + Download.apikey
+		return url
+	}
+	
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+		let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+		userDataSource.consolidate()
+		currentUser = userDataSource.userAt(0)
+		addHello()
+	}
+	
 	func searchBorders() {
 		searchOptionsButton.layer.borderColor = UIColor.black.cgColor
 		searchOptionsButton.layer.borderWidth = 0.2
 		
 		searchBar.layer.borderColor = UIColor.black.cgColor
 		searchBar.layer.borderWidth = 0.2
-		
 	}
 
     override func didReceiveMemoryWarning() {
@@ -80,16 +103,12 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
     }
 	
 	func startValues() {
-        
-        
 		uName = uName == nil ? userData.getUserName() : uName
 		
 		// Set place of menu
 		let topY = searchBar.frame.minY
 		viewForMenu.frame.origin = CGPoint(x: 50, y: topY)
 		
-    
-        
 		// Add targets
 		registerButton.addTarget(self, action: #selector(clickRegister(_:)), for: .touchUpInside)
 		signInButton.addTarget(self, action: #selector(clickSignIn(_:)), for: .touchUpInside)
@@ -123,23 +142,13 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		signInButton.isHidden = true
 		registerButton.isHidden = true
 		
-        let username = uName
         curEmail = currentUser.email
-        print(curEmail)
         helloLabel.text = "Hello, " + currentUser.first_name! + " " + currentUser.last_name![0] + "."
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
 		menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
 	}
-	
-//    func updateUserName(_ newName: String) {
-//        uName = (newName != nil) ? newName : userData.getUserName()
-//        //let username = uName
-//        helloLabel.text = "Hello, " + uName
-//        helloLabel.isHidden = false
-//    }
-
 	
 	func signOut() {
 		if !signedIn {
@@ -157,11 +166,6 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
         currentUser = nil
 		signedIn = false
 	}
-    
-    //@objc func searchMenuOptions(_ sender: UIButton) {
-        
-    //}
-    
 
     @objc func searchHomeGarden(_ sender: UIButton) {
         self.performSegue(withIdentifier: "searchStart", sender: self)
@@ -237,7 +241,6 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			let name = uName.components(separatedBy: " ")
 			vc.firstName = name[0]
 			vc.lastName = name[1]
-            print(currentUser.email)
             vc.curEmail = curEmail
             vc.hasVal = true
             vc.currentUser = currentUser
@@ -252,11 +255,6 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
             endMenu(self)
             vc.thisUserEmail = curEmail
         }
-        
-        
-//        if let vc = segue.destination as? SearchParametersTableView,
-//            segue.identifier == "toSearchParams" {
-//            vc.delegate = self
 	}
 	
 	func segueToNext(identifier: String) {
@@ -264,29 +262,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	}
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        if curEmail != nil {
-            downloadAssistant = Download(withURLString: buildURLString())
-            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
-            downloadAssistant.download_request()
-        }
-    }
-    
-    func buildURLString() -> String {
-        var url = Download.baseURL
-        url += "/users/"
-        url += "?email=" + curEmail
-        url += "&apikey=" + Download.apikey
-        return url
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        let userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
-        let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
-        userDataSource.consolidate()
-        currentUser = userDataSource.userAt(0)
-        addHello()
-    }
+	
     
     
 	/*

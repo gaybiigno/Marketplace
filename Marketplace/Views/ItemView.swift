@@ -270,7 +270,7 @@ class ItemView: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "itemToMsg" {
-			vc.setDefaultValues(userModel.getUserName(), item: itemTitle.text, vc: self)
+			vc.setDefaultValues(userModel.getUserName(), "Linda", itemTitle.text)
 		}
 		if let vc = segue.destination as? UploadItemTableView,
 			segue.identifier == "editItem" {
