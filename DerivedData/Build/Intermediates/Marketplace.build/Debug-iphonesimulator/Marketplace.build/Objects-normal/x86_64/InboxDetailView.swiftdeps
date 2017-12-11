@@ -1,0 +1,700 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "InboxDetailView"
+provides-nominal:
+- "11Marketplace15InboxDetailViewC"
+provides-member:
+- ["11Marketplace15InboxDetailViewC", ""]
+provides-dynamic-lookup:
+- "backButton"
+- "clickedBack"
+- "clickedReply"
+- "didReceiveMemoryWarning"
+- "msgContent"
+- "msgSubject"
+- "prepare"
+- "recipientLabel"
+- "replyButton"
+- "senderLabel"
+- "viewDidLoad"
+depends-top-level:
+- !private "=="
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "InboxDetailView"
+- !private "SendMessageView"
+- "String"
+- !private "StringLiteralType"
+- "UIButton"
+- "UILabel"
+- "UIStoryboardSegue"
+- "UITextView"
+- "UIViewController"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "addTarget"]
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["s7CVarArgP", "addTarget"]
+- !private ["s7CVarArgP", "backButton"]
+- !private ["s7CVarArgP", "clickedBack"]
+- !private ["s7CVarArgP", "clickedReply"]
+- !private ["s7CVarArgP", "content"]
+- !private ["s7CVarArgP", "destination"]
+- !private ["s7CVarArgP", "didReceiveMemoryWarning"]
+- !private ["s7CVarArgP", "dismiss"]
+- !private ["s7CVarArgP", "identifier"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "msgContent"]
+- !private ["s7CVarArgP", "msgSubject"]
+- !private ["s7CVarArgP", "performSegue"]
+- !private ["s7CVarArgP", "recipientEmail"]
+- !private ["s7CVarArgP", "recipientLabel"]
+- !private ["s7CVarArgP", "replyButton"]
+- !private ["s7CVarArgP", "senderEmail"]
+- !private ["s7CVarArgP", "senderLabel"]
+- !private ["s7CVarArgP", "setDefaultValues"]
+- !private ["s7CVarArgP", "subject"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "addTarget"]
+- !private ["s28CustomDebugStringConvertibleP", "backButton"]
+- !private ["s28CustomDebugStringConvertibleP", "clickedBack"]
+- !private ["s28CustomDebugStringConvertibleP", "clickedReply"]
+- !private ["s28CustomDebugStringConvertibleP", "content"]
+- !private ["s28CustomDebugStringConvertibleP", "destination"]
+- !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s28CustomDebugStringConvertibleP", "dismiss"]
+- !private ["s28CustomDebugStringConvertibleP", "identifier"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "msgContent"]
+- !private ["s28CustomDebugStringConvertibleP", "msgSubject"]
+- !private ["s28CustomDebugStringConvertibleP", "performSegue"]
+- !private ["s28CustomDebugStringConvertibleP", "recipientEmail"]
+- !private ["s28CustomDebugStringConvertibleP", "recipientLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "replyButton"]
+- !private ["s28CustomDebugStringConvertibleP", "senderEmail"]
+- !private ["s28CustomDebugStringConvertibleP", "senderLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "setDefaultValues"]
+- !private ["s28CustomDebugStringConvertibleP", "subject"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "addTarget"]
+- !private ["s23CustomStringConvertibleP", "backButton"]
+- !private ["s23CustomStringConvertibleP", "clickedBack"]
+- !private ["s23CustomStringConvertibleP", "clickedReply"]
+- !private ["s23CustomStringConvertibleP", "content"]
+- !private ["s23CustomStringConvertibleP", "destination"]
+- !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s23CustomStringConvertibleP", "dismiss"]
+- !private ["s23CustomStringConvertibleP", "identifier"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "msgContent"]
+- !private ["s23CustomStringConvertibleP", "msgSubject"]
+- !private ["s23CustomStringConvertibleP", "performSegue"]
+- !private ["s23CustomStringConvertibleP", "recipientEmail"]
+- !private ["s23CustomStringConvertibleP", "recipientLabel"]
+- !private ["s23CustomStringConvertibleP", "replyButton"]
+- !private ["s23CustomStringConvertibleP", "senderEmail"]
+- !private ["s23CustomStringConvertibleP", "senderLabel"]
+- !private ["s23CustomStringConvertibleP", "setDefaultValues"]
+- !private ["s23CustomStringConvertibleP", "subject"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "addTarget"]
+- !private ["s9EquatableP", "backButton"]
+- !private ["s9EquatableP", "clickedBack"]
+- !private ["s9EquatableP", "clickedReply"]
+- !private ["s9EquatableP", "content"]
+- !private ["s9EquatableP", "destination"]
+- !private ["s9EquatableP", "didReceiveMemoryWarning"]
+- !private ["s9EquatableP", "dismiss"]
+- !private ["s9EquatableP", "identifier"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "msgContent"]
+- !private ["s9EquatableP", "msgSubject"]
+- !private ["s9EquatableP", "performSegue"]
+- !private ["s9EquatableP", "recipientEmail"]
+- !private ["s9EquatableP", "recipientLabel"]
+- !private ["s9EquatableP", "replyButton"]
+- !private ["s9EquatableP", "senderEmail"]
+- !private ["s9EquatableP", "senderLabel"]
+- !private ["s9EquatableP", "setDefaultValues"]
+- !private ["s9EquatableP", "subject"]
+- !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "touchUpInside"]
+- !private ["s9EquatableP", "viewDidLoad"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "touchUpInside"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "addTarget"]
+- !private ["s8HashableP", "backButton"]
+- !private ["s8HashableP", "clickedBack"]
+- !private ["s8HashableP", "clickedReply"]
+- !private ["s8HashableP", "content"]
+- !private ["s8HashableP", "destination"]
+- !private ["s8HashableP", "didReceiveMemoryWarning"]
+- !private ["s8HashableP", "dismiss"]
+- !private ["s8HashableP", "identifier"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "msgContent"]
+- !private ["s8HashableP", "msgSubject"]
+- !private ["s8HashableP", "performSegue"]
+- !private ["s8HashableP", "recipientEmail"]
+- !private ["s8HashableP", "recipientLabel"]
+- !private ["s8HashableP", "replyButton"]
+- !private ["s8HashableP", "senderEmail"]
+- !private ["s8HashableP", "senderLabel"]
+- !private ["s8HashableP", "setDefaultValues"]
+- !private ["s8HashableP", "subject"]
+- !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "viewDidLoad"]
+- ["s8HashableP", ""]
+- !private ["11Marketplace15InboxDetailViewC", "SendMessageView"]
+- ["11Marketplace15InboxDetailViewC", "String"]
+- ["11Marketplace15InboxDetailViewC", "UIButton"]
+- ["11Marketplace15InboxDetailViewC", "UILabel"]
+- ["11Marketplace15InboxDetailViewC", "UIStoryboardSegue"]
+- ["11Marketplace15InboxDetailViewC", "UITextView"]
+- ["11Marketplace15InboxDetailViewC", "backButton"]
+- ["11Marketplace15InboxDetailViewC", "clickedBack"]
+- ["11Marketplace15InboxDetailViewC", "clickedReply"]
+- ["11Marketplace15InboxDetailViewC", "content"]
+- ["11Marketplace15InboxDetailViewC", "deinit"]
+- ["11Marketplace15InboxDetailViewC", "didReceiveMemoryWarning"]
+- !private ["11Marketplace15InboxDetailViewC", "dismiss"]
+- ["11Marketplace15InboxDetailViewC", "init"]
+- ["11Marketplace15InboxDetailViewC", "msgContent"]
+- ["11Marketplace15InboxDetailViewC", "msgSubject"]
+- !private ["11Marketplace15InboxDetailViewC", "performSegue"]
+- ["11Marketplace15InboxDetailViewC", "prepare"]
+- ["11Marketplace15InboxDetailViewC", "recipientEmail"]
+- ["11Marketplace15InboxDetailViewC", "recipientLabel"]
+- ["11Marketplace15InboxDetailViewC", "replyButton"]
+- ["11Marketplace15InboxDetailViewC", "senderEmail"]
+- ["11Marketplace15InboxDetailViewC", "senderLabel"]
+- ["11Marketplace15InboxDetailViewC", "showMessage"]
+- ["11Marketplace15InboxDetailViewC", "subject"]
+- ["11Marketplace15InboxDetailViewC", "viewDidLoad"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "addTarget"]
+- !private ["So8NSCodingP", "backButton"]
+- !private ["So8NSCodingP", "clickedBack"]
+- !private ["So8NSCodingP", "clickedReply"]
+- !private ["So8NSCodingP", "content"]
+- !private ["So8NSCodingP", "didReceiveMemoryWarning"]
+- !private ["So8NSCodingP", "dismiss"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "msgContent"]
+- !private ["So8NSCodingP", "msgSubject"]
+- !private ["So8NSCodingP", "performSegue"]
+- !private ["So8NSCodingP", "recipientEmail"]
+- !private ["So8NSCodingP", "recipientLabel"]
+- !private ["So8NSCodingP", "replyButton"]
+- !private ["So8NSCodingP", "senderEmail"]
+- !private ["So8NSCodingP", "senderLabel"]
+- !private ["So8NSCodingP", "setDefaultValues"]
+- !private ["So8NSCodingP", "subject"]
+- !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- ["So8NSCodingP", ""]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "backButton"]
+- !private ["So26NSExtensionRequestHandlingP", "clickedBack"]
+- !private ["So26NSExtensionRequestHandlingP", "clickedReply"]
+- !private ["So26NSExtensionRequestHandlingP", "content"]
+- !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
+- !private ["So26NSExtensionRequestHandlingP", "dismiss"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "msgContent"]
+- !private ["So26NSExtensionRequestHandlingP", "msgSubject"]
+- !private ["So26NSExtensionRequestHandlingP", "performSegue"]
+- !private ["So26NSExtensionRequestHandlingP", "recipientEmail"]
+- !private ["So26NSExtensionRequestHandlingP", "recipientLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "replyButton"]
+- !private ["So26NSExtensionRequestHandlingP", "senderEmail"]
+- !private ["So26NSExtensionRequestHandlingP", "senderLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "setDefaultValues"]
+- !private ["So26NSExtensionRequestHandlingP", "subject"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So8NSObjectC", "SendMessageView"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UIButton"]
+- ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "UIStoryboardSegue"]
+- ["So8NSObjectC", "UITextView"]
+- !private ["So8NSObjectC", "addTarget"]
+- ["So8NSObjectC", "backButton"]
+- ["So8NSObjectC", "clickedBack"]
+- ["So8NSObjectC", "clickedReply"]
+- ["So8NSObjectC", "content"]
+- !private ["So8NSObjectC", "destination"]
+- ["So8NSObjectC", "didReceiveMemoryWarning"]
+- !private ["So8NSObjectC", "dismiss"]
+- !private ["So8NSObjectC", "identifier"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "msgContent"]
+- ["So8NSObjectC", "msgSubject"]
+- !private ["So8NSObjectC", "performSegue"]
+- ["So8NSObjectC", "prepare"]
+- ["So8NSObjectC", "recipientEmail"]
+- ["So8NSObjectC", "recipientLabel"]
+- ["So8NSObjectC", "replyButton"]
+- ["So8NSObjectC", "senderEmail"]
+- ["So8NSObjectC", "senderLabel"]
+- !private ["So8NSObjectC", "setDefaultValues"]
+- ["So8NSObjectC", "showMessage"]
+- ["So8NSObjectC", "subject"]
+- !private ["So8NSObjectC", "text"]
+- ["So8NSObjectC", "viewDidLoad"]
+- !private ["So16NSObjectProtocolP", "addTarget"]
+- !private ["So16NSObjectProtocolP", "backButton"]
+- !private ["So16NSObjectProtocolP", "clickedBack"]
+- !private ["So16NSObjectProtocolP", "clickedReply"]
+- !private ["So16NSObjectProtocolP", "content"]
+- !private ["So16NSObjectProtocolP", "destination"]
+- !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
+- !private ["So16NSObjectProtocolP", "dismiss"]
+- !private ["So16NSObjectProtocolP", "identifier"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "msgContent"]
+- !private ["So16NSObjectProtocolP", "msgSubject"]
+- !private ["So16NSObjectProtocolP", "performSegue"]
+- !private ["So16NSObjectProtocolP", "recipientEmail"]
+- !private ["So16NSObjectProtocolP", "recipientLabel"]
+- !private ["So16NSObjectProtocolP", "replyButton"]
+- !private ["So16NSObjectProtocolP", "senderEmail"]
+- !private ["So16NSObjectProtocolP", "senderLabel"]
+- !private ["So16NSObjectProtocolP", "setDefaultValues"]
+- !private ["So16NSObjectProtocolP", "subject"]
+- !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "viewDidLoad"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
+- !private ["s9OptionSetP", "touchUpInside"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "touchUpInside"]
+- !private ["11Marketplace15SendMessageViewC", "setDefaultValues"]
+- !private ["s8SequenceP", "init"]
+- !private ["s10SetAlgebraP", "touchUpInside"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "addTarget"]
+- !private ["So29UIAccessibilityIdentificationP", "addTarget"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "addTarget"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "addTarget"]
+- !private ["So21UIAppearanceContainerP", "backButton"]
+- !private ["So21UIAppearanceContainerP", "clickedBack"]
+- !private ["So21UIAppearanceContainerP", "clickedReply"]
+- !private ["So21UIAppearanceContainerP", "content"]
+- !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
+- !private ["So21UIAppearanceContainerP", "dismiss"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "msgContent"]
+- !private ["So21UIAppearanceContainerP", "msgSubject"]
+- !private ["So21UIAppearanceContainerP", "performSegue"]
+- !private ["So21UIAppearanceContainerP", "recipientEmail"]
+- !private ["So21UIAppearanceContainerP", "recipientLabel"]
+- !private ["So21UIAppearanceContainerP", "replyButton"]
+- !private ["So21UIAppearanceContainerP", "senderEmail"]
+- !private ["So21UIAppearanceContainerP", "senderLabel"]
+- !private ["So21UIAppearanceContainerP", "setDefaultValues"]
+- !private ["So21UIAppearanceContainerP", "subject"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So8UIButtonC", "addTarget"]
+- !private ["So18UIContentContainerP", "backButton"]
+- !private ["So18UIContentContainerP", "clickedBack"]
+- !private ["So18UIContentContainerP", "clickedReply"]
+- !private ["So18UIContentContainerP", "content"]
+- !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
+- !private ["So18UIContentContainerP", "dismiss"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "msgContent"]
+- !private ["So18UIContentContainerP", "msgSubject"]
+- !private ["So18UIContentContainerP", "performSegue"]
+- !private ["So18UIContentContainerP", "recipientEmail"]
+- !private ["So18UIContentContainerP", "recipientLabel"]
+- !private ["So18UIContentContainerP", "replyButton"]
+- !private ["So18UIContentContainerP", "senderEmail"]
+- !private ["So18UIContentContainerP", "senderLabel"]
+- !private ["So18UIContentContainerP", "setDefaultValues"]
+- !private ["So18UIContentContainerP", "subject"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", ""]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So9UIControlC", "addTarget"]
+- !private ["SC15UIControlEventsV", "touchUpInside"]
+- !private ["So17UICoordinateSpaceP", "addTarget"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So13UIDynamicItemP", "addTarget"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "addTarget"]
+- !private ["So18UIFocusEnvironmentP", "backButton"]
+- !private ["So18UIFocusEnvironmentP", "clickedBack"]
+- !private ["So18UIFocusEnvironmentP", "clickedReply"]
+- !private ["So18UIFocusEnvironmentP", "content"]
+- !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UIFocusEnvironmentP", "dismiss"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "msgContent"]
+- !private ["So18UIFocusEnvironmentP", "msgSubject"]
+- !private ["So18UIFocusEnvironmentP", "performSegue"]
+- !private ["So18UIFocusEnvironmentP", "recipientEmail"]
+- !private ["So18UIFocusEnvironmentP", "recipientLabel"]
+- !private ["So18UIFocusEnvironmentP", "replyButton"]
+- !private ["So18UIFocusEnvironmentP", "senderEmail"]
+- !private ["So18UIFocusEnvironmentP", "senderLabel"]
+- !private ["So18UIFocusEnvironmentP", "setDefaultValues"]
+- !private ["So18UIFocusEnvironmentP", "subject"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "addTarget"]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So10UIKeyInputP", "text"]
+- !private ["So7UILabelC", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "addTarget"]
+- !private ["So30UIPasteConfigurationSupportingP", "backButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickedBack"]
+- !private ["So30UIPasteConfigurationSupportingP", "clickedReply"]
+- !private ["So30UIPasteConfigurationSupportingP", "content"]
+- !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
+- !private ["So30UIPasteConfigurationSupportingP", "dismiss"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "msgContent"]
+- !private ["So30UIPasteConfigurationSupportingP", "msgSubject"]
+- !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
+- !private ["So30UIPasteConfigurationSupportingP", "recipientEmail"]
+- !private ["So30UIPasteConfigurationSupportingP", "recipientLabel"]
+- !private ["So30UIPasteConfigurationSupportingP", "replyButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "senderEmail"]
+- !private ["So30UIPasteConfigurationSupportingP", "senderLabel"]
+- !private ["So30UIPasteConfigurationSupportingP", "setDefaultValues"]
+- !private ["So30UIPasteConfigurationSupportingP", "subject"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So11UIResponderC", "SendMessageView"]
+- ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "UIButton"]
+- ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "UIStoryboardSegue"]
+- ["So11UIResponderC", "UITextView"]
+- !private ["So11UIResponderC", "addTarget"]
+- ["So11UIResponderC", "backButton"]
+- ["So11UIResponderC", "clickedBack"]
+- ["So11UIResponderC", "clickedReply"]
+- ["So11UIResponderC", "content"]
+- ["So11UIResponderC", "didReceiveMemoryWarning"]
+- !private ["So11UIResponderC", "dismiss"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "msgContent"]
+- ["So11UIResponderC", "msgSubject"]
+- !private ["So11UIResponderC", "performSegue"]
+- ["So11UIResponderC", "prepare"]
+- ["So11UIResponderC", "recipientEmail"]
+- ["So11UIResponderC", "recipientLabel"]
+- ["So11UIResponderC", "replyButton"]
+- ["So11UIResponderC", "senderEmail"]
+- ["So11UIResponderC", "senderLabel"]
+- !private ["So11UIResponderC", "setDefaultValues"]
+- ["So11UIResponderC", "showMessage"]
+- ["So11UIResponderC", "subject"]
+- !private ["So11UIResponderC", "text"]
+- ["So11UIResponderC", "viewDidLoad"]
+- !private ["So30UIResponderStandardEditActionsP", "addTarget"]
+- !private ["So30UIResponderStandardEditActionsP", "backButton"]
+- !private ["So30UIResponderStandardEditActionsP", "clickedBack"]
+- !private ["So30UIResponderStandardEditActionsP", "clickedReply"]
+- !private ["So30UIResponderStandardEditActionsP", "content"]
+- !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
+- !private ["So30UIResponderStandardEditActionsP", "dismiss"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "msgContent"]
+- !private ["So30UIResponderStandardEditActionsP", "msgSubject"]
+- !private ["So30UIResponderStandardEditActionsP", "performSegue"]
+- !private ["So30UIResponderStandardEditActionsP", "recipientEmail"]
+- !private ["So30UIResponderStandardEditActionsP", "recipientLabel"]
+- !private ["So30UIResponderStandardEditActionsP", "replyButton"]
+- !private ["So30UIResponderStandardEditActionsP", "senderEmail"]
+- !private ["So30UIResponderStandardEditActionsP", "senderLabel"]
+- !private ["So30UIResponderStandardEditActionsP", "setDefaultValues"]
+- !private ["So30UIResponderStandardEditActionsP", "subject"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So12UIScrollViewC", "text"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "addTarget"]
+- !private ["So16UIStateRestoringP", "backButton"]
+- !private ["So16UIStateRestoringP", "clickedBack"]
+- !private ["So16UIStateRestoringP", "clickedReply"]
+- !private ["So16UIStateRestoringP", "content"]
+- !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
+- !private ["So16UIStateRestoringP", "dismiss"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "msgContent"]
+- !private ["So16UIStateRestoringP", "msgSubject"]
+- !private ["So16UIStateRestoringP", "performSegue"]
+- !private ["So16UIStateRestoringP", "recipientEmail"]
+- !private ["So16UIStateRestoringP", "recipientLabel"]
+- !private ["So16UIStateRestoringP", "replyButton"]
+- !private ["So16UIStateRestoringP", "senderEmail"]
+- !private ["So16UIStateRestoringP", "senderLabel"]
+- !private ["So16UIStateRestoringP", "setDefaultValues"]
+- !private ["So16UIStateRestoringP", "subject"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So17UIStoryboardSegueC", "destination"]
+- !private ["So17UIStoryboardSegueC", "identifier"]
+- !private ["So15UITextDraggableP", "text"]
+- !private ["So15UITextDroppableP", "text"]
+- !private ["So11UITextInputP", "text"]
+- !private ["So17UITextInputTraitsP", "text"]
+- !private ["So34UITextPasteConfigurationSupportingP", "text"]
+- !private ["So10UITextViewC", "text"]
+- !private ["So18UITraitEnvironmentP", "addTarget"]
+- !private ["So18UITraitEnvironmentP", "backButton"]
+- !private ["So18UITraitEnvironmentP", "clickedBack"]
+- !private ["So18UITraitEnvironmentP", "clickedReply"]
+- !private ["So18UITraitEnvironmentP", "content"]
+- !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UITraitEnvironmentP", "dismiss"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "msgContent"]
+- !private ["So18UITraitEnvironmentP", "msgSubject"]
+- !private ["So18UITraitEnvironmentP", "performSegue"]
+- !private ["So18UITraitEnvironmentP", "recipientEmail"]
+- !private ["So18UITraitEnvironmentP", "recipientLabel"]
+- !private ["So18UITraitEnvironmentP", "replyButton"]
+- !private ["So18UITraitEnvironmentP", "senderEmail"]
+- !private ["So18UITraitEnvironmentP", "senderLabel"]
+- !private ["So18UITraitEnvironmentP", "setDefaultValues"]
+- !private ["So18UITraitEnvironmentP", "subject"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So6UIViewC", "addTarget"]
+- !private ["So6UIViewC", "text"]
+- !private ["So16UIViewControllerC", "SendMessageView"]
+- ["So16UIViewControllerC", "String"]
+- ["So16UIViewControllerC", "UIButton"]
+- ["So16UIViewControllerC", "UILabel"]
+- ["So16UIViewControllerC", "UIStoryboardSegue"]
+- ["So16UIViewControllerC", "UITextView"]
+- ["So16UIViewControllerC", "backButton"]
+- ["So16UIViewControllerC", "clickedBack"]
+- ["So16UIViewControllerC", "clickedReply"]
+- ["So16UIViewControllerC", "content"]
+- ["So16UIViewControllerC", "didReceiveMemoryWarning"]
+- !private ["So16UIViewControllerC", "dismiss"]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "msgContent"]
+- ["So16UIViewControllerC", "msgSubject"]
+- !private ["So16UIViewControllerC", "performSegue"]
+- ["So16UIViewControllerC", "prepare"]
+- ["So16UIViewControllerC", "recipientEmail"]
+- ["So16UIViewControllerC", "recipientLabel"]
+- ["So16UIViewControllerC", "replyButton"]
+- ["So16UIViewControllerC", "senderEmail"]
+- ["So16UIViewControllerC", "senderLabel"]
+- !private ["So16UIViewControllerC", "setDefaultValues"]
+- ["So16UIViewControllerC", "showMessage"]
+- ["So16UIViewControllerC", "subject"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", ""]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addTarget"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addTarget"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "backButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickedBack"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clickedReply"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "content"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "identifier"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "msgContent"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "msgSubject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recipientEmail"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recipientLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "replyButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "senderEmail"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "senderLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setDefaultValues"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- !private "So15CALayerDelegateP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "11Marketplace15InboxDetailViewC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "s9OptionSetP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "11Marketplace15SendMessageViewC"
+- !private "s8SequenceP"
+- !private "s10SetAlgebraP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- !private "So8UIButtonC"
+- "So18UIContentContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
+- !private "So9UIControlC"
+- !private "SC15UIControlEventsV"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So10UIKeyInputP"
+- !private "So7UILabelC"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- !private "So12UIScrollViewC"
+- !private "So35UISpringLoadedInteractionSupportingP"
+- "So16UIStateRestoringP"
+- !private "So17UIStoryboardSegueC"
+- !private "So15UITextDraggableP"
+- !private "So15UITextDroppableP"
+- !private "So11UITextInputP"
+- !private "So17UITextInputTraitsP"
+- !private "So34UITextPasteConfigurationSupportingP"
+- !private "So10UITextViewC"
+- "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "s23_BidirectionalIndexableP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/student/ryan/Marketplace/Marketplace-Bridging-Header.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "f6919809233c719b8237285115bc7c3b"
