@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "eaebc47aa03154992bfa7f14a6612f36"
-build_time: [1512955709, 681115000]
+build_time: [1512958783, 5103000]
 inputs:
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/DataModels/Item+CoreDataProperties.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/InboxMsgTableCell.swift": [1512950208, 0]
@@ -15,7 +15,7 @@ inputs:
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/InboxSchemaProcessor.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/DataModels/Tags.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/Network/Download.swift": [1512950208, 0]
-  "/Users/student/testMarket/Marketplace/Marketplace/Views/SearchTableView.swift": [1512950208, 0]
+  "/Users/student/testMarket/Marketplace/Marketplace/Views/SearchTableView.swift": [1512958782, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures+CoreDataProperties.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/InboxTableView.swift": [1512951317, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1512950208, 0]
@@ -30,7 +30,7 @@ inputs:
   "/Users/student/testMarket/Marketplace/Marketplace/Views/ItemTableViewCell.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/InboxDataSource.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/Network/CoreDataCommonMethods.swift": [1512950208, 0]
-  "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemSchemaProcessor.swift": [1512950208, 0]
+  "/Users/student/testMarket/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemSchemaProcessor.swift": [1512957147, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/RegisterTableView.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/RatingView.swift": [1512950208, 0]
   "/Users/student/testMarket/Marketplace/Marketplace/Views/MenuTableView.swift": [1512950208, 0]

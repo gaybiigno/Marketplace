@@ -146,6 +146,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
             
             let matchedItems = findItemsWithStrings(searchText)
             itemsToShow = matchedItems
+            print(itemsToShow[0])
             tableView.reloadData()
         }
     }
@@ -229,6 +230,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 }
             }
         }
+        print(itemsWithStrings[0])
         return itemsWithStrings
     }
     
@@ -388,10 +390,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let items = itemDataSource?.items
+        let items = itemsToShow
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let item = items![indexPath.row]
+                let item = items[indexPath.row]
                 let controller = (segue.destination as! ItemView)
                 //controller.detailCandy = item
                 controller.hasValues = true
