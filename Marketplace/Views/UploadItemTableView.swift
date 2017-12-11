@@ -12,7 +12,7 @@ protocol ImageHandler: class {
     func setImages(_ imageList: UIImage)
 }
 
-class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource, ImageHandler {
+class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource, ImageHandler, UINavigationControllerDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return categories.count
@@ -50,16 +50,20 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	var itemDescription: String = ""
 	var quantity: Int = 0
 	var tagString: String = ""
+    
+    var currentEmail: String!
 	
 	var editingItem = false
 	
     var itemImages = [UIImage]()
 	
 	private var itemViewer: ItemView!
+    
+    var uploadAssistant: Upload! = nil
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		print(currentEmail)
 		descriptionEntry.delegate = self
 		priceEntry.delegate = self
 		catPicker.delegate = self
@@ -77,6 +81,23 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			categoryChoice.text = cat
 		}
 		start()
+    }
+    
+    func buildUploadURL() -> String {
+        var url = Upload.baseURL + "/items/insert"
+        url += "?email=" + currentEmail
+        url += "&name=" + itemTitle.replacingOccurrences(of: " ", with: "_")
+        url += "&description=" + itemDescription.replacingOccurrences(of: " ", with: "_")
+        url += "&category=" + cat.replacingOccurrences(of: " ", with: "_")
+        url += "&quantity=" + String(quantity)
+        url += "&price=" + itemPrice
+        url += "&minage=" + String(age)
+        print(String(age))
+        return url
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("uploaded new item")
     }
 
     override func didReceiveMemoryWarning() {
@@ -173,8 +194,13 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@objc func clickUpload(_ sender: UIButton) {
 		let weGood = checkValues()
 		if weGood {
+            print(currentEmail)
 			// Save all this shit
-			self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
+            uploadAssistant = Upload(withURLString: buildUploadURL())
+            uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            uploadAssistant.upload_request()
+            print("request sent")
+			//self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 		} else {
 			// Basically nothing
 		}
@@ -209,6 +235,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			errorFound = true
 			catPicker.layer.borderWidth = 1.0
 			catPicker.layer.borderColor = UIColor.red.cgColor
+            print(cat)
+            //print(catPicker.)
             print("category error")
 		} else {
 			catPicker.layer.borderWidth = 0
@@ -260,8 +288,19 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		return myTitle
 	}
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryChoice.text = categories[row]
+        cat = categoryChoice.text!
+    }
+    
     func setImages(_ itemList: UIImage) {
         itemImages.append(itemList)
+    }
+    
+    deinit {
+        if uploadAssistant != nil {
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
 	
     // MARK: - Table view data source

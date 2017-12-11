@@ -822,6 +822,7 @@ depends-member:
 - ["So30UINavigationControllerDelegateP", "imagePickerController"]
 - ["So30UINavigationControllerDelegateP", "imagePickerControllerDidCancel"]
 - !private ["So30UINavigationControllerDelegateP", "imgCountLabel"]
+- ["So30UINavigationControllerDelegateP", "init"]
 - !private ["So30UINavigationControllerDelegateP", "mainImage"]
 - ["So30UINavigationControllerDelegateP", "navigationController"]
 - ["So30UINavigationControllerDelegateP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -1385,5 +1386,5 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/testMarket/Marketplace/Marketplace-Bridging-Header.h"
 interface-hash: "b86797e7914500f8da4d0afc9e70c268"

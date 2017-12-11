@@ -778,7 +778,7 @@ SWIFT_CLASS("_TtC11Marketplace15UploadImageView")
 
 
 SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
-@interface UploadItemTableView : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+@interface UploadItemTableView : UITableViewController <UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 - (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified titleEntry;
@@ -792,12 +792,14 @@ SWIFT_CLASS("_TtC11Marketplace19UploadItemTableView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified errorLabel;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified uploadButton;
 - (void)viewDidLoad;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)didReceiveMemoryWarning;
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text SWIFT_WARN_UNUSED_RESULT;
 - (IBAction)changedPrice:(UITextField * _Nonnull)sender;
 - (IBAction)backButton:(UIButton * _Nonnull)sender;
 - (void)clickUpload:(UIButton * _Nonnull)sender;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;

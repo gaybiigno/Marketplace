@@ -237,11 +237,13 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			let name = uName.components(separatedBy: " ")
 			vc.firstName = name[0]
 			vc.lastName = name[1]
-            print(currentUser.email)
             vc.curEmail = curEmail
             vc.hasVal = true
             vc.currentUser = currentUser
-		}
+        } else if let vc = segue.destination as? UploadItemTableView,
+            segue.identifier == "homeToUp" {
+            vc.currentEmail = curEmail
+        }
 //        if let vc = segue.destination as? SearchParametersTableView,
 //            segue.identifier == "toSearchParams" {
 //            vc.delegate = self

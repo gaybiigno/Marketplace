@@ -28,7 +28,7 @@ class Upload: NSObject {
                 var contents = try String(contentsOf: url)
                 contents = makeJsonArray(string: contents)
                 if let data = contents.data(using: .utf8) {
-                    try! JSONSerialization.jsonObject(with: data, options: []) as! AnyObject
+                    //try! JSONSerialization.jsonObject(with: data, options: []) as! AnyObject
                 }
             } catch {
                 // contents could not be loaded

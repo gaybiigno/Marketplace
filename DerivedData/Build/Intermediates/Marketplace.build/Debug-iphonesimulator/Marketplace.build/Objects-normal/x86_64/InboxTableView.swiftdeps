@@ -12,7 +12,7 @@ provides-dynamic-lookup:
 - "tableView"
 - "viewDidLoad"
 depends-top-level:
-- "+"
+- !private "!="
 - !private "AnyObject"
 - "Array"
 - "AssignmentPrecedence"
@@ -53,6 +53,7 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "sender_email"]
 - !private ["s23BidirectionalCollectionP", "subject"]
 - !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["So15CALayerDelegateP", "backgroundColor"]
 - !private ["So15CALayerDelegateP", "dequeueReusableCell"]
 - !private ["So15CALayerDelegateP", "rowHeight"]
@@ -64,7 +65,6 @@ depends-member:
 - !private ["s7CVarArgP", "UIColor"]
 - ["s7CVarArgP", "UIImage"]
 - !private ["s7CVarArgP", "addObserver"]
-- ["s7CVarArgP", "apikey"]
 - !private ["s7CVarArgP", "backgroundColor"]
 - !private ["s7CVarArgP", "consolidate"]
 - !private ["s7CVarArgP", "count"]
@@ -111,7 +111,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "UIColor"]
 - ["s28CustomDebugStringConvertibleP", "UIImage"]
 - !private ["s28CustomDebugStringConvertibleP", "addObserver"]
-- ["s28CustomDebugStringConvertibleP", "apikey"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundColor"]
 - !private ["s28CustomDebugStringConvertibleP", "consolidate"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
@@ -143,7 +142,9 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "view"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "count"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "message"]
@@ -157,8 +158,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "InboxSchemaProcessor"]
 - !private ["s23CustomStringConvertibleP", "UIColor"]
 - ["s23CustomStringConvertibleP", "UIImage"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "addObserver"]
-- ["s23CustomStringConvertibleP", "apikey"]
 - !private ["s23CustomStringConvertibleP", "backgroundColor"]
 - !private ["s23CustomStringConvertibleP", "consolidate"]
 - !private ["s23CustomStringConvertibleP", "count"]
@@ -190,16 +191,18 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "view"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "count"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "row"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["11Marketplace8DownloadC", "addObserver"]
-- ["11Marketplace8DownloadC", "apikey"]
 - !private ["11Marketplace8DownloadC", "dataFromServer"]
+- !private ["11Marketplace8DownloadC", "deinit"]
 - !private ["11Marketplace8DownloadC", "download_request"]
 - ["11Marketplace8DownloadC", "init"]
 - !private ["11Marketplace8DownloadC", "removeObserver"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "count"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "row"]
@@ -209,8 +212,8 @@ depends-member:
 - !private ["s9EquatableP", "InboxSchemaProcessor"]
 - !private ["s9EquatableP", "UIColor"]
 - ["s9EquatableP", "UIImage"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "addObserver"]
-- ["s9EquatableP", "apikey"]
 - !private ["s9EquatableP", "backgroundColor"]
 - !private ["s9EquatableP", "consolidate"]
 - !private ["s9EquatableP", "dataFromServer"]
@@ -250,6 +253,7 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "sender_email"]
 - !private ["s25ExpressibleByArrayLiteralP", "subject"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
@@ -258,8 +262,8 @@ depends-member:
 - !private ["s8HashableP", "InboxSchemaProcessor"]
 - !private ["s8HashableP", "UIColor"]
 - ["s8HashableP", "UIImage"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "addObserver"]
-- ["s8HashableP", "apikey"]
 - !private ["s8HashableP", "backgroundColor"]
 - !private ["s8HashableP", "consolidate"]
 - !private ["s8HashableP", "dataFromServer"]
@@ -336,6 +340,7 @@ depends-member:
 - !private ["11Marketplace14InboxTableViewC", "view"]
 - ["11Marketplace14InboxTableViewC", "viewDidLoad"]
 - !private ["10Foundation9IndexPathV", "row"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
 - !private ["s17MutableCollectionP", "count"]
@@ -417,7 +422,6 @@ depends-member:
 - ["So8NSObjectC", "UnsafeMutableRawPointer"]
 - ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "addObserver"]
-- ["So8NSObjectC", "apikey"]
 - !private ["So8NSObjectC", "backgroundColor"]
 - !private ["So8NSObjectC", "consolidate"]
 - !private ["So8NSObjectC", "dataFromServer"]
@@ -457,7 +461,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "UIColor"]
 - ["So16NSObjectProtocolP", "UIImage"]
 - !private ["So16NSObjectProtocolP", "addObserver"]
-- ["So16NSObjectProtocolP", "apikey"]
 - !private ["So16NSObjectProtocolP", "backgroundColor"]
 - !private ["So16NSObjectProtocolP", "consolidate"]
 - !private ["So16NSObjectProtocolP", "dataFromServer"]
@@ -895,6 +898,7 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "sender_email"]
 - !private ["s24_DestructorSafeContainerP", "subject"]
 - !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -925,7 +929,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIColor"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addObserver"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "apikey"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "consolidate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dataFromServer"]
@@ -961,6 +964,7 @@ depends-member:
 - !private ["s17_MutableIndexableP", "sender_email"]
 - !private ["s17_MutableIndexableP", "subject"]
 - !private ["s17_MutableIndexableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "count"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "row"]
@@ -984,6 +988,7 @@ depends-nominal:
 - !private "Sa"
 - !private "s10ArraySliceV"
 - "s23BidirectionalCollectionP"
+- !private "Sb"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
 - "s10CollectionP"
@@ -997,6 +1002,7 @@ depends-nominal:
 - "s9EncodableP"
 - "s9EquatableP"
 - !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
@@ -1068,6 +1074,7 @@ depends-nominal:
 - "s23_BidirectionalIndexableP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
 - "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -1106,5 +1113,5 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
-interface-hash: "e2da76eebc292a853d45e5bb9ec77dbc"
+- "/Users/student/testMarket/Marketplace/Marketplace-Bridging-Header.h"
+interface-hash: "9adee7ef9857971a0760ebc18cd4386a"

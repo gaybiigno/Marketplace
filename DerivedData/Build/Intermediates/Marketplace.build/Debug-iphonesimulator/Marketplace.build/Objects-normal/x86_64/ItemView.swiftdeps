@@ -1719,6 +1719,15 @@ depends-member:
 - !private ["So7UILabelC", "isHidden"]
 - !private ["So7UILabelC", "text"]
 - !private ["So7UILabelC", "textAlignment"]
+- !private ["So30UINavigationControllerDelegateP", "age"]
+- !private ["So30UINavigationControllerDelegateP", "cat"]
+- !private ["So30UINavigationControllerDelegateP", "editingItem"]
+- !private ["So30UINavigationControllerDelegateP", "itemDescription"]
+- !private ["So30UINavigationControllerDelegateP", "itemImages"]
+- !private ["So30UINavigationControllerDelegateP", "itemPrice"]
+- !private ["So30UINavigationControllerDelegateP", "itemTitle"]
+- !private ["So30UINavigationControllerDelegateP", "quantity"]
+- !private ["So30UINavigationControllerDelegateP", "tagString"]
 - !private ["So30UIPasteConfigurationSupportingP", "CGPoint"]
 - !private ["So30UIPasteConfigurationSupportingP", "CGSize"]
 - ["So30UIPasteConfigurationSupportingP", "Float"]
@@ -2663,6 +2672,7 @@ depends-nominal:
 - !private "So39UIItemProviderPresentationSizeProvidingP"
 - !private "So10UIKeyInputP"
 - !private "So7UILabelC"
+- !private "So30UINavigationControllerDelegateP"
 - "So30UIPasteConfigurationSupportingP"
 - !private "So22UIPickerViewDataSourceP"
 - !private "So20UIPickerViewDelegateP"
@@ -2741,5 +2751,5 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/testMarket/Marketplace/Marketplace-Bridging-Header.h"
 interface-hash: "6f77bca5e0fc8952c1b0ec6bc9206c08"
