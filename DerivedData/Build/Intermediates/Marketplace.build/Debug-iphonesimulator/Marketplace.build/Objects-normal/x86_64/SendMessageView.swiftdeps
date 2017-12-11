@@ -11,6 +11,7 @@ provides-dynamic-lookup:
 - "clickedSend"
 - "didReceiveMemoryWarning"
 - "messageBody"
+- "prepare"
 - "recipientLabel"
 - "sendButton"
 - "sendMsgTitle"
@@ -21,21 +22,26 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "!="
 - !private "+"
+- !private "=="
 - "AssignmentPrecedence"
-- !private "BooleanLiteralType"
+- "BooleanLiteralType"
 - !private "CGRect"
 - !private "CGSize"
-- "ItemView"
+- "CastingPrecedence"
+- !private "InboxTableView"
 - "SendMessageView"
 - "String"
-- "StringLiteralType"
+- !private "StringLiteralType"
 - "UIButton"
 - !private "UIColor"
 - "UILabel"
+- "UIStoryboardSegue"
 - "UITextView"
 - "UIViewController"
+- "Upload"
+- !private "print"
 depends-member:
-- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["So7CALayerC", "borderColor"]
 - !private ["So7CALayerC", "borderWidth"]
@@ -66,13 +72,18 @@ depends-member:
 - !private ["s7CVarArgP", "borderWidth"]
 - !private ["s7CVarArgP", "cgColor"]
 - !private ["s7CVarArgP", "clickedSend"]
+- !private ["s7CVarArgP", "destination"]
 - !private ["s7CVarArgP", "didReceiveMemoryWarning"]
 - !private ["s7CVarArgP", "dismiss"]
 - !private ["s7CVarArgP", "frame"]
-- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "identifier"]
+- !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isHidden"]
 - !private ["s7CVarArgP", "layer"]
 - !private ["s7CVarArgP", "messageBody"]
+- !private ["s7CVarArgP", "msgBody"]
+- !private ["s7CVarArgP", "performSegue"]
+- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "recipient"]
 - !private ["s7CVarArgP", "recipientLabel"]
 - !private ["s7CVarArgP", "removeFromSuperview"]
@@ -91,11 +102,12 @@ depends-member:
 - !private ["s7CVarArgP", "successMessage"]
 - !private ["s7CVarArgP", "tag"]
 - !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "thisUserEmail"]
 - !private ["s7CVarArgP", "view"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - ["s7CVarArgP", ""]
-- ["s10CollectionP", "init"]
-- ["s10ComparableP", "init"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "CGRect"]
 - !private ["s28CustomDebugStringConvertibleP", "CGSize"]
 - !private ["s28CustomDebugStringConvertibleP", "UIColor"]
@@ -106,15 +118,20 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "borderWidth"]
 - !private ["s28CustomDebugStringConvertibleP", "cgColor"]
 - !private ["s28CustomDebugStringConvertibleP", "clickedSend"]
+- !private ["s28CustomDebugStringConvertibleP", "destination"]
 - !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s28CustomDebugStringConvertibleP", "dismiss"]
 - !private ["s28CustomDebugStringConvertibleP", "frame"]
-- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "identifier"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isHidden"]
 - !private ["s28CustomDebugStringConvertibleP", "layer"]
 - !private ["s28CustomDebugStringConvertibleP", "maxY"]
 - !private ["s28CustomDebugStringConvertibleP", "messageBody"]
 - !private ["s28CustomDebugStringConvertibleP", "minX"]
+- !private ["s28CustomDebugStringConvertibleP", "msgBody"]
+- !private ["s28CustomDebugStringConvertibleP", "performSegue"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "recipient"]
 - !private ["s28CustomDebugStringConvertibleP", "recipientLabel"]
 - !private ["s28CustomDebugStringConvertibleP", "removeFromSuperview"]
@@ -134,18 +151,19 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "successMessage"]
 - !private ["s28CustomDebugStringConvertibleP", "tag"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "thisUserEmail"]
 - !private ["s28CustomDebugStringConvertibleP", "view"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - !private ["s28CustomDebugStringConvertibleP", "width"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
-- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "maxY"]
 - !private ["s29CustomPlaygroundQuickLookableP", "minX"]
 - !private ["s29CustomPlaygroundQuickLookableP", "size"]
 - !private ["s29CustomPlaygroundQuickLookableP", "width"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
-- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "maxY"]
 - !private ["s17CustomReflectableP", "minX"]
 - !private ["s17CustomReflectableP", "size"]
@@ -161,13 +179,18 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "borderWidth"]
 - !private ["s23CustomStringConvertibleP", "cgColor"]
 - !private ["s23CustomStringConvertibleP", "clickedSend"]
+- !private ["s23CustomStringConvertibleP", "destination"]
 - !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
 - !private ["s23CustomStringConvertibleP", "dismiss"]
 - !private ["s23CustomStringConvertibleP", "frame"]
-- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "identifier"]
+- !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isHidden"]
 - !private ["s23CustomStringConvertibleP", "layer"]
 - !private ["s23CustomStringConvertibleP", "messageBody"]
+- !private ["s23CustomStringConvertibleP", "msgBody"]
+- !private ["s23CustomStringConvertibleP", "performSegue"]
+- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "recipient"]
 - !private ["s23CustomStringConvertibleP", "recipientLabel"]
 - !private ["s23CustomStringConvertibleP", "removeFromSuperview"]
@@ -186,17 +209,18 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "successMessage"]
 - !private ["s23CustomStringConvertibleP", "tag"]
 - !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "thisUserEmail"]
 - !private ["s23CustomStringConvertibleP", "view"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
-- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "maxY"]
 - !private ["s9DecodableP", "minX"]
 - !private ["s9DecodableP", "size"]
 - !private ["s9DecodableP", "width"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
-- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "maxY"]
 - !private ["s9EncodableP", "minX"]
 - !private ["s9EncodableP", "size"]
@@ -212,16 +236,21 @@ depends-member:
 - !private ["s9EquatableP", "borderWidth"]
 - !private ["s9EquatableP", "cgColor"]
 - !private ["s9EquatableP", "clickedSend"]
+- !private ["s9EquatableP", "destination"]
 - !private ["s9EquatableP", "didReceiveMemoryWarning"]
 - !private ["s9EquatableP", "dismiss"]
 - !private ["s9EquatableP", "frame"]
-- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "identifier"]
+- !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "isHidden"]
 - !private ["s9EquatableP", "layer"]
 - !private ["s9EquatableP", "maxY"]
 - !private ["s9EquatableP", "messageBody"]
 - !private ["s9EquatableP", "minX"]
+- !private ["s9EquatableP", "msgBody"]
 - !private ["s9EquatableP", "normal"]
+- !private ["s9EquatableP", "performSegue"]
+- !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "recipient"]
 - !private ["s9EquatableP", "recipientLabel"]
 - !private ["s9EquatableP", "removeFromSuperview"]
@@ -241,6 +270,7 @@ depends-member:
 - !private ["s9EquatableP", "successMessage"]
 - !private ["s9EquatableP", "tag"]
 - !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "thisUserEmail"]
 - !private ["s9EquatableP", "touchUpInside"]
 - !private ["s9EquatableP", "view"]
 - !private ["s9EquatableP", "viewDidLoad"]
@@ -249,9 +279,9 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "normal"]
 - !private ["s25ExpressibleByArrayLiteralP", "touchUpInside"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
-- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
-- ["s26ExpressibleByStringLiteralP", "init"]
-- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s8HashableP", "CGRect"]
 - !private ["s8HashableP", "CGSize"]
 - !private ["s8HashableP", "UIColor"]
@@ -263,13 +293,18 @@ depends-member:
 - !private ["s8HashableP", "borderWidth"]
 - !private ["s8HashableP", "cgColor"]
 - !private ["s8HashableP", "clickedSend"]
+- !private ["s8HashableP", "destination"]
 - !private ["s8HashableP", "didReceiveMemoryWarning"]
 - !private ["s8HashableP", "dismiss"]
 - !private ["s8HashableP", "frame"]
-- ["s8HashableP", "init"]
+- !private ["s8HashableP", "identifier"]
+- !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "isHidden"]
 - !private ["s8HashableP", "layer"]
 - !private ["s8HashableP", "messageBody"]
+- !private ["s8HashableP", "msgBody"]
+- !private ["s8HashableP", "performSegue"]
+- !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "recipient"]
 - !private ["s8HashableP", "recipientLabel"]
 - !private ["s8HashableP", "removeFromSuperview"]
@@ -288,12 +323,14 @@ depends-member:
 - !private ["s8HashableP", "successMessage"]
 - !private ["s8HashableP", "tag"]
 - !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "thisUserEmail"]
 - !private ["s8HashableP", "view"]
 - !private ["s8HashableP", "viewDidLoad"]
 - ["s8HashableP", ""]
+- !private ["11Marketplace14InboxTableViewC", "thisUserEmail"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
-- ["s25LosslessStringConvertibleP", "init"]
-- ["s10MirrorPathP", "init"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "CGRect"]
 - !private ["So8NSCodingP", "CGSize"]
 - !private ["So8NSCodingP", "UIColor"]
@@ -307,10 +344,13 @@ depends-member:
 - !private ["So8NSCodingP", "didReceiveMemoryWarning"]
 - !private ["So8NSCodingP", "dismiss"]
 - !private ["So8NSCodingP", "frame"]
-- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isHidden"]
 - !private ["So8NSCodingP", "layer"]
 - !private ["So8NSCodingP", "messageBody"]
+- !private ["So8NSCodingP", "msgBody"]
+- !private ["So8NSCodingP", "performSegue"]
+- !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "recipient"]
 - !private ["So8NSCodingP", "recipientLabel"]
 - !private ["So8NSCodingP", "removeFromSuperview"]
@@ -329,12 +369,13 @@ depends-member:
 - !private ["So8NSCodingP", "successMessage"]
 - !private ["So8NSCodingP", "tag"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "thisUserEmail"]
 - !private ["So8NSCodingP", "view"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - ["So8NSCodingP", ""]
 - !private ["So9NSCopyingP", "black"]
 - !private ["So9NSCopyingP", "cgColor"]
-- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "init"]
 - !private ["So26NSExtensionRequestHandlingP", "CGRect"]
 - !private ["So26NSExtensionRequestHandlingP", "CGSize"]
 - !private ["So26NSExtensionRequestHandlingP", "UIColor"]
@@ -344,6 +385,9 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "dismiss"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - !private ["So26NSExtensionRequestHandlingP", "messageBody"]
+- !private ["So26NSExtensionRequestHandlingP", "msgBody"]
+- !private ["So26NSExtensionRequestHandlingP", "performSegue"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "recipient"]
 - !private ["So26NSExtensionRequestHandlingP", "recipientLabel"]
 - !private ["So26NSExtensionRequestHandlingP", "sendButton"]
@@ -357,24 +401,27 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "subject"]
 - !private ["So26NSExtensionRequestHandlingP", "subjectLabel"]
 - !private ["So26NSExtensionRequestHandlingP", "successMessage"]
+- !private ["So26NSExtensionRequestHandlingP", "thisUserEmail"]
 - !private ["So26NSExtensionRequestHandlingP", "view"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So26NSExtensionRequestHandlingP", ""]
 - !private ["So21NSItemProviderReadingP", "black"]
 - !private ["So21NSItemProviderReadingP", "cgColor"]
-- ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "black"]
 - !private ["So21NSItemProviderWritingP", "cgColor"]
-- ["So21NSItemProviderWritingP", "init"]
-- ["So16NSMutableCopyingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
 - !private ["So8NSObjectC", "CGRect"]
 - !private ["So8NSObjectC", "CGSize"]
-- ["So8NSObjectC", "ItemView"]
+- !private ["So8NSObjectC", "InboxTableView"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "UIButton"]
 - !private ["So8NSObjectC", "UIColor"]
 - ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "UIStoryboardSegue"]
 - ["So8NSObjectC", "UITextView"]
+- ["So8NSObjectC", "Upload"]
 - !private ["So8NSObjectC", "addTarget"]
 - ["So8NSObjectC", "backButton"]
 - !private ["So8NSObjectC", "black"]
@@ -383,16 +430,23 @@ depends-member:
 - !private ["So8NSObjectC", "cgColor"]
 - ["So8NSObjectC", "clickedBack"]
 - ["So8NSObjectC", "clickedSend"]
+- !private ["So8NSObjectC", "destination"]
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
 - !private ["So8NSObjectC", "dismiss"]
 - !private ["So8NSObjectC", "frame"]
+- !private ["So8NSObjectC", "identifier"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isHidden"]
 - !private ["So8NSObjectC", "layer"]
 - ["So8NSObjectC", "messageBody"]
+- ["So8NSObjectC", "msgBody"]
+- !private ["So8NSObjectC", "performSegue"]
+- ["So8NSObjectC", "prepare"]
+- !private ["So8NSObjectC", "print"]
 - ["So8NSObjectC", "recipient"]
 - ["So8NSObjectC", "recipientLabel"]
 - !private ["So8NSObjectC", "removeFromSuperview"]
+- ["So8NSObjectC", "reply"]
 - ["So8NSObjectC", "sendButton"]
 - ["So8NSObjectC", "sendMsgTitle"]
 - ["So8NSObjectC", "sender"]
@@ -409,6 +463,8 @@ depends-member:
 - ["So8NSObjectC", "successMessage"]
 - !private ["So8NSObjectC", "tag"]
 - !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectC", "thisUserEmail"]
+- ["So8NSObjectC", "uploadAssistant"]
 - !private ["So8NSObjectC", "view"]
 - ["So8NSObjectC", "viewDidLoad"]
 - !private ["So16NSObjectProtocolP", "CGRect"]
@@ -421,13 +477,18 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "borderWidth"]
 - !private ["So16NSObjectProtocolP", "cgColor"]
 - !private ["So16NSObjectProtocolP", "clickedSend"]
+- !private ["So16NSObjectProtocolP", "destination"]
 - !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
 - !private ["So16NSObjectProtocolP", "dismiss"]
 - !private ["So16NSObjectProtocolP", "frame"]
-- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "identifier"]
+- !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "isHidden"]
 - !private ["So16NSObjectProtocolP", "layer"]
 - !private ["So16NSObjectProtocolP", "messageBody"]
+- !private ["So16NSObjectProtocolP", "msgBody"]
+- !private ["So16NSObjectProtocolP", "performSegue"]
+- !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "recipient"]
 - !private ["So16NSObjectProtocolP", "recipientLabel"]
 - !private ["So16NSObjectProtocolP", "removeFromSuperview"]
@@ -446,6 +507,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "successMessage"]
 - !private ["So16NSObjectProtocolP", "tag"]
 - !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "thisUserEmail"]
 - !private ["So16NSObjectProtocolP", "view"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - ["So16NSObjectProtocolP", ""]
@@ -453,21 +515,23 @@ depends-member:
 - !private ["So14NSSecureCodingP", "borderColor"]
 - !private ["So14NSSecureCodingP", "borderWidth"]
 - !private ["So14NSSecureCodingP", "cgColor"]
-- ["So14NSSecureCodingP", "init"]
-- ["So8NSStringC", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
 - !private ["s9OptionSetP", "normal"]
 - !private ["s9OptionSetP", "touchUpInside"]
-- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s16RawRepresentableP", "normal"]
 - !private ["s16RawRepresentableP", "touchUpInside"]
 - !private ["11Marketplace15SendMessageViewC", "CGRect"]
 - !private ["11Marketplace15SendMessageViewC", "CGSize"]
-- ["11Marketplace15SendMessageViewC", "ItemView"]
+- !private ["11Marketplace15SendMessageViewC", "InboxTableView"]
 - ["11Marketplace15SendMessageViewC", "String"]
 - ["11Marketplace15SendMessageViewC", "UIButton"]
 - !private ["11Marketplace15SendMessageViewC", "UIColor"]
 - ["11Marketplace15SendMessageViewC", "UILabel"]
+- ["11Marketplace15SendMessageViewC", "UIStoryboardSegue"]
 - ["11Marketplace15SendMessageViewC", "UITextView"]
+- ["11Marketplace15SendMessageViewC", "Upload"]
 - ["11Marketplace15SendMessageViewC", "backButton"]
 - ["11Marketplace15SendMessageViewC", "clickedBack"]
 - ["11Marketplace15SendMessageViewC", "clickedSend"]
@@ -476,8 +540,13 @@ depends-member:
 - !private ["11Marketplace15SendMessageViewC", "dismiss"]
 - ["11Marketplace15SendMessageViewC", "init"]
 - ["11Marketplace15SendMessageViewC", "messageBody"]
+- ["11Marketplace15SendMessageViewC", "msgBody"]
+- !private ["11Marketplace15SendMessageViewC", "performSegue"]
+- ["11Marketplace15SendMessageViewC", "prepare"]
+- !private ["11Marketplace15SendMessageViewC", "print"]
 - ["11Marketplace15SendMessageViewC", "recipient"]
 - ["11Marketplace15SendMessageViewC", "recipientLabel"]
+- ["11Marketplace15SendMessageViewC", "reply"]
 - ["11Marketplace15SendMessageViewC", "sendButton"]
 - ["11Marketplace15SendMessageViewC", "sendMsgTitle"]
 - ["11Marketplace15SendMessageViewC", "sender"]
@@ -490,15 +559,16 @@ depends-member:
 - ["11Marketplace15SendMessageViewC", "subject"]
 - ["11Marketplace15SendMessageViewC", "subjectLabel"]
 - ["11Marketplace15SendMessageViewC", "successMessage"]
+- ["11Marketplace15SendMessageViewC", "uploadAssistant"]
 - !private ["11Marketplace15SendMessageViewC", "view"]
 - ["11Marketplace15SendMessageViewC", "viewDidLoad"]
-- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "init"]
 - !private ["s10SetAlgebraP", "normal"]
 - !private ["s10SetAlgebraP", "touchUpInside"]
-- ["SS", "init"]
-- ["s14StringProtocolP", "init"]
-- ["s16TextOutputStreamP", "init"]
-- ["s20TextOutputStreamableP", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "addTarget"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "frame"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "setTitle"]
@@ -534,6 +604,9 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "isHidden"]
 - !private ["So21UIAppearanceContainerP", "layer"]
 - !private ["So21UIAppearanceContainerP", "messageBody"]
+- !private ["So21UIAppearanceContainerP", "msgBody"]
+- !private ["So21UIAppearanceContainerP", "performSegue"]
+- !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "recipient"]
 - !private ["So21UIAppearanceContainerP", "recipientLabel"]
 - !private ["So21UIAppearanceContainerP", "removeFromSuperview"]
@@ -552,6 +625,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "successMessage"]
 - !private ["So21UIAppearanceContainerP", "tag"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "thisUserEmail"]
 - !private ["So21UIAppearanceContainerP", "view"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - ["So21UIAppearanceContainerP", ""]
@@ -570,6 +644,9 @@ depends-member:
 - !private ["So18UIContentContainerP", "dismiss"]
 - !private ["So18UIContentContainerP", "init"]
 - !private ["So18UIContentContainerP", "messageBody"]
+- !private ["So18UIContentContainerP", "msgBody"]
+- !private ["So18UIContentContainerP", "performSegue"]
+- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "recipient"]
 - !private ["So18UIContentContainerP", "recipientLabel"]
 - !private ["So18UIContentContainerP", "sendButton"]
@@ -583,6 +660,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "subject"]
 - !private ["So18UIContentContainerP", "subjectLabel"]
 - !private ["So18UIContentContainerP", "successMessage"]
+- !private ["So18UIContentContainerP", "thisUserEmail"]
 - !private ["So18UIContentContainerP", "view"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - ["So18UIContentContainerP", ""]
@@ -628,6 +706,9 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "isHidden"]
 - !private ["So18UIFocusEnvironmentP", "layer"]
 - !private ["So18UIFocusEnvironmentP", "messageBody"]
+- !private ["So18UIFocusEnvironmentP", "msgBody"]
+- !private ["So18UIFocusEnvironmentP", "performSegue"]
+- !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "recipient"]
 - !private ["So18UIFocusEnvironmentP", "recipientLabel"]
 - !private ["So18UIFocusEnvironmentP", "removeFromSuperview"]
@@ -646,6 +727,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "successMessage"]
 - !private ["So18UIFocusEnvironmentP", "tag"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "thisUserEmail"]
 - !private ["So18UIFocusEnvironmentP", "view"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - ["So18UIFocusEnvironmentP", ""]
@@ -677,6 +759,9 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
 - !private ["So30UIPasteConfigurationSupportingP", "layer"]
 - !private ["So30UIPasteConfigurationSupportingP", "messageBody"]
+- !private ["So30UIPasteConfigurationSupportingP", "msgBody"]
+- !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "recipient"]
 - !private ["So30UIPasteConfigurationSupportingP", "recipientLabel"]
 - !private ["So30UIPasteConfigurationSupportingP", "removeFromSuperview"]
@@ -695,17 +780,20 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "successMessage"]
 - !private ["So30UIPasteConfigurationSupportingP", "tag"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "thisUserEmail"]
 - !private ["So30UIPasteConfigurationSupportingP", "view"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So11UIResponderC", "CGRect"]
 - !private ["So11UIResponderC", "CGSize"]
-- ["So11UIResponderC", "ItemView"]
+- !private ["So11UIResponderC", "InboxTableView"]
 - ["So11UIResponderC", "String"]
 - ["So11UIResponderC", "UIButton"]
 - !private ["So11UIResponderC", "UIColor"]
 - ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "UIStoryboardSegue"]
 - ["So11UIResponderC", "UITextView"]
+- ["So11UIResponderC", "Upload"]
 - !private ["So11UIResponderC", "addTarget"]
 - ["So11UIResponderC", "backButton"]
 - ["So11UIResponderC", "clickedBack"]
@@ -717,9 +805,14 @@ depends-member:
 - !private ["So11UIResponderC", "isHidden"]
 - !private ["So11UIResponderC", "layer"]
 - ["So11UIResponderC", "messageBody"]
+- ["So11UIResponderC", "msgBody"]
+- !private ["So11UIResponderC", "performSegue"]
+- ["So11UIResponderC", "prepare"]
+- !private ["So11UIResponderC", "print"]
 - ["So11UIResponderC", "recipient"]
 - ["So11UIResponderC", "recipientLabel"]
 - !private ["So11UIResponderC", "removeFromSuperview"]
+- ["So11UIResponderC", "reply"]
 - ["So11UIResponderC", "sendButton"]
 - ["So11UIResponderC", "sendMsgTitle"]
 - ["So11UIResponderC", "sender"]
@@ -736,6 +829,8 @@ depends-member:
 - ["So11UIResponderC", "successMessage"]
 - !private ["So11UIResponderC", "tag"]
 - !private ["So11UIResponderC", "text"]
+- !private ["So11UIResponderC", "thisUserEmail"]
+- ["So11UIResponderC", "uploadAssistant"]
 - !private ["So11UIResponderC", "view"]
 - ["So11UIResponderC", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "CGRect"]
@@ -751,6 +846,9 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "isHidden"]
 - !private ["So30UIResponderStandardEditActionsP", "layer"]
 - !private ["So30UIResponderStandardEditActionsP", "messageBody"]
+- !private ["So30UIResponderStandardEditActionsP", "msgBody"]
+- !private ["So30UIResponderStandardEditActionsP", "performSegue"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "recipient"]
 - !private ["So30UIResponderStandardEditActionsP", "recipientLabel"]
 - !private ["So30UIResponderStandardEditActionsP", "removeFromSuperview"]
@@ -769,11 +867,13 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "successMessage"]
 - !private ["So30UIResponderStandardEditActionsP", "tag"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "thisUserEmail"]
 - !private ["So30UIResponderStandardEditActionsP", "view"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So12UIScrollViewC", "layer"]
 - !private ["So12UIScrollViewC", "text"]
+- !private ["So20UIScrollViewDelegateP", "thisUserEmail"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "addTarget"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "frame"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "setTitle"]
@@ -787,6 +887,9 @@ depends-member:
 - !private ["So16UIStateRestoringP", "dismiss"]
 - !private ["So16UIStateRestoringP", "init"]
 - !private ["So16UIStateRestoringP", "messageBody"]
+- !private ["So16UIStateRestoringP", "msgBody"]
+- !private ["So16UIStateRestoringP", "performSegue"]
+- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "recipient"]
 - !private ["So16UIStateRestoringP", "recipientLabel"]
 - !private ["So16UIStateRestoringP", "sendButton"]
@@ -800,9 +903,15 @@ depends-member:
 - !private ["So16UIStateRestoringP", "subject"]
 - !private ["So16UIStateRestoringP", "subjectLabel"]
 - !private ["So16UIStateRestoringP", "successMessage"]
+- !private ["So16UIStateRestoringP", "thisUserEmail"]
 - !private ["So16UIStateRestoringP", "view"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - ["So16UIStateRestoringP", ""]
+- !private ["So17UIStoryboardSegueC", "destination"]
+- !private ["So17UIStoryboardSegueC", "identifier"]
+- !private ["So21UITableViewControllerC", "thisUserEmail"]
+- !private ["So21UITableViewDataSourceP", "thisUserEmail"]
+- !private ["So19UITableViewDelegateP", "thisUserEmail"]
 - !private ["So15UITextDraggableP", "layer"]
 - !private ["So15UITextDraggableP", "text"]
 - !private ["So15UITextDroppableP", "layer"]
@@ -828,6 +937,9 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "isHidden"]
 - !private ["So18UITraitEnvironmentP", "layer"]
 - !private ["So18UITraitEnvironmentP", "messageBody"]
+- !private ["So18UITraitEnvironmentP", "msgBody"]
+- !private ["So18UITraitEnvironmentP", "performSegue"]
+- !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "recipient"]
 - !private ["So18UITraitEnvironmentP", "recipientLabel"]
 - !private ["So18UITraitEnvironmentP", "removeFromSuperview"]
@@ -846,6 +958,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "successMessage"]
 - !private ["So18UITraitEnvironmentP", "tag"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "thisUserEmail"]
 - !private ["So18UITraitEnvironmentP", "view"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - ["So18UITraitEnvironmentP", ""]
@@ -860,12 +973,14 @@ depends-member:
 - !private ["So6UIViewC", "text"]
 - !private ["So16UIViewControllerC", "CGRect"]
 - !private ["So16UIViewControllerC", "CGSize"]
-- ["So16UIViewControllerC", "ItemView"]
+- !private ["So16UIViewControllerC", "InboxTableView"]
 - ["So16UIViewControllerC", "String"]
 - ["So16UIViewControllerC", "UIButton"]
 - !private ["So16UIViewControllerC", "UIColor"]
 - ["So16UIViewControllerC", "UILabel"]
+- ["So16UIViewControllerC", "UIStoryboardSegue"]
 - ["So16UIViewControllerC", "UITextView"]
+- ["So16UIViewControllerC", "Upload"]
 - ["So16UIViewControllerC", "backButton"]
 - ["So16UIViewControllerC", "clickedBack"]
 - ["So16UIViewControllerC", "clickedSend"]
@@ -873,8 +988,13 @@ depends-member:
 - !private ["So16UIViewControllerC", "dismiss"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "messageBody"]
+- ["So16UIViewControllerC", "msgBody"]
+- !private ["So16UIViewControllerC", "performSegue"]
+- ["So16UIViewControllerC", "prepare"]
+- !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "recipient"]
 - ["So16UIViewControllerC", "recipientLabel"]
+- ["So16UIViewControllerC", "reply"]
 - ["So16UIViewControllerC", "sendButton"]
 - ["So16UIViewControllerC", "sendMsgTitle"]
 - ["So16UIViewControllerC", "sender"]
@@ -887,10 +1007,12 @@ depends-member:
 - ["So16UIViewControllerC", "subject"]
 - ["So16UIViewControllerC", "subjectLabel"]
 - ["So16UIViewControllerC", "successMessage"]
+- !private ["So16UIViewControllerC", "thisUserEmail"]
+- ["So16UIViewControllerC", "uploadAssistant"]
 - !private ["So16UIViewControllerC", "view"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", ""]
-- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addTarget"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "frame"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isHidden"]
@@ -901,16 +1023,16 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "tag"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
-- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
-- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
-- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s26_ExpressibleByColorLiteralP", "black"]
 - !private ["s26_ExpressibleByColorLiteralP", "cgColor"]
-- ["s33_ExpressibleByStringInterpolationP", "init"]
-- ["s35_HasCustomAnyHashableRepresentationP", "init"]
-- ["s10_IndexableP", "init"]
-- ["s14_IndexableBaseP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CGRect"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CGSize"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIColor"]
@@ -921,13 +1043,18 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "borderWidth"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "cgColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "clickedSend"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "frame"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "identifier"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "layer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "messageBody"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "msgBody"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "recipient"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "recipientLabel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "removeFromSuperview"]
@@ -946,19 +1073,20 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "successMessage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tag"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "thisUserEmail"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
-- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "maxY"]
 - !private ["s21_ObjectiveCBridgeableP", "minX"]
 - !private ["s21_ObjectiveCBridgeableP", "size"]
 - !private ["s21_ObjectiveCBridgeableP", "width"]
-- ["s26_RangeReplaceableIndexableP", "init"]
-- ["s16_SwiftStringViewP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- "s23BidirectionalCollectionP"
+- !private "s23BidirectionalCollectionP"
 - !private "Sb"
 - !private "So7CALayerC"
 - !private "So15CALayerDelegateP"
@@ -966,43 +1094,44 @@ depends-nominal:
 - !private "SC6CGRectV"
 - !private "SC6CGSizeV"
 - "s7CVarArgP"
-- "s10CollectionP"
-- "s10ComparableP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
-- "s29CustomPlaygroundQuickLookableP"
-- "s17CustomReflectableP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- "s9DecodableP"
-- "s9EncodableP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
 - "s9EquatableP"
 - !private "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
-- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- "s26ExpressibleByStringLiteralP"
-- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
-- "s25LosslessStringConvertibleP"
-- "s10MirrorPathP"
+- !private "11Marketplace14InboxTableViewC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
 - "So8NSCodingP"
-- "So9NSCopyingP"
+- !private "So9NSCopyingP"
 - "So26NSExtensionRequestHandlingP"
-- "So21NSItemProviderReadingP"
-- "So21NSItemProviderWritingP"
-- "So16NSMutableCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
-- "So14NSSecureCodingP"
-- "So8NSStringC"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
 - !private "s9OptionSetP"
-- "s26RangeReplaceableCollectionP"
+- !private "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
 - "11Marketplace15SendMessageViewC"
-- "s8SequenceP"
+- !private "s8SequenceP"
 - !private "s10SetAlgebraP"
-- "SS"
-- "s14StringProtocolP"
-- "s16TextOutputStreamP"
-- "s20TextOutputStreamableP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
@@ -1024,8 +1153,13 @@ depends-nominal:
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
 - !private "So12UIScrollViewC"
+- !private "So20UIScrollViewDelegateP"
 - !private "So35UISpringLoadedInteractionSupportingP"
 - "So16UIStateRestoringP"
+- !private "So17UIStoryboardSegueC"
+- !private "So21UITableViewControllerC"
+- !private "So21UITableViewDataSourceP"
+- !private "So19UITableViewDelegateP"
 - !private "So15UITextDraggableP"
 - !private "So15UITextDroppableP"
 - !private "So11UITextInputP"
@@ -1035,22 +1169,22 @@ depends-nominal:
 - "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
-- "s23_BidirectionalIndexableP"
+- !private "s23_BidirectionalIndexableP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
-- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- "s34_ExpressibleByBuiltinStringLiteralP"
-- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
-- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s26_ExpressibleByColorLiteralP"
-- "s33_ExpressibleByStringInterpolationP"
-- "s35_HasCustomAnyHashableRepresentationP"
-- "s10_IndexableP"
-- "s14_IndexableBaseP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
 - "10Foundation27_KeyValueCodingAndObservingP"
-- "s21_ObjectiveCBridgeableP"
-- "s26_RangeReplaceableIndexableP"
-- "s16_SwiftStringViewP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
@@ -1073,13 +1207,16 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/student/Documents/Marketplace/Marketplace-Bridging-Header.h"
+- "/Users/student/ryan/Marketplace/Marketplace-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-interface-hash: "028f17a7414b88805352b3c4dda13bc6"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "07e09bd17f571d44d7c60691acad3178"

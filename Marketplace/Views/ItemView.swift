@@ -52,18 +52,44 @@ class ItemView: UIViewController {
 	var category = ""
 	var quantity = 0
 	var age = 0
-	
+	var sellerEmail = ""
+    var currentUser = User()
+    
+    var downloadAssistant: Download!
+    var userSchema: UserSchemaProcessor!
+    var userDataSource: UserDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.scrollView.backgroundColor = UIColor.white
-		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 200)
-		
+		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 300)
+		print(sellerEmail)
+        
+        downloadAssistant = Download(withURLString: buildURLString())
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
         
         itemPriceLabel.adjustsFontSizeToFitWidth = true
         itemPriceLabel.clipsToBounds = true
         itemPriceLabel.baselineAdjustment = .alignCenters
 
 		start()
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+        userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+        userDataSource.consolidate()
+        currentUser = userDataSource.userAt(0)!
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+    }
+    
+    func buildURLString() -> String {
+        var url = Download.baseURL
+        url += "/users/"
+        url += "?email=" + sellerEmail
+        url += "&apikey=" + Download.apikey
+        return url
     }
 
     override func didReceiveMemoryWarning() {
@@ -193,8 +219,13 @@ class ItemView: UIViewController {
 	}
 	
 	func setItemPrice() {
-		let modPrice = "$" + String(itemModel.getPrice())
-		let getPrice = "$" + String(price)
+		let modPrice = "$" + String(round(itemModel.getPrice()*100)/100)
+        var getPrice = "$"
+        if Int(price*10)*10 >= Int(price*100) {
+            getPrice += String(price) + "0"
+        } else {
+            getPrice += String(price)
+        }
 		if hasValues {
 			itemPriceLabel.text = hasValues ? getPrice : modPrice
 		} else {
@@ -265,9 +296,11 @@ class ItemView: UIViewController {
 	}
     
     func setUserInfo() {
+        usernameLabel.text = currentUser.first_name! + " " + currentUser.last_name!
+        ratingLabel.text = "Rating:     " + String(currentUser.rating) + "/10"
         profilePicture.image = userModel.getProfilePic()
-        usernameLabel.text = userModel.getUserName()
-        ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
+//        usernameLabel.text = userModel.getUserName()
+//        ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
     }
 	
 	@IBAction func clickedBack(_ sender: UIButton) {

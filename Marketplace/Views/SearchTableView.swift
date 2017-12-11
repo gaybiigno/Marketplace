@@ -102,21 +102,22 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
 //            if itemsToShow == nil {
 //                itemsToShow = [Item]()
 //            }
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
         } else {
             usersSchema = UserSchemaProcessor(userModelJSON: udownloadAssistant.dataFromServer! as! [AnyObject])
             let users_returned = usersSchema.getAllUsers()
             userDataSource = UserDataSource(dataSource: users_returned)
             userDataSource?.consolidate()
+            udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         }
-        
     }
     
     deinit {
-        if downloadAssistant != nil {
-            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        }
+        //if downloadAssistant != nil {
+            //downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        //}
         //if udownloadAssistant != nil {
-            udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+            //udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         //}
     }
     
@@ -387,10 +388,10 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let items = itemDataSource?.items
+        let items = itemsToShow
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let item = items![indexPath.row]
+                let item = items[indexPath.row]
                 let controller = (segue.destination as! ItemView)
                 //controller.detailCandy = item
 				print("guestBrowsing in search:", guestBrowsing)
@@ -405,6 +406,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 let defaultPic = [UIImage(named: "PhotoIcon")]
                 controller.imageArray = defaultPic as! [UIImage]
                 controller.tags = [String()]
+                controller.sellerEmail = item.seller_email!
                 //controller.imageCounterLabel.text = "1"
             }
         }

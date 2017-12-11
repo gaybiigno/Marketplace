@@ -61,8 +61,12 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	private var itemViewer: ItemView!
     
     var currentEmail: String!
+    var itemId: Int = 0
 
     var uploadAssistant: Upload! = nil
+    var downloadAssistant: Download!
+    
+    var downloading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,8 +103,43 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         return url
     }
     
+    func buildUploadTagURL(tag: String) -> String {
+        var url = Upload.baseURL + "tags/insert"
+        url += "?item_id=" + String(itemId)
+        url += "&tag=" + tag
+        return url
+    }
+    
+    func buildGetItemsByUserURL() -> String {
+        var url = Download.baseURL + "/items/seller"
+        url += "?seller_email=" + currentEmail
+        return url
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("uploaded new item")
+        if downloading == false {
+            print("uploaded new item")
+            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        } else {
+            downloading = false
+            let itemSchema = ItemSchemaProcessor(itemModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            let itemDataSource = ItemDataSource(dataSource: itemSchema.getAllItems())
+            itemDataSource.consolidate()
+            //print(itemDataSource.items)
+            for item in itemDataSource.items! {
+                if item.item_id > itemId {
+                    itemId = Int(item.item_id)
+                }
+            }
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+            tagString = tagString.replacingOccurrences(of: ",", with: "")
+            let tags = tagString.split(separator: " ")
+            for tag in tags {
+                uploadAssistant = Upload(withURLString: buildUploadTagURL(tag: String(tag)))
+                uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+                uploadAssistant.upload_request()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -201,6 +240,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
             uploadAssistant = Upload(withURLString: buildUploadURL())
             uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
             uploadAssistant.upload_request()
+            downloading = true
+            downloadAssistant = Download(withURLString: buildGetItemsByUserURL())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.download_request()
 			//self.performSegue(withIdentifier: "presentUploadedItem", sender: self)
 		} else {
 			// Basically nothing

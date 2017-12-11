@@ -89,6 +89,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		userDataSource.consolidate()
 		currentUser = userDataSource.userAt(0)
 		addHello()
+        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
 	}
 	
 	func searchBorders() {
