@@ -756,6 +756,12 @@ SWIFT_CLASS("_TtC11Marketplace15SignInTableView")
 @end
 
 
+SWIFT_CLASS("_TtC11Marketplace18TagSchemaProcessor")
+@interface TagSchemaProcessor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS_NAMED("Tags")
 @interface Tags : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;

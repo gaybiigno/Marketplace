@@ -407,6 +407,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 controller.imageArray = defaultPic as! [UIImage]
                 controller.tags = [String()]
                 controller.sellerEmail = item.seller_email!
+                controller.itemId = Int(item.item_id)
                 //controller.imageCounterLabel.text = "1"
             }
         }

@@ -53,7 +53,9 @@ class ItemView: UIViewController {
 	var quantity = 0
 	var age = 0
 	var sellerEmail = ""
+    var itemId = 0
     var currentUser = User()
+    var gettingTags = false
     
     var downloadAssistant: Download!
     var userSchema: UserSchemaProcessor!
@@ -68,6 +70,10 @@ class ItemView: UIViewController {
         downloadAssistant = Download(withURLString: buildURLString())
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         downloadAssistant.download_request()
+        gettingTags = true
+        downloadAssistant = Download(withURLString: buildTagURLString())
+        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+        downloadAssistant.download_request()
         
         itemPriceLabel.adjustsFontSizeToFitWidth = true
         itemPriceLabel.clipsToBounds = true
@@ -77,11 +83,23 @@ class ItemView: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
-        userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
-        userDataSource.consolidate()
-        currentUser = userDataSource.userAt(0)!
-        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        if gettingTags == false {
+            userSchema = UserSchemaProcessor(userModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
+            userDataSource.consolidate()
+            currentUser = userDataSource.userAt(0)!
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        } else {
+            gettingTags = false
+            let tagsSchema = TagSchemaProcessor(tagsModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
+            let tagsDataSource = TagsDataSource(dataSource: tagsSchema.getAllTags())
+            tagsDataSource.consolidate()
+            let curTags = tagsDataSource.tags
+            for tag in curTags! {
+                itemTags.text = String(itemTags.text) + String(describing: tag.tag)
+            }
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        }
     }
     
     func buildURLString() -> String {
@@ -89,6 +107,12 @@ class ItemView: UIViewController {
         url += "/users/"
         url += "?email=" + sellerEmail
         url += "&apikey=" + Download.apikey
+        return url
+    }
+    
+    func buildTagURLString() -> String {
+        var url = Download.baseURL + "/tags/item_id/"
+        url += "?item_id=" + String(itemId)
         return url
     }
 

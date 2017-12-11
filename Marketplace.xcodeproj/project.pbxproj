@@ -25,6 +25,8 @@
 		3F127BD91FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F127BD71FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift */; };
 		3F5772FE1FD87B810022AE91 /* marketplace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F5772FC1FD87B810022AE91 /* marketplace.xcdatamodeld */; };
 		3F5773191FD881CF0022AE91 /* ItemSchemaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5773181FD881CF0022AE91 /* ItemSchemaProcessor.swift */; };
+		3F77B0B61FDF29A2003607EC /* TagSchemaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77B0B51FDF29A2003607EC /* TagSchemaProcessor.swift */; };
+		3F77B0B81FDF2B07003607EC /* TagsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77B0B71FDF2B07003607EC /* TagsDataSource.swift */; };
 		3F82482C1FD7B26B00996C45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F82482B1FD7B26B00996C45 /* CoreLocation.framework */; };
 		3F95A7661FCF88D80024B8AA /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A7651FCF88D80024B8AA /* UploadImageView.swift */; };
 		3FA640801FD89E3100294301 /* ItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6407F1FD89E3100294301 /* ItemDataSource.swift */; };
@@ -100,6 +102,8 @@
 		3F5772BD1FD87A150022AE91 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3F5772FD1FD87B810022AE91 /* marketplace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = marketplace.xcdatamodel; sourceTree = "<group>"; };
 		3F5773181FD881CF0022AE91 /* ItemSchemaProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSchemaProcessor.swift; sourceTree = "<group>"; };
+		3F77B0B51FDF29A2003607EC /* TagSchemaProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSchemaProcessor.swift; sourceTree = "<group>"; };
+		3F77B0B71FDF2B07003607EC /* TagsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsDataSource.swift; sourceTree = "<group>"; };
 		3F82482B1FD7B26B00996C45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3F95A7651FCF88D80024B8AA /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		3FA640541FD88E1200294301 /* Marketplace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marketplace-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				3F0454BE1FDDE63C00088976 /* InboxDataSource.swift */,
 				3F0454C01FDDF47B00088976 /* FunctionSchemaProcessor.swift */,
 				3F0454C21FDDF49500088976 /* FunctionDataSource.swift */,
+				3F77B0B51FDF29A2003607EC /* TagSchemaProcessor.swift */,
+				3F77B0B71FDF2B07003607EC /* TagsDataSource.swift */,
 			);
 			path = ObjectAdapters;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				3F127BAB1FDB350800D329B1 /* Download.swift in Sources */,
 				5A4397241FC66DE100606AA2 /* SearchTableView.swift in Sources */,
 				3F127BD31FDB363A00D329B1 /* Pictures+CoreDataProperties.swift in Sources */,
+				3F77B0B61FDF29A2003607EC /* TagSchemaProcessor.swift in Sources */,
 				5A3EDFA71FD9E65800665BA2 /* InboxTableView.swift in Sources */,
 				3FC6B38F1FDB5B3A00B9DB4E /* SearchParametersTableView.swift in Sources */,
 				3F95A7661FCF88D80024B8AA /* UploadImageView.swift in Sources */,
@@ -502,6 +509,7 @@
 				3F0454CB1FDE0C6F00088976 /* Inbox.swift in Sources */,
 				5A49973E1FC6239300AB1A1A /* MenuTableView.swift in Sources */,
 				3F127BD91FDB4B3600D329B1 /* Inbox+CoreDataProperties.swift in Sources */,
+				3F77B0B81FDF2B07003607EC /* TagsDataSource.swift in Sources */,
 				5A2C08A21FB5671900D884B4 /* Handy.swift in Sources */,
 				5A8495201FB3D72100A2A91C /* ItemView.swift in Sources */,
 				5A49973C1FC6178B00AB1A1A /* ForgotPasswordView.swift in Sources */,

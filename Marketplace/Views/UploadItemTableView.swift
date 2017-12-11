@@ -104,7 +104,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     }
     
     func buildUploadTagURL(tag: String) -> String {
-        var url = Upload.baseURL + "tags/insert"
+        var url = Upload.baseURL + "/tags/insert"
         url += "?item_id=" + String(itemId)
         url += "&tag=" + tag
         return url
@@ -132,8 +132,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
                 }
             }
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
-            tagString = tagString.replacingOccurrences(of: ",", with: "")
-            let tags = tagString.split(separator: " ")
             for tag in tags {
                 uploadAssistant = Upload(withURLString: buildUploadTagURL(tag: String(tag)))
                 uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
@@ -304,7 +302,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func formatVals() {
 		if !tagEntry.text.isEmpty {
-			tags = tagEntry.text.components(separatedBy: " ")
+			tags = tagEntry.text.replacingOccurrences(of: ",", with: "").components(separatedBy: " ")
 		}
 		if let numChars = priceEntry.text?.characters.count {
 			let priceToRet = priceEntry.text![1 ..< numChars]
