@@ -236,6 +236,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
             segue.identifier == "searchStart" {
 			endMenu(self)
 			print("guestBrowsing in home:", signedIn)
+            vc.currentUserEmail = curEmail
 			vc.guestBrowsing = !signedIn
 			vc.keyWords = category
             vc.filterContentForSearchText(category)

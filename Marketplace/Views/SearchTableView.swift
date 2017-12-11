@@ -51,6 +51,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var usersSchema: UserSchemaProcessor!
     var userDataSource: UserDataSource? = nil
     
+    var currentUserEmail: String!
+    
     
     //var currentLocation = CLLocation!
     
@@ -408,6 +410,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                 controller.tags = [String()]
                 controller.sellerEmail = item.seller_email!
                 controller.itemId = Int(item.item_id)
+                controller.currentUserEmail = currentUserEmail
                 //controller.imageCounterLabel.text = "1"
             }
         }

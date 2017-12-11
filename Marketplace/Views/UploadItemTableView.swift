@@ -95,7 +95,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         url += "?email=" + currentEmail
         url += "&name=" + itemTitle.replacingOccurrences(of: " ", with: "_")
         url += "&description=" + itemDescription.replacingOccurrences(of: " ", with: "_")
-        url += "&category=" + cat.replacingOccurrences(of: " ", with: "_")
+        url += "&category=" + cat.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: "&", with: "and")
         url += "&quantity=" + String(quantity)
         url += "&price=" + itemPrice
         url += "&minage=" + String(age)

@@ -26,12 +26,19 @@ class SendMessageView: UIViewController {
 	var recipient: String!
 	var subject: String!
 	var msgBody: String!
+    
+    var buyerEmail: String!
+    var sellerEmail: String!
 	
 	var uploadAssistant: Upload! = nil
+    
+    
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(buyerEmail)
+        print(sellerEmail)
 		start()
 
         // Do any additional setup after loading the view.

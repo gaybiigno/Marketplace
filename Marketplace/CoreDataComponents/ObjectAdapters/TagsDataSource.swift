@@ -35,14 +35,14 @@ class TagsDataSource: NSObject {
     }
     
     func consolidate() {
-        var previd = -1
+        var previd = ""
         var curIdx = 0
         for tag in tags! {
-            if tag.item_id == previd {
+            if tag.tag == previd {
                 tags?.remove(at: curIdx)
             } else {
                 curIdx = curIdx + 1
-                previd = Int(tag.item_id)
+                previd = tag.tag!
             }
         }
     }

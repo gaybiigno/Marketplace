@@ -54,6 +54,7 @@ class ItemView: UIViewController {
 	var age = 0
 	var sellerEmail = ""
     var itemId = 0
+    var currentUserEmail = ""
     var currentUser = User()
     var gettingTags = false
     
@@ -65,7 +66,7 @@ class ItemView: UIViewController {
         super.viewDidLoad()
 		self.scrollView.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 300)
-		print(sellerEmail)
+		//print(sellerEmail)
         
         downloadAssistant = Download(withURLString: buildURLString())
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
@@ -95,8 +96,13 @@ class ItemView: UIViewController {
             let tagsDataSource = TagsDataSource(dataSource: tagsSchema.getAllTags())
             tagsDataSource.consolidate()
             let curTags = tagsDataSource.tags
+            var numTags = curTags?.count
             for tag in curTags! {
-                itemTags.text = String(itemTags.text) + String(describing: tag.tag)
+                numTags = numTags! - 1
+                itemTags.text = String(itemTags.text) + tag.tag!
+                if numTags! > 0 {
+                    itemTags.text = String(itemTags.text) + ", "
+                }
             }
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
         }
@@ -229,6 +235,7 @@ class ItemView: UIViewController {
 	func setItemCategory() {
 		if hasValues {
 			itemCategory.text = hasValues ? category : itemModel.getCategory()
+            itemCategory.text = itemCategory.text?.replacingOccurrences(of: "_", with: " ").replacingOccurrences(of: "and", with: "&")
 		} else {
 			itemCategory.text = editView ? category : itemModel.getCategory()
 		}
@@ -270,6 +277,7 @@ class ItemView: UIViewController {
 	func setItemDescription() {
 		if hasValues {
 			itemDescription.text = hasValues ? descrip : itemModel.getDescription()
+            itemDescription.text = itemDescription.text.replacingOccurrences(of: "_", with: " ")
 		} else {
 			itemDescription.text = editView ? descrip : itemModel.getDescription()
 		}
@@ -334,6 +342,8 @@ class ItemView: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "itemToMsg" {
+            vc.buyerEmail = currentUserEmail
+            vc.sellerEmail = sellerEmail
 			vc.setDefaultValues(userModel.getUserName(), "Linda", itemTitle.text)
 		}
 		if let vc = segue.destination as? UploadItemTableView,

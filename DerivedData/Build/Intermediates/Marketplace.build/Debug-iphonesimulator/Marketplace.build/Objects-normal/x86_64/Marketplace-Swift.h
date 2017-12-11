@@ -775,6 +775,12 @@ SWIFT_CLASS_NAMED("Tags")
 @end
 
 
+SWIFT_CLASS("_TtC11Marketplace14TagsDataSource")
+@interface TagsDataSource : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 @interface UITextField (SWIFT_EXTENSION(Marketplace))
 @property (nonatomic) NSInteger maxLength;
 - (void)fixWithTextField:(UITextField * _Nonnull)textField;
