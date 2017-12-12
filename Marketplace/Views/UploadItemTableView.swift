@@ -39,13 +39,12 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var uploadButton: UIButton!
 	
-	
 	private var price: String = ""
 	private var finalPrice: Float = 0.0
 	private var categories = ["", "Home & Garden", "Fashion", "Electronics", "Art & Collectibles", "Auto & Vehicles", "Sporting Goods"]
 	private var tags = [String]()
 	
-     var itemImages = [UIImage]()
+    var itemImages = [UIImage]()
 	var categoryChoice = UILabel()
 	var cat: String = ""
 	var age: Int = 0
@@ -67,6 +66,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(currentEmail)
 		
 		descriptionEntry.delegate = self
 		priceEntry.delegate = self
@@ -108,7 +109,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     }
     
     func buildGetItemsByUserURL() -> String {
-        var url = Download.baseURL + "/items/seller"
+        var url = Download.baseURL + "/items/seller/"
         url += "?seller_email=" + currentEmail
         return url
     }
@@ -151,8 +152,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		
 		// Add targets
 		uploadButton.addTarget(self, action: #selector(clickUpload(_:)), for: .touchUpInside)
-		
-		
 	}
 	
 	// Description character counter
@@ -334,6 +333,9 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     }
     
     deinit {
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
         if uploadAssistant != nil {
             uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         }
@@ -364,6 +366,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 		if let vc = segue.destination as? ItemView,
 			segue.identifier == "presentUploadedItem" {
 			vc.editView = true
+            vc.guestBrowsing = false
+            vc.hasValues = true
 			vc.imageArray = itemImages
 			vc.givenTitle = titleEntry.text!
 			vc.descrip = descriptionEntry.text!
@@ -372,6 +376,8 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			vc.category = categoryChoice.text!
 			vc.quantity = quantity
 			vc.age = age
+            vc.sellerEmail = currentEmail
+            vc.currentUserEmail = currentEmail
 		}
 	}
 	

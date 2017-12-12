@@ -36,6 +36,7 @@ class Upload: NSObject {
             }
         } else {
             print("bad url!!!!")
+            print(urlString)
             // the URL was bad!
         }
     }

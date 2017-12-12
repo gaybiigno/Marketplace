@@ -56,7 +56,7 @@ class ItemView: UIViewController {
     var sellerEmail = ""
     var itemId = 0
     var currentUserEmail = ""
-    var currentUser = User()
+    var currentUser: User!
     var gettingTags = false
     
     var downloadAssistant: Download!
@@ -65,11 +65,15 @@ class ItemView: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(currentUserEmail)
+        
 		self.scrollView.backgroundColor = UIColor.white
 		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 300)
         downloadAssistant = Download(withURLString: buildURLString())
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         downloadAssistant.download_request()
+        
         gettingTags = true
         downloadAssistant = Download(withURLString: buildTagURLString())
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
@@ -87,7 +91,10 @@ class ItemView: UIViewController {
             userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
             userDataSource.consolidate()
             currentUser = userDataSource.userAt(0)!
+            print(currentUser)
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+            print(currentUser)
+            
         } else {
             gettingTags = false
             let tagsSchema = TagSchemaProcessor(tagsModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
@@ -326,9 +333,10 @@ class ItemView: UIViewController {
 	}
     
     func setUserInfo() {
+        // TODO pic
         profilePicture.image = userModel.getProfilePic()
-        usernameLabel.text = userModel.getUserName()
-        ratingLabel.text = "Rating:     " + String(userModel.getRating()) + "/10"
+        usernameLabel.text = currentUser.first_name! + " " + currentUser.last_name![0] + "."
+        ratingLabel.text = "Rating:     " + String(currentUser.rating) + "/10"
     }
 	
 	@IBAction func clickedBack(_ sender: UIButton) {
@@ -339,9 +347,9 @@ class ItemView: UIViewController {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "itemToMsg" {
             if !guestBrowsing {
-                vc.buyerEmail = currentUserEmail
-                vc.sellerEmail = sellerEmail
-                vc.setDefaultValues(userModel.getUserName(), "Linda", itemTitle.text)
+//                vc.buyerEmail = currentUserEmail
+//                vc.sellerEmail = sellerEmail
+                vc.setDefaultValues(nil, nil, itemTitle.text, currentUserEmail, sellerEmail)
             }
 		}
 		if let vc = segue.destination as? UploadItemTableView,
@@ -355,6 +363,7 @@ class ItemView: UIViewController {
 			vc.age = age
 			vc.tagString = tags.joined(separator: "  ")
 			vc.cat = category
+            // send email
 			}
 		if let vc = segue.destination as? HomeView,
 			segue.identifier == "purchaseToHome" {

@@ -726,6 +726,7 @@ SWIFT_CLASS("_TtC11Marketplace15SendMessageView")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sendButton;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (IBAction)clickedBack:(UIButton * _Nonnull)sender;
 - (void)clickedSend:(UIButton * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;

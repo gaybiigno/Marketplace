@@ -14,9 +14,6 @@ class UserDataSource: NSObject {
     
     init(dataSource: [User]?) {
         users = dataSource
-//        print(users!)
-//        print(dataSource!.count)
-//        
         super.init()
     }
     
@@ -28,7 +25,7 @@ class UserDataSource: NSObject {
     }
     
     func userAt(_ index: Int) -> User? {
-        if users == nil || index > users!.count {
+        if users == nil || index > users!.count || index < 0 {
             return nil
         }
         return users?[index]

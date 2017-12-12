@@ -47,9 +47,9 @@ class InboxTableView: UITableViewController {
         
         let header = UIView(frame: CGRect(x: 0, y: 0, width: Int(self.tableView.frame.width), height: 50))
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
-        //let titleText = NSAttributedString(string: "Inbox", attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 22.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+        let titleText = NSAttributedString(string: "Inbox", attributes: [NSAttributedStringKey.font:UIFont(name: "Avenir Book", size: 22.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
         titleLabel.text = "Inbox" //titleText.string //as! String
-        //titleLabel.attributedText = titleText
+        titleLabel.attributedText = titleText
         titleLabel.textAlignment = .center
         titleLabel.center = header.center
         header.addSubview(titleLabel)
@@ -100,14 +100,11 @@ class InboxTableView: UITableViewController {
         }
         else if inboxUp {
             inboxSchema = InboxSchemaProcessor(inboxModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
-            let inbox_returned = inboxSchema.getAllInboxs()
-            
-            inboxDataSource = InboxDataSource(dataSource: inbox_returned)
+            inboxDataSource = InboxDataSource(dataSource: inboxSchema.getAllInboxs())
             inboxDataSource?.consolidate()
             
             if let t = thisUserEmail {
-                inboxItems = inboxSchema.fetchForRecipient(t)
-                self.tableView.reloadData()
+                inboxItems = inboxDataSource.inboxFor(t)
             }
         }
     }
@@ -162,7 +159,7 @@ class InboxTableView: UITableViewController {
                     otUser = f + " " + l[0] + "."
                 }
                 
-                let content = inboxItems[indexPath.row].message
+                let content = inboxItems[indexPath.row].message?.replacingOccurrences(of: "_", with: " ")
                 msgCell.useMessage(sub!, tUser!, otUser!, content!, true)
             }
             return cell

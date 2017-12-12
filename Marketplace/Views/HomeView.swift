@@ -67,6 +67,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		if curEmail != nil {
+            signedIn = true
 			downloadAssistant = Download(withURLString: buildURLString())
 			downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
 			downloadAssistant.download_request()
@@ -234,7 +235,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
         else if let vc = segue.destination as? SearchTableView,
             segue.identifier == "searchStart" {
 			endMenu(self)
-			print("guestBrowsing in home:", signedIn)
+			print("guestBrowsing in home:", !signedIn)
 			vc.guestBrowsing = !signedIn
 			vc.keyWords = category
             vc.currentUserEmail = curEmail

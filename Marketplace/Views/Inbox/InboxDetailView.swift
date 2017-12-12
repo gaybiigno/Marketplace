@@ -51,10 +51,10 @@ class InboxDetailView: UIViewController {
 	}
 	
     func showMessage(_ subject: String, _ thisUser: String, _ otherUser: String, _ msgContent: String, _ rec: String!, _ sen: String!) {
-		self.subject = subject
+		self.subject = subject.replacingOccurrences(of: "_", with: " ")
         self.recipientEmail = thisUser
 		self.senderEmail = otherUser
-		self.content = msgContent
+		self.content = msgContent.replacingOccurrences(of: "_", with: " ")
         
         if let r = rec, let s = sen {
             self.recipientName = r
@@ -82,8 +82,7 @@ class InboxDetailView: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? SendMessageView,
 			segue.identifier == "replyMessage" {
-			vc.setDefaultValues(self.recipientEmail, self.senderEmail, self.subject)
-			
+			vc.setDefaultValues(self.senderName, self.recipientName, self.subject, self.recipientEmail, self.senderEmail)
 		}
 		
 	}

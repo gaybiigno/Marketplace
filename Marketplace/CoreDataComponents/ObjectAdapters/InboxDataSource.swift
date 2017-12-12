@@ -31,6 +31,19 @@ class InboxDataSource: NSObject {
         return inboxs?[index]
     }
     
+    func inboxFor(_ recEmail: String) -> [Inbox]? {
+        if inboxs == nil {
+            return nil
+        }
+        var to_ret = [Inbox]()
+        for i in inboxs! {
+            if i.recipient_email?.lowercased() == recEmail.lowercased() {
+                to_ret.append(i)
+            }
+        }
+        return to_ret
+    }
+    
     func consolidate() {
         var previd = -1
         var curIdx = 0
