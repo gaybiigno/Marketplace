@@ -20,7 +20,6 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     
     var filteredItems = [ItemView]()
     var guestBrowsing = true
-    
     var searchParams = false
     var keyWords = ""
     // var sortBy: Int! // Index in filterChoices
@@ -29,6 +28,9 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     var maxPrice: Double!
     var category: String!
     var rating: Int!
+    
+    var gettingItem = false
+    var gettingUser = false
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -57,8 +59,9 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         
         //        downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         //        downloadAssistant.download_request()
-        
-        udownloadAssistant.addObserver(self, forKeyPath: "udataFromServer", options: .old, context: nil)
+        gettingUser = true
+        gettingItem = false
+        udownloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         udownloadAssistant.download_request()
         
         locationManager.delegate = self
@@ -88,7 +91,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         //        print(downloadAssistant.dataFromServer!)
-        if keyPath == "dataFromServer" {
+        if gettingItem {
             
             itemsSchema = ItemSchemaProcessor(itemModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
             print("---------items downloaded-----------")
@@ -100,23 +103,24 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
             //            if itemsToShow == nil {
             //                itemsToShow = [Item]()
             //            }
-            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
-        } else {
+            //downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        }
+        else if gettingUser {
             usersSchema = UserSchemaProcessor(userModelJSON: udownloadAssistant.dataFromServer! as! [AnyObject])
             let users_returned = usersSchema.getAllUsers()
             userDataSource = UserDataSource(dataSource: users_returned)
             userDataSource?.consolidate()
-            udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+            //udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
         }
     }
     
     deinit {
-        //if downloadAssistant != nil {
-        //downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        //}
-        //if udownloadAssistant != nil {
-        //udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        //}
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
+        if udownloadAssistant != nil {
+            udownloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
+        }
     }
     
     func setSearchies() {
@@ -129,6 +133,8 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //        var address = searchBar.text
         //        getCoordinatesOfAddress(addressString: address!)
+        gettingItem = true
+        gettingUser = false
         downloadAssistant = Download(withURLString: "http://localhost:8181/items/all")
         downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
         downloadAssistant.download_request()
@@ -146,9 +152,11 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         }
     }
     func findUserByEmail(_ senderEmail: String) -> User? {
-        for user in (userDataSource?.users)! {
-            if user.email == senderEmail {
-                return user
+        if let listOfUsers = userDataSource?.users {
+            for user in listOfUsers {
+                if user.email == senderEmail {
+                    return user
+                }
             }
         }
         return nil
@@ -160,6 +168,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
         for item in itemsToShow {
             var count = 0
             var fcount = 0
+            //print(item)
             if let cat = category, item.item_category?.lowercased() == cat.lowercased() {
                 count += 1
                 fcount += 1
@@ -184,6 +193,7 @@ class SearchTableView: UITableViewController, UISearchBarDelegate, CLLocationMan
                     fcount += 1
                 }
             }
+            print(count, fcount)
             if count == fcount, count != 0 {
                 endResults.append(item)
             }

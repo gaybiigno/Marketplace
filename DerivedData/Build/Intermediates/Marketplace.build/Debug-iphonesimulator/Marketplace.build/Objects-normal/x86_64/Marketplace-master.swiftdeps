@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "319a540938f7094bd3675b19dcbade00"
-build_time: [1513042495, 39620000]
+build_time: [1513044828, 906604000]
 inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Item+CoreDataProperties.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/Inbox/InboxMsgTableCell.swift": [1513029947, 0]
@@ -14,16 +14,16 @@ inputs:
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Sale+CoreDataProperties.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/InboxSchemaProcessor.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/Network/Download.swift": [1513022389, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchTableView.swift": [1513035011, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchTableView.swift": [1513044357, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures+CoreDataProperties.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/TagSchemaProcessor.swift": [1513033630, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/Inbox/InboxTableView.swift": [1513042494, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1513022390, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/SearchParametersTableView.swift": [1513044828, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/UploadImageView.swift": [1513022390, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/ItemDataSource.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Pictures.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Models/ItemModel.swift": [1513025327, 0]
-  "/Users/student/Documents/Marketplace/Marketplace/Views/HomeView.swift": [1513042162, 0]
+  "/Users/student/Documents/Marketplace/Marketplace/Views/HomeView.swift": [1513043328, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/DataModels/Tags+CoreDataProperties.swift": [1513022389, 0]
   "/Users/student/Documents/Marketplace/Marketplace/Views/ItemTableViewCell.swift": [1513022390, 0]
   "/Users/student/Documents/Marketplace/Marketplace/CoreDataComponents/ObjectAdapters/InboxDataSource.swift": [1513041070, 0]

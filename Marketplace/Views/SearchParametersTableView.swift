@@ -50,6 +50,7 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     var higherPrice: Double! //max 1000000.00
     var rate: Int!
 	
+    var guestBrowsing = true
 	var noFilters = true
 	var sort = false
 	var filterDistance = false
@@ -123,16 +124,21 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     
     // paramsToSearch
     @IBAction func clickedApply(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "paramsToSearch", sender: self)
+        
         if let pe = Double(minPriceEntry.text!) {
             lowerPrice = pe
+        } else {
+            lowerPrice = 0.0
         }
         if let pe = Double(maxPriceEntry.text!) {
             higherPrice = pe
+        } else {
+            higherPrice = 999999.99
         }
         if let r = Int(rating.text!) {
             rate = r
         }
+        self.performSegue(withIdentifier: "paramsToSearch", sender: self)
     }
     
     
@@ -241,13 +247,20 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? SearchTableView,
             segue.identifier == "paramsToSearch" {
-            vc.searchParams = true
-            vc.category = cat.isEmpty ? nil : cat
-            vc.minPrice = lowerPrice
-            vc.maxPrice = higherPrice
-            vc.rating = rate
-//            vc.keyWords = " "
-            vc.keyWords = "c"
+            vc.searchParams =  (togglePrice.isOn || toggleRating.isOn || toggleCategory.isOn || toggleDistance.isOn)
+            vc.guestBrowsing = guestBrowsing
+            if filterCategory {
+                vc.category = cat.isEmpty ? nil : cat
+            }
+            if filterPrice {
+                vc.minPrice = lowerPrice
+                vc.maxPrice = higherPrice
+            }
+            if filterRating {
+                vc.rating = rate
+            }
+            //vc.keyWords = " "
+            //vc.keyWords = "c"
             //vc.filterContentForSearchText(cat)
         }
     }

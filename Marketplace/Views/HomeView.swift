@@ -237,7 +237,9 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			endMenu(self)
 			print("guestBrowsing in home:", !signedIn)
 			vc.guestBrowsing = !signedIn
-			vc.keyWords = category
+            vc.searchParams = true
+			//vc.keyWords = category
+            vc.category = category.isEmpty ? nil : category
             vc.currentUserEmail = curEmail
             vc.filterContentForSearchText(category)
         }
@@ -260,6 +262,11 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
             segue.identifier == "homeToInbox" {
             endMenu(self)
             vc.thisUserEmail = curEmail
+        }
+        else if let vc = segue.destination as? SearchParametersTableView,
+            segue.identifier == "toSearchParams" {
+            endMenu(self)
+            vc.guestBrowsing = !signedIn
         }
 	}
 	

@@ -907,7 +907,7 @@
             <objects>
                 <viewController id="crb-H0-5jg" customClass="EditProfileView" customModule="Marketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vAS-78-g0R">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="176"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoi-Z5-tFb">
@@ -2612,12 +2612,11 @@
         <image name="PhotoIcon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eFI-GU-uEE"/>
         <segue reference="3Cx-Ii-YsF"/>
-        <segue reference="LuE-rl-xzt"/>
-        <segue reference="PID-hA-ejW"/>
+        <segue reference="G8T-Es-8ZJ"/>
+        <segue reference="qtw-2h-LeB"/>
         <segue reference="wR7-pD-Igu"/>
-        <segue reference="Pjh-Hn-Bic"/>
+        <segue reference="5uY-PQ-cL7"/>
         <segue reference="S3O-V1-7Vh"/>
     </inferredMetricsTieBreakers>
 </document>
