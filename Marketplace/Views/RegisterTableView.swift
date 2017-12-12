@@ -316,6 +316,8 @@ class RegisterTableView: UITableViewController, UIImagePickerControllerDelegate,
             if let hv = segue.destination as? HomeView {
 				hv.signedIn = true
                 hv.uName = username
+                hv.curEmail = email.text
+                //hv.currentUser = curUser
 				//hv.updateUserName(username)
             }
         }

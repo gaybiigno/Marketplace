@@ -28,6 +28,8 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     var imgURL: NSURL!
     
     var imageData: Data!
+    
+    var item_num = -1
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,76 +80,6 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
         task1.resume()
     }
     
-    func createBody(with parameters: [String: String]?, filePathKey: String, paths: [String], boundary: String) throws -> Data {
-        var body = Data()
-        
-        if parameters != nil {
-            for (key, value) in parameters! {
-                body.append("--\(boundary)\r\n")
-                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-                body.append("\(value)\r\n")
-            }
-        }
-        
-        for path in paths {
-            let url = URL(fileURLWithPath: path)
-            let filename = url.lastPathComponent
-            let data = try Data(contentsOf: url)
-            let mimetype = "image/png"//mimeType(for: path)
-            
-            body.append("--\(boundary)\r\n")
-            body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
-            body.append("Content-Type: \(mimetype)\r\n\r\n")
-            body.append(data)
-            body.append("\r\n")
-        }
-        
-        body.append("--\(boundary)--\r\n")
-        return body
-    }
-    
-    func uploadImage(urlString: String, image: UIImage?) {
-//        let request: URLRequest
-//
-//        do {
-//            request = try createRequestBodyWith(parameters: [:], boundary: generateBoundaryString())
-//        } catch {
-//            print(error)
-//            return
-//        }
-//        print(request.httpBody)
-//        print(String(describing: request.httpBody))
-//        print(request.httpBody?.base64EncodedString())
-//
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard error == nil else {
-//                // handle error here
-//                print(error!)
-//                return
-//            }
-//
-//            // if response was JSON, then parse it
-//
-//            do {
-//                let responseDictionary = try JSONSerialization.jsonObject(with: data!)
-//                print("success == \(responseDictionary)")
-//
-//                // note, if you want to update the UI, make sure to dispatch that to the main queue, e.g.:
-//                //
-//                // DispatchQueue.main.async {
-//                //     // update your UI and model objects here
-//                // }
-//            } catch {
-//                print(error)
-//
-//                let responseString = String(data: data!, encoding: .utf8)
-//                print("responseString = \(responseString)")
-//            }
-//        }
-//        task.resume()
-    }
-    
-    
     func start() {
         addButton.addTarget(self, action: #selector(clickNew(_:)), for: .touchUpInside)
     }
@@ -191,6 +123,8 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
     }
     
+    
+    
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let imageURL = info[UIImagePickerControllerReferenceURL] as? NSURL
@@ -198,8 +132,7 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
             imageData = UIImagePNGRepresentation(pickedImage)!
             let imgStr = imageData.base64EncodedString()
             imgURL = imageURL
-            upload()
-//            uploadImage(urlString: (imageURL?.absoluteString)!, image: pickedImage)
+            //upload()
             allImages.append(pickedImage)
             delegate?.setImages(pickedImage)
 			imgCountLabel.text = String(numImages())
@@ -260,19 +193,4 @@ class UploadImageView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     */
 
-}
-
-extension Data {
-    
-    /// Append string to NSMutableData
-    ///
-    /// Rather than littering my code with calls to `dataUsingEncoding` to convert strings to NSData, and then add that data to the NSMutableData, this wraps it in a nice convenient little extension to NSMutableData. This converts using UTF-8.
-    ///
-    /// - parameter string:       The string to be added to the `NSMutableData`.
-    
-    mutating func append(_ string: String) {
-        if let data = string.data(using: .utf8) {
-            self.append(data)
-        }
-    }
 }

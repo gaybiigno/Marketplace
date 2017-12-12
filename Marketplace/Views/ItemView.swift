@@ -58,6 +58,7 @@ class ItemView: UIViewController {
     var currentUserEmail = ""
     var currentUser: User!
     var gettingTags = false
+    var gettingPics = false
     
     var downloadAssistant: Download!
     var userSchema: UserSchemaProcessor!
@@ -81,8 +82,10 @@ class ItemView: UIViewController {
         itemPriceLabel.adjustsFontSizeToFitWidth = true
         itemPriceLabel.clipsToBounds = true
         itemPriceLabel.baselineAdjustment = .alignCenters
+        
 
 		start()
+        setItemImages()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -95,7 +98,8 @@ class ItemView: UIViewController {
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
             print(currentUser)
             
-        } else {
+        }
+        if gettingTags == true {
             gettingTags = false
             let tagsSchema = TagSchemaProcessor(tagsModelJSON: downloadAssistant.dataFromServer! as! [AnyObject])
             let tagsDataSource = TagsDataSource(dataSource: tagsSchema.getAllTags())
@@ -111,6 +115,27 @@ class ItemView: UIViewController {
             }
             downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
         }
+        
+    }
+    
+    func setItemImages() {
+        if let url = URL(string: buildPictureURLString()), let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) {
+            imageArray.append(image)
+            itemImageView.image = image
+        } else {
+            if let img = UIImage(named: "PhotoIcon") {
+                imageArray.append(img)
+                itemImageView.image = img
+            }
+        }
+    }
+    
+    func buildPictureURLString() -> String {
+        var url = Download.baseURL + "/pics/"
+        url += "?item_id=" + String(itemId)
+        url += "&img_num=" + String(0)
+        return url
     }
     
     func buildURLString() -> String {
@@ -249,6 +274,7 @@ class ItemView: UIViewController {
 	func setItemTitle() {
 		if hasValues {
 			itemTitle.text = hasValues ? givenTitle : itemModel.getTitle()
+            itemTitle.text = itemTitle.text?.replacingOccurrences(of: "_", with: " ")
 		} else {
 			itemTitle.text = editView ? givenTitle : itemModel.getTitle()
 		}
@@ -287,6 +313,7 @@ class ItemView: UIViewController {
 		} else {
 			itemDescription.text = editView ? descrip : itemModel.getDescription()
 		}
+        itemDescription.text = itemDescription.text?.replacingOccurrences(of: "_", with: " ")
 	}
 	
 	func setItemQuantity() {
@@ -368,6 +395,7 @@ class ItemView: UIViewController {
 		if let vc = segue.destination as? HomeView,
 			segue.identifier == "purchaseToHome" {
 			vc.signedIn = true
+            vc.curEmail = currentUserEmail
 			vc.uName = "UPD IN ITEMVIEW"
 		}
 	}

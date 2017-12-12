@@ -52,6 +52,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	var uName: String!
 	
 	var signedIn = false
+    var addingHello = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +68,12 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		if curEmail != nil {
-            signedIn = true
-			downloadAssistant = Download(withURLString: buildURLString())
-			downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
-			downloadAssistant.download_request()
+            if currentUser == nil {
+                signedIn = true
+                downloadAssistant = Download(withURLString: buildURLString())
+                downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+                downloadAssistant.download_request()
+            }
 		} else {
 			signedIn = false
 		}
@@ -89,8 +92,12 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 		let userDataSource = UserDataSource(dataSource: userSchema.getAllUsers())
 		userDataSource.consolidate()
 		currentUser = userDataSource.userAt(0)
-		addHello()
-        downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        if addingHello == false {
+            addHello()
+        }
+        if downloadAssistant != nil {
+            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer")
+        }
 	}
 	
 	func searchBorders() {
@@ -142,15 +149,23 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 	}
 	
 	func addHello() {
+        addingHello = true
 		signInButton.isHidden = true
 		registerButton.isHidden = true
 		
-        curEmail = currentUser.email
+        if curEmail == nil {
+            curEmail = currentUser.email
+        } else {
+            downloadAssistant = Download(withURLString: buildURLString())
+            downloadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
+            downloadAssistant.download_request()
+        }
         helloLabel.text = "Hello, " + currentUser.first_name! + " " + currentUser.last_name![0] + "."
 		helloLabel.isHidden = false
 		
 		menuButton.isHidden = false
 		menuButton.addTarget(self, action: #selector(clickMenu(_:)), for: .touchUpInside)
+        addingHello = false
 	}
 	
 	func signOut() {
@@ -237,7 +252,11 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
 			endMenu(self)
 			print("guestBrowsing in home:", !signedIn)
 			vc.guestBrowsing = !signedIn
-            vc.searchParams = true
+            if category.isEmpty {
+                vc.searchParams = false
+            } else {
+                vc.searchParams = true
+            }
 			//vc.keyWords = category
             vc.category = category.isEmpty ? nil : category
             vc.currentUserEmail = curEmail
@@ -266,6 +285,7 @@ class HomeView: UIViewController, SegueHandler, UISearchBarDelegate {
         else if let vc = segue.destination as? SearchParametersTableView,
             segue.identifier == "toSearchParams" {
             endMenu(self)
+            vc.currentEmail = curEmail
             vc.guestBrowsing = !signedIn
         }
 	}

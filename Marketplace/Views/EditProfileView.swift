@@ -224,6 +224,7 @@ class EditProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
 		if let presenter = presentingViewController as! HomeView? {
 			if !firstName.isEmpty && !lastName.isEmpty {
 				let name = firstName + " " + String(lastName[0]) + "."
+                presenter.curEmail = curEmail
 				presenter.uName = name
 			}
 		}

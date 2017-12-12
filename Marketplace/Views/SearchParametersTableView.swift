@@ -58,6 +58,8 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
 	var filterCategory = false
 	var filterRating = false
 
+    var currentEmail = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -248,6 +250,7 @@ class SearchParametersTableView: UITableViewController, UIPickerViewDelegate, UI
         if let vc = segue.destination as? SearchTableView,
             segue.identifier == "paramsToSearch" {
             vc.searchParams =  (togglePrice.isOn || toggleRating.isOn || toggleCategory.isOn || toggleDistance.isOn)
+            vc.currentUserEmail = currentEmail
             vc.guestBrowsing = guestBrowsing
             if filterCategory {
                 vc.category = cat.isEmpty ? nil : cat

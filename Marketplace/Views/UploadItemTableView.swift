@@ -55,6 +55,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 	var tagString: String = ""
     var currentEmail: String!
     var itemId: Int = 0
+    var curImg = 0
 	
 	var editingItem = false
     var downloading = false
@@ -134,6 +135,10 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
                 uploadAssistant = Upload(withURLString: buildUploadTagURL(tag: String(tag)))
                 uploadAssistant.addObserver(self, forKeyPath: "dataFromServer", options: .old, context: nil)
                 uploadAssistant.upload_request()
+            }
+            for image in itemImages {
+                upload(image: image)
+                curImg += 1
             }
         }
     }
@@ -296,6 +301,43 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
         }
 	}
 	
+    func upload(image: UIImage) {
+        let imageData = UIImagePNGRepresentation(image)
+        var urlString = "http://localhost:8181/pics/upload"
+        urlString += "?item_id=" + String(itemId)
+        urlString += "&img_num=" + String(curImg)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        var mutableURLRequest = URLRequest(url: NSURL(string: urlString) as! URL)
+        
+        mutableURLRequest.httpMethod = "POST"
+        
+        let boundaryConstant = "----------------12345"
+        let contentType = "multipart/form-data;boundary=" + boundaryConstant
+        mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        
+        var uploadData = Data()
+        
+        uploadData.append("\r\n--\(boundaryConstant)\r\n".data(using: String.Encoding.utf8)!)
+        uploadData.append("Content-Disposition: form-data; name=\"picture\"; filename=\"file.png\"\r\n".data(using: String.Encoding.utf8)!)
+        uploadData.append("Content-Type: image/png\r\n\r\n".data(using: String.Encoding.utf8)!)
+        uploadData.append(imageData!)
+        uploadData.append("\r\n--\(boundaryConstant)--\r\n".data(using: String.Encoding.utf8)!)
+        
+        mutableURLRequest.httpBody = uploadData as Data
+        
+        
+        let task1 = session.dataTask(with: mutableURLRequest, completionHandler: { (data, response, error) -> Void in
+            if error == nil {
+                print("image uploaded")
+            } else {
+                print("image not uploaded")
+            }
+        })
+        //let task = session.dataTask(with: mutableURLRequest)
+        
+        task1.resume()
+    }
     
     func formatVals() {
 		if !tagEntry.text.isEmpty {
@@ -330,15 +372,6 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
     
     func setImages(_ itemList: UIImage) {
         itemImages.append(itemList)
-    }
-    
-    deinit {
-        if downloadAssistant != nil {
-            downloadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        }
-        if uploadAssistant != nil {
-            uploadAssistant.removeObserver(self, forKeyPath: "dataFromServer", context: nil)
-        }
     }
 	
     // MARK: - Table view data source
@@ -378,6 +411,7 @@ class UploadItemTableView: UITableViewController, UITextFieldDelegate, UITextVie
 			vc.age = age
             vc.sellerEmail = currentEmail
             vc.currentUserEmail = currentEmail
+            vc.itemId = itemId
 		}
 	}
 	
